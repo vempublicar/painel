@@ -5,7 +5,7 @@ session_start();
 include '../conn/connection.php';  // Caminho corrigido e nome do arquivo corrigido
 include '../path/caminho.php';
 //include 'cadastro-lead.php';
-include 'email/envio-email.php';
+include '../email/envio-email.php';
 
 // Função para sanitizar dados
 function sanitizar($data) {
