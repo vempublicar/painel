@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    overflow-y: hidden; /* Remove a barra de rolagem vertical */
+}
+
+/* Para a scroll-container, habilitar rolagem vertical */
+.scroll-container {
+    display: flex;
+    flex-direction: column; /* Muda para coluna para rolagem vertical */
+    overflow-y: scroll; /* Habilita rolagem vertical */
+    overflow-x: hidden; /* Esconde a rolagem horizontal */
+    scroll-behavior: smooth;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 50px; /* Mesma altura do header */
+}
+
+.scroll-section {
+    min-height: 100vh; /* Ajusta para altura da seção */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+    transition: transform 0.5s ease; /* Animação suave */
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 767px) {
+    body {
+        overflow: visible; /* Aplica o overflow: hidden; em telas menores */
+    }
+}
+
+/* Para dispositivos desktop */
+@media (min-width: 768px) {
+    body {
+        overflow: hidden; /* Remove o overflow: hidden; em telas maiores */
+    }
+}
+
+
+/* Centralizando o botão e adicionando margens */
+.d-flex.justify-content-center {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Estilizando o botão para ter diferentes larguras em desktop e mobile */
+.btn-cadastro {
+    width: 70%; /* Largura para mobile */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
+@media (min-width: 768px) {
+    .btn-cadastro {
+        width: 25%; /* Largura para desktop */
+    }
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+/* Estilização do Header */
+header.navbar {
+    background-color: #182433; /* Cor de fundo do header */
+}
+
+.btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    color: #559df6;
+    border-color: #3e84d9;
+}
+
+/* Ajuste de espaçamento para o logotipo e elementos */
+.navbar-brand {
+    margin-right: auto;
+}
+
+.d-flex.align-items-center {
+    margin-left: auto;
+}
+
+/* Estilização da seção de apresentação (hero) */
+.hero {
+    background-color: #182433; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Tamanho para desktop */
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 1.8rem; /* Tamanho para desktop */
+    font-weight: 700;
+}
+h4 {
+    font-size: 1.2rem; /* Tamanho para desktop */
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.25rem; /* Tamanho para desktop */
+    font-weight: 300;
+    max-width: 80%;
+    margin: 0 auto 30px auto; /* Centralizar e adicionar espaço inferior */
+}
+
+.metodo-secao {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+.metodo-secao h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #182433; /* Cor do texto principal */
+}
+
+.metodo-secao h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #182433; /* Cor do texto principal */
+}
+
+.metodo-secao p {
+    color: #555555; /* Cor do texto secundário */
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centralizar e espaçamento */
+}
+.cinza {
+    background-color: #f3f4f6; /* Cor de fundo */
+}
+/* Media query para larguras abaixo de 580px */
+@media (max-width: 580px) {
+    .btn-cadastro {
+        width: 80%; /* Largura ajustada para dispositivos muito pequenos */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Reduzir o tamanho da fonte em telas menores */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduzir o tamanho da fonte em telas menores */
+    }
+
+    .metodo-secao h2 {
+        font-size: 1.8rem; /* Ajuste do tamanho da fonte para caber melhor */
+    }
+    .metodo-secao h3 {
+        font-size: 1.5rem; /* Ajuste do tamanho da fonte para caber melhor */
+    }
+
+    .metodo-secao p {
+        font-size: 0.9rem;
+        max-width: 90%; /* Ajuste da largura máxima */
+    }
+}
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #182433;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333333;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+}
+

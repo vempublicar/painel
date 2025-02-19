@@ -1,0 +1,152 @@
+/* CSS */
+
+body.theme-light #logo-branco {
+    display: inline;
+}
+
+body.theme-light #logo-escuro {
+    display: none;
+}
+
+body.theme-dark #logo-branco {
+    display: none;
+}
+
+body.theme-dark #logo-escuro {
+    display: inline;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Faz a barra de rolagem ser invisível */
+    height: 0; /* Para rolagem horizontal, se necessário */
+}
+header.header1 {
+    position: fixed;
+    top: 0;
+    height: 45px;
+    width: 100%;
+    z-index: 1000; /* Certifique-se de que ele fique acima de outros elementos */
+}
+
+/* Segundo header fixo logo abaixo do primeiro */
+.header2 {
+    position: fixed;
+    height: 22px;
+    top: 55px; /* Ajuste para a altura exata do primeiro header */
+    width: 100%;
+    z-index: 999; /* Coloque abaixo do primeiro header */
+}
+/* Para outros navegadores */
+html {
+    scrollbar-width: none; /* Firefox */
+}
+
+body {
+    padding-top: 55px;
+    overflow: auto;  /* Permite a rolagem normalmente */
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 50vh;
+    right: -5px;
+    z-index: 1000;
+}
+
+
+.floating-button a {
+    position: relative;
+    z-index: 1; 
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* animation: pulse 1.5s infinite ease-in-out, float 3s infinite ease-in-out; */
+}
+
+.linha-background {
+    /* background-color: #007bff; */
+    position: fixed;
+    bottom: 42vh; /* Mesmo valor de bottom do botão */
+    right: 0px;  /* Ajuste esta distância para alinhar ao lado do botão */
+    width: 2px;   /* Espessura da linha */
+    height: 25%;  /* Altura da linha */
+    z-index: 999; /* Fica atrás do botão, mas acima de outros elementos */
+}
+
+.line-through {
+    text-decoration: line-through;
+    text-decoration-color: rgb(255, 255, 255); /* Opcional: cor da linha riscada */
+}
+
+.apexcharts-menu {
+    background-color: #062038 !important;  /* Cor de fundo do menu */
+    color: #f1c40f !important;  /* Cor do texto do menu */
+}
+.apexcharts-menu-item:hover {
+    background-color: #062038 !important;  /* Cor de fundo ao passar o mouse */
+    color: #f1c40f !important;  /* Cor do texto ao passar o mouse */
+}
+
+.funil-container {
+    width: 100%;
+    margin: 5px auto;
+    font-family: Arial, sans-serif;
+}
+.funil-linha {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.barra-valor {
+    height: 30px;
+    background-color: #eb56a8; /* Azul */
+    margin-right: 5px;
+}
+.barra-diferenca {
+    height: 30px;
+}
+.barra-verde {
+    background-color: #2ecc71; /* Verde */
+}
+.barra-vermelha {
+    background-color: #FF33A1; /* Vermelha */
+}
+.label {
+    width: 20%;
+}
+
+.custom-chart .apexcharts-yaxis text {
+    fill: #138799 !important;  /* Define a cor para os rótulos do eixo Y */
+    font-size: 15px !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+.custom-chart .apexcharts-xaxis text {
+    fill: #138799 !important;  /* Define a cor para os rótulos do eixo X */
+    font-size: 15px !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+.pdf-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;  /* Simula a altura completa da página */
+    
+}
+
+.page-break { 
+    /* page-break-before: always; */
+    page-break-after: always;  
+ }
+
+hr.custom-hr {
+    border: none;                 /* Remove a borda padrão */
+    height: 4px;                  /* Define a altura da linha */
+    background: linear-gradient(to right, #3649b3, #FF33A1); /* Gradiente de cores */
+    border-radius: 2px;           /* Adiciona cantos arredondados */
+    margin: 20px 0;               /* Espaçamento acima e abaixo da linha */
+}
