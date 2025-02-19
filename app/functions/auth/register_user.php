@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 include '../../conn/connection.php';  // Caminho corrigido e nome do arquivo corrigido
 include '../path/caminho.php';
 //include 'cadastro-lead.php';
-include '../email/envio-email.php';
+include '../email/envia-email.php';
 
 // Função para sanitizar dados
 function sanitizar($data) {
@@ -49,15 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         enviarLinkCadastroSenha($email, $nome, $password);
         echo 'teste1';
-        //header("Location: " . BASE_URL . "verificar-email");
-        //exit();
+        header("Location: " . BASE_URL . "verificar-email");
+        exit();
 
     } catch (PDOException $e) {
         redirecionarComMensagem("cadastro", "Erro ao inserir dados no banco de dados: " . $e->getMessage());
     }
 } else {
-    //header("Location: " . BASE_URL . "login");
-    //exit();
+    header("Location: " . BASE_URL . "login");
+    exit();
     echo 'teste2';
 }
 
