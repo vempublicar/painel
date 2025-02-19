@@ -4,7 +4,7 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+date_default_timezone_set('America/Sao_Paulo');
 include '../../conn/connection.php';  // Caminho corrigido e nome do arquivo corrigido
 include '../path/caminho.php';
 //include 'cadastro-lead.php';
@@ -37,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'nome' => $nome,
             'fone' => $whatsapp,
             'email' => $email,
-            'acesso' => $password,
+            'chave' $password,
+            'acesso' => date('Y-m-d H:i:s'),
         ];
 
         $colunas = implode(", ", array_keys($dados));

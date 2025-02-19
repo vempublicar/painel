@@ -75,16 +75,16 @@ function enviarLinkCadastroSenha($destinatario, $nome, $senhaCadastrada) {
     <body style='font-family: Arial, sans-serif; line-height: 1.6;'>
         <h2>Olá $nome, que bom ver você aqui!</h2>
         <p>Estamos entusiasmados em lhe ajudar com o crescimento da sua empresa!<br> 
-        Na Área de Membros do Fepacoc, você se aprofunda em uma variedade de vídeos, serviços e recursos valiosos para ajudar ativamente na sua gestão.</p>
+        Aqui no Fepacoc, você se aprofunda em uma variedade de vídeos, serviços e recursos valiosos para ajudar ativamente na sua gestão.</p>
         
-        <i>Para acessar a Área de Membros, informe o email cadastrado e a senha destacada abaixo.</i>
+        <i>Para acessar o <b>seu painel</b>, informe o email cadastrado e a chave destacada abaixo.</i>
         
         <hr>
-        <p>Sua senha de acesso é: <strong>$senhaCadastrada</strong></p>
+        <p>Chave de acesso: <strong>$senhaCadastrada</strong></p>
         <hr>
         
         <p>
-            <a href='https://members.fepacoc.com.br/login' 
+            <a href='https://painel.fepacoc.com/login' 
                 style='background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; display: inline-block;'>Acessar Área de Membros
             </a>
         </p>
@@ -142,7 +142,7 @@ function enviarEmailRecuperar($destinatario, $nome, $senhaCadastrada) {
         </head>
         <body>
             <h2>Olá " . htmlspecialchars($nome, ENT_QUOTES, 'UTF-8') . "</h2>
-            <p>O seu código de acesso: " . htmlspecialchars($senhaCadastrada, ENT_QUOTES, 'UTF-8') . "</p>
+            <p>A sua chave de acesso é: " . htmlspecialchars($senhaCadastrada, ENT_QUOTES, 'UTF-8') . "</p>
             <p>Qualquer dúvida entre em contato conosco pelo email: <a href='mailto:suporte@fepacoc.com.br'>suporte@fepacoc.com.br</a>.</p>
             <p>Atenciosamente, <br> Equipe Fepacoc</p>
         </body>
