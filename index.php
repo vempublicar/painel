@@ -24,5 +24,5 @@ if(isset($_GET['pg']) && $_GET['pg'] != ""){
         
     }
 }else{
-    include "app/public/inicio.php";
+    include "app/public/login.php";
 }
