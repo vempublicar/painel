@@ -50,77 +50,173 @@
       margin-bottom: 5px;
     }
   </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fepacoc | Planos Disponíveis</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google Fonts (ex: Open Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f1f3f5;
+      margin: 0;
+      padding-top: 60px;
+    }
+    h1, h5 {
+      font-weight: 600;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .pricing-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-header p {
+      color: #6c757d;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    /* Seção de preços */
+    .plans-section .col-plan {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin: 0;
+    }
+    .plans-section .col-plan h5 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    .plans-section .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .plans-section ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .plans-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    .plans-section .btn {
+      width: 100%;
+    }
+    /* Coluna de destaque (chamada de atenção) */
+    .highlight-box {
+      background-color: #0d6efd;
+      color: #fff;
+      border-radius: 0.5rem;
+      padding: 2rem 1rem;
+    }
+    .highlight-box h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    /* Plano Personalizado */
+    .personalizado-card {
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    /* Botão para tabela comparativa */
+    .compare-btn {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+    }
+    /* Tabela comparativa */
+    .comparison-table .table-responsive {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-  <header class="text-center mb-5">
-      <h1>Planos e Preços</h1>
-      <p class="lead">Escolha o plano que melhor se adapta às necessidades da sua empresa</p>
-    </header>
+    <!-- Título principal e subtítulo -->
+    <div class="pricing-header">
+      <h1><span class="text-primary">Comece agora</span> & não olhe para trás.</h1>
+      <p>Aproveite as melhores soluções para alavancar seu negócio</p>
+    </div>
 
-    <div class="row">
+    <!-- Seção de planos -->
+    <div class="row plans-section gx-3 gy-4">
+      <!-- Coluna de destaque (texto chamativo) -->
+      <div class="col-md-3">
+        <div class="highlight-box h-100 d-flex flex-column justify-content-center">
+          <h3>Pare de empurrar seus clientes para um canto</h3>
+          <p class="mb-0">
+            Fames ac turpis egestas integer. Viverra orci sagittis eu volutpat odio.
+          </p>
+        </div>
+      </div>
+
       <!-- Plano Gratuito -->
-      <div class="col-md-4">
-        <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solid #FFC107;">
-            <i class="bi bi-star" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Iniciar a Gestão Estratégica</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Plano Gratuito</h5>
-            <p class="price-discount">Gratuito</p>
-            <ul class="list-unstyled text-start">
-              <li>Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica e organização dos processos da empresa, estruturando com o método fepacoc.</li>
+      <div class="col-md-3">
+        <div class="col-plan h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h5>Plano Gratuito</h5>
+            <div class="price">Gratuito</div>
+            <ul>
+              <li>Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Acesso prioritário a teste de ferramentas exclusivas</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal para sua empresa</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
+          </div>
+          <div>
+            <a href="#" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Estratégia -->
-      <div class="col-md-4">
-        <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solid #0d6efd;">
-            <i class="bi bi-rocket" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Ajustar o Marketing e Vendas</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Plano Estratégia</h5>
-            <p>
-              <span class="price-original">R$179,90</span><br>
-              <span class="price-discount">R$79,90/mês</span>
-            </p>
-            <ul class="list-unstyled text-start">
-              <li>Acesso a Ferramentas e Vídeos Estratégicos para organizar a empresa nas áreas de Marketing, Vendas e Atendimento ao Cliente.</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp para ajudar nos processo de implementação</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Receba vídeos estratégicos exclusivos para seu segmento no Whatsapp</li>
+      <div class="col-md-3">
+        <div class="col-plan h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h5>Plano Estratégia</h5>
+            <div class="price">R$79,90 <span style="font-size:0.8rem;">/mês</span></div>
+            <ul>
+              <li>Acesso a Ferramentas e Vídeos para Marketing, Vendas e Atendimento</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Vídeos estratégicos exclusivos no WhatsApp</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
+          </div>
+          <div>
+            <a href="#" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Ferramenta -->
-      <div class="col-md-4">
-        <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solid #198754;">
-            <i class="bi bi-gem" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Consolidar os Processos</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Plano Ferramenta</h5>
-            <p>
-              <span class="price-original">R$399,90</span><br>
-              <span class="price-discount">R$189,90/mês</span>
-            </p>
-            <ul class="list-unstyled text-start">
-              <li>Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor à marca e cultura</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo do fepacoc que garante o crescimento da empresa, com suporte da nossa equipe</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas sobre estratégias e novidades do mercado</li>
+      <div class="col-md-3">
+        <div class="col-plan h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h5>Plano Ferramenta</h5>
+            <div class="price">R$189,90 <span style="font-size:0.8rem;">/mês</span></div>
+            <ul>
+              <li>Acesso a todas as Ferramentas e Vídeos Estratégicos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo da FEPACOC</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
+          </div>
+          <div>
+            <a href="#" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -129,24 +225,16 @@
     <!-- Plano Personalizado -->
     <div class="row">
       <div class="col-12">
-        <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solid rgb(40, 43, 44);">
-            <i class="bi bi-person-check" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Empresas que buscam crescimento estruturado</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Plano Personalizado</h5>
-            <p class="card-text">
-              Para empresas que desejam um consultor ativo no seu projeto, para garantir o crescimento estruturado da empresa.
-            </p>
-            <a href="#" class="btn btn-dark w-100">Falar com Consultor</a>
-          </div>
+        <div class="personalizado-card">
+          <h5>Plano Personalizado</h5>
+          <p>Para empresas que desejam um consultor ativo no seu projeto, garantindo o crescimento estruturado.</p>
+          <a href="#" class="btn btn-dark">Falar com Consultor</a>
         </div>
       </div>
     </div>
 
     <!-- Botão para expandir a tabela comparativa -->
-    <div class="text-center mt-5 mb-5">
+    <div class="compare-btn">
       <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#comparativoFuncionalidades" aria-expanded="false" aria-controls="comparativoFuncionalidades">
         Comparar Funcionalidades
       </button>
