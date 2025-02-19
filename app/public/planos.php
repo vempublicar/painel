@@ -61,15 +61,13 @@
         <div class="card text-center">
           <div class="card-header" style="border-top: 4px solid #FFC107;">
             <i class="bi bi-star" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Ideal para quem está começando</span>
+            <span class="ms-2">Iniciar a Gestão Estratégica</span>
           </div>
           <div class="card-body">
             <h5 class="card-title">Plano Gratuito</h5>
             <p class="price-discount">Gratuito</p>
-            <p class="card-text">
-              Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica e organização dos processos da empresa, estruturando com o método fepacoc.
-            </p>
             <ul class="list-unstyled text-start">
+              <li>Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica e organização dos processos da empresa, estruturando com o método fepacoc.</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Acesso prioritário a teste de ferramentas exclusivas</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal para sua empresa</li>
             </ul>
@@ -83,7 +81,7 @@
         <div class="card text-center">
           <div class="card-header" style="border-top: 4px solid #0d6efd;">
             <i class="bi bi-rocket" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Ideal para empresas em expansão</span>
+            <span class="ms-2">Ajustar o Marketing e Vendas</span>
           </div>
           <div class="card-body">
             <h5 class="card-title">Plano Estratégia</h5>
@@ -91,10 +89,8 @@
               <span class="price-original">R$179,90</span><br>
               <span class="price-discount">R$79,90/mês</span>
             </p>
-            <p class="card-text">
-              Acesso a Ferramentas e Vídeos Estratégicos para organizar a empresa nas áreas de Marketing, Vendas e Atendimento ao Cliente.
-            </p>
             <ul class="list-unstyled text-start">
+              <li>Acesso a Ferramentas e Vídeos Estratégicos para organizar a empresa nas áreas de Marketing, Vendas e Atendimento ao Cliente.</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp para ajudar nos processo de implementação</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Receba vídeos estratégicos exclusivos para seu segmento no Whatsapp</li>
             </ul>
@@ -108,18 +104,18 @@
         <div class="card text-center">
           <div class="card-header" style="border-top: 4px solid #198754;">
             <i class="bi bi-gem" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Ideal para empresas consolidadas</span>
+            <span class="ms-2">Consolidar os Processos</span>
           </div>
           <div class="card-body">
             <h5 class="card-title">Plano Ferramenta</h5>
             <p>
-              <span class="price-original">R$589,90</span><br>
+              <span class="price-original">R$399,90</span><br>
               <span class="price-discount">R$189,90/mês</span>
             </p>
             <ul class="list-unstyled text-start">
-              <li><i class="bi bi-check-circle-fill text-success"></i> Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor a marca e cultura</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Sua empresa entra em um sistema de controle exclusivo do fepacoc que garante o crescimento da empresa, com suporte da nossa equipe</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Participe de lives exclusivas com especialistas com assuntos estratégicos e novidades do mercado</li>
+              <li> Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor a marca e cultura</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo do fepacoc que garante o crescimento da empresa, com suporte da nossa equipe</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas sobre estratégias e novidades do mercado.</li>
             </ul>
             <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
           </div>
@@ -131,23 +127,23 @@
     <div class="row">
       <div class="col-12">
         <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solid #dc3545;">
+          <div class="card-header" style="border-top: 4px solidrgb(40, 43, 44);">
             <i class="bi bi-person-check" style="font-size: 1.5rem;"></i>
-            <span class="ms-2">Ideal para empresas que buscam consultoria personalizada</span>
+            <span class="ms-2">Empresas que buscam crescimento estruturado</span>
           </div>
           <div class="card-body">
             <h5 class="card-title">Plano Personalizado</h5>
             <p class="card-text">
               Para empresas que desejam um consultor ativo no seu projeto, para garantir o crescimento estruturado da empresa.
             </p>
-            <a href="#" class="btn btn-primary w-100">Falar com Consultor</a>
+            <a href="#" class="btn btn-dark ">Falar com Consultor</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Botão para expandir a tabela comparativa -->
-    <div class="text-center mt-5 mb-3">
+    <div class="text-center mt-5 mb-5">
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#comparativoFuncionalidades" aria-expanded="false" aria-controls="comparativoFuncionalidades">
         Comparar Funcionalidades
       </button>
