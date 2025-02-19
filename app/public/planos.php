@@ -10,20 +10,27 @@
   <style>
     body {
       padding-top: 70px;
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+      font-family: 'Open Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h5 {
+      font-weight: 600;
     }
     .card {
       border: none;
+      border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s;
       margin-bottom: 30px;
+      background: #fff;
     }
     .card:hover {
       transform: scale(1.02);
     }
     .card-header {
       background: transparent;
-      font-weight: bold;
+      font-weight: 600;
       padding: 0.75rem 1.25rem;
     }
     .price-original {
@@ -32,8 +39,8 @@
       color: #888;
     }
     .price-discount {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 2.5rem;
+      font-weight: 700;
       color: #333;
     }
     .btn {
@@ -42,15 +49,11 @@
     .feature-list li {
       margin-bottom: 5px;
     }
-    .table-responsive {
-      max-height: 500px;
-      overflow-y: auto;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="text-center mb-5">
+  <header class="text-center mb-5">
       <h1>Planos e Preços</h1>
       <p class="lead">Escolha o plano que melhor se adapta às necessidades da sua empresa</p>
     </header>
@@ -113,9 +116,9 @@
               <span class="price-discount">R$189,90/mês</span>
             </p>
             <ul class="list-unstyled text-start">
-              <li> Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor a marca e cultura</li>
+              <li>Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor à marca e cultura</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo do fepacoc que garante o crescimento da empresa, com suporte da nossa equipe</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas sobre estratégias e novidades do mercado.</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas sobre estratégias e novidades do mercado</li>
             </ul>
             <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
           </div>
@@ -127,7 +130,7 @@
     <div class="row">
       <div class="col-12">
         <div class="card text-center">
-          <div class="card-header" style="border-top: 4px solidrgb(40, 43, 44);">
+          <div class="card-header" style="border-top: 4px solid rgb(40, 43, 44);">
             <i class="bi bi-person-check" style="font-size: 1.5rem;"></i>
             <span class="ms-2">Empresas que buscam crescimento estruturado</span>
           </div>
@@ -136,7 +139,7 @@
             <p class="card-text">
               Para empresas que desejam um consultor ativo no seu projeto, para garantir o crescimento estruturado da empresa.
             </p>
-            <a href="#" class="btn btn-dark ">Falar com Consultor</a>
+            <a href="#" class="btn btn-dark w-100">Falar com Consultor</a>
           </div>
         </div>
       </div>
@@ -144,10 +147,11 @@
 
     <!-- Botão para expandir a tabela comparativa -->
     <div class="text-center mt-5 mb-5">
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#comparativoFuncionalidades" aria-expanded="false" aria-controls="comparativoFuncionalidades">
+      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#comparativoFuncionalidades" aria-expanded="false" aria-controls="comparativoFuncionalidades">
         Comparar Funcionalidades
       </button>
     </div>
+    <hr>
 
     <!-- Tabela Comparativa de Funcionalidades -->
     <div class="collapse" id="comparativoFuncionalidades">
