@@ -16,13 +16,15 @@
       border: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s;
+      margin-bottom: 30px;
     }
     .card:hover {
       transform: scale(1.02);
     }
-    .card-title {
-      font-size: 1.5rem;
+    .card-header {
+      background: transparent;
       font-weight: bold;
+      padding: 0.75rem 1.25rem;
     }
     .price-original {
       font-size: 1.2rem;
@@ -33,6 +35,9 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: #333;
+    }
+    .btn {
+      margin-top: 15px;
     }
     .feature-list li {
       margin-bottom: 5px;
@@ -50,76 +55,92 @@
       <p class="lead">Escolha o plano que melhor se adapta às necessidades da sua empresa</p>
     </header>
 
-    <div class="row g-4">
+    <div class="row">
       <!-- Plano Gratuito -->
       <div class="col-md-4">
-        <div class="card h-100 text-center">
+        <div class="card text-center">
+          <div class="card-header" style="border-top: 4px solid #FFC107;">
+            <i class="bi bi-star" style="font-size: 1.5rem;"></i>
+            <span class="ms-2">Ideal para quem está começando</span>
+          </div>
           <div class="card-body">
-            <i class="bi bi-star text-warning" style="font-size: 2.5rem;"></i>
-            <h5 class="card-title mt-3">Plano Gratuito</h5>
+            <h5 class="card-title">Plano Gratuito</h5>
             <p class="price-discount">Gratuito</p>
-            <p class="card-text">Acesso básico para iniciar sua jornada.</p>
-            <ul class="list-unstyled feature-list">
-              <li><i class="bi bi-check-circle-fill text-success"></i> OKRs</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Indicadores de Desempenho</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Crescimento Real da Empresa</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Performance de Departamentos</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Ferramentas para Melhorar Atendimento</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Treinamentos para Equipe</li>
+            <p class="card-text">
+              Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica e organização dos processos da empresa, estruturando com o método fepacoc.
+            </p>
+            <ul class="list-unstyled text-start">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Acesso prioritário a teste de ferramentas exclusivas</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal para sua empresa</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary mt-3">Assine Agora</a>
+            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Estratégia -->
       <div class="col-md-4">
-        <div class="card h-100 text-center">
+        <div class="card text-center">
+          <div class="card-header" style="border-top: 4px solid #0d6efd;">
+            <i class="bi bi-rocket" style="font-size: 1.5rem;"></i>
+            <span class="ms-2">Ideal para empresas em expansão</span>
+          </div>
           <div class="card-body">
-            <i class="bi bi-rocket text-primary" style="font-size: 2.5rem;"></i>
-            <h5 class="card-title mt-3">Plano Estratégia</h5>
+            <h5 class="card-title">Plano Estratégia</h5>
             <p>
-              <span class="price-original">R$179,90</span>
-              <br>
+              <span class="price-original">R$179,90</span><br>
               <span class="price-discount">R$79,90/mês</span>
             </p>
-            <p class="card-text">Recursos aprimorados para impulsionar seu negócio.</p>
-            <ul class="list-unstyled feature-list">
-              <li><i class="bi bi-check-circle-fill text-success"></i> OKRs</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Índice de Eficiência Operacional</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Indicadores de Desempenho</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Crescimento Real da Empresa</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Valuation</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Custo de Aquisição de Clientes (CAC)</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Lucro Antes de Juros, Impostos e Taxas (EBIT)</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Performance de Departamentos</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Ferramentas para Melhorar Atendimento</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Treinamentos para Equipe</li>
+            <p class="card-text">
+              Acesso a Ferramentas e Vídeos Estratégicos para organizar a empresa nas áreas de Marketing, Vendas e Atendimento ao Cliente.
+            </p>
+            <ul class="list-unstyled text-start">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp para ajudar nos processo de implementação</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Receba vídeos estratégicos exclusivos para seu segmento no Whatsapp</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary mt-3">Assine Agora</a>
+            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Ferramenta -->
       <div class="col-md-4">
-        <div class="card h-100 text-center">
+        <div class="card text-center">
+          <div class="card-header" style="border-top: 4px solid #198754;">
+            <i class="bi bi-gem" style="font-size: 1.5rem;"></i>
+            <span class="ms-2">Ideal para empresas consolidadas</span>
+          </div>
           <div class="card-body">
-            <i class="bi bi-gem text-info" style="font-size: 2.5rem;"></i>
-            <h5 class="card-title mt-3">Plano Ferramenta</h5>
+            <h5 class="card-title">Plano Ferramenta</h5>
             <p>
-              <span class="price-original">R$589,90</span>
-              <br>
+              <span class="price-original">R$589,90</span><br>
               <span class="price-discount">R$189,90/mês</span>
             </p>
-            <p class="card-text">Soluções completas para gestão e análise empresarial.</p>
-            <ul class="list-unstyled feature-list">
-              <li><i class="bi bi-check-circle-fill text-success"></i> Análise de Criativos de Anúncios</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Estratégia de Endomarketing</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Segmentação das Vendas</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Radar de Performance</li>
+            <ul class="list-unstyled text-start">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Acesso a Todas as Ferramentas e Vídeos Estratégicos para organizar todos os processos da empresa, criando valor a marca e cultura</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Sua empresa entra em um sistema de controle exclusivo do fepacoc que garante o crescimento da empresa, com suporte da nossa equipe</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Participe de lives exclusivas com especialistas com assuntos estratégicos e novidades do mercado</li>
             </ul>
-            <a href="#" class="btn btn-outline-primary mt-3">Assine Agora</a>
+            <a href="#" class="btn btn-outline-primary w-100">Assine Agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plano Personalizado -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card text-center">
+          <div class="card-header" style="border-top: 4px solid #dc3545;">
+            <i class="bi bi-person-check" style="font-size: 1.5rem;"></i>
+            <span class="ms-2">Ideal para empresas que buscam consultoria personalizada</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Plano Personalizado</h5>
+            <p class="card-text">
+              Para empresas que desejam um consultor ativo no seu projeto, para garantir o crescimento estruturado da empresa.
+            </p>
+            <a href="#" class="btn btn-primary w-100">Falar com Consultor</a>
           </div>
         </div>
       </div>
