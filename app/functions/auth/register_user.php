@@ -45,19 +45,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute($dados);
 
         enviarLinkCadastroSenha($email, $nome, $password);
-
-        header("Location: " . BASE_URL . "verificar-email");
-        exit();
+        echo 'teste1';
+        //header("Location: " . BASE_URL . "verificar-email");
+        //exit();
 
     } catch (PDOException $e) {
         redirecionarComMensagem("cadastro", "Erro ao inserir dados no banco de dados: " . $e->getMessage());
     }
 } else {
-    header("Location: " . BASE_URL . "login");
-    exit();
+    //header("Location: " . BASE_URL . "login");
+    //exit();
+    echo 'teste2';
 }
 
 function redirecionarComMensagem($url, $mensagem) {
     header("Location: " . BASE_URL . $url . "?msg=" . urlencode($mensagem));
     exit();
+    echo 'teste3';
 }
