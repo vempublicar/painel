@@ -157,24 +157,15 @@
 
     <!-- Seção de planos -->
     <div class="row plans-section gx-3 gy-4">
-      <!-- Coluna de destaque (texto chamativo) -->
-      <div class="col-md-3">
-        <div class="highlight-box h-100 d-flex flex-column justify-content-center">
-          <h3>Pare de empurrar seus clientes para um canto</h3>
-          <p class="mb-0">
-            Fames ac turpis egestas integer. Viverra orci sagittis eu volutpat odio.
-          </p>
-        </div>
-      </div>
-
+      
       <!-- Plano Gratuito -->
       <div class="col-md-3">
         <div class="col-plan h-100 d-flex flex-column justify-content-between">
           <div>
-            <h5>Plano Gratuito</h5>
+            <h5>Plano Inicial</h5>
             <div class="price">Gratuito</div>
             <ul>
-              <li>Acesso a Ferramentas e Vídeos para iniciar na gestão estratégica</li>
+              <li>Acesso a Ferramentas e Vídeos focados em iniciar a gestão estratégica</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Acesso prioritário a teste de ferramentas exclusivas</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal</li>
             </ul>
@@ -192,7 +183,7 @@
             <h5>Plano Estratégia</h5>
             <div class="price">R$79,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
-              <li>Acesso a Ferramentas e Vídeos para Marketing, Vendas e Atendimento</li>
+              <li>Acesso a Ferramentas e Vídeos focado em marketing, vendas e atendimento</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Vídeos estratégicos exclusivos no WhatsApp</li>
             </ul>
@@ -210,7 +201,7 @@
             <h5>Plano Ferramenta</h5>
             <div class="price">R$189,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
-              <li>Acesso a todas as Ferramentas e Vídeos Estratégicos</li>
+              <li>Acesso completo para criar processos, cultura, gerar vendas e crescimento</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo da FEPACOC</li>
               <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas</li>
             </ul>
@@ -220,15 +211,16 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Plano Personalizado -->
-    <div class="row">
-      <div class="col-12">
-        <div class="personalizado-card">
-          <h5>Plano Personalizado</h5>
-          <p>Para empresas que desejam um consultor ativo no seu projeto, garantindo o crescimento estruturado.</p>
-          <a href="#" class="btn btn-dark">Falar com Consultor</a>
+      <!-- Coluna de destaque (texto chamativo) -->
+      <div class="col-md-3">
+        <div class="highlight-box h-100 d-flex flex-column justify-content-center">
+          <h3>Procurando uma faísca para reacender seu crescimento</h3>
+          <p class="mb-0">
+            Quero um plano personalizado que garante meu sucesso.
+          </p>
+          <div>
+            <a href="#" class="btn btn-dark">Consultor</a>
+          </div>
         </div>
       </div>
     </div>
