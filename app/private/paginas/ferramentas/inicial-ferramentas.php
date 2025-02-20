@@ -44,7 +44,7 @@ $ferramentas = [
                             break;
                     }
                 ?>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card rounded" style="border-top: 5px solid <?php echo $borderColor; ?>;">
                         <!-- Imagem na parte superior -->
                         <img src="<?php echo $ferramenta['imagem']; ?>" class="card-img-top" alt="<?php echo $ferramenta['nome']; ?>">
@@ -53,12 +53,12 @@ $ferramentas = [
                             <h5 class="card-title"><?php echo $ferramenta['nome']; ?></h5>
                             <div class="d-flex justify-content-around">
                                 <!-- Botão Play: abre o modal e passa o link do vídeo via data-video -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="<?php echo $ferramenta['link-video']; ?>">
-                                    Play
+                                <button type="button" class="btn btn-outline-secondary w-50" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="<?php echo $ferramenta['link-video']; ?>">
+                                <i class="bi bi-play me-2"></i>  Como Usar
                                 </button>
                                 <!-- Botão Adicionar: link direcionado conforme o 'codigo-url' -->
-                                <a href="<?php echo $ferramenta['codigo-url']; ?>" class="btn btn-secondary">
-                                    Adicionar
+                                <a href="<?php echo $ferramenta['codigo-url']; ?>" class="btn btn-outline-secondary w-50 ">
+                                <i class="bi bi-plus me-2"></i>  Adicionar
                                 </a>
                             </div>
                         </div>
