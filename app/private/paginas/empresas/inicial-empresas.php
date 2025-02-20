@@ -13,7 +13,9 @@
                     </div>
                 </div>
                 <div class="col-md-5">                    
-                        
+                        <?php 
+                            print_r($_SESSION);
+                        ?>
                             
                         
                 </div>

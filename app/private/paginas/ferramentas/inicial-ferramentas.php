@@ -2,22 +2,22 @@
 $ferramentas = [
     [
         'imagem'     => 'vendor/images/ferramentas/ferramenta1.png',
-        'nome'       => 'Análise Rápida',
-        'codigo-url' => 'ferramenta/analisarapida',
+        'nome'       => 'Fluxo de Caixa',
+        'codigo-url' => '&fin=fluxo-caixa',
         'link-video' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
         'plano'      => 'gratuito'
     ],
     [
         'imagem'     => 'vendor/images/ferramentas/ferramenta2.png',
-        'nome'       => 'Estratégia Avançada',
-        'codigo-url' => 'ferramenta/estrategiaavancada',
+        'nome'       => 'Detalhamento de Despesas',
+        'codigo-url' => '&fin=detalhe-despesas',
         'link-video' => 'https://www.youtube.com/embed/3GwjfUFyY6M',
         'plano'      => 'estrategia'
     ],
     [
         'imagem'     => 'vendor/images/ferramentas/ferramenta3.png',
-        'nome'       => 'Ferramenta de Otimização',
-        'codigo-url' => 'ferramenta/otimizacao',
+        'nome'       => 'Detalhamento de Receita',
+        'codigo-url' => '&fin=detalhe-receita',
         'link-video' => 'https://www.youtube.com/embed/abcdef12345',
         'plano'      => 'ferramenta'
     ]
@@ -57,9 +57,9 @@ $ferramentas = [
                                 <i class="bi bi-play me-2"></i>  Como Usar
                                 </button>
                                 <!-- Botão Adicionar: link direcionado conforme o 'codigo-url' -->
-                                <a href="<?php echo $ferramenta['codigo-url']; ?>" class="btn btn-outline-secondary w-50 ">
-                                <i class="bi bi-plus me-2"></i>  Adicionar
-                                </a>
+                                <button onclick="adicionarFerramenta(<?php echo $ferramenta['id']; ?>, <?php echo $empresa['id']; ?>)" class="btn btn-outline-secondary w-50">
+                                    <i class="bi bi-plus me-2"></i> Adicionar
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -101,4 +101,27 @@ $ferramentas = [
         // Limpa o src para interromper o vídeo ao fechar o modal
         iframe.src = "";
     });
+</script>
+<script>
+function adicionarFerramenta(ferramentaId, empresaId) {
+    $.ajax({
+         type: "POST",
+         url: "app/functions/push/adicionar_ajax.php",
+         data: {
+             ferramenta: ferramentaId,
+             empresa: empresaId
+         },
+         dataType: "json",
+         success: function(response) {
+             if(response.success) {
+                 alert(response.success);
+             } else if(response.error) {
+                 alert(response.error);
+             }
+         },
+         error: function(xhr, status, error) {
+             alert("Erro: " + error);
+         }
+    });
+}
 </script>
