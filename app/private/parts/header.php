@@ -1,4 +1,3 @@
-
   <header class="navbar d-print-none header1">
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal mb-1">
@@ -11,7 +10,7 @@
       </h1>
       <div class="m-auto d-print-none ">
         <div class="btn-list d-none d-sm-block">
-        <a href="dashboard&setting=minhas-empresas" class="text-secondary btn " aria-current="true">
+        <a href="painel&a=empresas" class="text-secondary btn " aria-current="true">
             <i class="bi bi-folder me-2"></i>
             Minhas Empresas
             </a>
@@ -39,7 +38,7 @@
         </div>
         <div class="offcanvas-body">
           <div class="icon-buttons d-block me-3">
-          <a href="dashboard&setting=minhas-empresas" class="btn w-100 m-1" aria-current="true">
+          <a href="painel&a=empresas" class="btn w-100 m-1" aria-current="true">
             <i class="bi bi-folder me-2"></i>
             Minhas Empresas
             </a>
