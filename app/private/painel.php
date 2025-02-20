@@ -4,7 +4,7 @@
 <body class=" layout-fluid" >
     <script src="vendor/js/demo-theme.min.js"></script>
     <div class="page" id="page-content">
-    </div>
+    
     <?php include "app/private/parts/header.php" ?>
     <?php // include "app/private/parts/submenu.php" ?>
 
@@ -52,7 +52,7 @@
     }
     ?>
     
-
+    </div>
 
     <script src="vendor/libs/apexcharts/dist/apexcharts.min.js" defer></script>
     <script src="vendor/libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>
