@@ -232,7 +232,7 @@ $plano = $decoded;
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    ☑ Entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
+                                                    ☑ Qualquer inconsistência ou falhas, solicite suporte especializado; temos um time preparado para resolver.
                                                 </li>
                                                 </ul>
                                             </div>
