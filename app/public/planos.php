@@ -171,7 +171,7 @@
             </ul>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=Gratuito" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@
             </ul>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=Estrategia" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -207,21 +207,21 @@
             </ul>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=Ferramenta" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
       <!-- Coluna de destaque (texto chamativo) -->
       <div class="col-md-3">
         <div class="highlight-box h-100 d-flex flex-column justify-content-center">
-          <h3 class="text-center" >Procurando uma faísca para <b class="text-dark">reacender</b> seu crescimento</h3>
+          <h3>Procurando uma faísca para <b class="text-dark">reacender</b> seu crescimento</h3>
           <ul>
               <li>Quero um plano personalizado que garante meu sucesso.</li>
               <li>✔ Gestão Estratégica Conjunta.</li>
               <li>✔ Consultor de crescimento full-time.</li>
           </ul>
           <div>
-            <a href="#" class="btn btn-light"><i class="bi bi-chat-dots me-2"></i> Fale com Consultor</a>
+            <a href="register&plano=Personalizado" class="btn btn-light"><i class="bi bi-chat-dots me-2"></i> Fale com Consultor</a>
           </div>
         </div>
       </div>

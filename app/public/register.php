@@ -26,32 +26,146 @@
     <div class="page page-center">
         <div class="container container-normal py-4">
             <div class="row align-items-center g-4">
+                <!-- Coluna principal: Formulário -->
                 <div class="col-lg">
                     <div class="container-tight">
                         <div class="text-center mb-4">
                             <a href="." id="logo-branco">
-                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="FEPACOC" class="navbar-brand-image">
+                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png"
+                                     width="110" height="32"
+                                     alt="FEPACOC"
+                                     class="navbar-brand-image">
                             </a>
                         </div>
                         <div class="card card-md">
                             <div class="card-body">
                                 <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
                                 <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
-                                    <div class="mb-3">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" name="name" required>
+                                    <!-- Linha com duas colunas: Empresa e Contato -->
+                                    <div class="row">
+                                        <!-- Cadastro da Empresa -->
+                                        <div class="col-md-6">
+                                            <h4 class="mb-3">Cadastro da Empresa</h4>
+                                            <!-- Plano Escolhido (readonly) -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Plano Escolhido</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="plano"
+                                                       value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
+                                                       readonly>
+                                            </div>
+                                            <!-- Nome da Empresa -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Nome da Empresa</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="nome_empresa"
+                                                       required>
+                                            </div>
+                                            <!-- CNPJ ou CPF -->
+                                            <div class="mb-3">
+                                                <label class="form-label">CNPJ ou CPF</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="cnpj_cpf"
+                                                       id="cnpjCpf"
+                                                       required
+                                                       placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                                            </div>
+                                            <!-- CEP -->
+                                            <div class="mb-3">
+                                                <label class="form-label">CEP</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="cep"
+                                                       id="cep"
+                                                       placeholder="00000-000"
+                                                       required>
+                                            </div>
+                                            <!-- Cidade, Estado e Endereço (readonly) -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Cidade</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="cidade"
+                                                       id="cidade"
+                                                       readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Estado</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="estado"
+                                                       id="estado"
+                                                       readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Endereço</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="endereco"
+                                                       id="endereco"
+                                                       readonly>
+                                            </div>
+                                            <!-- Número -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Número</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="numero"
+                                                       required>
+                                            </div>
+                                            <!-- Faturamento -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Faturamento Atual</label>
+                                                <select class="form-select" name="faturamento" required>
+                                                    <option value="">Selecione...</option>
+                                                    <option value="1 a 10 mil">1 a 10 mil</option>
+                                                    <option value="10 a 30 mil">10 a 30 mil</option>
+                                                    <option value="30 a 60 mil">30 a 60 mil</option>
+                                                    <option value="Acima de 60 mil">Acima de 60 mil</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Contato -->
+                                        <div class="col-md-6">
+                                            <h4 class="mb-3">Contato</h4>
+                                            <!-- Nome Completo -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Nome Completo</label>
+                                                <input type="text" class="form-control" name="name" required>
+                                            </div>
+                                            <!-- Email -->
+                                            <div class="mb-3">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="email-username" required>
+                                            </div>
+                                            <!-- WhatsApp -->
+                                            <div class="mb-3">
+                                                <label class="form-label">WhatsApp</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="whatsapp"
+                                                       id="whatsapp"
+                                                       placeholder="(00) 00000-0000"
+                                                       required>
+                                            </div>
+                                            <!-- Senha gerada (hidden) -->
+                                            <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email-username" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">WhatsApp</label>
-                                        <input type="text" class="form-control" name="whatsapp" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(00) 00000-0000" required>
-                                    </div>
-                                    <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
+
+                                    <!-- Texto de instruções -->
+                                    <p class="text-muted mt-3" style="font-size: .875rem;">
+                                        Após o cadastro, será enviado um email com a chave de acesso. Já dentro do painel,
+                                        você poderá selecionar o formato de pagamento e, caso esteja dentro do horário comercial,
+                                        em breve um membro da nossa equipe poderá entrar em contato via WhatsApp.
+                                    </p>
+
+                                    <!-- Botão de Envio -->
                                     <div class="form-footer">
-                                        <button type="submit" class="btn btn-indigo w-100">Registrar</button>
+                                        <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
                                     </div>
                                 </form>
                             </div>
@@ -61,31 +175,65 @@
                         </div>
                     </div>
                 </div>
+                <!-- Coluna com imagem -->
                 <div class="col-lg d-none d-lg-block">
                     <img src="vendor/images/template/register.svg" height="400" class="d-block mx-auto" alt="">
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
     <script src="vendor/js/tabler.min.js" defer></script>
     <script src="vendor/js/demo.min.js" defer></script>
     <!-- jQuery e Máscara -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#whatsapp').mask('(00) 00000-0000');
-            // Enable submit button only if all fields are filled
-            $('#registrationForm input').on('keyup change', function() {
-                let valid = true;
-                $('#registrationForm input[required]').each(function() {
-                    if ($(this).val() === '') {
-                        valid = false;
-                    }
-                });
-                $('#submitBtn').prop('disabled', !valid);
-            });
+      $(document).ready(function() {
+        // Máscaras
+        $('#whatsapp').mask('(00) 00000-0000');
+        // Para CPF/CNPJ de modo simples (exemplo):
+        // Ajuste conforme a sua necessidade (ex: identificar automaticamente CPF/CNPJ).
+        $('#cnpjCpf').mask('00.000.000/0000-00'); // ou '000.000.000-00' se for só CPF
+
+        // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
+        $('#registrationForm input[required], #registrationForm select[required]').on('keyup change', function() {
+          let valid = true;
+          $('#registrationForm input[required], #registrationForm select[required]').each(function() {
+            if (!$(this).val()) {
+              valid = false;
+            }
+          });
+          $('#submitBtn').prop('disabled', !valid);
         });
+      });
+
+      // Consulta CEP via ViaCEP
+      function limpaCamposEndereco() {
+        $('#cidade').val('');
+        $('#estado').val('');
+        $('#endereco').val('');
+      }
+      document.getElementById('cep').addEventListener('blur', function() {
+        let cep = this.value.replace(/\D/g, '');
+        if (cep.length !== 8) {
+          limpaCamposEndereco();
+          return;
+        }
+        fetch('https://viacep.com.br/ws/'+ cep +'/json/')
+          .then(response => response.json())
+          .then(data => {
+            if (data.erro) {
+              limpaCamposEndereco();
+              return;
+            }
+            $('#cidade').val(data.localidade || '');
+            $('#estado').val(data.uf || '');
+            $('#endereco').val(data.logradouro || '');
+          })
+          .catch(() => limpaCamposEndereco());
+      });
     </script>
 </body>
 </html>
