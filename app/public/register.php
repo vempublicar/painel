@@ -220,7 +220,7 @@ $plano = $decoded;
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    ☑ Não enviaremos WhatsApp de ofertas de produtos, apenas de suporte ou material estratégico pré-notificado.
+                                                    ☑ Não enviaremos WhatsApp de ofertas de produtos (apenas mensagens de suporte ou material estratégico se pré-cadastrado).
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
