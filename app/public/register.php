@@ -205,10 +205,8 @@ $plano = $decoded;
                                         </div>
 
                                         <!-- Texto de instruções -->
-                                        <p class="text-muted mt-3" style="font-size: .875rem;">
-                                            Após o cadastro, será enviado um email com a chave de acesso. Já dentro do painel,
-                                            você poderá selecionar o formato de pagamento e, caso esteja dentro do horário comercial,
-                                            em breve um membro da nossa equipe poderá entrar em contato via WhatsApp.
+                                        <p class="alert alert-info mt-3" style="font-size: .875rem;">
+                                        Atenção: Após o cadastro, você receberá um e-mail com a chave de acesso. No painel, poderá selecionar seu método de pagamento e, se estiver dentro do horário comercial, um membro da nossa equipe entrará em contato via WhatsApp para prestar suporte.
                                         </p>
                                         <div class="card my-4">
                                             <div class="card-body">
