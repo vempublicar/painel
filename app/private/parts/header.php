@@ -10,43 +10,11 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
-      <div class="btn-list">
-        <div class="d-none d-lg-inline-block">
-          <a href="#" title="Metas" class="btn btn-square btn-outline-purple">
-            <i class="fas fa-crosshairs m-2"></i>
-          </a>
-          <a href="#" title="Relatório" class="btn btn-square btn-outline-teal">
-            <i class="fas fa-tasks m-2"></i>
-          </a>
-          <a href="#" title="Kpis" class="btn btn-square btn-outline-azure">
-            <i class="fas fa-chart-line m-2"></i>
-          </a>
-          <a href="#" title="Financeiro" class="btn btn-square btn-outline-cyan">
-            <i class="fas fa-money-bill-wave m-2"></i>
-          </a>
-          <a href="#" title="Estrutura" class="btn btn-square btn-outline-orange">
-            <i class="fas fa-user-tie m-2"></i>
-          </a>
-          <a href="#" title="Produto" class="btn btn-square btn-outline-yellow">
-            <i class="fas fa-tag m-2"></i>
-          </a>
-          <a href="#" title="Anúncio" class="btn btn-square btn-outline-indigo">
-            <i class="fas fa-bullhorn m-2"></i>
-          </a>
-          <a href="#" title="Cliente" class="btn btn-square btn-outline-pink">
-            <i class="fas fa-users m-2"></i>
-          </a>
-          <a href="#" title="Operacional" class="btn btn-square btn-outline-lime">
-            <i class="fas fa-sitemap m-2"></i>
-          </a>
-          <a href="#" title="Consistência" class="btn btn-square btn-outline-green">
-            <i class="fas fa-sync m-2"></i>
-          </a>
-        </div>
-        <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
-          <i class="fas fa-list m-2"></i> Menu
-        </a>
-      </div>
+      <nav class="main-menu">
+          <a href="#">Vídeos</a>
+          <a href="#">Ferramentas</a>
+          <a href="#">Multipla Empresa</a>
+        </nav>
       <div class="d-md-flex">
         <div class="me-2">
           <a href="#" class="text-center text-secondary" title="Home">
