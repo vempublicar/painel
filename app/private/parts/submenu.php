@@ -1,19 +1,19 @@
 <style>
   /* Sub Menu fixo à esquerda, ocupando 100% da altura da viewport */
-  .sub-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* 100% da altura da tela */
-  width: 60px;  /* Defina a largura desejada para o sidebar */
-  padding: 10px 0;
-  overflow-y: auto;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    .sub-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* 100% da altura da tela */
+    width: 60px;  /* Defina a largura desejada para o sidebar */
+    padding: 10px 0;
+    overflow-y: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
   /* Botões ocupando 100% da largura do menu */
   .sub-menu .btn-tools a {
     display: block;
