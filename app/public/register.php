@@ -241,18 +241,24 @@ $plano = $decoded;
 
                                         <!-- Botão de Envio -->
                                          <div class="row">
-                                         <div class="form-check mb-3 mt-2 col-md-6">
+                                            <div class="col-md-6">
+                                                
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-check mb-3 mt-2 ">
                                         
-                                        <input type="checkbox" class="form-check-input" id="agreeCheck">
-                                        <label class="form-check-label" for="agreeCheck">
-                                        ← Ao cadastrar, você concorda com nossos 
-                                            <a href="https://fepacoc.com/termos" target="_blank">Termos de Uso</a> e 
-                                            <a href="https://fepacoc.com/politica-privacidade" target="_blank">Política de Privacidade</a>.
-                                        </label>
-                                        </div>
-                                        <div class="form-footer mb-3 col-md-6">
-                                        <button type="submit" class="btn btn-indigo w-100" id="submitBtn" disabled>REGISTRAR</button>
-                                        </div>
+                                                    <input type="checkbox" class="form-check-input" id="agreeCheck">
+                                                    <label class="form-check-label" for="agreeCheck">
+                                                    ← Ao cadastrar, você concorda com nossos 
+                                                        <a href="https://fepacoc.com/termos" target="_blank">Termos de Uso</a> e 
+                                                        <a href="https://fepacoc.com/politica-privacidade" target="_blank">Política de Privacidade</a>.
+                                                    </label>
+                                                </div>
+                                                <div class="form-footer mb-3">
+                                                    <button type="submit" class="btn btn-indigo w-100" id="submitBtn" disabled>REGISTRAR</button>
+                                                </div>
+                                            </div>
+                                            
                                          </div>
                                         
                                     </form>
