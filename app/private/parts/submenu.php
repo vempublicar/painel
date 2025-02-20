@@ -16,7 +16,6 @@
     display: block;
     width: 100%;
     margin-bottom: 10px;
-    margin-top: 50px;
     text-align: center;
   }
   .bi {
@@ -24,7 +23,7 @@
 }
 </style>
 
-<div class="sub-menu">
+<div class="sub-menu mt-5">
   <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
       <i class="bi bi-speedometer2"></i>
