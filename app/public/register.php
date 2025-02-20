@@ -245,7 +245,7 @@ $plano = $decoded;
                                         
                                         <input type="checkbox" class="form-check-input" id="agreeCheck">
                                         <label class="form-check-label" for="agreeCheck">
-                                            Ao cadastrar, você concorda com nossos 
+                                        ← Ao cadastrar, você concorda com nossos 
                                             <a href="https://fepacoc.com/termos" target="_blank">Termos de Uso</a> e 
                                             <a href="https://fepacoc.com/politica-privacidade" target="_blank">Política de Privacidade</a>.
                                         </label>
