@@ -25,7 +25,7 @@
   font-size: 1.5rem; /* ou o tamanho desejado */
 }
 </style>
-
+<?php if(isset($_GET['edit'])){ ?>
 <div class="sub-menu">
   <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
@@ -51,3 +51,4 @@
     </a>
   </div>
 </div>
+<?php } ?>
