@@ -25,8 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Conectar ao banco de dados
         $pdo = db_connect();
 
-        // Busca o usuário na tabela leads, incluindo a coluna 'chave'
-        $stmt = $pdo->prepare("SELECT id, email, nome, fone, tipo, chave, acesso, created_at FROM leads WHERE email = :email");
+        // Busca o usuário na tabela leads, utilizando as colunas existentes
+        $stmt = $pdo->prepare("SELECT id, email, nome, fone, chave, acesso, nome_empresa, cnpj_cpf, cep, faturamento, cidade, estado, endereco, numero, plano, plano_escolhido, webhook 
+                               FROM leads 
+                               WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
@@ -41,11 +43,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_email'] = $user['email'];
                 $_SESSION['nome']       = $user['nome'];
                 $_SESSION['fone']       = $user['fone'];
-                $_SESSION['tipo']       = $user['tipo'];
                 $_SESSION['acesso']     = $user['acesso'];
-                $_SESSION['created_at'] = $user['created_at'];
+                
+                // Se desejar, salve também os dados adicionais:
+                $_SESSION['nome_empresa']  = $user['nome_empresa'];
+                $_SESSION['cnpj_cpf']      = $user['cnpj_cpf'];
+                $_SESSION['cep']           = $user['cep'];
+                $_SESSION['faturamento']   = $user['faturamento'];
+                $_SESSION['cidade']        = $user['cidade'];
+                $_SESSION['estado']        = $user['estado'];
+                $_SESSION['endereco']      = $user['endereco'];
+                $_SESSION['numero']        = $user['numero'];
+                $_SESSION['plano']         = $user['plano'];
+                $_SESSION['plano_escolhido'] = $user['plano_escolhido'];
+                $_SESSION['webhook']       = $user['webhook'];
 
-                // Verifica se o usuário tem uma empresa vinculada
+                // Verifica se o usuário tem uma empresa vinculada na tabela 'empresa'
                 $stmtEmpresa = $pdo->prepare("SELECT * FROM empresa WHERE email = :email");
                 $stmtEmpresa->bindParam(':email', $email);
                 $stmtEmpresa->execute();
