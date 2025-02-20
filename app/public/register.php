@@ -232,8 +232,8 @@ $plano = $decoded;
                                                 </li>
                                                 </ul>
                                             </div>
-                                            <b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
-                                            </div>
+                                                <p><b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b></p>
+                                        </div>
 
                                         <!-- Botão de Envio -->
                                         <div class="form-check mb-3">
