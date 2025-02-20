@@ -228,7 +228,11 @@ $plano = $decoded;
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    ☑ Nos comprometemos a trabalhar em soluções para beneficiar sua empresa, mas entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Se perceber qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
+                                                    ☑ Nos comprometemos a trabalhar em soluções e estratégias que beneficiam sua empresa.
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    ☑ Entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
                                                 </li>
                                                 </ul>
                                             </div>
