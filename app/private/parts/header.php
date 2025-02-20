@@ -9,20 +9,6 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
-      <div class="btn-list d-none d-lg-inline-block">
-        <a href="painel" title="Início" class="">
-          <i class="fas fa-home m-2"></i>Início
-        </a>
-        <a href="painel&a=videos" title="Vídeos" class="">
-          <i class="fas fa-crosshairs m-2"></i>Vídeos
-        </a>
-        <a href="painel&a=ferramentas" title="Ferramentas" class="">
-          <i class="fas fa-tasks m-2"></i>Ferramentas
-        </a>
-        <a href="painel&a=empresas" title="Multi-Empresas" class="">
-          <i class="fas fa-briefcase m-2"></i>Multi-Empresas
-        </a>
-      </div>
       <!-- Offcanvas para o menu (dispositivos pequenos) -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
         <div class="offcanvas-header">

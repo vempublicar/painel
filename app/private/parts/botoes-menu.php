@@ -1,4 +1,8 @@
 painel&a=empresas
+
+                    <div class="card p-2">
+                    <div class="list-group list-group-flush">
+                        <h3 class=" text-center mt-3">Acessos</h3>
                             <div class="row mt-2">
                                 <div class="col-sm-6">
                                     <a href="dashboard&setting=minhas-empresas" class="btn list-group-item list-group-item-action
@@ -33,3 +37,5 @@ painel&a=empresas
                                          Notificação </a>
                                 </div>
                             </div>
+</div>
+</div>

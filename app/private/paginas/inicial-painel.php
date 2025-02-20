@@ -12,13 +12,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="card p-2">
-                        <h3 class=" text-center mt-3">Acessos</h3>
-                        <div class="list-group list-group-flush">
+                <div class="col-md-5">                    
+                        
                             <?php include "app/private/parts/botoes-menu.php" ?>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
         </div>
