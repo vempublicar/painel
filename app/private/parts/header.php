@@ -33,27 +33,49 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
-      <div class="btn-list">
-        <div class="d-none d-lg-inline-block">
-          <a href="#" title="Metas" class="btn btn-link">
-            <i class="fas fa-home m-2"></i>Início
-          </a>
-          <a href="#" title="Metas" class="btn btn-link">
-            <i class="fas fa-crosshairs m-2"></i>Vídeos
-          </a>
-          <a href="#" title="Relatório" class="btn btn-link">
-            <i class="fas fa-tasks m-2"></i>Ferramentas
-          </a>
-          <a href="#" title="Kpis" class="btn btn-link">
-            <i class="fas fa-briefcase m-2"></i>Multi-Empresas
-          </a>
-          
+      <div class="btn-list d-none d-lg-inline-block">
+        <a href="#" title="Início" class="btn btn-link">
+          <i class="fas fa-home m-2"></i>Início
+        </a>
+        <a href="#" title="Vídeos" class="btn btn-link">
+          <i class="fas fa-crosshairs m-2"></i>Vídeos
+        </a>
+        <a href="#" title="Ferramentas" class="btn btn-link">
+          <i class="fas fa-tasks m-2"></i>Ferramentas
+        </a>
+        <a href="#" title="Multi-Empresas" class="btn btn-link">
+          <i class="fas fa-briefcase m-2"></i>Multi-Empresas
+        </a>
+      </div>
+      <!-- Offcanvas para o menu (dispositivos pequenos) -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="btn-list">
+            <a href="#" title="Início" class="btn btn-link d-block">
+              <i class="fas fa-home m-2"></i>Início
+            </a>
+            <a href="#" title="Vídeos" class="btn btn-link d-block">
+              <i class="fas fa-crosshairs m-2"></i>Vídeos
+            </a>
+            <a href="#" title="Ferramentas" class="btn btn-link d-block">
+              <i class="fas fa-tasks m-2"></i>Ferramentas
+            </a>
+            <a href="#" title="Multi-Empresas" class="btn btn-link d-block">
+              <i class="fas fa-briefcase m-2"></i>Multi-Empresas
+            </a>
+          </div>
         </div>
       </div>
       <div class="d-flex">        
-        <a class="btn btn-link d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
-          <i class="fas fa-list m-2"></i> Menu
-        </a>
+        <div class="d-flex d-lg-none">
+          <a class="btn btn-link btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
+            <i class="fas fa-list m-2"></i> Menu
+          </a>
+        </div>
         <div class="me-2">
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
