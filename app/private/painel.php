@@ -15,15 +15,33 @@
     
     // Verifica a categoria e inclui a página apropriada
     switch ($a) {
-        case 'videos':
+        case 'analise':
+            if ($b) {
+                // Lógica para subpágina de empresas (a definir)
+                // include "app/private/paginas/empresas/subpagina.php";
+            } else {
+                // Página inicial de empresas
+                include "app/private/paginas/analise/inicial-analises.php";
+            }
+            break;
+        case 'estrategia':
             if ($b) {
                 // Lógica para subpágina de vídeos (a definir)
                 // include "app/private/paginas/videos/subpagina.php";
             } else {
                 // Página inicial de vídeos
-                include "app/private/paginas/videos/inicial-videos.php";
+                include "app/private/paginas/estrategia/inicial-estrategia.php";
             }
             break;
+            case 'treinamento':
+                if ($b) {
+                    // Lógica para subpágina de vídeos (a definir)
+                    // include "app/private/paginas/videos/subpagina.php";
+                } else {
+                    // Página inicial de vídeos
+                    include "app/private/paginas/treinamento/treinamento.php";
+                }
+                break;
             
         case 'ferramentas':
             if ($b) {

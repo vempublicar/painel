@@ -8,7 +8,7 @@
                             <img src="vendor/images/relatorio/magica.png" alt="">
                         </div>
                         <div class="col m-auto">
-                            <h1 class="text-start m-auto"><b class="text-info">Listar as Ferramentas de análise</b><br></h1>
+                            <h1 class="text-start m-auto"><b class="text-info">Listar os Treinamentos</b><br></h1>
                         </div>
                     </div>
                 </div>
