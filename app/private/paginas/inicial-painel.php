@@ -16,7 +16,7 @@
                     <div class="card p-2">
                         <h3 class=" text-center mt-3">Acessos</h3>
                         <div class="list-group list-group-flush">
-                            <?php include "vempublicar/painel/app/private/parts/botoes-menu.php" ?>
+                            <?php include "app/private/parts/botoes-menu.php" ?>
                         </div>
                     </div>
                 </div>

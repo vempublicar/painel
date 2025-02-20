@@ -30,7 +30,7 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-          <?php include "vempublicar/painel/app/private/parts/botoes-menu.php" ?>
+          <?php include "app/private/parts/botoes-menu.php" ?>
         </div>
       </div>
       <div class="d-flex">   
