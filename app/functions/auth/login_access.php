@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo = db_connect();
 
         // Busca o usuário na tabela leads, utilizando as colunas existentes
-        $stmt = $pdo->prepare("SELECT id, email, nome, fone, chave, acesso, nome_empresa, cnpj_cpf, cep, faturamento, cidade, estado, endereco, numero, plano, plano_escolhido, webhook 
+        $stmt = $pdo->prepare("SELECT * 
                                FROM leads 
                                WHERE email = :email");
         $stmt->bindParam(':email', $email);
@@ -63,22 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmtEmpresa->bindParam(':email', $email);
                 $stmtEmpresa->execute();
 
-                if ($stmtEmpresa->rowCount() > 0) {
-                    // Armazena os dados da empresa na sessão
-                    $empresa = $stmtEmpresa->fetch(PDO::FETCH_ASSOC);
-                    $_SESSION['dados_profissionais'] = json_encode($empresa, JSON_UNESCAPED_UNICODE);
-                    $_SESSION['videos']      = fetchVideos();
-                    $_SESSION['produtos']    = fetchProdutos();
-                    $_SESSION['materiais']   = fetchMateriais();
-                    $_SESSION['leads']       = fetchLeads();
-                    $_SESSION['categorias']  = fetchCategorias();
-                    $_SESSION['ferramentas'] = fetchFerramentas();
-                    $_SESSION['capas']       = fetchCapas();
-                    $_SESSION['assuntos']    = fetchAssunto();
-                } else {
-                    // Caso o usuário não tenha empresa vinculada
-                    $_SESSION['dados_profissionais'] = json_encode([]);
-                }
+                
 
                 header("Location: " . BASE_URL . "painel");
                 exit();
