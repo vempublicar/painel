@@ -31,23 +31,21 @@
         </div>
         <div class="offcanvas-body">
             
-            <a href="painel&a=videos" title="Vídeos" class=" d-block">
+            <a href="painel&a=videos" title="Vídeos" class="">
               <i class="fas fa-crosshairs m-2"></i>Vídeos
             </a>
-            <a href="painel&a=ferramentas" title="Ferramentas" class=" d-block">
+            <a href="painel&a=ferramentas" title="Ferramentas" class="">
               <i class="fas fa-tasks m-2"></i>Ferramentas
             </a>
-            <a href="painel&a=empresas" title="Multi-Empresas" class=" d-block">
+            <a href="painel&a=empresas" title="Multi-Empresas" class="">
               <i class="fas fa-briefcase m-2"></i>Multi-Empresas
             </a>
         </div>
       </div>
-      <div class="d-flex">        
-        <div class="d-flex d-lg-none">
-          <a class="btn btn-link btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
-            <i class="fas fa-list m-2"></i> Menu
+      <div class="d-flex">   
+        <a class="text-secondary" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
+            <i class="fas fa-list m-2"></i> 
           </a>
-        </div>
           <a href="painel" title="Início" class=" d-block">
               <i class="fas fa-home m-2"></i>
             </a>
