@@ -58,13 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['plano_escolhido'] = $user['plano_escolhido'];
                 $_SESSION['webhook']       = $user['webhook'];
 
-                // Verifica se o usuário tem uma empresa vinculada na tabela 'empresa'
-                $stmtEmpresa = $pdo->prepare("SELECT * FROM empresa WHERE email = :email");
-                $stmtEmpresa->bindParam(':email', $email);
-                $stmtEmpresa->execute();
-
-                
-
+               
                 header("Location: " . BASE_URL . "painel");
                 exit();
             } else {
