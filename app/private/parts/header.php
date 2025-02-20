@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="d-flex">        
-        <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
+        <a class="btn btn-link d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
           <i class="fas fa-list m-2"></i> Menu
         </a>
         <div class="me-2">
