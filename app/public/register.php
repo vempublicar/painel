@@ -48,7 +48,7 @@
                                                     <div class="col-md-6">
                                                         <h4 class="mb-3">Cadastro da Empresa</h4>
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-6">
                                                                 <!-- Nome da Empresa -->
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Nome da Empresa</label>
@@ -58,7 +58,7 @@
                                                                         required>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-6">
                                                                 <!-- CNPJ ou CPF -->
                                                                 <div class="mb-3">
                                                                     <label class="form-label">CNPJ ou CPF</label>
@@ -70,7 +70,7 @@
                                                                         placeholder="00.000.000/0000-00 ou 000.000.000-00">
                                                                 </div>                                                                
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-6">
                                                                 <!-- CEP -->
                                                                     <div class="mb-3">
                                                                     <label class="form-label">CEP</label>
@@ -82,17 +82,20 @@
                                                                         required>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <!-- Número -->
+                                                            <div class="col-6">
                                                                 <div class="mb-3">
-                                                                    <label class="form-label">Número</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="numero"
-                                                                        required>
+                                                                    <label class="form-label">Faturamento Atual</label>
+                                                                    <select class="form-select" name="faturamento" required>
+                                                                        <option value="">Selecione...</option>
+                                                                        <option value="1 a 10 mil">1 a 10 mil</option>
+                                                                        <option value="10 a 30 mil">10 a 30 mil</option>
+                                                                        <option value="30 a 60 mil">30 a 60 mil</option>
+                                                                        <option value="Acima de 60 mil">Acima de 60 mil</option>
+                                                                    </select>
                                                                 </div>
+                                                                
                                                             </div>
-                                                            <div class="col-md-8">
+                                                            <div class="col-8">
                                                                 <!-- Cidade, Estado e Endereço (readonly) -->
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Cidade</label>
@@ -103,7 +106,7 @@
                                                                         readonly>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <div class="col-4">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Estado</label>
                                                                     <input type="text"
@@ -113,25 +116,27 @@
                                                                         readonly>
                                                                 </div>
                                                             </div>
-                                                            <div class="mb-3">
-                                                                <label class="form-label">Endereço</label>
-                                                                <input type="text"
-                                                                    class="form-control"
-                                                                    name="endereco"
-                                                                    id="endereco"
-                                                                    readonly>
+                                                            <div class="col-8">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Endereço</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="endereco"
+                                                                        id="endereco"
+                                                                        readonly>
+                                                                </div>
                                                             </div>
-                                                            <!-- Faturamento -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Faturamento Atual</label>
-                                                            <select class="form-select" name="faturamento" required>
-                                                                <option value="">Selecione...</option>
-                                                                <option value="1 a 10 mil">1 a 10 mil</option>
-                                                                <option value="10 a 30 mil">10 a 30 mil</option>
-                                                                <option value="30 a 60 mil">30 a 60 mil</option>
-                                                                <option value="Acima de 60 mil">Acima de 60 mil</option>
-                                                            </select>
-                                                        </div>
+                                                            <div class="col-4">
+                                                                <!-- Número -->
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Número</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="numero"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                        
                                                         </div>   
                                                     </div>
                                                 <div class="col-md-6">
