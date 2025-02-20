@@ -7,7 +7,7 @@
     height: 100vh; /* 100% da altura da tela */
     width: 60px;  /* Defina a largura desejada para o sidebar */
     background-color: #f8f9fa;
-    padding: 60px 0;
+    padding: 10px 0;
     overflow-y: auto;
     z-index: 1000;
   }
@@ -19,7 +19,7 @@
     text-align: center;
   }
   .bi {
-  font-size: 2rem; /* ou o tamanho desejado */
+  font-size: 1.5rem; /* ou o tamanho desejado */
 }
 </style>
 
