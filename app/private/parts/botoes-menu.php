@@ -7,11 +7,11 @@
                       Minhas Análises
             </a>
             <a href="painel&a=treinamento" class="text-secondary m-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wrench text-info fs-2 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M13.21 13.21l-3.42 3.42a1.5 1.5 0 0 1 -2.12 0l-3.42 -3.42a1.5 1.5 0 0 1 0 -2.12l3.42 -3.42" />
-                    <path d="M14.83 9.17a4 4 0 1 1 0 5.66" />
-                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M7 21l4 -4h4l4 4" />
+                <path d="M7 3a4 4 0 0 1 4 4c0 1 -.5 2 -1 2l7 7a4 4 0 1 1 -2 2l-7 -7c-1 0 -2 -1 -2 -2a4 4 0 0 1 4 -4z" />
+            </svg>
                         Ferramentas
             </a>
             <a href="painel&a=treinamento" class="text-secondary m-1">
