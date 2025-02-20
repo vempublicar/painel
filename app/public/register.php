@@ -206,7 +206,7 @@
         }
         };
 
-        $('#cnpjCpf').mask('000.000.000-00', options);
+        $('#cnpjCpf').mask('000.000.000-000', options);
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
         $('#registrationForm input[required], #registrationForm select[required]').on('keyup change', function() {
