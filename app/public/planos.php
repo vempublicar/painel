@@ -150,9 +150,7 @@
 <body>
   <div class="container">
   <div class=" mb-4">
-                            <a href="." id="logo-branco">
-                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
-                            </a>
+                         
                             <a href="." id="logo-escuro">
                                 <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
                             </a>
