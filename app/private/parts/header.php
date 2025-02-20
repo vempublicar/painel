@@ -89,7 +89,11 @@
         </div>
       </div>
     </div>
-    <div class="sub-menu">
+    
+  </header>
+
+
+  <div class="sub-menu">
     <div class="btn-list">
       <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
         <i class="bi bi-speedometer2"></i>
@@ -114,6 +118,3 @@
       </a>
     </div>
   </div>
-  </header>
-
-
