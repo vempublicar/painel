@@ -61,7 +61,7 @@ $plano = $decoded;
                             <div class="text-center mb-4">
                                 <a href="." id="logo-branco">
                                     <img src="vendor/images/fepacoc/logotipo_fepacoc.png"
-                                        width="110" height="32"
+                                        width="210" 
                                         alt="FEPACOC"
                                         class="navbar-brand-image">
                                 </a>
