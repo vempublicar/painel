@@ -50,8 +50,8 @@
           
         </div>
       </div>
-      <div class="d-md-flex row">        
-      <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
+      <div class="d-sm-flex">        
+        <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
           <i class="fas fa-list m-2"></i> Menu
         </a>
         <div class="me-2">
