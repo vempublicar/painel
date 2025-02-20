@@ -250,7 +250,7 @@ $plano = $decoded;
                                             <a href="https://fepacoc.com/politica-privacidade" target="_blank">Política de Privacidade</a>.
                                         </label>
                                         </div>
-                                        <div class="form-footer col-md-6">
+                                        <div class="form-footer mb-3 col-md-6">
                                         <button type="submit" class="btn btn-indigo w-100" id="submitBtn" disabled>REGISTRAR</button>
                                         </div>
                                          </div>
