@@ -49,11 +49,12 @@
           </a>
           
         </div>
-        <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
-          <i class="fas fa-list m-2"></i> Menu
-        </a>
       </div>
       <div class="d-md-flex">
+        
+      <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
+          <i class="fas fa-list m-2"></i> Menu
+        </a>
         <div class="me-2">
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
