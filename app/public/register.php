@@ -27,8 +27,8 @@
         <div class="container container-normal py-4">
             <div class="row align-items-center g-4">
                 <!-- Coluna principal: Formulário -->
-                <div class="col-lg">
-                    <div class="container-tight">
+                <div class="">
+                    <div class="">
                         <div class="text-center mb-4">
                             <a href="." id="logo-branco">
                                 <img src="vendor/images/fepacoc/logotipo_fepacoc.png"
@@ -199,14 +199,17 @@
         $('#whatsapp').mask('(00) 00000-0000');
         // Para CPF/CNPJ de modo simples (exemplo):
         // Ajuste conforme a sua necessidade (ex: identificar automaticamente CPF/CNPJ).
+        var maskBehavior = function (val) {
+        return val.replace(/\D/g, '').length <= 11 ? '000.000.000-00' : '00.000.000/0000-00';
+        };
+
         var options = {
         onKeyPress: function(val, e, field, options) {
-            var mask = (val.replace(/\D/g, '').length > 11) ? '00.000.000/0000-00' : '000.000.000-00';
-            $('#cnpjCpf').mask(mask, options);
+            field.mask(maskBehavior(val), options);
         }
         };
 
-        $('#cnpjCpf').mask('000.000.000-000', options);
+        $('#cnpjCpf').mask(maskBehavior, options);
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
         $('#registrationForm input[required], #registrationForm select[required]').on('keyup change', function() {
