@@ -30,16 +30,7 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-            
-            <a href="painel&a=videos" title="Vídeos" class="">
-              <i class="fas fa-crosshairs m-2"></i>Vídeos
-            </a>
-            <a href="painel&a=ferramentas" title="Ferramentas" class="">
-              <i class="fas fa-tasks m-2"></i>Ferramentas
-            </a>
-            <a href="painel&a=empresas" title="Multi-Empresas" class="">
-              <i class="fas fa-briefcase m-2"></i>Multi-Empresas
-            </a>
+          <?php include "vempublicar/painel/app/private/parts/botoes-menu.php" ?>
         </div>
       </div>
       <div class="d-flex">   
