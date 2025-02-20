@@ -39,22 +39,22 @@
         </div>
         <div class="offcanvas-body">
           <div class="icon-buttons d-block me-3">
-          <a href="dashboard&setting=minhas-empresas" class="btn text-secondary m-1" aria-current="true">
+          <a href="dashboard&setting=minhas-empresas" class="btn  m-1" aria-current="true">
             <i class="bi bi-folder"></i>
             Minhas Empresas
             </a>
-            <a href="painel&a=analises" class="btn text-secondary m-1">
+            <a href="painel&a=analises" class="btn  m-1">
             <i class="bi bi-graph-up"></i>
             Minhas Análises
             </a>
-            <a href="painel&a=treinamento" class="btn text-secondary m-1">
+            <a href="painel&a=treinamento" class="btn  m-1">
             <i class="bi bi-tools"></i> Ferramentas
             </a>
-            <a href="painel&a=treinamento" class="btn text-secondary m-1">
+            <a href="painel&a=treinamento" class="btn  m-1">
             <i class="bi bi-mortarboard"></i>
             Treinamento
             </a>
-            <a href="painel&a=estrategias" class="btn text-secondary m-1">
+            <a href="painel&a=estrategias" class="btn  m-1">
             <i class="bi bi-play"></i>    Estratégias Exclusivas
             </a>
           </div>
