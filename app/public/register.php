@@ -214,22 +214,27 @@
         $('#whatsapp').mask('(00) 00000-0000');
         // Para CPF/CNPJ de modo simples (exemplo):
         $('#cnpjCpf').on('input', function() {
+        // Permite apenas números enquanto o usuário digita
         this.value = this.value.replace(/\D/g, '');
         });
 
-        // Ao sair do input, formata conforme a quantidade de dígitos
         $('#cnpjCpf').on('blur', function() {
         var val = $(this).val();
-        if (val.length === 11) {
+        var numeric = val.replace(/\D/g, '');
+        if (numeric.length === 11) {
             // Formata como CPF: XXX.XXX.XXX-XX
-            var cpf = val.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+            var cpf = numeric.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
             $(this).val(cpf);
-        } else if (val.length === 14) {
+            $(this).removeClass('is-invalid');
+        } else if (numeric.length === 14) {
             // Formata como CNPJ: XX.XXX.XXX/XXXX-XX
-            var cnpj = val.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+            var cnpj = numeric.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
             $(this).val(cnpj);
+            $(this).removeClass('is-invalid');
+        } else {
+            // Se não tiver 11 ou 14 dígitos, adiciona a classe de erro (borda vermelha)
+            $(this).addClass('is-invalid');
         }
-        // Se não tiver 11 ou 14 dígitos, mantém apenas os números
         });
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
