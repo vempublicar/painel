@@ -77,7 +77,7 @@ $plano = $decoded;
                                                         <div class="col-md-6">
                                                             <h4 class="mb-3">Cadastro da Empresa</h4>
                                                             <div class="row">
-                                                                <div class="col-6">
+                                                                <div class="col-md-6">
                                                                     <!-- Nome da Empresa -->
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Nome da Empresa</label>
@@ -87,7 +87,7 @@ $plano = $decoded;
                                                                             required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-md-6">
                                                                     <!-- CNPJ ou CPF -->
                                                                     <div class="mb-3">
                                                                         <label class="form-label">CNPJ ou CPF</label>
@@ -99,7 +99,7 @@ $plano = $decoded;
                                                                             placeholder="00.000.000/0000-00 ou 000.000.000-00">
                                                                     </div>                                                                
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-md-6">
                                                                     <!-- CEP -->
                                                                         <div class="mb-3">
                                                                         <label class="form-label">CEP</label>
@@ -111,7 +111,7 @@ $plano = $decoded;
                                                                             required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-md-6">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Faturamento Atual</label>
                                                                         <select class="form-select" name="faturamento" required>
