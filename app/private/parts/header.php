@@ -37,13 +37,13 @@
         <a href="painel" title="Início" class="">
           <i class="fas fa-home m-2"></i>Início
         </a>
-        <a href="videos" title="Vídeos" class="">
+        <a href="painel&a=videos" title="Vídeos" class="">
           <i class="fas fa-crosshairs m-2"></i>Vídeos
         </a>
-        <a href="ferramentas" title="Ferramentas" class="">
+        <a href="painel&a=ferramentas" title="Ferramentas" class="">
           <i class="fas fa-tasks m-2"></i>Ferramentas
         </a>
-        <a href="empresas" title="Multi-Empresas" class="">
+        <a href="painel&a=empresas" title="Multi-Empresas" class="">
           <i class="fas fa-briefcase m-2"></i>Multi-Empresas
         </a>
       </div>
@@ -57,13 +57,13 @@
             <a href="painel" title="Início" class=" d-block">
               <i class="fas fa-home m-2"></i>Início
             </a>
-            <a href="videos" title="Vídeos" class=" d-block">
+            <a href="painel&a=videos" title="Vídeos" class=" d-block">
               <i class="fas fa-crosshairs m-2"></i>Vídeos
             </a>
-            <a href="ferramentas" title="Ferramentas" class=" d-block">
+            <a href="painel&a=ferramentas" title="Ferramentas" class=" d-block">
               <i class="fas fa-tasks m-2"></i>Ferramentas
             </a>
-            <a href="empresas" title="Multi-Empresas" class=" d-block">
+            <a href="painel&a=empresas" title="Multi-Empresas" class=" d-block">
               <i class="fas fa-briefcase m-2"></i>Multi-Empresas
             </a>
         </div>
@@ -107,7 +107,7 @@
                 <div class="col-6">Início</div>
               </div>
             </a>
-            <a href="#" class="dropdown-item" title="Conta">
+            <a href="conta-usuario" class="dropdown-item" title="Conta">
               <div class="row">
                 <div class="col">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -120,7 +120,7 @@
                 <div class="col-6">Conta</div>
               </div>
             </a>
-            <a href="#" class="dropdown-item">
+            <a href="sair" class="dropdown-item">
               <div class="row">
                 <div class="col">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -8,6 +8,52 @@
     <?php include "app/private/parts/header.php" ?>
     <?php include "app/private/parts/submenu.php" ?>
 
+    <?Php
+        //lógica para apresentar conteúdo:
+         if(isset($_GET['a'])){ 
+            //verifica qual categoria o usuário está
+            if($_GET['a'] == 'videos')){
+                if(isset($_GET['b'])){
+                    //verifica qual sub-pagina o usuário
+
+                }else{
+                    //página inicial de vídeos
+                    include "app/private/paginas/videos/inicial-videos.php";
+                }
+
+
+            }elseif($_GET['a'] == 'ferramentas')){
+                if(isset($_GET['b'])){
+                    //verifica qual sub-pagina o usuário
+
+                }else{
+                    //página inicial de ferramentas
+                    include "app/private/paginas/ferramentas/inicial-ferramentas.php";
+                }
+
+
+            }elseif($_GET['a'] == 'empresas')){
+                if(isset($_GET['b'])){
+                    //verifica qual sub-pagina o usuário
+
+                }else{
+                    //página inicial de empresas
+                    include "app/private/paginas/empresas/inicial-empresas.php";
+                }
+
+            }
+
+            else{
+                include "app/private/paginas/inicial-painel.php";
+            }
+
+         }else{
+            //PAGINA INICIAL DO PAINEL
+            include "app/private/paginas/inicial-painel.php";
+         }
+
+    ?>
+
 
 
     <script src="vendor/libs/apexcharts/dist/apexcharts.min.js" defer></script>
