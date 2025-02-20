@@ -216,23 +216,23 @@ $plano = $decoded;
                                                 <ul class="list-unstyled">
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    Não enviaremos e-mail de propaganda (apenas se o usuário assinar a newsletter).
+                                                    ☑ Não enviaremos e-mail de propaganda (apenas se o usuário assinar a newsletter).
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    Não enviaremos WhatsApp de ofertas de produtos, apenas de suporte ou material estratégico pré-notificado.
+                                                    ☑ Não enviaremos WhatsApp de ofertas de produtos, apenas de suporte ou material estratégico pré-notificado.
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    A qualquer momento, você poderá solicitar a exclusão de seus dados do nosso banco.
+                                                    ☑ A qualquer momento, você poderá solicitar a exclusão de seus dados do nosso banco.
                                                 </li>
                                                 <li class="mb-2">
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    Nos comprometemos a trabalhar em soluções para beneficiar sua empresa, mas entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Se perceber qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
+                                                    ☑ Nos comprometemos a trabalhar em soluções para beneficiar sua empresa, mas entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Se perceber qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
                                                 </li>
                                                 <li>
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    Entre apenas se você realmente deseja mudar; da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!
+                                                    <b>Entre apenas se você realmente deseja mudar e se comprometer em realizar o que foi proposto. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
                                                 </li>
                                                 </ul>
                                             </div>
