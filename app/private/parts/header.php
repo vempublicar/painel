@@ -36,13 +36,16 @@
       <div class="btn-list">
         <div class="d-none d-lg-inline-block">
           <a href="#" title="Metas" class="btn btn-link">
+            <i class="fas fa-home m-2"></i>Início
+          </a>
+          <a href="#" title="Metas" class="btn btn-link">
             <i class="fas fa-crosshairs m-2"></i>Vídeos
           </a>
           <a href="#" title="Relatório" class="btn btn-link">
             <i class="fas fa-tasks m-2"></i>Ferramentas
           </a>
           <a href="#" title="Kpis" class="btn btn-link">
-            <i class="fas fa-chart-line m-2"></i>Multi-Empresas
+            <i class="fas fa-briefcase m-2"></i>Multi-Empresas
           </a>
           
         </div>
@@ -52,12 +55,6 @@
       </div>
       <div class="d-md-flex">
         <div class="me-2">
-          <a href="#" class="text-center text-secondary" title="Home">
-            <i class="fas fa-home m-2"></i>
-          </a>
-          <a href="#" title="Empresas" class="text-center text-secondary btn-outline-primary">
-            <i class="fas fa-briefcase m-2"></i>
-          </a>
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
             <i class="fas fa-lightbulb m-2"></i>
@@ -65,9 +62,6 @@
           <a href="javascript:void(0)" class="text-secondary hide-theme-light" title="Light Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
             <i class="far fa-lightbulb m-2"></i>
-          </a>
-          <a href="#" class="text-center text-secondary" id="fullscreenToggle" title="F11">
-            <i class="fas fa-expand m-2"></i>
           </a>
         </div>
         <div class="nav-item dropdown">
