@@ -213,18 +213,17 @@
         // Máscaras
         $('#whatsapp').mask('(00) 00000-0000');
         // Para CPF/CNPJ de modo simples (exemplo):
-        // Ajuste conforme a sua necessidade (ex: identificar automaticamente CPF/CNPJ).
-        var maskBehavior = function (val) {
-        return val.replace(/\D/g, '').length <= 11 ? '000.000.000-00' : '00.000.000/0000-00';
-        };
-
-        var options = {
-        onKeyPress: function(val, e, field, options) {
-            field.mask(maskBehavior(val), options);
-        }
-        };
-
-        $('#cnpjCpf').mask(maskBehavior, options);
+        $('#cnpjCpf').on('input', function() {
+            var val = $(this).val().replace(/\D/g, '');
+            // Remove a máscara atual
+            $(this).unmask();
+            // Se tiver mais que 11 dígitos, aplica máscara de CNPJ, senão CPF
+            if(val.length > 11) {
+                $(this).mask('00.000.000/0000-00');
+            } else {
+                $(this).mask('000.000.000-00');
+            }
+        });
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
         $('#registrationForm input[required], #registrationForm select[required]').on('keyup change', function() {
