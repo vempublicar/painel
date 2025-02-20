@@ -50,9 +50,8 @@ $plano = $decoded;
     <div class="page page-center">
         <div class="container container-normal py-4">
         <div class="text-center mb-4">
-                            
-                            <a href="." id="logo-escuro">
-                                <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                            <a href="." id="logo-branco">
+                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
                             </a>
                         </div>
             <div class="row align-items-center g-4">
