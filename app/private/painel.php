@@ -24,7 +24,7 @@
                 include "app/private/paginas/analise/inicial-analises.php";
             }
             break;
-        case 'estrategia':
+        case 'estrategias':
             if ($b) {
                 // Lógica para subpágina de vídeos (a definir)
                 // include "app/private/paginas/videos/subpagina.php";
