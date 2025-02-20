@@ -22,7 +22,6 @@ if ($decoded === false || !in_array($decoded, $validOptions)) {
 $plano = $decoded;
 ?>
 
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -56,6 +55,14 @@ $plano = $decoded;
                     if($plano != null){
                  ?>
                     <div class="">
+                    <div class="text-center mb-4">
+                            <a href="." id="logo-branco">
+                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                            </a>
+                            <a href="." id="logo-escuro">
+                                <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                            </a>
+                        </div>
                         <div class="">
                             <div class="text-center mb-4">
                                 <a href="." id="logo-branco">
@@ -234,10 +241,7 @@ $plano = $decoded;
                  <?php 
                     }
                  ?>
-                <!-- Coluna com imagem -->
-                <div class="col-lg d-none d-lg-block">
-                    <img src="vendor/images/template/register.svg" height="400" class="d-block mx-auto" alt="">
-                </div>
+                
             </div>
         </div>
     </div>

@@ -149,6 +149,14 @@
 </head>
 <body>
   <div class="container">
+  <div class="text-center mb-4">
+                            <a href="." id="logo-branco">
+                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                            </a>
+                            <a href="." id="logo-escuro">
+                                <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                            </a>
+                        </div>
     <!-- Título principal e subtítulo -->
     <div class="pricing-header">
       <h1><span class="text-primary">Comece agora</span> & mude o futuro da sua empresa.</h1>
