@@ -1,9 +1,5 @@
 <?Php
 
-function base64DecodeWrapMB($string) {
-    return base64_decode($string, true);
-}
-
 // Define as opções válidas
 $validOptions = ["Ferramenta", "Personalizado", "Estrategia", "Gratuito"];
 
@@ -14,8 +10,8 @@ if (!isset($_GET['plano'])) {
 
 $planoBase64 = $_GET['plano'];
 
-// Decodifica o valor utilizando o wrapper
-$decoded = base64DecodeWrapMB($planoBase64);
+// Decodifica o valor em base64 com verificação rigorosa
+$decoded = base64_decode($planoBase64, true);
 
 // Verifica se a decodificação foi bem-sucedida e se o valor decodificado é uma das opções válidas
 if ($decoded === false || !in_array($decoded, $validOptions)) {
