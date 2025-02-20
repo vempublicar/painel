@@ -171,7 +171,7 @@
             </ul>
           </div>
           <div>
-            <a href="register&plano=<?= base64EncodeWrapMB('Gratuito') ?>" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=<?php echo base64EncodeWrapMB('Gratuito') ?>" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
