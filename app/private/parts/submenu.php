@@ -12,7 +12,7 @@
     z-index: 1000;
   }
   /* Botões ocupando 100% da largura do menu */
-  .sub-menu .btn-list a {
+  .sub-menu .btn-tools a {
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -21,7 +21,7 @@
 </style>
 
 <div class="sub-menu">
-  <div class="btn-list">
+  <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
       <i class="bi bi-speedometer2"></i>
     </a>
