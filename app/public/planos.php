@@ -166,8 +166,8 @@
             <div class="price">Gratuito</div>
             <ul>
               <li>Acesso a Ferramentas e Vídeos focados em iniciar a gestão estratégica</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Acesso prioritário a teste de ferramentas exclusivas</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Agende uma reunião de análise do plano ideal</li>
+              <li>✔ Acesso prioritário a teste de ferramentas</li>
+              <li>✔ Agende uma reunião de análise do plano ideal</li>
             </ul>
           </div>
           <div>
@@ -184,8 +184,8 @@
             <div class="price">R$79,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
               <li>Acesso a Ferramentas e Vídeos focado em marketing, vendas e atendimento</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Suporte via WhatsApp</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Vídeos estratégicos exclusivos no WhatsApp</li>
+              <li>✔ Suporte exclusivo via WhatsApp</li>
+              <li>✔ Vídeos estratégicos do seu setor no WhatsApp</li>
             </ul>
           </div>
           <div>
@@ -202,8 +202,8 @@
             <div class="price">R$189,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
               <li>Acesso completo para criar processos, cultura, gerar vendas e crescimento</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Sistema de controle exclusivo da FEPACOC</li>
-              <li><i class="bi bi-check-circle-fill text-success"></i> Lives exclusivas com especialistas</li>
+              <li>✔ Sistema de controle exclusivo da FEPACOC</li>
+              <li>✔ Lives exclusivas com especialistas</li>
             </ul>
           </div>
           <div>
@@ -218,6 +218,9 @@
           <p class="mb-0">
             Quero um plano personalizado que garante meu sucesso.
           </p>
+          <ul>
+              <li>✔ Consultor de crescimento full-time.</li>
+          </ul>
           <div>
             <a href="#" class="btn btn-dark">Consultor</a>
           </div>
