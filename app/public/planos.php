@@ -214,7 +214,7 @@
       <!-- Coluna de destaque (texto chamativo) -->
       <div class="col-md-3">
         <div class="highlight-box h-100 d-flex flex-column justify-content-center">
-          <h3>Procurando uma faísca e <b class="text-dark">reacender</b> seu crescimento</h3>
+          <h3>Procurando uma faísca para <b class="text-dark">reacender</b> seu crescimento</h3>
           <ul>
               <li>Quero um plano personalizado que garante meu sucesso.</li>
               <li>✔ Gestão Estratégica Conjunta.</li>
