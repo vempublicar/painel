@@ -39,48 +39,23 @@
         </div>
         <div class="offcanvas-body">
           <div class="icon-buttons d-block me-3">
-<<<<<<< HEAD
           <a href="dashboard&setting=minhas-empresas" class="btn  m-1" aria-current="true">
             <i class="bi bi-folder me-2"></i>
-=======
-          <a href="dashboard&setting=minhas-empresas" class="btn w-100 m-1" aria-current="true">
-            <i class="bi bi-folder"></i>
->>>>>>> 09f9eef86f87516e6f821ba2f1a40646a5a69d53
             Minhas Empresas
             </a>
-<<<<<<< HEAD
             <a href="painel&a=analises" class="btn  m-1">
             <i class="bi bi-graph-up me-2"></i>
-=======
-            <a href="painel&a=analises" class="btn w-100 m-1">
-            <i class="bi bi-graph-up"></i>
->>>>>>> 09f9eef86f87516e6f821ba2f1a40646a5a69d53
             Minhas Análises
             </a>
-<<<<<<< HEAD
             <a href="painel&a=treinamento" class="btn  m-1">
             <i class="bi bi-tools me-2"></i> Ferramentas
-=======
-            <a href="painel&a=treinamento" class="btn w-100 m-1">
-            <i class="bi bi-tools"></i> Ferramentas
->>>>>>> 09f9eef86f87516e6f821ba2f1a40646a5a69d53
             </a>
-<<<<<<< HEAD
             <a href="painel&a=treinamento" class="btn  m-1">
             <i class="bi bi-mortarboard me-2"></i>
-=======
-            <a href="painel&a=treinamento" class="btn w-100 m-1">
-            <i class="bi bi-mortarboard"></i>
->>>>>>> 09f9eef86f87516e6f821ba2f1a40646a5a69d53
             Treinamento
             </a>
-<<<<<<< HEAD
             <a href="painel&a=estrategias" class="btn  m-1">
             <i class="bi bi-play me-2"></i>    Estratégias Exclusivas
-=======
-            <a href="painel&a=estrategias" class="btn w-100 m-1">
-            <i class="bi bi-play"></i>    Estratégias Exclusivas
->>>>>>> 09f9eef86f87516e6f821ba2f1a40646a5a69d53
             </a>
           </div>
         </div>
