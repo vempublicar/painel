@@ -152,7 +152,7 @@
   
     <!-- Título principal e subtítulo -->
     <div class="pricing-header">
-    <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+    <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" alt="Tabler" class="navbar-brand-image">
       <h1><span class="text-primary">Comece agora</span> & mude o futuro da sua empresa.</h1>
       <p>Aproveite as melhores estratégias para alavancar e ter orgulho dos seus resultados.</p>
     </div>
