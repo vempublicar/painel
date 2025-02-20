@@ -34,16 +34,16 @@
         </a>
       </h1>
       <div class="btn-list d-none d-lg-inline-block">
-        <a href="#" title="Início" class="btn btn-link">
+        <a href="#" title="Início" class="">
           <i class="fas fa-home m-2"></i>Início
         </a>
-        <a href="#" title="Vídeos" class="btn btn-link">
+        <a href="#" title="Vídeos" class="">
           <i class="fas fa-crosshairs m-2"></i>Vídeos
         </a>
-        <a href="#" title="Ferramentas" class="btn btn-link">
+        <a href="#" title="Ferramentas" class="">
           <i class="fas fa-tasks m-2"></i>Ferramentas
         </a>
-        <a href="#" title="Multi-Empresas" class="btn btn-link">
+        <a href="#" title="Multi-Empresas" class="">
           <i class="fas fa-briefcase m-2"></i>Multi-Empresas
         </a>
       </div>
@@ -54,16 +54,16 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-            <a href="#" title="Início" class="btn btn-link d-block">
+            <a href="#" title="Início" class=" d-block">
               <i class="fas fa-home m-2"></i>Início
             </a>
-            <a href="#" title="Vídeos" class="btn btn-link d-block">
+            <a href="#" title="Vídeos" class=" d-block">
               <i class="fas fa-crosshairs m-2"></i>Vídeos
             </a>
-            <a href="#" title="Ferramentas" class="btn btn-link d-block">
+            <a href="#" title="Ferramentas" class=" d-block">
               <i class="fas fa-tasks m-2"></i>Ferramentas
             </a>
-            <a href="#" title="Multi-Empresas" class="btn btn-link d-block">
+            <a href="#" title="Multi-Empresas" class=" d-block">
               <i class="fas fa-briefcase m-2"></i>Multi-Empresas
             </a>
         </div>
