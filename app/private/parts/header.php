@@ -21,7 +21,7 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-          <div class="icon-buttons d-none d-lg-inline-block me-3">
+          <div class="icon-buttons me-3">
           <?php include "app/private/parts/botoes-menu.php" ?>
           </div>
         </div>
