@@ -214,15 +214,22 @@
         $('#whatsapp').mask('(00) 00000-0000');
         // Para CPF/CNPJ de modo simples (exemplo):
         $('#cnpjCpf').on('input', function() {
-            var val = $(this).val().replace(/\D/g, '');
-            // Remove a máscara atual
-            $(this).unmask();
-            // Se tiver mais que 11 dígitos, aplica máscara de CNPJ, senão CPF
-            if(val.length > 11) {
-                $(this).mask('00.000.000/0000-00');
-            } else {
-                $(this).mask('000.000.000-00');
-            }
+        this.value = this.value.replace(/\D/g, '');
+        });
+
+        // Ao sair do input, formata conforme a quantidade de dígitos
+        $('#cnpjCpf').on('blur', function() {
+        var val = $(this).val();
+        if (val.length === 11) {
+            // Formata como CPF: XXX.XXX.XXX-XX
+            var cpf = val.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+            $(this).val(cpf);
+        } else if (val.length === 14) {
+            // Formata como CNPJ: XX.XXX.XXX/XXXX-XX
+            var cnpj = val.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+            $(this).val(cnpj);
+        }
+        // Se não tiver 11 ou 14 dígitos, mantém apenas os números
         });
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
