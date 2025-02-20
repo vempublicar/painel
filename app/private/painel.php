@@ -47,7 +47,7 @@
             
         default:
             // Se não houver parâmetro ou a categoria não for reconhecida, mostra a página inicial do painel
-           // include "app/private/paginas/inicial-painel.php";
+            include "app/private/paginas/inicial-painel.php";
             break;
     }
     ?>
