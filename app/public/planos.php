@@ -171,7 +171,7 @@
             </ul>
           </div>
           <div>
-            <a href="register&plano=Gratuito" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=<?= base64EncodeWrapMB('Gratuito') ?>" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@
             </ul>
           </div>
           <div>
-            <a href="register&plano=Estrategia" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=<?= base64EncodeWrapMB('Estrategia') ?>" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -207,7 +207,7 @@
             </ul>
           </div>
           <div>
-            <a href="register&plano=Ferramenta" class="btn btn-primary">COMECE AGORA</a>
+            <a href="register&plano=<?= base64EncodeWrapMB('Ferramenta') ?>" class="btn btn-primary">COMECE AGORA</a>
           </div>
         </div>
       </div>
@@ -221,7 +221,7 @@
               <li>✔ Consultor de crescimento full-time.</li>
           </ul>
           <div>
-            <a href="register&plano=Personalizado" class="btn btn-light"><i class="bi bi-chat-dots me-2"></i> Fale com Consultor</a>
+            <a href="register&plano=<?= base64EncodeWrapMB('Personalizado') ?>" class="btn btn-light"><i class="bi bi-chat-dots me-2"></i> Fale com Consultor</a>
           </div>
         </div>
       </div>

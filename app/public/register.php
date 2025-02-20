@@ -1,3 +1,32 @@
+<?Php
+
+function base64DecodeWrapMB($string) {
+    return base64_decode($string, true);
+}
+
+// Define as opções válidas
+$validOptions = ["Ferramenta", "Personalizado", "Estrategia", "Gratuito"];
+
+// Verifica se o parâmetro 'plano' existe na URL
+if (!isset($_GET['plano'])) {
+    $plano = null;
+}
+
+$planoBase64 = $_GET['plano'];
+
+// Decodifica o valor utilizando o wrapper
+$decoded = base64DecodeWrapMB($planoBase64);
+
+// Verifica se a decodificação foi bem-sucedida e se o valor decodificado é uma das opções válidas
+if ($decoded === false || !in_array($decoded, $validOptions)) {
+    $plano = null;
+}
+
+// Se tudo estiver correto, $decoded contém o plano válido
+$plano = $decoded;
+?>
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,173 +56,188 @@
         <div class="container container-normal py-4">
             <div class="row align-items-center g-4">
                 <!-- Coluna principal: Formulário -->
-                <div class="">
+                 <?php 
+                    if($plano != null){
+                 ?>
                     <div class="">
-                        <div class="text-center mb-4">
-                            <a href="." id="logo-branco">
-                                <img src="vendor/images/fepacoc/logotipo_fepacoc.png"
-                                     width="110" height="32"
-                                     alt="FEPACOC"
-                                     class="navbar-brand-image">
-                            </a>
-                        </div>
-                        <div class="card ">
-                                            <div class="card-body">
-                        <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
-                                <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
-                                    <!-- Linha com duas colunas: Empresa e Contato -->
-                                    <div class="row">
-                                        <!-- Cadastro da Empresa -->
-                                        
-                                                    <div class="col-md-6">
-                                                        <h4 class="mb-3">Cadastro da Empresa</h4>
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <!-- Nome da Empresa -->
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Nome da Empresa</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="nome_empresa"
-                                                                        required>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <!-- CNPJ ou CPF -->
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">CNPJ ou CPF</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="cnpj_cpf"
-                                                                        id="cnpjCpf"
-                                                                        required
-                                                                        placeholder="00.000.000/0000-00 ou 000.000.000-00">
-                                                                </div>                                                                
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <!-- CEP -->
+                        <div class="">
+                            <div class="text-center mb-4">
+                                <a href="." id="logo-branco">
+                                    <img src="vendor/images/fepacoc/logotipo_fepacoc.png"
+                                        width="110" height="32"
+                                        alt="FEPACOC"
+                                        class="navbar-brand-image">
+                                </a>
+                            </div>
+                            <div class="card ">
+                                                <div class="card-body">
+                                <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
+                                    <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
+                                        <!-- Linha com duas colunas: Empresa e Contato -->
+                                        <div class="row">
+                                            <!-- Cadastro da Empresa -->
+                                            
+                                                        <div class="col-md-6">
+                                                            <h4 class="mb-3">Cadastro da Empresa</h4>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <!-- Nome da Empresa -->
                                                                     <div class="mb-3">
-                                                                    <label class="form-label">CEP</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="cep"
-                                                                        id="cep"
-                                                                        placeholder="00000-000"
-                                                                        required>
+                                                                        <label class="form-label">Nome da Empresa</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="nome_empresa"
+                                                                            required>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Faturamento Atual</label>
-                                                                    <select class="form-select" name="faturamento" required>
-                                                                        <option value="">Selecione...</option>
-                                                                        <option value="1 a 10 mil">1 a 10 mil</option>
-                                                                        <option value="10 a 30 mil">10 a 30 mil</option>
-                                                                        <option value="30 a 60 mil">30 a 60 mil</option>
-                                                                        <option value="Acima de 60 mil">Acima de 60 mil</option>
-                                                                    </select>
+                                                                <div class="col-6">
+                                                                    <!-- CNPJ ou CPF -->
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">CNPJ ou CPF</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="cnpj_cpf"
+                                                                            id="cnpjCpf"
+                                                                            required
+                                                                            placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                                                                    </div>                                                                
                                                                 </div>
-                                                                
-                                                            </div>
-                                                            <div class="col-8">
-                                                                <!-- Cidade, Estado e Endereço (readonly) -->
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Cidade</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="cidade"
-                                                                        id="cidade"
-                                                                        readonly>
+                                                                <div class="col-6">
+                                                                    <!-- CEP -->
+                                                                        <div class="mb-3">
+                                                                        <label class="form-label">CEP</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="cep"
+                                                                            id="cep"
+                                                                            placeholder="00000-000"
+                                                                            required>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Estado</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="estado"
-                                                                        id="estado"
-                                                                        readonly>
+                                                                <div class="col-6">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Faturamento Atual</label>
+                                                                        <select class="form-select" name="faturamento" required>
+                                                                            <option value="">Selecione...</option>
+                                                                            <option value="1 a 10 mil">1 a 10 mil</option>
+                                                                            <option value="10 a 30 mil">10 a 30 mil</option>
+                                                                            <option value="30 a 60 mil">30 a 60 mil</option>
+                                                                            <option value="Acima de 60 mil">Acima de 60 mil</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-8">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Endereço</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="endereco"
-                                                                        id="endereco"
-                                                                        readonly>
+                                                                <div class="col-8">
+                                                                    <!-- Cidade, Estado e Endereço (readonly) -->
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Cidade</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="cidade"
+                                                                            id="cidade"
+                                                                            >
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <!-- Número -->
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Número</label>
-                                                                    <input type="text"
-                                                                        class="form-control"
-                                                                        name="numero"
-                                                                        required>
+                                                                <div class="col-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Estado (UF)</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="estado"
+                                                                            id="estado"
+                                                                            maxlength="2" >
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        
-                                                        </div>   
-                                                    </div>
-                                                <div class="col-md-6">
-                                                    <h4 class="mb-3">Contato</h4>
-                                                    <!-- Nome Completo -->
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Nome Completo</label>
-                                                        <input type="text" class="form-control" name="name" required>
-                                                    </div>
-                                                    <!-- Email -->
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Email</label>
-                                                        <input type="email" class="form-control" name="email-username" required>
-                                                    </div>
-                                                    <!-- WhatsApp -->
-                                                    <div class="mb-3">
-                                                        <label class="form-label">WhatsApp</label>
-                                                        <input type="text"
-                                                            class="form-control"
-                                                            name="whatsapp"
-                                                            id="whatsapp"
-                                                            placeholder="(00) 00000-0000"
-                                                            required>
-                                                    </div>
-                                                    <!-- Plano Escolhido (readonly) -->
-                                                    <div class="mb-3">
-                                                            <label class="form-label">Plano Escolhido</label>
+                                                                <div class="col-8">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Endereço</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="endereco"
+                                                                            id="endereco"
+                                                                            >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <!-- Número -->
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Número</label>
+                                                                        <input type="text"
+                                                                            class="form-control"
+                                                                            name="numero"
+                                                                            maxlength="6">
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            </div>   
+                                                        </div>
+                                                    <div class="col-md-6">
+                                                        <h4 class="mb-3">Contato</h4>
+                                                        <!-- Nome Completo -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Nome Completo</label>
+                                                            <input type="text" class="form-control" name="name" required>
+                                                        </div>
+                                                        <!-- Email -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Email</label>
+                                                            <input type="email" class="form-control" name="email-username" required>
+                                                        </div>
+                                                        <!-- WhatsApp -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">WhatsApp</label>
                                                             <input type="text"
                                                                 class="form-control"
-                                                                name="plano"
-                                                                value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
-                                                                readonly>
+                                                                name="whatsapp"
+                                                                id="whatsapp"
+                                                                placeholder="(00) 00000-0000"
+                                                                required>
                                                         </div>
-                                                    <!-- Senha gerada (hidden) -->
-                                                    <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
-                                                </div>
-                                    </div>
+                                                        <!-- Plano Escolhido (readonly) -->
+                                                        <div class="mb-3">
+                                                                <label class="form-label">Plano Escolhido</label>
+                                                                <input type="text"
+                                                                    class="form-control"
+                                                                    name="plano"
+                                                                    value="<?= $plano ?>"
+                                                                    readonly>
+                                                            </div>
+                                                        <!-- Senha gerada (hidden) -->
+                                                        <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
+                                                    </div>
+                                        </div>
 
-                                    <!-- Texto de instruções -->
-                                    <p class="text-muted mt-3" style="font-size: .875rem;">
-                                        Após o cadastro, será enviado um email com a chave de acesso. Já dentro do painel,
-                                        você poderá selecionar o formato de pagamento e, caso esteja dentro do horário comercial,
-                                        em breve um membro da nossa equipe poderá entrar em contato via WhatsApp.
-                                    </p>
+                                        <!-- Texto de instruções -->
+                                        <p class="text-muted mt-3" style="font-size: .875rem;">
+                                            Após o cadastro, será enviado um email com a chave de acesso. Já dentro do painel,
+                                            você poderá selecionar o formato de pagamento e, caso esteja dentro do horário comercial,
+                                            em breve um membro da nossa equipe poderá entrar em contato via WhatsApp.
+                                        </p>
 
-                                    <!-- Botão de Envio -->
-                                    <div class="form-footer">
-                                        <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
-                                    </div>
-                                </form>
-                        </div>
-                        </div>
-                        <div class="text-center text-secondary mt-3">
-                            Já possui uma conta? <a href="login" tabindex="-1">Entrar</a>
+                                        <!-- Botão de Envio -->
+                                        <div class="form-footer">
+                                            <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            </div>
+                            <div class="text-center text-secondary mt-3">
+                                Já possui uma conta? <a href="login" tabindex="-1">Entrar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                 <?php 
+                    }else{
+                 ?>
+                    <div class="card text-center" style="max-width: 400px; margin: 20px auto;">
+                    <div class="card-body">
+                        <p class="card-text">Selecione um plano válido para continuar.</p>
+                        <a href="planos" class="btn btn-primary">Planos</a>
+                    </div>
+                    </div>
+                 <?php 
+                    }
+                 ?>
                 <!-- Coluna com imagem -->
                 <div class="col-lg d-none d-lg-block">
                     <img src="vendor/images/template/register.svg" height="400" class="d-block mx-auto" alt="">
