@@ -241,7 +241,7 @@ $plano = $decoded;
 
                                         <!-- Botão de Envio -->
                                          <div class="row">
-                                         <div class="form-check mb-3 col-md-6">
+                                         <div class="form-check mb-3 mt-2 col-md-6">
                                         
                                         <input type="checkbox" class="form-check-input" id="agreeCheck">
                                         <label class="form-check-label" for="agreeCheck">
