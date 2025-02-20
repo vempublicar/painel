@@ -11,7 +11,24 @@
       </h1>
       <div class="m-auto d-print-none ">
         <div class="btn-list d-none d-sm-block">
-          <?php include "app/private/parts/botoes-menu.php" ?>
+        <a href="dashboard&setting=minhas-empresas" class="text-secondary m-1" aria-current="true">
+            <i class="bi bi-folder"></i>
+            Minhas Empresas
+            </a>
+            <a href="painel&a=analises" class="text-secondary m-1">
+            <i class="bi bi-graph-up"></i>
+            Minhas Análises
+            </a>
+            <a href="painel&a=treinamento" class="text-secondary m-1">
+            <i class="bi bi-tools"></i> Ferramentas
+            </a>
+            <a href="painel&a=treinamento" class="text-secondary m-1">
+            <i class="bi bi-mortarboard"></i>
+            Treinamento
+            </a>
+            <a href="painel&a=estrategias" class="text-secondary m-1">
+            <i class="bi bi-play"></i>    Estratégias Exclusivas
+            </a>
         </div>
       </div>
       <!-- Offcanvas para o menu (dispositivos pequenos) -->
@@ -22,7 +39,24 @@
         </div>
         <div class="offcanvas-body">
           <div class="icon-buttons d-block me-3">
-          <?php include "app/private/parts/botoes-menu.php" ?>
+          <a href="dashboard&setting=minhas-empresas" class="btn text-secondary m-1" aria-current="true">
+            <i class="bi bi-folder"></i>
+            Minhas Empresas
+            </a>
+            <a href="painel&a=analises" class="btn text-secondary m-1">
+            <i class="bi bi-graph-up"></i>
+            Minhas Análises
+            </a>
+            <a href="painel&a=treinamento" class="btn text-secondary m-1">
+            <i class="bi bi-tools"></i> Ferramentas
+            </a>
+            <a href="painel&a=treinamento" class="btn text-secondary m-1">
+            <i class="bi bi-mortarboard"></i>
+            Treinamento
+            </a>
+            <a href="painel&a=estrategias" class="btn text-secondary m-1">
+            <i class="bi bi-play"></i>    Estratégias Exclusivas
+            </a>
           </div>
         </div>
       </div>
