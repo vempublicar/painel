@@ -35,13 +35,13 @@
       </h1>
       <div class="btn-list">
         <div class="d-none d-lg-inline-block">
-          <a href="#" title="Metas" class="btn btn-square btn-outline-purple">
+          <a href="#" title="Metas" class="btn btn-link">
             <i class="fas fa-crosshairs m-2"></i>Vídeos
           </a>
-          <a href="#" title="Relatório" class="btn btn-square btn-outline-teal">
+          <a href="#" title="Relatório" class="btn btn-link">
             <i class="fas fa-tasks m-2"></i>Ferramentas
           </a>
-          <a href="#" title="Kpis" class="btn btn-square btn-outline-azure">
+          <a href="#" title="Kpis" class="btn btn-link">
             <i class="fas fa-chart-line m-2"></i>Multi-Empresas
           </a>
           

@@ -23,7 +23,7 @@
 <div class="sub-menu">
   <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
-      <i class="bi bi-speedometer2"></i>
+      <i class="bi bi-speedometer2">a</i>
     </a>
     <a href="#" title="Relatório" class="btn btn-square btn-outline-secondary">
       <i class="bi bi-bar-chart-line"></i>
