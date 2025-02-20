@@ -37,122 +37,128 @@
                                      class="navbar-brand-image">
                             </a>
                         </div>
-                        <div class="card ">
-                            <div class="card-body">
-                                <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
+                        <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
                                 <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
                                     <!-- Linha com duas colunas: Empresa e Contato -->
                                     <div class="row">
                                         <!-- Cadastro da Empresa -->
-                                        <div class="col-md-6">
-                                            <h4 class="mb-3">Cadastro da Empresa</h4>
-                                            <!-- Plano Escolhido (readonly) -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Plano Escolhido</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="plano"
-                                                       value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
-                                                       readonly>
-                                            </div>
-                                            <!-- Nome da Empresa -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Nome da Empresa</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="nome_empresa"
-                                                       required>
-                                            </div>
-                                            <!-- CNPJ ou CPF -->
-                                            <div class="mb-3">
-                                                <label class="form-label">CNPJ ou CPF</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="cnpj_cpf"
-                                                       id="cnpjCpf"
-                                                       required
-                                                       placeholder="00.000.000/0000-00 ou 000.000.000-00">
-                                            </div>
-                                            <!-- CEP -->
-                                            <div class="mb-3">
-                                                <label class="form-label">CEP</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="cep"
-                                                       id="cep"
-                                                       placeholder="00000-000"
-                                                       required>
-                                            </div>
-                                            <!-- Cidade, Estado e Endereço (readonly) -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Cidade</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="cidade"
-                                                       id="cidade"
-                                                       readonly>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Estado</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="estado"
-                                                       id="estado"
-                                                       readonly>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Endereço</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="endereco"
-                                                       id="endereco"
-                                                       readonly>
-                                            </div>
-                                            <!-- Número -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Número</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="numero"
-                                                       required>
-                                            </div>
-                                            <!-- Faturamento -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Faturamento Atual</label>
-                                                <select class="form-select" name="faturamento" required>
-                                                    <option value="">Selecione...</option>
-                                                    <option value="1 a 10 mil">1 a 10 mil</option>
-                                                    <option value="10 a 30 mil">10 a 30 mil</option>
-                                                    <option value="30 a 60 mil">30 a 60 mil</option>
-                                                    <option value="Acima de 60 mil">Acima de 60 mil</option>
-                                                </select>
+                                        <div class="card ">
+                                            <div class="card-body">
+                                                    <div class="col-md-6">
+                                                        <h4 class="mb-3">Cadastro da Empresa</h4>
+                                                        <!-- Plano Escolhido (readonly) -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Plano Escolhido</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="plano"
+                                                                value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
+                                                                readonly>
+                                                        </div>
+                                                        <!-- Nome da Empresa -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Nome da Empresa</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="nome_empresa"
+                                                                required>
+                                                        </div>
+                                                        <!-- CNPJ ou CPF -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">CNPJ ou CPF</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="cnpj_cpf"
+                                                                id="cnpjCpf"
+                                                                required
+                                                                placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                                                        </div>
+                                                        <!-- CEP -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">CEP</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="cep"
+                                                                id="cep"
+                                                                placeholder="00000-000"
+                                                                required>
+                                                        </div>
+                                                        <!-- Cidade, Estado e Endereço (readonly) -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Cidade</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="cidade"
+                                                                id="cidade"
+                                                                readonly>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Estado</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="estado"
+                                                                id="estado"
+                                                                readonly>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Endereço</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="endereco"
+                                                                id="endereco"
+                                                                readonly>
+                                                        </div>
+                                                        <!-- Número -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Número</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="numero"
+                                                                required>
+                                                        </div>
+                                                        <!-- Faturamento -->
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Faturamento Atual</label>
+                                                            <select class="form-select" name="faturamento" required>
+                                                                <option value="">Selecione...</option>
+                                                                <option value="1 a 10 mil">1 a 10 mil</option>
+                                                                <option value="10 a 30 mil">10 a 30 mil</option>
+                                                                <option value="30 a 60 mil">30 a 60 mil</option>
+                                                                <option value="Acima de 60 mil">Acima de 60 mil</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                         <!-- Contato -->
-                                        <div class="col-md-6">
-                                            <h4 class="mb-3">Contato</h4>
-                                            <!-- Nome Completo -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Nome Completo</label>
-                                                <input type="text" class="form-control" name="name" required>
+                                        <div class="card ">
+                                            <div class="card-body">
+                                                <div class="col-md-6">
+                                                    <h4 class="mb-3">Contato</h4>
+                                                    <!-- Nome Completo -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Nome Completo</label>
+                                                        <input type="text" class="form-control" name="name" required>
+                                                    </div>
+                                                    <!-- Email -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Email</label>
+                                                        <input type="email" class="form-control" name="email-username" required>
+                                                    </div>
+                                                    <!-- WhatsApp -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">WhatsApp</label>
+                                                        <input type="text"
+                                                            class="form-control"
+                                                            name="whatsapp"
+                                                            id="whatsapp"
+                                                            placeholder="(00) 00000-0000"
+                                                            required>
+                                                    </div>
+                                                    <!-- Senha gerada (hidden) -->
+                                                    <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
+                                                </div>
                                             </div>
-                                            <!-- Email -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Email</label>
-                                                <input type="email" class="form-control" name="email-username" required>
-                                            </div>
-                                            <!-- WhatsApp -->
-                                            <div class="mb-3">
-                                                <label class="form-label">WhatsApp</label>
-                                                <input type="text"
-                                                       class="form-control"
-                                                       name="whatsapp"
-                                                       id="whatsapp"
-                                                       placeholder="(00) 00000-0000"
-                                                       required>
-                                            </div>
-                                            <!-- Senha gerada (hidden) -->
-                                            <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
                                         </div>
                                     </div>
 
@@ -168,8 +174,6 @@
                                         <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
                         <div class="text-center text-secondary mt-3">
                             Já possui uma conta? <a href="login" tabindex="-1">Entrar</a>
                         </div>
