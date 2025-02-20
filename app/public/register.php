@@ -232,7 +232,7 @@ $plano = $decoded;
                                                 </li>
                                                 </ul>
                                             </div>
-                                                <p><b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b></p>
+                                                <p class="text-center m-1" ><b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b></p>
                                         </div>
 
                                         <!-- Botão de Envio -->
