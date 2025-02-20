@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="d-flex">   
-        <a class="text-secondary d-sm-none d-md-block" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
+        <a class="text-secondary d-sm-none d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
             <i class="fas fa-list m-2"></i> 
           </a>
           <a href="painel" title="Início" class=" d-block">
