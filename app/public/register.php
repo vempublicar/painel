@@ -75,7 +75,7 @@ $plano = $decoded;
                                             <!-- Cadastro da Empresa -->
                                             
                                                         <div class="col-md-6">
-                                                            <h4 class="mb-3">Cadastro da Empresa</h4>
+                                                            <h4 class="mb-3 text-primary ">Cadastro da Empresa</h4>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <!-- Nome da Empresa -->
@@ -169,7 +169,7 @@ $plano = $decoded;
                                                             </div>   
                                                         </div>
                                                     <div class="col-md-6">
-                                                        <h4 class="mb-3">Contato</h4>
+                                                        <h4 class="mb-3 text-primary ">Contato</h4>
                                                         <!-- Nome Completo -->
                                                         <div class="mb-3">
                                                             <label class="form-label">Nome Completo</label>
