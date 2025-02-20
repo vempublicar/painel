@@ -46,7 +46,7 @@
                         <div class="card card-md">
                             <div class="card-body">
                                 <h2 class="h2 text-center mb-4">Painel de gestão</h2>
-                                <form action="function/auth/login-logic.php" method="post" autocomplete="on" novalidate>
+                                <form action="functions/auth/login_access.php" method="post" autocomplete="on" novalidate>
                                     <div class="mb-3">
                                         <label class="form-label">Email </label>
                                         <input type="email" class="form-control" name="email-username" placeholder="nome@email.com" autocomplete="on">
