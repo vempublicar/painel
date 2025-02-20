@@ -212,8 +212,16 @@ $plano = $decoded;
                                         </p>
 
                                         <!-- Botão de Envio -->
+                                        <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="agreeCheck">
+                                        <label class="form-check-label" for="agreeCheck">
+                                            Ao cadastrar, você concorda com nossos 
+                                            <a href="https://fepacoc.com/termos" target="_blank">Termos de Uso</a> e 
+                                            <a href="https://fepacoc.com/politica-privacidade" target="_blank">Política de Privacidade</a>.
+                                        </label>
+                                        </div>
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
+                                        <button type="submit" class="btn btn-indigo w-100" id="submitBtn" disabled>Registrar</button>
                                         </div>
                                     </form>
                             </div>
@@ -246,6 +254,11 @@ $plano = $decoded;
     <!-- jQuery e Máscara -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        document.getElementById('agreeCheck').addEventListener('change', function() {
+            document.getElementById('submitBtn').disabled = !this.checked;
+        });
+    </script>
     <script>
       $(document).ready(function() {
         // Máscaras
