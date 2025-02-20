@@ -11,23 +11,23 @@
       </h1>
       <div class="m-auto d-print-none ">
         <div class="btn-list d-none d-sm-block">
-        <a href="dashboard&setting=minhas-empresas" class="text-secondary btn m-1" aria-current="true">
-            <i class="bi bi-folder"></i>
+        <a href="dashboard&setting=minhas-empresas" class="text-secondary btn " aria-current="true">
+            <i class="bi bi-folder me-2"></i>
             Minhas Empresas
             </a>
-            <a href="painel&a=analises" class="text-secondary btn m-1">
-            <i class="bi bi-graph-up"></i>
+            <a href="painel&a=analises" class="text-secondary btn ">
+            <i class="bi bi-graph-up me-2"></i>
             Minhas Análises
             </a>
-            <a href="painel&a=treinamento" class="text-secondary btn m-1">
-            <i class="bi bi-tools"></i> Ferramentas
+            <a href="painel&a=treinamento" class="text-secondary btn ">
+            <i class="bi bi-tools me-2"></i> Ferramentas
             </a>
-            <a href="painel&a=treinamento" class="text-secondary btn m-1">
-            <i class="bi bi-mortarboard"></i>
+            <a href="painel&a=treinamento" class="text-secondary btn ">
+            <i class="bi bi-mortarboard me-2"></i>
             Treinamento
             </a>
-            <a href="painel&a=estrategias" class="text-secondary btn m-1">
-            <i class="bi bi-play"></i>    Estratégias Exclusivas
+            <a href="painel&a=estrategias" class="text-secondary btn ">
+            <i class="bi bi-play me-2"></i>    Estratégias Exclusivas
             </a>
         </div>
       </div>
