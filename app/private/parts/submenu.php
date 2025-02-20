@@ -7,7 +7,7 @@
     height: 100vh; /* 100% da altura da tela */
     width: 60px;  /* Defina a largura desejada para o sidebar */
     background-color: #f8f9fa;
-    padding: 10px 0;
+    padding: 30px 0;
     overflow-y: auto;
     z-index: 1000;
   }
@@ -23,7 +23,7 @@
 <div class="sub-menu">
   <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
-      <i class="bi bi-speedometer2">a</i>
+      <i class="bi bi-speedometer2"></i>
     </a>
     <a href="#" title="Relatório" class="btn btn-square btn-outline-secondary">
       <i class="bi bi-bar-chart-line"></i>

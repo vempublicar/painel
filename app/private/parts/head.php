@@ -15,6 +15,8 @@
     <link href="vendor/css/projeto.css" rel="stylesheet"/>
     <link href="vendor/libs/star-rating.js/dist/star-rating.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
     <style>
       @import url('https://rsms.me/inter/inter.css');
