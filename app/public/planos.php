@@ -154,7 +154,7 @@
     <div class="pricing-header">
     <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="210" alt="Tabler" class="navbar-brand-image">
       <h1><span class="text-primary">Comece agora</span> & mude o futuro da sua empresa.</h1>
-      <p>Aproveite as melhores estratégias para alavancar e ter orgulho dos seus resultados.</p>
+      <p>Aproveite as melhores estratégias e tenha orgulho dos seus resultados.</p>
     </div>
 
     <!-- Seção de planos -->
@@ -184,6 +184,7 @@
           <div>
             <h5>Plano Estratégia</h5>
             <div class="price">R$79,90 <span style="font-size:0.8rem;">/mês</span></div>
+              <span style="font-size:0.8rem;">boleto ou cartão</span>
             <ul>
               <li><i>Acesso a Ferramentas e Vídeos focado em marketing, vendas e atendimento</i></li><hr>
               <li>✔ Suporte exclusivo via WhatsApp</li>
