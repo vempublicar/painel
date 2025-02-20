@@ -230,16 +230,13 @@ $plano = $decoded;
                                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
                                                     ☑ Nos comprometemos a trabalhar em soluções para beneficiar sua empresa, mas entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Se perceber qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
                                                 </li>
-                                                <li>
-                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                                    <b>Entre apenas se você realmente deseja mudar e se comprometer em realizar o que foi proposto. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
-                                                </li>
                                                 </ul>
                                             </div>
                                             </div>
 
                                         <!-- Botão de Envio -->
                                         <div class="form-check mb-3">
+                                        <b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
                                         <input type="checkbox" class="form-check-input" id="agreeCheck">
                                         <label class="form-check-label" for="agreeCheck">
                                             Ao cadastrar, você concorda com nossos 
