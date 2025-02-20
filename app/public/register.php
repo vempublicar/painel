@@ -37,7 +37,7 @@
                                      class="navbar-brand-image">
                             </a>
                         </div>
-                        <div class="card card-md">
+                        <div class="card ">
                             <div class="card-body">
                                 <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
                                 <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
