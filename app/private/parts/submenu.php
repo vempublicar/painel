@@ -8,7 +8,7 @@
     width: 60px;  /* Defina a largura desejada para o sidebar */
     padding: 10px 0;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 998;
     display: flex;
     flex-direction: column;
     justify-content: center;
