@@ -1,6 +1,6 @@
 <div class="page-body">
     <div class="container-xl">
-        <div class="col-sm-12 p-2 mt-6">
+        <div class="col-sm-12 p-2 ">
             <div class="row">
                 <div class="card card-sponsor col-md-7 ">
                     <div class="row m-auto">

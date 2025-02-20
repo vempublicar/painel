@@ -30,9 +30,7 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-            <a href="painel" title="Início" class=" d-block">
-              <i class="fas fa-home m-2"></i>Início
-            </a>
+            
             <a href="painel&a=videos" title="Vídeos" class=" d-block">
               <i class="fas fa-crosshairs m-2"></i>Vídeos
             </a>
@@ -50,6 +48,9 @@
             <i class="fas fa-list m-2"></i> Menu
           </a>
         </div>
+          <a href="painel" title="Início" class=" d-block">
+              <i class="fas fa-home m-2"></i>
+            </a>
         <div class="me-2">
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
