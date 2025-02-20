@@ -8,7 +8,6 @@
     <?php include "app/private/parts/header.php" ?>
     <?php include "app/private/parts/submenu.php" ?>
 
-    <?php 
     <?php
     // Obter os parâmetros GET com valores padrão null
     $a = $_GET['a'] ?? null;
@@ -53,8 +52,6 @@
     }
     ?>
     
-
-    ?>
 
 
     <script src="vendor/libs/apexcharts/dist/apexcharts.min.js" defer></script>
