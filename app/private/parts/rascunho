@@ -1,0 +1,343 @@
+teste
+<!-- <div class="page-header d-print-none" style="margin-top: 65px !important;">
+  <div class="container-xl">
+    <div class="row g-2 align-items-center">
+      <?php if (isset($_GET['empresa'])) { ?>
+        <span class="avatar me-2" style="background-image: url(<?php echo !empty($logo) ? "vendor/images/empresa/" . $logo : 'vendor/images/perfil/avatar.jpg'; ?>)"></span>
+      <?php } ?>
+      <div class="col">
+        <div class="page-pretitle d-none d-sm-inline">
+          <?php
+          if (isset($_GET['n'])) {
+            echo urldecode($_GET['n']);
+          } else { ?>
+          <?php } ?>
+        </div>
+        <h2 class="page-title">
+          <?php
+          if (isset($_GET['pagina'])) {
+            if($_GET['pagina'] == 'empresa'){
+              // echo "Lista de Empresa";
+            }
+          } else {
+            if (isset($_GET['d'])) {
+              echo urldecode($_GET['p']);
+            } elseif (isset($_GET['p'])) {
+              echo urldecode($_GET['p']);
+            }
+          }
+          if (isset($_GET['setting'])) {
+            if($_GET['setting'] == 'minhas-empresas'){
+              echo "Minhas Empresas";
+            }
+          }
+          ?>
+        </h2>
+
+
+
+      </div>
+
+      <div class="col-auto ms-auto d-print-none">
+        <div class="btn-list">
+
+          <?php
+          if (isset($_GET['empresa'])) { ?>
+            <div class="d-none d-lg-inline-block">
+              <a href="dashboard&setting=minhas-empresas" class="btn btn-icon 
+          <?php if (isset($_GET['setting']) && $_GET['setting'] == "minhas-empresas") {
+              echo 'btn-outline-cyan';
+            } ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-category">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 4h6v6h-6z" />
+                  <path d="M14 4h6v6h-6z" />
+                  <path d="M4 14h6v6h-6z" />
+                  <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                </svg>
+              </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Kpis" class="btn btn-icon 
+            <?php if (isset($_GET['p']) && $_GET['p'] == "Kpis") {
+              echo 'btn-outline-cyan';
+            } ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chart-dots-2">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 3v18h18" />
+                  <path d="M9 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M13 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M18 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M21 3l-6 1.5" />
+                  <path d="M14.113 6.65l2.771 3.695" />
+                  <path d="M16 12.5l-5 2" />
+                </svg>
+              </a>
+
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Financeiro&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Financeiro") {
+                echo 'btn-outline-cyan';
+              } ?>">
+                Financeiro
+              </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Estrutura&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Estrutura") {
+                echo 'btn-outline-orange';
+              } ?>">
+                Estrutura </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Produto&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Produto") {
+                echo 'btn-outline-yellow';
+              } ?>">
+                Produto </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Anuncio&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Anuncio") {
+                echo 'btn-outline-indigo';
+              } ?>">
+                Anúncio </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Cliente&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Cliente") {
+                echo 'btn-outline-pink';
+              } ?>">
+                Cliente </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Operacional&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Operacional") {
+                echo 'btn-outline-lime';
+              } ?>">
+                Operacional </a>
+              <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Consistencia&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Consistencia") {
+                echo 'btn-outline-green';
+              } ?>">
+                Consistência </a>
+            </div>
+          <?php } ?>
+
+          <?php if (isset($_GET['setting']) && $_GET['setting'] == 'minhas-empresas') { ?>
+            <span class="d-none d-sm-inline">
+              <a href="dashboard&setting=conta&pagina=empresa" class="btn bg-cyan-lt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 5l0 14" />
+                  <path d="M5 12l14 0" />
+                </svg>
+                Adicionar
+              </a>
+            </span>
+            <a class="btn btn-primary d-lg-none btn-icon" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Create new report">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-indent-decrease">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M20 6l-7 0" />
+                <path d="M20 12l-9 0" />
+                <path d="M20 18l-7 0" />
+                <path d="M8 8l-4 4l4 4" />
+              </svg>
+            </a>
+          <?php } ?>
+          <?php if (isset($_GET['empresa'])) { ?>
+            <a class="btn btn-primary d-lg-none btn-icon" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Create new report">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-indent-decrease">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M20 6l-7 0" />
+                <path d="M20 12l-9 0" />
+                <path d="M20 18l-7 0" />
+                <path d="M8 8l-4 4l4 4" />
+              </svg>
+            </a>
+          <?php } ?>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div> -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEndLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasEndLabel">FEPACOC</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Financeiro&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Financeiro") {
+                echo 'btn-outline-cyan';
+              } ?> w-100 mb-3">
+        Financeiro
+      </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Estrutura&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Estrutura") {
+                echo 'btn-outline-orange';
+              } ?> w-100 mb-3">
+        Estrutura </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Produto&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Produto") {
+                echo 'btn-outline-yellow';
+              } ?> w-100 mb-3">
+        Produto </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Anuncio&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Anuncio") {
+                echo 'btn-outline-indigo';
+              } ?> w-100 mb-3">
+        Anúncio </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Cliente&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Cliente") {
+                echo 'btn-outline-pink';
+              } ?> w-100 mb-3">
+        Cliente </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Operacional&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Operacional") {
+                echo 'btn-outline-lime';
+              } ?> w-100 mb-3">
+        Operacional </a>
+      <a href="dashboard&empresa=<?php echo $empresa_selecionada ?>&n=<?php echo $empresa_nome ?>&p=Consistencia&d=Resumo" class="btn  
+              <?php if (isset($_GET['p']) && $_GET['p'] == "Consistencia") {
+                echo 'btn-outline-green';
+              } ?> w-100 mb-3">
+        Consistência </a>
+    </div>
+  </div>
+</div>
+
+
+------------------------------------------------
+
+<?php
+include "function/data/dados-assinatura.php";
+$userId = $_SESSION['user_id'];
+$cliente_info = isset($_SESSION['cliente_info']['user_info'][0]) ? $_SESSION['cliente_info']['user_info'][0] : null;
+if (!isset($cliente_info['u_nome'])) {
+  $cliente_info = [
+    'u_foto' => '',
+    'u_nome' => 'User',
+    'u_celular' => '',
+    'u_email' => '',
+    'u_nivel' => 1,
+    'id' => null
+  ];
+}
+$nome = htmlspecialchars($cliente_info['u_nome'] ?? 'user');
+$email = htmlspecialchars($_SESSION['user_email']);
+
+$emailCliente = $_SESSION['user_email'];
+$dadosFinanceiro = dadosValida('valida-assinatura', $emailCliente);
+
+$statusAtual = 'Liberado'; $corStatus = 'bg-green'; $liberaAcesso = true;
+// print_r($dadosFinanceiro);
+$statusPlano = $dadosFinanceiro[0]['status'];
+
+if($statusPlano == 'OVERDUE'){$statusAtual = 'Atrasado'; $corStatus = 'bg-orange'; $liberaAcesso = false; }
+elseif($statusPlano == 'UPDATED'){$statusAtual = 'Liberado'; $corStatus = 'bg-info'; $liberaAcesso = true;}
+elseif($statusPlano == 'CONFIRMED'){$statusAtual = 'Liberado'; $corStatus = 'bg-yellow'; $liberaAcesso = true;}
+elseif($statusPlano == 'RECEIVED'){$statusAtual = 'Liberado'; $corStatus = 'bg-green'; $liberaAcesso = true;}
+else{$statusAtual = 'Ativação'; $corStatus = 'bg-secondary'; $liberaAcesso = false;}
+
+?>
+<header class="navbar navbar-expand-md fixed-top d-print-none">
+  <div class="container-xl">
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+    <h1 class="navbar-brand d-none-navbar-horizontal pe-0 pe-md-3">
+      <a href="#" id="logo-branco">
+        <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+      </a>
+      <a href="#" id="logo-escuro">
+        <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+      </a>
+    </h1>
+    <div class="navbar-nav flex-row order-md-last">
+    
+      <div class="d-none d-md-flex">
+        <a href="dashboard" class="nav-link px-0 " title="Dashboard">
+          <!-- Ícone Lua para Modo Escuro -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+          </svg>
+        </a>
+
+        <a href="javascript:void(0)" class="nav-link px-0 hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
+          data-bs-placement="bottom" onclick="toggleTheme()">
+          <!-- Ícone Lua para Modo Escuro -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="nav-link px-0 hide-theme-light" title="Light Mode" data-bs-toggle="tooltip"
+          data-bs-placement="bottom" onclick="toggleTheme()">
+          <!-- Ícone Sol para Modo Claro -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+          </svg>
+        </a>
+        <!-- AMPLIAR TELA -->
+        <a href="#" id="fullscreenToggle" class="nav-link px-0" aria-label="Fullscreen">        
+          <!-- Expand Icon -->
+          <svg id="expandIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-diagonal">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M16 4l4 0l0 4" />
+            <path d="M14 10l6 -6" />
+            <path d="M8 20l-4 0l0 -4" />
+            <path d="M4 20l6 -6" />
+          </svg>
+          <!-- Collapse Icon -->
+
+          <svg id="collapseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-diagonal-minimize-2" style="display: none;">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 10h-4v-4" />
+            <path d="M20 4l-6 6" />
+            <path d="M6 14h4v4" />
+            <path d="M10 14l-6 6" />
+          </svg>
+        </a>
+
+        <div class="nav-item dropdown">          
+          <a href="" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+            <span class="avatar avatar-sm" style="background-image: url(<?php echo !empty($cliente_info['u_foto']) ? "vendor/images/usuario/" . $cliente_info['u_foto'] : 'vendor/images/perfil/avatar.jpg'; ?>)"></span>
+            <div class="d-none d-xl-block ps-2">
+              <div class="small text-center mb-1 <?= $corStatus ?> "><span class=" text-orange-fg"><?= $statusAtual ?></span></div>
+              <div><?php echo strlen($nome) > 12 ? substr($nome, 0, 12) . '...' : $nome; ?></div> 
+              <!-- <div class="mt-1 small text-secondary"><?php echo strlen($email) > 12 ? substr($email, 0, 12) . '...' : $email; ?></div> -->
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+            <!-- <a href="#" class="dropdown-item">Status</a>
+                <a href="dashboard&setting=conta&pagina=perfil" class="dropdown-item">Perfil</a>
+                <a href="#" class="dropdown-item">Feedback</a>
+                <div class="dropdown-divider"></div> -->
+            <a href="dashboard&setting=conta" class="dropdown-item">
+              <div class="row">
+                <div class="col">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
+                </div>
+                <div class="col-6">
+                Conta
+                </div>
+              </div>
+            </a>
+              
+            <a href="logout" class="dropdown-item">
+              <div class="row">
+                <div class="col">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-transfer-out">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 19v2h16v-14l-8 -4l-8 4v2" />
+                    <path d="M13 14h-9" />
+                    <path d="M7 11l-3 3l3 3" />
+                  </svg>
+                </div>
+                <div class="col-6">
+                  Logout
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</header>
