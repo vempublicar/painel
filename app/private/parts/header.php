@@ -20,8 +20,11 @@
           <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
-        <div class="offcanvas-body d-block">
+        <div class="offcanvas-body">
+          <div class="d-block">
+
           <?php include "app/private/parts/botoes-menu.php" ?>
+          </div>
         </div>
       </div>
       <div class="d-flex">   
