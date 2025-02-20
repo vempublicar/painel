@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-5">                    
                         
-                            <?php include "app/private/parts/botoes-menu.php" ?>
+                            
                         
                 </div>
             </div>

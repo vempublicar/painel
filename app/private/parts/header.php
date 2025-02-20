@@ -10,7 +10,7 @@
         </a>
       </h1>
       <div class="m-auto d-print-none ">
-        <div class="btn-list ">
+        <div class="btn-list d-none d-sm-block">
           <?php include "app/private/parts/botoes-menu.php" ?>
         </div>
       </div>
@@ -20,12 +20,12 @@
           <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body d-block">
           <?php include "app/private/parts/botoes-menu.php" ?>
         </div>
       </div>
       <div class="d-flex">   
-        <a class="text-secondary d-sm-none" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
+        <a class="text-secondary d-sm-none d-md-block" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
             <i class="fas fa-list m-2"></i> 
           </a>
           <a href="painel" title="Início" class=" d-block">
