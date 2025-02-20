@@ -210,6 +210,33 @@ $plano = $decoded;
                                             você poderá selecionar o formato de pagamento e, caso esteja dentro do horário comercial,
                                             em breve um membro da nossa equipe poderá entrar em contato via WhatsApp.
                                         </p>
+                                        <div class="card my-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nossos Compromissos</h5>
+                                                <ul class="list-unstyled">
+                                                <li class="mb-2">
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    Não enviaremos e-mail de propaganda (apenas se o usuário assinar a newsletter).
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    Não enviaremos WhatsApp de ofertas de produtos, apenas de suporte ou material estratégico pré-notificado.
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    A qualquer momento, você poderá solicitar a exclusão de seus dados do nosso banco.
+                                                </li>
+                                                <li class="mb-2">
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    Nos comprometemos a trabalhar em soluções para beneficiar sua empresa, mas entendemos que podem ocorrer falhas nos cálculos ou no processamento das informações. Se perceber qualquer inconsistência, solicite suporte especializado; temos um time preparado para resolver.
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                    Entre apenas se você realmente deseja mudar; da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!
+                                                </li>
+                                                </ul>
+                                            </div>
+                                            </div>
 
                                         <!-- Botão de Envio -->
                                         <div class="form-check mb-3">
