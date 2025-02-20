@@ -221,7 +221,7 @@
               <li>✔ Consultor de crescimento full-time.</li>
           </ul>
           <div>
-            <a href="#" class="btn btn-light">Consultor</a>
+            <a href="#" class="btn btn-light"><i class="bi bi-chat-dots me-2"></i> Fale com Consultor</a>
           </div>
         </div>
       </div>
