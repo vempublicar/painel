@@ -17,14 +17,10 @@ painel&a=empresas
                                     Minhas Análises</a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#" class="btn list-group-item list-group-item-action ">
-                                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-list-letters text-info"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 6h9" /><path d="M11 12h9" /><path d="M11 18h9" /><path d="M4 10v-4.5a1.5 1.5 0 0 1 3 0v4.5" /><path d="M4 8h3" /><path d="M4 20h1.5a1.5 1.5 0 0 0 0 -3h-1.5h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6z" /></svg>
-                                    Treinamento</a>
+                                    
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#" class="btn list-group-item list-group-item-action ">
-                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-player-play text-info"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4v16l13 -8z" /></svg>
-                                    Aulas Exclusivas</a>
+                                    
                                 </div>
                                 <!-- <div class="col-6">
                                     <a class="btn list-group-item list-group-item-action" data-bs-toggle="offcanvas" href="#offFinanceiro" role="button" aria-controls="offcanvasStart">
@@ -32,9 +28,7 @@ painel&a=empresas
                                     Financeiro</a>
                                 </div> -->
                                 <div class="col-sm-6">
-                                    <a class="btn list-group-item list-group-item-action" data-bs-toggle="offcanvas" href="#offNotifica" role="button" aria-controls="offcanvasStart">
-                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing text-info"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /><path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727" /><path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727" /></svg>
-                                         Notificação </a>
+                                    
                                 </div>
                             </div>
 </div>
