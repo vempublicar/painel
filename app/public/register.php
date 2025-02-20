@@ -199,7 +199,14 @@
         $('#whatsapp').mask('(00) 00000-0000');
         // Para CPF/CNPJ de modo simples (exemplo):
         // Ajuste conforme a sua necessidade (ex: identificar automaticamente CPF/CNPJ).
-        $('#cnpjCpf').mask('00.000.000/0000-00'); // ou '000.000.000-00' se for só CPF
+        var options = {
+        onKeyPress: function(val, e, field, options) {
+            var mask = (val.replace(/\D/g, '').length > 11) ? '00.000.000/0000-00' : '000.000.000-00';
+            $('#cnpjCpf').mask(mask, options);
+        }
+        };
+
+        $('#cnpjCpf').mask('000.000.000-00', options);
 
         // Habilita/desabilita o botão se os campos obrigatórios estão preenchidos
         $('#registrationForm input[required], #registrationForm select[required]').on('keyup change', function() {
