@@ -15,13 +15,13 @@
         </div>
       </div>
       <!-- Offcanvas para o menu (dispositivos pequenos) -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+      <div class="offcanvas offcanvas-end d-sm-none d-lg-none" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
         </div>
         <div class="offcanvas-body">
-          <div class="card d-block">
+          <div class="icon-buttons d-none d-lg-inline-block me-3">
           <?php include "app/private/parts/botoes-menu.php" ?>
           </div>
         </div>
