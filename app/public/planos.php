@@ -151,8 +151,8 @@
   <div class="container">
     <!-- Título principal e subtítulo -->
     <div class="pricing-header">
-      <h1><span class="text-primary">Comece agora</span> & não olhe para trás.</h1>
-      <p>Aproveite as melhores soluções para alavancar seu negócio</p>
+      <h1><span class="text-primary">Comece agora</span> & mude o futuro da sua empresa.</h1>
+      <p>Aproveite as melhores estratégias para alavancar e ter orgulho dos seus resultados.</p>
     </div>
 
     <!-- Seção de planos -->
@@ -165,7 +165,7 @@
             <h5>Plano Inicial</h5>
             <div class="price">Gratuito</div>
             <ul>
-              <li>Acesso a Ferramentas e Vídeos focados em iniciar a gestão estratégica</li>
+              <li><i>Acesso a Ferramentas e Vídeos focados em iniciar a gestão estratégica</i></li><hr>
               <li>✔ Acesso prioritário a teste de ferramentas</li>
               <li>✔ Agende uma reunião de análise do plano ideal</li>
             </ul>
@@ -183,7 +183,7 @@
             <h5>Plano Estratégia</h5>
             <div class="price">R$79,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
-              <li>Acesso a Ferramentas e Vídeos focado em marketing, vendas e atendimento</li>
+              <li><i>Acesso a Ferramentas e Vídeos focado em marketing, vendas e atendimento</i></li><hr>
               <li>✔ Suporte exclusivo via WhatsApp</li>
               <li>✔ Vídeos estratégicos do seu setor no WhatsApp</li>
             </ul>
@@ -201,7 +201,7 @@
             <h5>Plano Ferramenta</h5>
             <div class="price">R$189,90 <span style="font-size:0.8rem;">/mês</span></div>
             <ul>
-              <li>Acesso completo para criar processos, cultura, gerar vendas e crescimento</li>
+              <li><i>Acesso completo para criar processos, cultura, gerar vendas e crescimento</i></li><hr>
               <li>✔ Sistema de controle exclusivo da FEPACOC</li>
               <li>✔ Lives exclusivas com especialistas</li>
             </ul>
@@ -215,14 +215,13 @@
       <div class="col-md-3">
         <div class="highlight-box h-100 d-flex flex-column justify-content-center">
           <h3>Procurando uma faísca para reacender seu crescimento</h3>
-          <p class="mb-0">
-            Quero um plano personalizado que garante meu sucesso.
-          </p>
           <ul>
+              <li>Quero um plano personalizado que garante meu sucesso.</li>
+              <li>✔ Gestão Estratégica Conjunta.</li>
               <li>✔ Consultor de crescimento full-time.</li>
           </ul>
           <div>
-            <a href="#" class="btn btn-dark">Consultor</a>
+            <a href="#" class="btn btn-light">Consultor</a>
           </div>
         </div>
       </div>
