@@ -9,7 +9,7 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
-      <div class="m-auto d-print-none d-none">
+      <div class="m-auto d-print-none ">
         <div class="btn-list ">
           <?php include "app/private/parts/botoes-menu.php" ?>
         </div>
