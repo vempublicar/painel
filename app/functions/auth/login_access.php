@@ -7,8 +7,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 include '../../conn/connection.php';  // Caminho e nome do arquivo corrigidos
 include '../path/caminho.php';
-include '../email/envia-email.php';
-
+echo 'teste';
 // Verificar se os dados do formulário foram enviados
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coletar dados do formulário
