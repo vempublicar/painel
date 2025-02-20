@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Dashboard - Informações Genéricas</title>
-  <link rel="icon" type="image/x-icon" href="vendor/images/fepacoc/icone.png" />
-  <link href="vendor/css/tabler.min.css" rel="stylesheet" />
-  <link href="vendor/css/tabler-flags.min.css" rel="stylesheet" />
-  <link href="vendor/css/tabler-payments.min.css" rel="stylesheet" />
-  <link href="vendor/css/tabler-vendors.min.css" rel="stylesheet" />
-  <link href="vendor/css/projeto.css" rel="stylesheet"/>
-  <link href="vendor/css/demo.min.css" rel="stylesheet" />
-  <style>
-    @import url('https://rsms.me/inter/inter.css');
-    :root {
-      --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-    }
-    body {
-      font-feature-settings: "cv03", "cv04", "cv11";
-    }
-  </style>
-</head>
-<body>
+
   <header class="navbar d-print-none header1">
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal mb-1">
@@ -139,5 +115,3 @@
       </div>
     </div>
   </header>
-</body>
-</html>
