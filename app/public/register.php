@@ -47,77 +47,81 @@
                                         
                                                     <div class="col-md-6">
                                                         <h4 class="mb-3">Cadastro da Empresa</h4>
-                                                        <!-- Plano Escolhido (readonly) -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Plano Escolhido</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="plano"
-                                                                value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
-                                                                readonly>
-                                                        </div>
-                                                        <!-- Nome da Empresa -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Nome da Empresa</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="nome_empresa"
-                                                                required>
-                                                        </div>
-                                                        <!-- CNPJ ou CPF -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">CNPJ ou CPF</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="cnpj_cpf"
-                                                                id="cnpjCpf"
-                                                                required
-                                                                placeholder="00.000.000/0000-00 ou 000.000.000-00">
-                                                        </div>
-                                                        <!-- CEP -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">CEP</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="cep"
-                                                                id="cep"
-                                                                placeholder="00000-000"
-                                                                required>
-                                                        </div>
-                                                        <!-- Cidade, Estado e Endereço (readonly) -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Cidade</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="cidade"
-                                                                id="cidade"
-                                                                readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Estado</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="estado"
-                                                                id="estado"
-                                                                readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Endereço</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="endereco"
-                                                                id="endereco"
-                                                                readonly>
-                                                        </div>
-                                                        <!-- Número -->
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Número</label>
-                                                            <input type="text"
-                                                                class="form-control"
-                                                                name="numero"
-                                                                required>
-                                                        </div>
-                                                        <!-- Faturamento -->
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <!-- Nome da Empresa -->
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Nome da Empresa</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="nome_empresa"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <!-- CNPJ ou CPF -->
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">CNPJ ou CPF</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="cnpj_cpf"
+                                                                        id="cnpjCpf"
+                                                                        required
+                                                                        placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                                                                </div>                                                                
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <!-- CEP -->
+                                                                    <div class="mb-3">
+                                                                    <label class="form-label">CEP</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="cep"
+                                                                        id="cep"
+                                                                        placeholder="00000-000"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <!-- Número -->
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Número</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="numero"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <!-- Cidade, Estado e Endereço (readonly) -->
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Cidade</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="cidade"
+                                                                        id="cidade"
+                                                                        readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Estado</label>
+                                                                    <input type="text"
+                                                                        class="form-control"
+                                                                        name="estado"
+                                                                        id="estado"
+                                                                        readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Endereço</label>
+                                                                <input type="text"
+                                                                    class="form-control"
+                                                                    name="endereco"
+                                                                    id="endereco"
+                                                                    readonly>
+                                                            </div>
+                                                            <!-- Faturamento -->
                                                         <div class="mb-3">
                                                             <label class="form-label">Faturamento Atual</label>
                                                             <select class="form-select" name="faturamento" required>
@@ -128,6 +132,7 @@
                                                                 <option value="Acima de 60 mil">Acima de 60 mil</option>
                                                             </select>
                                                         </div>
+                                                        </div>   
                                                     </div>
                                                 <div class="col-md-6">
                                                     <h4 class="mb-3">Contato</h4>
@@ -151,6 +156,15 @@
                                                             placeholder="(00) 00000-0000"
                                                             required>
                                                     </div>
+                                                    <!-- Plano Escolhido (readonly) -->
+                                                    <div class="mb-3">
+                                                            <label class="form-label">Plano Escolhido</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="plano"
+                                                                value="<?= isset($_GET['plano']) ? htmlspecialchars($_GET['plano']) : ''; ?>"
+                                                                readonly>
+                                                        </div>
                                                     <!-- Senha gerada (hidden) -->
                                                     <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
                                                 </div>
