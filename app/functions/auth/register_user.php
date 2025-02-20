@@ -14,6 +14,20 @@ function sanitizar($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
+// Função para redirecionar com mensagem
+function redirecionarComMensagem($url, $mensagem) {
+    header("Location: " . BASE_URL . $url . "?msg=" . urlencode($mensagem));
+    exit();
+}
+
+// Função para verificar se o email já está cadastrado
+function emailJaCadastrado($email, $pdo) {
+    $sql = "SELECT id FROM leads WHERE email = :email LIMIT 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['email' => $email]);
+    return $stmt->fetch() ? true : false;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Dados de contato
     $nome = sanitizar($_POST['name']);
@@ -40,21 +54,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         redirecionarComMensagem("cadastro", "Formato de email inválido.");
     }
-    function emailJaCadastrado($email, $pdo) {
-        $sql = "SELECT id FROM leads WHERE email = :email LIMIT 1";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['email' => $email]);
-        return $stmt->fetch() ? true : false;
-    }
-    
-    // Em seu código de registro, logo após sanitizar os dados:
+
+    // Cria a conexão com o banco de dados antes de verificar se o email já está cadastrado
+    $pdo = db_connect();  // Função definida em connection.php
+
     if (emailJaCadastrado($email, $pdo)) {
         redirecionarComMensagem("login", "Email já cadastrado, por favor, faça login.");
     }
 
     try {
-        $pdo = db_connect();  // Função definida em connection.php
-
         // Array de dados para inserir no banco, incluindo os campos adicionais
         $dados = [
             'nome'          => $nome,
@@ -92,8 +100,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: " . BASE_URL . "login");
     exit();
 }
-
-function redirecionarComMensagem($url, $mensagem) {
-    header("Location: " . BASE_URL . $url . "&msg=" . urlencode($mensagem));
-    exit();
-}
+?>
