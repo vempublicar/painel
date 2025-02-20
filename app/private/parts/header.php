@@ -18,7 +18,7 @@
             <i class="bi bi-graph-up me-2"></i>
             Minhas Análises
             </a>
-            <a href="painel&a=treinamento" class="text-secondary btn ">
+            <a href="painel&a=ferramentas" class="text-secondary btn ">
             <i class="bi bi-tools me-2"></i> Ferramentas
             </a>
             <a href="painel&a=treinamento" class="text-secondary btn ">
@@ -46,7 +46,7 @@
             <i class="bi bi-graph-up me-2"></i>
             Minhas Análises
             </a>
-            <a href="painel&a=treinamento" class="btn w-100 m-1">
+            <a href="painel&a=ferramentas" class="btn w-100 m-1">
             <i class="bi bi-tools me-2"></i> Ferramentas
             </a>
             <a href="painel&a=treinamento" class="btn w-100 m-1">

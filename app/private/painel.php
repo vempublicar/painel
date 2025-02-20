@@ -15,7 +15,7 @@
     
     // Verifica a categoria e inclui a página apropriada
     switch ($a) {
-        case 'analise':
+        case 'analises':
             if ($b) {
                 // Lógica para subpágina de empresas (a definir)
                 // include "app/private/paginas/empresas/subpagina.php";
