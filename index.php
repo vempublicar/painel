@@ -16,7 +16,7 @@ if(isset($_GET['pg']) && $_GET['pg'] != ""){
         include "app/public/{$page}.php";        
     }
     if(file_exists($page_private)) { 
-        if(isset($_SESSION['cliente_info']['user_info'][0])) {
+        if(isset($_SESSION['user_email'])) {
             include "app/private/{$page}.php";
         }else{
             header('Location: login');
