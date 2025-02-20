@@ -232,11 +232,12 @@ $plano = $decoded;
                                                 </li>
                                                 </ul>
                                             </div>
+                                            <b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
                                             </div>
 
                                         <!-- Botão de Envio -->
                                         <div class="form-check mb-3">
-                                        <b>Entre apenas se você realmente vai se comprometer em melhorar sua empresa. Da nossa parte, faremos o máximo para que você e sua empresa tenham sucesso!</b>
+                                        
                                         <input type="checkbox" class="form-check-input" id="agreeCheck">
                                         <label class="form-check-label" for="agreeCheck">
                                             Ao cadastrar, você concorda com nossos 
