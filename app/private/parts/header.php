@@ -1,5 +1,28 @@
 <!DOCTYPE html>
-
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Dashboard - Informações Genéricas</title>
+  <link rel="icon" type="image/x-icon" href="vendor/images/fepacoc/icone.png" />
+  <link href="vendor/css/tabler.min.css" rel="stylesheet" />
+  <link href="vendor/css/tabler-flags.min.css" rel="stylesheet" />
+  <link href="vendor/css/tabler-payments.min.css" rel="stylesheet" />
+  <link href="vendor/css/tabler-vendors.min.css" rel="stylesheet" />
+  <link href="vendor/css/projeto.css" rel="stylesheet"/>
+  <link href="vendor/css/demo.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://rsms.me/inter/inter.css');
+    :root {
+      --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    }
+    body {
+      font-feature-settings: "cv03", "cv04", "cv11";
+    }
+  </style>
+</head>
+<body>
   <header class="navbar d-print-none header1">
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal mb-1">
@@ -10,11 +33,23 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
-      <nav class="main-menu">
-          <a href="#">Vídeos</a>
-          <a href="#">Ferramentas</a>
-          <a href="#">Multipla Empresa</a>
-        </nav>
+      <div class="btn-list">
+        <div class="d-none d-lg-inline-block">
+          <a href="#" title="Metas" class="btn btn-square btn-outline-purple">
+            <i class="fas fa-crosshairs m-2"></i>Vídeos
+          </a>
+          <a href="#" title="Relatório" class="btn btn-square btn-outline-teal">
+            <i class="fas fa-tasks m-2"></i>Ferramentas
+          </a>
+          <a href="#" title="Kpis" class="btn btn-square btn-outline-azure">
+            <i class="fas fa-chart-line m-2"></i>Multi-Empresas
+          </a>
+          
+        </div>
+        <a class="btn btn-square d-lg-none btn-icon p-1" data-bs-toggle="offcanvas" href="#offcanvasEnd" aria-label="Menu">
+          <i class="fas fa-list m-2"></i> Menu
+        </a>
+      </div>
       <div class="d-md-flex">
         <div class="me-2">
           <a href="#" class="text-center text-secondary" title="Home">
@@ -89,32 +124,6 @@
         </div>
       </div>
     </div>
-    
   </header>
-
-
-  <div class="sub-menu">
-    <div class="btn-list">
-      <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
-        <i class="bi bi-speedometer2"></i>
-      </a>
-      <a href="#" title="Relatório" class="btn btn-square btn-outline-secondary">
-        <i class="bi bi-bar-chart-line"></i>
-      </a>
-      <a href="#" title="KPIs" class="btn btn-square btn-outline-info">
-        <i class="bi bi-graph-up"></i>
-      </a>
-      <a href="#" title="Financeiro" class="btn btn-square btn-outline-success">
-        <i class="bi bi-currency-dollar"></i>
-      </a>
-      <a href="#" title="Estrutura" class="btn btn-square btn-outline-warning">
-        <i class="bi bi-building"></i>
-      </a>
-      <a href="#" title="Produto" class="btn btn-square btn-outline-danger">
-        <i class="bi bi-tag"></i>
-      </a>
-      <a href="#" title="Anúncio" class="btn btn-square btn-outline-dark">
-        <i class="bi bi-megaphone"></i>
-      </a>
-    </div>
-  </div>
+</body>
+</html>

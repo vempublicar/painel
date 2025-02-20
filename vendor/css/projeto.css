@@ -151,14 +151,3 @@ hr.custom-hr {
     margin: 20px 0;               /* Espaçamento acima e abaixo da linha */
 }
 
-.sub-menu {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    width: 60px; /* ajuste conforme necessário */
-  }
-  .btn-list a {
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
-  }
