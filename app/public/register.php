@@ -37,13 +37,14 @@
                                      class="navbar-brand-image">
                             </a>
                         </div>
+                        <div class="card ">
+                                            <div class="card-body">
                         <h2 class="h2 text-center mb-4">Cadastro de Membro</h2>
                                 <form action="app/functions/auth/register_user.php" method="post" id="registrationForm">
                                     <!-- Linha com duas colunas: Empresa e Contato -->
                                     <div class="row">
                                         <!-- Cadastro da Empresa -->
-                                        <div class="card ">
-                                            <div class="card-body">
+                                        
                                                     <div class="col-md-6">
                                                         <h4 class="mb-3">Cadastro da Empresa</h4>
                                                         <!-- Plano Escolhido (readonly) -->
@@ -128,11 +129,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                            </div>
-                                        </div>
-                                        <!-- Contato -->
-                                        <div class="card ">
-                                            <div class="card-body">
                                                 <div class="col-md-6">
                                                     <h4 class="mb-3">Contato</h4>
                                                     <!-- Nome Completo -->
@@ -158,8 +154,6 @@
                                                     <!-- Senha gerada (hidden) -->
                                                     <input type="hidden" name="password" value="<?= bin2hex(random_bytes(4)); ?>">
                                                 </div>
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <!-- Texto de instruções -->
@@ -174,6 +168,8 @@
                                         <button type="submit" class="btn btn-indigo w-100" id="submitBtn">Registrar</button>
                                     </div>
                                 </form>
+                        </div>
+                        </div>
                         <div class="text-center text-secondary mt-3">
                             Já possui uma conta? <a href="login" tabindex="-1">Entrar</a>
                         </div>
