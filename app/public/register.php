@@ -49,13 +49,7 @@ $plano = $decoded;
 <body class="d-flex flex-column">
     <div class="page page-center">
         <div class="container container-normal py-4">
-            <div class="row align-items-center g-4">
-                <!-- Coluna principal: Formulário -->
-                 <?php 
-                    if($plano != null){
-                 ?>
-                    <div class="">
-                    <div class="text-center mb-4">
+        <div class=" mb-4">
                             <a href="." id="logo-branco">
                                 <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
                             </a>
@@ -63,6 +57,13 @@ $plano = $decoded;
                                 <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
                             </a>
                         </div>
+            <div class="row align-items-center g-4">
+                <!-- Coluna principal: Formulário -->
+                 <?php 
+                    if($plano != null){
+                 ?>
+                    <div class="">
+                    
                         <div class="">
                             <div class="text-center mb-4">
                                 <a href="." id="logo-branco">

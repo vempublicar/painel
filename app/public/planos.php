@@ -149,7 +149,7 @@
 </head>
 <body>
   <div class="container">
-  <div class="text-center mb-4">
+  <div class=" mb-4">
                             <a href="." id="logo-branco">
                                 <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
                             </a>
@@ -578,6 +578,8 @@
       </div>
     </div>
   </div>
+  <script src="vendor/js/tabler.min.js" defer></script>
+  <script src="vendor/js/demo.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
