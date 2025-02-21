@@ -24,7 +24,10 @@
         </div>
       </div>
       
-      <div class="d-flex">   
+      <div class="d-flex">  
+          <a href="painel" title="Início" class=" d-block">
+              <i class="fas fa-home m-2"></i>
+          </a> 
           <a href="painel&a=empresas" class="text-secondary d-sm-none d-lg-none">
               <i class="fas fa-building m-2"></i>
           </a>
@@ -33,9 +36,6 @@
           </a>
           <a href="painel&a=estrategias" class="text-secondary d-sm-none d-lg-none">
               <i class="fas fa-play m-2"></i>
-          </a>
-          <a href="painel" title="Início" class=" d-block">
-              <i class="fas fa-home m-2"></i>
           </a>
         <div class="me-2">
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
