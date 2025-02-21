@@ -1,6 +1,5 @@
 <?php 
 include "app/functions/data/dados.php";
-$_SESSION['minhas_empresas'] = '';
 carregarEmpresasDoUsuario();
 
 $minhas_empresas = $_SESSION['minhas_empresas'];
