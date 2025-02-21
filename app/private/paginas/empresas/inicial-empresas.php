@@ -47,10 +47,16 @@ if(empty($minhas_empresas)) {
                     <div class="card-body">
                         <?php if (!empty($minhas_empresas)): ?>
                             <ul class="list-group">
-                                <?php foreach ($minhas_empresas as $empresa): ?>
-                                    <li class="list-group-item">
-                                        <?= $empresa['empresa']; ?>
-                                        <a href="/painel?empresa=<?= $empresa['cnpj']; ?>" class="btn btn-primary float-end">Abrir Painel</a>
+                                <?php foreach ($minhas_empresas as $id => $empresa): ?>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="image-logo">
+                                            <img src="<?= $empresa['logotipo']; ?>" alt="Logo" style="height: 50px; width: auto;">
+                                        </div>
+                                        <div class="info">
+                                            <strong><?= $empresa['nome_empresa']; ?></strong>
+                                            <div class="text-muted"><?= ucfirst($empresa['cargo']); ?></div>
+                                        </div>
+                                        <a href="/painel?empresa=<?= $empresa['cnpj']; ?>" class="btn btn-primary">Abrir Painel</a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -61,6 +67,7 @@ if(empty($minhas_empresas)) {
                         <?php endif; ?>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
