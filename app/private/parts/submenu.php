@@ -28,14 +28,9 @@
 <?php if(isset($_GET['a']) && $_GET['a'] === 'edit-empresa'){ ?>
 <div class="sub-menu">
   <div class="btn-tools">
-    <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
+    
+    <a href="#" title="Indicadores" class="btn btn-square btn-outline-primary">
       <i class="bi bi-speedometer2"></i>
-    </a>
-    <a href="#" title="Relatório" class="btn btn-square btn-outline-secondary">
-      <i class="bi bi-bar-chart-line"></i>
-    </a>
-    <a href="#" title="KPIs" class="btn btn-square btn-outline-info">
-      <i class="bi bi-graph-up"></i>
     </a>
     <a href="#" title="Financeiro" class="btn btn-square btn-outline-success">
       <i class="bi bi-currency-dollar"></i>
@@ -48,6 +43,12 @@
     </a>
     <a href="#" title="Anúncio" class="btn btn-square btn-outline-dark">
       <i class="bi bi-megaphone"></i>
+    </a>
+    <a href="#" title="Relatório" class="btn btn-square btn-outline-secondary">
+      <i class="bi bi-bar-chart-line"></i>
+    </a>
+    <a href="#" title="KPIs" class="btn btn-square btn-outline-info">
+      <i class="bi bi-graph-up"></i>
     </a>
   </div>
 </div>
