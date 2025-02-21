@@ -2,17 +2,17 @@
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal mb-2">
         <a href="#" id="logo-branco">
-          <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
+          <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
         </a>
         <a href="#" id="logo-escuro">
-          <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
+          <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
         </a>
       </h1>
       <div class="m-auto d-print-none ">
         <div class="d-none d-sm-block">
-            <a href="painel&a=empresas" class="text-secondary btn btn-sm" aria-current="true"><i class="fas fa-building me-2"></i>Minhas Empresas</a>
-            <a href="painel&a=treinamento" class="text-secondary btn btn-sm"><i class="fas fa-graduation-cap me-2"></i>Minhas Análises</a>
-            <a href="painel&a=estrategias" class="text-secondary btn btn-sm"><i class="fas fa-play me-2"></i> Estratégias Exclusivas</a>
+            <a href="painel&a=empresas" class="text-secondary btn " aria-current="true"><i class="fas fa-building me-2"></i>Minhas Empresas</a>
+            <a href="painel&a=treinamento" class="text-secondary btn "><i class="fas fa-graduation-cap me-2"></i>Minhas Análises</a>
+            <a href="painel&a=estrategias" class="text-secondary btn ><i class="fas fa-play me-2"></i> Estratégias Exclusivas</a>
         </div>
       </div>
       
