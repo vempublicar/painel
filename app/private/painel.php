@@ -103,7 +103,7 @@ switch ($a) {
             if ($b) {
                 switch ($b) {
                     case 'radar':
-                        include "app/private/pages/00-resumo/g-kpis.php";
+                        include "app/private/paginas/analise/radar/g-radar.php";
                         break;
                     // Outros cases podem ser adicionados aqui, se necessário
                     default:
@@ -112,7 +112,7 @@ switch ($a) {
                 }
             } else {
                 // Carrega o script do gráfico inicial de radar
-                include "app/private/pages/00-resumo/g-kpis.php";
+                include "app/private/paginas/analise/radar/g-radar.php";
             }
         }
         ?>
