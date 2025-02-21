@@ -9,7 +9,7 @@ $operacional = intval(67);
 $consistencia = intval(21);
 
 ?>
-  <nav class="sidebar">
+  <nav class="navbar navbar-vertical navbar-expand-lg">
     <div class="px-3 mb-3">
       <h2 class="text-white">Menu</h2>
     </div>
