@@ -27,107 +27,52 @@ $consistencia = intval(21);
     <div class="col-lg-12">
       <!-- Cards dos números mágicos abaixo do gráfico de radar -->
       <h3 class="text-info text-center">Números Mágicos</h3>
-        <div class="row">
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                      Receita Online
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Receita Online</h5>
+              <h2 class="card-text">20%</h2>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                      Receita Presencial
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Receita Presencial</h5>
+              <h2 class="card-text">20%</h2>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                      Matéria Prima
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Marketing</h5>
+              <h2 class="card-text">20%</h2>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                      Marketing
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Matéria Prima</h5>
+              <h2 class="card-text">15%</h2>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                      Despesas
-                    </div>
-                  </div>
-                  <div the="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Despesas</h5>
+              <h2 class="card-text">15%</h2>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div the="col-12">
-                    <div class="font-weight-medium text-center">
-                      Margem de Lucro
-                    </div>
-                  </div>
-                  <div the="col-12 text-center mt-2">
-                    <span class="h2 float-right font-weight-medium"></span>
-                    <br>Sua Meta: <small></small>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Margem de Lucro</h5>
+              <h2 class="card-text">10%</h2>
             </div>
           </div>
         </div>
