@@ -1,5 +1,30 @@
 
-    <div class="container mt-5">
+<?Php
+$minhas_empresas = $_SESSION['minhas_empresas'];
+
+if (isset($_GET['c'])) {
+    $empresa_edit = base64_decode($_GET['c']);
+    $cargo = '';
+    $id = '';
+
+    foreach ($minhas_empresas as $empresa) {
+        if ($empresa['cnpj'] === $empresa_edit) {
+            $cargo = $empresa['cargo'];
+            $id = $empresa['id'];
+            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
+        }
+    }
+
+    if ($cargo && $id) {
+        // Faz algo com $cargo e $id
+    } else {
+        // CNPJ não encontrado nas empresas listadas
+        echo "CNPJ não encontrado nas empresas que você administra.";
+    }
+}
+?>
+
+<div class="container mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-6">
@@ -24,48 +49,47 @@
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offReceitaEditar" aria-labelledby="offReceitaEditarLabel">
     <div class="offcanvas-header">
-        <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Despesas</h2>
+        <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Fluxo</h2>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <form action="function/push/empresa-cadastro.php" method="post" enctype="multipart/form-data">
+        <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
                 <input type="hidden" name="emp_ref" id="emp_ref" value="1" class="form-control" readonly>
                 <input type="hidden" name="id" id="id" class="form-control">
                 <input type="hidden" name="tabela" value="financeiro">
-                <input type="hidden" name="indicador" value="financeiro-receita">
+                <input type="hidden" name="indicador" value="fluxo-caixa">
                 <input type="hidden" name="status" value="ativo">
                 <input type="hidden" name="retorno" value="null">
                 <input type="hidden" name="periodo_ref" value="M">
+                <label class="form-label">Data do Resultado</label>
                 <div class="mb-3 col-6">
                     <label class="form-label">Mês</label>
                     <select name="mes_ref" id="mes_ref" class="form-select" required>
-                        <option value="Janeiro">Janeiro</option>
-                        <option value="Fevereiro">Fevereiro</option>
-                        <option value="Março">Março</option>
-                        <option value="Abril">Abril</option>
-                        <option value="Maio">Maio</option>
-                        <option value="Junho">Junho</option>
-                        <option value="Julho">Julho</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Setembro">Setembro</option>
-                        <option value="Outubro">Outubro</option>
-                        <option value="Novembro">Novembro</option>
-                        <option value="Dezembro">Dezembro</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
                     </select>
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label">Ano</label>
-                    <select name="ano_ref" id="ano_ref" class="form-select" required>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024" selected>2024</option>
-                        <option value="2025">2025</option>
+                    <select name="ano_ref" id="ano_ref" class="form-select" required>                        
+                        <option value="2024" >2024</option>
+                        <option value="2025" selected>2025</option>
                         <option value="2026">2026</option>
                     </select>
                 </div>
-                <label class="form-label">Informe das Vendas</label>
+                <label class="form-label">Faturamento Bruto</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text"> Presencial </span>
@@ -78,10 +102,21 @@
                         <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
                     </div>
                 </div>
-                <div class="mb-3 col-12">
-                    <label for="totalReceitaMensal" class="form-label">Total</label>
-                    <input type="text" id="totalReceitaMensal" name="totalReceita" class="form-control bg-blue-lt" readonly>
+                <label class="form-label">Faturado no Mês</label>
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text"> Entrada de Caixa </span>
+                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                    </div>
                 </div>
+                <label class="form-label">Despesa Bruta</label>
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text"> Saída de Caixa </span>
+                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                    </div>
+                </div>
+
             </div>
             <div class="mt-3">
                 <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
