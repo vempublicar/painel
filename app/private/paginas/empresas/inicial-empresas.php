@@ -40,7 +40,7 @@ if(empty($minhas_empresas)) {
                                             <strong><?= $empresa['nome_empresa']; ?></strong>
                                             <div class="text-muted"><?= ucfirst($empresa['cargo']); ?></div>
                                         </div>
-                                        <a href="/painel-empresa&c=<?= base64_encode($empresa['cnpj']); ?>" class="btn btn-primary">Abrir Painel</a>
+                                        <a href="/painel&a=edit-empresa&c=<?= base64_encode($empresa['cnpj']); ?>" class="btn btn-primary">Abrir Painel</a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
