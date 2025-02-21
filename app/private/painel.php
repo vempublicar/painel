@@ -69,13 +69,15 @@ switch ($a) {
         break;
     case 'edit-empresa':
             if ($b) {
-                case 'fluxo-caixa':
-                    include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
-                    break;
-                default:
-                    // Caso não reconhecido, direciona para a página inicial de ferramentas
-                    include "app/private/paginas/ferramentas/inicial-ferramentas.php";
-                    break;
+                switch ($b) {
+                    case 'fluxo-caixa':
+                        include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
+                        break;
+                    default:
+                        // Caso não reconhecido, direciona para a página inicial de ferramentas
+                        include "app/private/paginas/ferramentas/inicial-ferramentas.php";
+                        break;
+                    }
             } else {
                 // Página inicial de empresas
                 include "app/private/paginas/analise/radar/radar.php";
