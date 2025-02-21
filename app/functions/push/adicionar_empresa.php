@@ -53,9 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Tratamento do upload do logotipo
+    // Tratamento do upload do logotipo
     $logotipoPath = null;
     if (isset($_FILES['logotipo']) && $_FILES['logotipo']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = '../empresas/logotipos/';
+        $uploadDir = '../../empresas/logotipos/';
         $fileTmpName = $_FILES['logotipo']['tmp_name'];
         $fileName    = $_FILES['logotipo']['name'];
         $fileSize    = $_FILES['logotipo']['size'];
@@ -75,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Gera um nome único para evitar conflitos
         $newFileName = uniqid('logo_', true) . '.' . $fileExtension;
-        $destination = $newFileName;
+        $destination = $uploadDir . $newFileName; // Corrigido: define o caminho completo de destino
 
         // Cria o diretório se não existir
         if (!is_dir($uploadDir)) {
@@ -90,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $logotipoPath = $destination;
     }
 
+
     try {
         $dados = [
             'nome_empresa'      => $nomeEmpresa,
@@ -103,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'telefone_comercial'=> $telefoneComercial,
             'senha_interna'     => $senhaInterna,
             'compartilha_dados' => $compartilhaDados,
-            'logotipo'          => $logotipoPath
+            'logotipo'          => $newFileName
         ];
 
         $tabela = 'empresa';
