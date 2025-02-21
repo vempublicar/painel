@@ -1,5 +1,5 @@
   <header class="navbar d-print-none header1 p-2">
-    
+    <div class="d-flex">
       <h1 class="d-none-navbar-horizontal">
         <a href="#" id="logo-branco">
           <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
@@ -8,6 +8,8 @@
           <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
         </a>
       </h1>
+
+    </div>
       <div class="m-auto d-print-none ">
         <div class="d-none d-sm-block">
             <a href="painel&a=empresas" class="text-secondary btn " aria-current="true"><i class="fas fa-building me-2"></i>Minhas Empresas</a>
