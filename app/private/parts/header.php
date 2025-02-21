@@ -2,10 +2,10 @@
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal mb-1">
         <a href="#" id="logo-branco">
-          <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
+          <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
         <a href="#" id="logo-escuro">
-          <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="110" height="32" alt="Logo" class="navbar-brand-image mt-2">
+          <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mt-2">
         </a>
       </h1>
       <div class="m-auto d-print-none ">
