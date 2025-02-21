@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Tratamento do upload do logotipo
     $logotipoPath = null;
     if (isset($_FILES['logotipo']) && $_FILES['logotipo']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'vendor/upload/logo/';
+        $uploadDir = '../../vendor/upload/logo/';
         $fileTmpName = $_FILES['logotipo']['tmp_name'];
         $fileName    = $_FILES['logotipo']['name'];
         $fileSize    = $_FILES['logotipo']['size'];
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Gera um nome único para evitar conflitos
         $newFileName = uniqid('logo_', true) . '.' . $fileExtension;
-        $destination = $uploadDir . $newFileName;
+        $destination = $newFileName;
 
         // Cria o diretório se não existir
         if (!is_dir($uploadDir)) {
