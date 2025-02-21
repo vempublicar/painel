@@ -97,7 +97,26 @@ switch ($a) {
     <script src="vendor/js/demo.min.js" defer></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+ 
+    <?php if(isset($_GET['a'])){ ?>
+        <?php if($_GET['a'] == 'edit-empresa'){ 
+                if ($b) {
+                    switch ($b) {
+                        case 'radar':
+                            include "app/private/pages/00-resumo/g-kpis.php";
+                            break;
+                            
+                }else{
+                    //carrega o script do grafico inicial de radar
+                    include "app/private/pages/00-resumo/g-kpis.php";
+                }
+
+                
+            ?>
+        <?php } ?>
         
+
+    <?php } ?>
     </body>
 
 </html>
