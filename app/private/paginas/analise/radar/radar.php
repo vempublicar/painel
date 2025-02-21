@@ -9,40 +9,7 @@ $operacional = intval(67);
 $consistencia = intval(21);
 
 ?>
-  <nav class="sidebar>
-    <div class="container-fluid">
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-brand navbar-brand-autodark">
-    <a href="#" id="logo-escuro">
-        <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
-      </a>
-    </div>
-    <div class="px-3 mb-3">
-      <h2 class="text-white">Menu</h2>
-    </div>
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Usuários</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Configurações</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Relatórios</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Suporte</a>
-      </li>
-    </ul>
-  </div>
-  </nav>
-  <div class="content">
-    <div class="container-fluid">
+
         <div class="modal modal-blur fade" id="modal-full-width" tabindex="-1" style="display: none;" aria-hidden="true">
           <div class="modal-dialog modal-full-width modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -147,8 +114,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-    </div>
-  </div>
+
 
 <div class="floating-button">
     <div class="linha-background bg-cyan"></div>
