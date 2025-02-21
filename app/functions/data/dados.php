@@ -14,7 +14,7 @@ function carregarEmpresasDoUsuario() {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-
+    $_SESSION['minhas_empresas'] = '';
     $usuarioEmail = $_SESSION['user_email'];
 
     // Consulta para buscar operadores vinculados ao usuário
