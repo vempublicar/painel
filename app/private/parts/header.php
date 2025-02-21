@@ -110,18 +110,107 @@
 					<div class="row flex-fill align-items-center">
 						<div class="col">
                   <ul class="navbar-nav">
-                      <li class="nav-item active">
+                      <li class="nav-item <?php if(!isset($_GET['b']) || $_GET['b'] == 'radar'){echo 'active';} ?>">
                         <a class="nav-link" href="./#">                          
                           <span class="nav-link-title">
-                            First
+                            Início
                           </span>
                         </a>
                       </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-                          
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
                           <span class="nav-link-title">
-                            Third
+                            Financeiro
+                          </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./#">
+                              First
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Second
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Third
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
+                          <span class="nav-link-title">
+                            Estrutura
+                          </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./#">
+                              First
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Second
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Third
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
+                          <span class="nav-link-title">
+                            Produto
+                          </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./#">
+                              First
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Second
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Third
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
+                          <span class="nav-link-title">
+                            Anúncio
+                          </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./#">
+                              First
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Second
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Third
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
+                          <span class="nav-link-title">
+                            Cliente
+                          </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./#">
+                              First
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Second
+                            </a>
+                            <a class="dropdown-item" href="./#">
+                              Third
+                            </a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown <?php if($_GET['b'] == 'financeiro'){echo 'active';} ?>"">
+                        <a class="nav-link dropdown-toggle" href="#navbar-third" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">                          
+                          <span class="nav-link-title">
+                            Operacional
                           </span>
                         </a>
                         <div class="dropdown-menu">
