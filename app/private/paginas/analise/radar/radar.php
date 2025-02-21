@@ -28,7 +28,7 @@ $consistencia = intval(21);
       <!-- Cards dos números mágicos abaixo do gráfico de radar -->
       <h3 class="text-info text-center">Números Mágicos</h3>  
       <div class="row">   
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Receita Online</h5>
@@ -36,7 +36,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Receita Presencial</h5>
@@ -44,7 +44,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Marketing</h5>
@@ -52,7 +52,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Matéria Prima</h5>
@@ -60,7 +60,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Despesas</h5>
@@ -68,7 +68,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-2 col-6">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Margem de Lucro</h5>
