@@ -12,45 +12,84 @@
     </div>
 
     <div class="floating-button">
-        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offReceitaEditar" role="button" aria-controls="offReceitaEditar">
-            Adicionar Receita
-        </a>
-    </div>
+    <div class="linha-background bg-cyan"></div>
+    <a class="btn btn-cyan btn-icon text-black" data-bs-toggle="offcanvas" href="#offReceitaEditar" role="button" aria-controls="offcanvasEnd" style="height: 60px; width: 60px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+            <path stroke="none" d="M0 0h24V24H0z" fill="none" />
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+        </svg>
+    </a>
+</div>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offReceitaEditar" aria-labelledby="offReceitaEditarLabel">
-        <div class="offcanvas-header">
-            <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Receita</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <form>
-                <div class="mb-3">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offReceitaEditar" aria-labelledby="offReceitaEditarLabel">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Despesas</h2>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form action="function/push/empresa-cadastro.php" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
+                <input type="hidden" name="emp_ref" id="emp_ref" value="1" class="form-control" readonly>
+                <input type="hidden" name="id" id="id" class="form-control">
+                <input type="hidden" name="tabela" value="financeiro">
+                <input type="hidden" name="indicador" value="financeiro-receita">
+                <input type="hidden" name="status" value="ativo">
+                <input type="hidden" name="retorno" value="null">
+                <input type="hidden" name="periodo_ref" value="M">
+                <div class="mb-3 col-6">
                     <label class="form-label">Mês</label>
-                    <select class="form-select">
+                    <select name="mes_ref" id="mes_ref" class="form-select" required>
                         <option value="Janeiro">Janeiro</option>
                         <option value="Fevereiro">Fevereiro</option>
                         <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-6">
                     <label class="form-label">Ano</label>
-                    <select class="form-select">
+                    <select name="ano_ref" id="ano_ref" class="form-select" required>
+                        <option value="2022">2022</option>
                         <option value="2023">2023</option>
-                        <option value="2024">2024</option>
+                        <option value="2024" selected>2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Receita Online</label>
-                    <input type="text" class="form-control">
+                <label class="form-label">Informe das Vendas</label>
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text"> Presencial </span>
+                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Receita Presencial</label>
-                    <input type="text" class="form-control">
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text"> Digital </span>
+                        <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Salvar</button>
-            </form>
-        </div>
+                <div class="mb-3 col-12">
+                    <label for="totalReceitaMensal" class="form-label">Total</label>
+                    <input type="text" id="totalReceitaMensal" name="totalReceita" class="form-control bg-blue-lt" readonly>
+                </div>
+            </div>
+            <div class="mt-3">
+                <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
+                <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black " data-bs-dismiss="offcanvas">Salvar</button>
+            </div>
+        </form>
     </div>
+</div>
 
     <script>
         const barCtx = document.getElementById('barChart').getContext('2d');
