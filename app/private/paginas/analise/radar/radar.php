@@ -9,24 +9,7 @@ $operacional = intval(67);
 $consistencia = intval(21);
 
 ?>
-<div class="page-header d-print-none">
-  <div class="container container-tight">
-    <div class="row g-3 align-items-center">
-      <div class="col-md-auto ms-auto d-print-none">
-        <div class="btn-list">
-          <a class="btn btn-indigo ms-auto" id="generate-pdf" data-bs-toggle="modal" data-bs-target="#modal-full-width">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-download">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-              <path d="M7 11l5 5l5 -5" />
-              <path d="M12 4l0 12" />
-            </svg>
-            Salvar PDF</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="modal modal-blur fade" id="modal-full-width" tabindex="-1" style="display: none;" aria-hidden="true">
   <div class="modal-dialog modal-full-width modal-dialog-centered" role="document">
     <div class="modal-content">
