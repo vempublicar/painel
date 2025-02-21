@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailComercial   = sanitizar($_POST['email_comercial'] ?? '');
     $telefoneComercial= sanitizar($_POST['telefone_comercial'] ?? '');
     $senhaInterna     = sanitizar($_POST['senha_interna'] ?? '');
-    $compartilhaDados = isset($_POST['compartilha_dados']) ? 'Sim' : 'Não';
+    $compartilhaDados = isset($_POST['compartilha_dados']) ? '1' : '0';
 
     if (empty($nomeEmpresa) || empty($cnpj) || empty($emailComercial)) {
         redirecionarComMensagem("painel&a=empresas", "Por favor, preencha todos os campos obrigatórios.");
