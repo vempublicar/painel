@@ -102,16 +102,16 @@ switch ($a) {
         if (isset($_GET['a']) && $_GET['a'] === 'edit-empresa') {
             // Se $b não estiver definida ou for nula, carrega o gráfico padrão
             if (!isset($b) || is_null($b)) {
-                include "app/private/pages/00-resumo/g-kpis.php";
+                include "app/private/paginas/analise/radar/g-radar.php";
             } else {
                 // Se $b estiver definida e não for nula, utiliza o switch para tratar os casos
                 switch ($b) {
                     case 'radar':
-                        include "app/private/pages/00-resumo/g-kpis.php";
+                        include "app/private/paginas/analise/radar/g-radar.php";
                         break;
                     default:
                         // Opcional: se desejar tratar outros casos, inclua aqui ou defina um comportamento padrão
-                        include "app/private/pages/00-resumo/g-kpis.php";
+                        include "app/private/paginas/analise/radar/g-radar.php";
                         break;
                 }
             }
