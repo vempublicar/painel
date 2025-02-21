@@ -54,15 +54,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $dados = [
-            'nome' => $nomeEmpresa,
+            'nome_empresa' => $nomeEmpresa,
             'cnpj' => $cnpj,
             'cep' => $cep,
             'segmento' => $segmento,
             'setor' => $setor,
             'atividade' => $atividade,
-            'email' => $emailComercial,
-            'telefone' => $telefoneComercial,
-            'senha' => $senhaInterna,
+            'email_comercial' => $emailComercial,
+            'telefone_comercial' => $telefoneComercial,
+            'senha_interna' => $senhaInterna,
             'compartilha_dados' => $compartilhaDados
         ];
 
