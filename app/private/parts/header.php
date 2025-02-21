@@ -18,54 +18,25 @@
             <i class="bi bi-graph-up me-2"></i>
             Minhas Análises
             </a>
-            <a href="painel&a=ferramentas" class="text-secondary btn ">
-            <i class="bi bi-tools me-2"></i> Ferramentas
-            </a>
-            <a href="painel&a=treinamento" class="text-secondary btn ">
-            <i class="bi bi-mortarboard me-2"></i>
-            Treinamento
-            </a>
             <a href="painel&a=estrategias" class="text-secondary btn ">
-            <i class="bi bi-play me-2"></i>    Estratégias Exclusivas
+            <i class="bi bi-play me-2"></i> Estratégias Exclusivas
             </a>
         </div>
       </div>
-      <!-- Offcanvas para o menu (dispositivos pequenos) -->
-      <div class="offcanvas offcanvas-end d-sm-none d-lg-none" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="icon-buttons d-block me-3">
-          <a href="painel&a=empresas" class="btn w-100 m-1" aria-current="true">
-            <i class="bi bi-folder me-2"></i>
-            Minhas Empresas
-            </a>
-            <a href="painel&a=analises" class="btn w-100 m-1">
-            <i class="bi bi-graph-up me-2"></i>
-            Minhas Análises
-            </a>
-            <a href="painel&a=ferramentas" class="btn w-100 m-1">
-            <i class="bi bi-tools me-2"></i> Ferramentas
-            </a>
-            <a href="painel&a=treinamento" class="btn w-100 m-1">
-            <i class="bi bi-mortarboard me-2"></i>
-            Treinamento
-            </a>
-            <a href="painel&a=estrategias" class="btn w-100 m-1">
-            <i class="bi bi-play me-2"></i>    Estratégias Exclusivas
-            </a>
-          </div>
-        </div>
-      </div>
+      
       <div class="d-flex">   
-        <a class="text-secondary d-sm-none d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasMenu" aria-label="Menu">
-            <i class="fas fa-list m-2"></i> 
+          <a href="painel&a=empresas" class="text-secondary d-sm-none d-lg-none">
+              <i class="bi bi-folder me-2"></i>
+          </a>
+          <a href="painel&a=treinamento" class="text-secondary d-sm-none d-lg-none">
+            <i class="bi bi-mortarboard me-2"></i>
+          </a>
+          <a href="painel&a=estrategias" class="text-secondary d-sm-none d-lg-none">
+            <i class="bi bi-play me-2"></i>
           </a>
           <a href="painel" title="Início" class=" d-block">
               <i class="fas fa-home m-2"></i>
-            </a>
+          </a>
         <div class="me-2">
           <a href="javascript:void(0)" class="text-secondary hide-theme-dark" title="Dark Mode" data-bs-toggle="tooltip"
              data-bs-placement="bottom" onclick="toggleTheme()">
