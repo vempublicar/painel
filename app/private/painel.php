@@ -45,7 +45,7 @@ switch ($a) {
     case 'ferramentas':
         if ($b) {
             switch ($b) {
-                case 'fluxo-caixa':
+                case 'okr':
                     include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
                     break;
                 default:
@@ -61,7 +61,7 @@ switch ($a) {
     case 'empresas':
         if ($b) {
             // Lógica para subpágina de empresas (a definir)
-            // include "app/private/paginas/empresas/subpagina.php";
+             
         } else {
             // Página inicial de empresas
             include "app/private/paginas/empresas/inicial-empresas.php";
@@ -69,8 +69,13 @@ switch ($a) {
         break;
     case 'edit-empresa':
             if ($b) {
-                // Lógica para subpágina de empresas (a definir)
-                // include "app/private/paginas/empresas/subpagina.php";
+                case 'fluxo-caixa':
+                    include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
+                    break;
+                default:
+                    // Caso não reconhecido, direciona para a página inicial de ferramentas
+                    include "app/private/paginas/ferramentas/inicial-ferramentas.php";
+                    break;
             } else {
                 // Página inicial de empresas
                 include "app/private/paginas/analise/radar/radar.php";

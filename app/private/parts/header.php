@@ -220,16 +220,15 @@
                             <a class="dropdown-item" href="./#">
                               Second
                             </a>
-                            <a class="dropdown-item" href="./#">
+                            <a class="dropdown-item disabled" href="./#">
                               Third
                             </a>
                           </div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link disabled" href="./#">
-                          
+                        <a class="nav-link " href="painel&a=edit-empresa&b=analise&c=<?= $_GET['c'] ?>">                          
                           <span class="nav-link-title">
-                            Disabled
+                            Análise
                           </span>
                         </a>
                       </li>
