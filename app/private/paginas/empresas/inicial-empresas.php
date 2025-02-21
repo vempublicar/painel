@@ -12,6 +12,18 @@ if(!empty($minhas_empresas)) {
     $empresa['plano'] = $_SESSION['plano'];
     $empresa['plano_escolhido'] = $_SESSION['plano_escolhido'];
     $empresa['webhook'] = $_SESSION['webhook'];
+}else{
+    $empresa['cnpj'] = "";
+    $empresa['empresa'] = "";
+    $empresa['cep'] = "";
+    $empresa['faturamento'] = "";
+    $empresa['cidade'] = "";
+    $empresa['estado'] = "";
+    $empresa['endereco'] = "";
+    $empresa['numero'] = "";
+    $empresa['plano'] = "";
+    $empresa['plano_escolhido'] = "";
+    $empresa['webhook'] = "";
 }
 ?>
 
@@ -61,19 +73,24 @@ if(!empty($minhas_empresas)) {
         <form action="app/functions/push/adicionar_empresa.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
-                <input type="text" class="form-control" id="nomeEmpresa" name="nome_empresa" required>
+                <input type="text" class="form-control" id="nomeEmpresa" value="<?= $empresa['empresa'] ?>" name="nome_empresa" required>
             </div>
             <div class="mb-3">
                 <label for="cnpj" class="form-label">CNPJ</label>
-                <input type="text" class="form-control" id="cnpj" name="cnpj" required>
+                <input type="text" class="form-control" id="cnpj" value="<?= $empresa['cnpj'] ?>" name="cnpj" required>
             </div>
             <div class="mb-3">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" name="cep" required>
+                <input type="text" class="form-control" id="cep" value="<?= $empresa['cep'] ?>" name="cep" required>
             </div>
             <div class="mb-3">
-                <label for="segmento" class="form-label">Segmento</label>
-                <input type="text" class="form-control" id="segmento" name="segmento" required>
+                <label for="segmento" class="form-label">Vende ao Segmento</label>
+                <select class="form-control" id="segmento" name="segmento" required>
+                    <option value="">Selecione um Segmento</option>
+                    <option value="B2C">B2C</option>
+                    <option value="B2B">B2B</option>
+                    <option value="Ambos">Ambos</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="setor-select" class="form-label">Setor</label>
@@ -81,7 +98,7 @@ if(!empty($minhas_empresas)) {
             </div>
             <div class="mb-3">
                 <label for="atividade-select" class="form-label">Atividade</label>
-                <select class="form-select" id="atividade-select" name="atividade" required></select>
+                <select class="form-select" id="atividade-select"  name="atividade" required></select>
             </div>
             <div class="mb-3">
                 <label for="emailComercial" class="form-label">Email Comercial</label>
@@ -89,7 +106,7 @@ if(!empty($minhas_empresas)) {
             </div>
             <div class="mb-3">
                 <label for="telefoneComercial" class="form-label">Telefone Comercial</label>
-                <input type="tel" class="form-control" id="telefoneComercial" name="telefone_comercial" required>
+                <input type="tel" class="form-control" id="telefoneComercial"  name="telefone_comercial" required>
             </div>
             <div class="mb-3">
                 <label for="logotipo" class="form-label">Logotipo</label>
