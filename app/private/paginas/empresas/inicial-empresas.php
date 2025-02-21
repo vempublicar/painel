@@ -6,29 +6,13 @@ $minhas_empresas = $_SESSION['minhas_empresas'];
 print_r($minhas_empresas);
 
 if(empty($minhas_empresas)) {
-    $empresa['cnpj'] = $_SESSION['cnpj_cpf'];
-    $empresa['empresa'] = $_SESSION['nome_empresa'];
-    $empresa['cep'] = $_SESSION['cep'];
-    $empresa['faturamento'] = $_SESSION['faturamento'];
-    $empresa['cidade'] = $_SESSION['cidade'];
-    $empresa['estado'] = $_SESSION['estado'];
-    $empresa['endereco'] = $_SESSION['endereco'];
-    $empresa['numero'] = $_SESSION['numero'];
-    $empresa['plano'] = $_SESSION['plano'];
-    $empresa['plano_escolhido'] = $_SESSION['plano_escolhido'];
-    $empresa['webhook'] = $_SESSION['webhook'];
+    $pre['cnpj'] = $_SESSION['cnpj_cpf'];
+    $pre['empresa'] = $_SESSION['nome_empresa'];
+    $pre['cep'] = $_SESSION['cep'];
 }else{
-    $empresa['cnpj'] = "";
-    $empresa['empresa'] = "";
-    $empresa['cep'] = "";
-    $empresa['faturamento'] = "";
-    $empresa['cidade'] = "";
-    $empresa['estado'] = "";
-    $empresa['endereco'] = "";
-    $empresa['numero'] = "";
-    $empresa['plano'] = "";
-    $empresa['plano_escolhido'] = "";
-    $empresa['webhook'] = "";
+    $pre['cnpj'] = "";
+    $pre['empresa'] = "";
+    $pre['cep'] = "";
 }
 ?>
 
@@ -50,7 +34,7 @@ if(empty($minhas_empresas)) {
                                 <?php foreach ($minhas_empresas as $id => $empresa): ?>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <div class="image-logo">
-                                            <img src="<?= $empresa['logotipo']; ?>" alt="Logo" style="height: 50px; width: auto;">
+                                            <img src="app/empresas/logotipos/<?= $empresa['logotipo']; ?>" alt="Logo" style="height: 50px; width: auto;">
                                         </div>
                                         <div class="info">
                                             <strong><?= $empresa['nome_empresa']; ?></strong>
@@ -82,15 +66,15 @@ if(empty($minhas_empresas)) {
         <form action="app/functions/push/adicionar_empresa.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
-                <input type="text" class="form-control" id="nomeEmpresa" value="<?= $empresa['empresa'] ?>" name="nome_empresa" required>
+                <input type="text" class="form-control" id="nomeEmpresa" value="<?= $pre['empresa'] ?>" name="nome_empresa" required>
             </div>
             <div class="mb-3">
                 <label for="cnpj" class="form-label">CNPJ</label>
-                <input type="text" class="form-control" id="cnpj" value="<?= $empresa['cnpj'] ?>" name="cnpj" required>
+                <input type="text" class="form-control" id="cnpj" value="<?= $pre['cnpj'] ?>" name="cnpj" required>
             </div>
             <div class="mb-3">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" value="<?= $empresa['cep'] ?>" name="cep" required>
+                <input type="text" class="form-control" id="cep" value="<?= $pre['cep'] ?>" name="cep" required>
             </div>
             <div class="mb-3">
                 <label for="segmento" class="form-label">Vende ao Segmento</label>
