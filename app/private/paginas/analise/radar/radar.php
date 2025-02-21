@@ -9,7 +9,7 @@ $operacional = intval(67);
 $consistencia = intval(21);
 
 ?>
-  <nav class="navbar navbar-vertical navbar-expand-lg">
+  <nav class="sidebar>
     <div class="container-fluid">
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
