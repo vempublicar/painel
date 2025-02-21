@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Opcional: validação do tamanho do arquivo (ex.: máximo 2MB)
-        $maxSize = 2 * 2024 * 2024; // 2MB
+        $maxSize = 2 * 1024 * 1024; // 2MB
         if ($fileSize > $maxSize) {
             redirecionarComMensagem("painel&a=empresas", "Arquivo muito grande para logotipo.");
         }
