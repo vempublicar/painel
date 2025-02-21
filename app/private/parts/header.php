@@ -26,13 +26,13 @@
       
       <div class="d-flex">   
           <a href="painel&a=empresas" class="text-secondary d-sm-none d-lg-none">
-              <i class="bi bi-folder me-2"></i>
+              <i class="bi bi-folder m-2"></i>
           </a>
           <a href="painel&a=treinamento" class="text-secondary d-sm-none d-lg-none">
-            <i class="bi bi-mortarboard me-2"></i>
+            <i class="bi bi-mortarboard m-2"></i>
           </a>
           <a href="painel&a=estrategias" class="text-secondary d-sm-none d-lg-none">
-            <i class="bi bi-play me-2"></i>
+            <i class="bi bi-play m-2"></i>
           </a>
           <a href="painel" title="Início" class=" d-block">
               <i class="fas fa-home m-2"></i>
