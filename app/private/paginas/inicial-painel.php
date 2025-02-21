@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="card card-sponsor col-md-7 ">
                     <div class="row m-auto">
-                        <div class="col-sm-5">
+                       <!-- <div class="col-sm-5">
                             <img src="vendor/images/relatorio/magica.png" alt="">
-                        </div>
+                        </div> -->
                         <div class="col m-auto">
                             <h1 class="text-start m-auto"><b class="text-info">Não é mágica!</b><br> É apenas a organização e cálculo dos seus dados para impulsionar seu crescimento.</h1>
                         </div>
