@@ -93,6 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $dados = [
             'nome_empresa'      => $nomeEmpresa,
+            'usuario_criador'   => $_SESSION['user_email'],
             'cnpj'              => $cnpj,
             'cep'               => $cep,
             'segmento'          => $segmento,
@@ -112,6 +113,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute($dados);
+
+        // Segunda inserção: dados do operador
+        $dadosOperador = [
+            'usuario' => $_SESSION['user_email'],
+            'empresa' => $cnpj,
+            'cargo'   => 'proprietario',
+            'status'  => 'ativo'
+        ];
+
+        $tabelaOperadores = 'operadores';
+        $colunasOperadores = implode(", ", array_keys($dadosOperador));
+        $valoresOperadores = ":" . implode(", :", array_keys($dadosOperador));
+        $sqlOperadores = "INSERT INTO $tabelaOperadores ($colunasOperadores) VALUES ($valoresOperadores)";
+
+        $stmtOperadores = $pdo->prepare($sqlOperadores);
+        $stmtOperadores->execute($dadosOperador);
 
         // Caso necessário, descomente a linha para enviar email
         // enviarEmailCadastro($emailComercial, $nomeEmpresa);
