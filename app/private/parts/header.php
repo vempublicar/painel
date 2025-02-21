@@ -124,8 +124,8 @@
                           </span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./#">
-                              First
+                            <a class="dropdown-item" href="painel&a=edit-empresa&b=fluxo-caixa&c=<?= $_GET['c'] ?>">
+                              Fluxo Caixa
                             </a>
                             <a class="dropdown-item" href="./#">
                               Second
