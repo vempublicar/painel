@@ -7,7 +7,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 include '../../conn/connection.php';  // Ajuste o caminho conforme sua estrutura
 include '../path/caminho.php'; // Certifique-se que este caminho está correto e necessário
-include '../email/envia-email.php'; // Inclua se necessário para enviar emails
+//include '../email/envia-email.php'; // Inclua se necessário para enviar emails
 
 // Função para sanitizar dados
 function sanitizar($data) {
@@ -30,15 +30,15 @@ function cnpjJaCadastrado($cnpj, $pdo) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitização dos dados do formulário
-    $nomeEmpresa = sanitizar($_POST['nome_empresa'] ?? '');
-    $cnpj = sanitizar($_POST['cnpj'] ?? '');
-    $cep = sanitizar($_POST['cep'] ?? '');
-    $segmento = sanitizar($_POST['segmento'] ?? '');
-    $setor = sanitizar($_POST['setor'] ?? '');
-    $atividade = sanitizar($_POST['atividade'] ?? '');
-    $emailComercial = sanitizar($_POST['email_comercial'] ?? '');
-    $telefoneComercial = sanitizar($_POST['telefone_comercial'] ?? '');
-    $senhaInterna = sanitizar($_POST['senha_interna'] ?? '');
+    $nomeEmpresa      = sanitizar($_POST['nome_empresa'] ?? '');
+    $cnpj             = sanitizar($_POST['cnpj'] ?? '');
+    $cep              = sanitizar($_POST['cep'] ?? '');
+    $segmento         = sanitizar($_POST['segmento'] ?? '');
+    $setor            = sanitizar($_POST['setor'] ?? '');
+    $atividade        = sanitizar($_POST['atividade'] ?? '');
+    $emailComercial   = sanitizar($_POST['email_comercial'] ?? '');
+    $telefoneComercial= sanitizar($_POST['telefone_comercial'] ?? '');
+    $senhaInterna     = sanitizar($_POST['senha_interna'] ?? '');
     $compartilhaDados = isset($_POST['compartilha_dados']) ? 'Sim' : 'Não';
 
     if (empty($nomeEmpresa) || empty($cnpj) || empty($emailComercial)) {
@@ -52,18 +52,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         redirecionarComMensagem("painel&a=empresas", "CNPJ já cadastrado, por favor, utilize outro CNPJ.");
     }
 
+    // Tratamento do upload do logotipo
+    $logotipoPath = null;
+    if (isset($_FILES['logotipo']) && $_FILES['logotipo']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = 'vendor/upload/logos/';
+        $fileTmpName = $_FILES['logotipo']['tmp_name'];
+        $fileName    = $_FILES['logotipo']['name'];
+        $fileSize    = $_FILES['logotipo']['size'];
+        $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        // Validação da extensão (adicione ou remova conforme necessário)
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+        if (!in_array($fileExtension, $allowedExtensions)) {
+            redirecionarComMensagem("painel&a=empresas", "Tipo de arquivo não permitido para logotipo.");
+        }
+
+        // Opcional: validação do tamanho do arquivo (ex.: máximo 2MB)
+        $maxSize = 2 * 1024 * 1024; // 2MB
+        if ($fileSize > $maxSize) {
+            redirecionarComMensagem("painel&a=empresas", "Arquivo muito grande para logotipo.");
+        }
+
+        // Gera um nome único para evitar conflitos
+        $newFileName = uniqid('logo_', true) . '.' . $fileExtension;
+        $destination = $uploadDir . $newFileName;
+
+        // Cria o diretório se não existir
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        if (!move_uploaded_file($fileTmpName, $destination)) {
+            redirecionarComMensagem("painel&a=empresas", "Erro ao fazer upload do logotipo.");
+        }
+
+        // Define o caminho do logotipo para salvar no banco de dados
+        $logotipoPath = $destination;
+    }
+
     try {
         $dados = [
-            'nome_empresa' => $nomeEmpresa,
-            'cnpj' => $cnpj,
-            'cep' => $cep,
-            'segmento' => $segmento,
-            'setor' => $setor,
-            'atividade' => $atividade,
-            'email_comercial' => $emailComercial,
-            'telefone_comercial' => $telefoneComercial,
-            'senha_interna' => $senhaInterna,
-            'compartilha_dados' => $compartilhaDados
+            'nome_empresa'      => $nomeEmpresa,
+            'cnpj'              => $cnpj,
+            'cep'               => $cep,
+            'segmento'          => $segmento,
+            'setor'             => $setor,
+            'atividade'         => $atividade,
+            'email_comercial'   => $emailComercial,
+            'telefone_comercial'=> $telefoneComercial,
+            'senha_interna'     => $senhaInterna,
+            'compartilha_dados' => $compartilhaDados,
+            'logotipo'          => $logotipoPath
         ];
 
         $tabela = 'empresa';
@@ -74,8 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($dados);
 
-        // Opção para enviar email ou qualquer outra ação pós-cadastro
-        // enviarEmailCadastro($emailComercial, $nomeEmpresa); // Descomente se necessário
+        // Caso necessário, descomente a linha para enviar email
+        // enviarEmailCadastro($emailComercial, $nomeEmpresa);
 
         redirecionarComMensagem("painel&a=empresas", "Empresa cadastrada com sucesso!");
     } catch (PDOException $e) {
