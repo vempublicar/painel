@@ -102,7 +102,7 @@ switch ($a) {
 
                 var telefoneMask = IMask(
                     document.getElementById('telefoneComercial'), {
-                        mask: '(00) 0000-0000[9]',
+                        mask: '(00) 0000-00000',
                         lazy: false // faz com que a máscara seja mostrada sempre
                     });
             });
