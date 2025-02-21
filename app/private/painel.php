@@ -67,7 +67,7 @@ switch ($a) {
             include "app/private/paginas/empresas/inicial-empresas.php";
         }
         break;
-    case 'painel-empresa':
+    case 'edit-empresa':
             if ($b) {
                 // Lógica para subpágina de empresas (a definir)
                 // include "app/private/paginas/empresas/subpagina.php";
