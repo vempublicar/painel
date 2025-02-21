@@ -86,27 +86,9 @@ switch ($a) {
     <!-- Tabler Core -->
     <script src="vendor/js/tabler.min.js" defer></script>
     <script src="vendor/js/demo.min.js" defer></script>
-    <script src="https://unpkg.com/imask"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var cnpjMask = IMask(
-                    document.getElementById('cnpj'), {
-                        mask: '00.000.000/0000-00'
-                    });
-
-                var cepMask = IMask(
-                    document.getElementById('cep'), {
-                        mask: '00000-000'
-                    });
-
-                var telefoneMask = IMask(
-                    document.getElementById('telefoneComercial'), {
-                        mask: '(00) 0000-00000',
-                        lazy: false // faz com que a máscara seja mostrada sempre
-                    });
-            });
-        </script>
+        
     </body>
 
 </html>

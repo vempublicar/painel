@@ -118,7 +118,26 @@ if(empty($minhas_empresas)) {
         </form>
     </div>
 </div>
+<script src="https://unpkg.com/imask"></script>
+<script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var cnpjMask = IMask(
+                    document.getElementById('cnpj'), {
+                        mask: '00.000.000/0000-00'
+                    });
 
+                var cepMask = IMask(
+                    document.getElementById('cep'), {
+                        mask: '00000-000'
+                    });
+
+                var telefoneMask = IMask(
+                    document.getElementById('telefoneComercial'), {
+                        mask: '(00) 0000-00000',
+                        lazy: false // faz com que a máscara seja mostrada sempre
+                    });
+            });
+        </script>
 <script>
 function previewLogotipo(input) {
     if (input.files && input.files[0]) {
