@@ -1,3 +1,9 @@
+<?php  
+print_r($_SESSION);
+//$usuario = $_session['']
+
+?>
+
 <div class="page-body">
     <div class="container-xl">
         <div class="col-sm-12 p-2 ">
