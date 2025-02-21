@@ -101,7 +101,7 @@ switch ($a) {
     <?php
         if (isset($_GET['a']) && $_GET['a'] === 'edit-empresa') {
             // Se $b não estiver definida ou for nula, carrega o gráfico padrão
-            if (!isset($b) || is_null($b)) {
+            if (!isset($_GET['b']) || is_null($b)) {
                 include "app/private/paginas/analise/radar/g-radar.php";
                 echo 'teste';
             } else {
