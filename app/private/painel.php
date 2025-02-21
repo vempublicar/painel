@@ -101,7 +101,7 @@ switch ($a) {
     <?php
         
                         include "app/private/paginas/analise/radar/g-radar.php";
-               
+               echo 'teste';
     ?>
 
 
