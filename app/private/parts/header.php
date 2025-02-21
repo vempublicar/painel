@@ -1,6 +1,6 @@
-  <header class="navbar d-print-none header1 p-1">
+  <header class="navbar d-print-none header1">
     <div class="container-xl">
-      <h1 class="d-none-navbar-horizontal mb-2">
+      <h1 class="d-none-navbar-horizontal">
         <a href="#" id="logo-branco">
           <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
         </a>
