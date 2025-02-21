@@ -1,12 +1,12 @@
 <?php 
 
-$financeiro = intval($financeiroPts);
-$estrutura = intval($estruturaPts);
-$produto = intval($produtosPts);
-$anuncio = intval($anuncioPts);
-$cliente = intval($clientesPts);
-$operacional = intval($operacionalPts);
-$consistencia = intval($consistenciaPts);
+$financeiro = intval(20);
+$estrutura = intval(44);
+$produto = intval(55);
+$anuncio = intval(33);
+$cliente = intval(14);
+$operacional = intval(67);
+$consistencia = intval(21);
 
 ?>
 <div class="page-header d-print-none">
