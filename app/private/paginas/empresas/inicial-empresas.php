@@ -139,31 +139,72 @@ function previewLogotipo(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const setorSelect = document.getElementById('setor-select');
-    const atividadeSelect = document.getElementById('atividade-select');
+let setoresEAtividades = null; // Variável para armazenar os dados JSON
 
-    fetch('vendor/json/atividades.json')
+// Função para carregar os setores e preencher o select
+function carregarSetores(callback) {
+    // Se os dados já foram carregados, apenas preencha o select de setores e execute o callback
+    if (setoresEAtividades) {
+        preencherSelectSetor(callback);
+        return;
+    }
+
+    // Caminho para o arquivo JSON
+    const jsonFile = 'vendor/json/atividades.json';
+
+    // Requisição AJAX para carregar o JSON
+    fetch(jsonFile)
         .then(response => response.json())
         .then(data => {
-            data.forEach(setor => {
-                let option = document.createElement('option');
-                option.value = setor.nome;
-                option.textContent = setor.nome;
-                option.dataset.atividades = JSON.stringify(setor.atividades);
-                setorSelect.appendChild(option);
-            });
-        });
+            setoresEAtividades = data;
+            preencherSelectSetor(callback);
+        })
+        .catch(error => console.error('Erro ao carregar setores e atividades:', error));
+}
 
-    setorSelect.addEventListener('change', function() {
-        atividadeSelect.innerHTML = '';
-        let atividades = JSON.parse(setorSelect.selectedOptions[0].dataset.atividades);
-        atividades.forEach(atividade => {
-            let option = document.createElement('option');
-            option.value = atividade;
-            option.textContent = atividade;
-            atividadeSelect.appendChild(option);
-        });
+function preencherSelectSetor(callback) {
+    const selectSetor = document.getElementById('setor-select');
+    selectSetor.innerHTML = '<option value="">Selecione um setor</option>'; // Limpa e preenche a opção inicial
+
+    // Preenche o select com os setores do JSON
+    setoresEAtividades.forEach(setor => {
+        const option = document.createElement('option');
+        option.value = setor.nome;
+        option.text = setor.nome;
+        selectSetor.appendChild(option);
+
+        // Define as atividades do setor como atributo do option
+        option.setAttribute('data-atividades', JSON.stringify(setor.atividades));
+    });
+
+    if (typeof callback === 'function') callback();
+}
+
+function carregarAtividades(setorSelecionado) {
+    const selectAtividade = document.getElementById('atividade-select');
+    selectAtividade.innerHTML = '<option value="">Selecione uma atividade</option>'; // Limpa e preenche a opção inicial
+
+    // Obtém as atividades do setor selecionado
+    const atividades = JSON.parse(setorSelecionado.getAttribute('data-atividades'));
+
+    // Preenche o select de atividade com as atividades do setor selecionado
+    atividades.forEach(atividade => {
+        const option = document.createElement('option');
+        option.value = atividade;
+        option.text = atividade;
+        selectAtividade.appendChild(option);
+    });
+}
+
+// Adiciona event listeners para carregar os dados ao clicar nos selects
+document.addEventListener('DOMContentLoaded', function() {
+    // Carrega os setores ao carregar a página
+    carregarSetores();
+
+    const selectSetor = document.getElementById('setor-select');
+    selectSetor.addEventListener('change', function() {
+        const setorSelecionado = selectSetor.options[selectSetor.selectedIndex];
+        carregarAtividades(setorSelecionado);
     });
 });
 
