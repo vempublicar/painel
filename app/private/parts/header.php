@@ -3,10 +3,10 @@
   <div class="d-flex align-items-center">
     <h1 class="d-none-navbar-horizontal m-0">
       <a href="#" id="logo-branco">
-        <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
+        <img src="vendor/images/fepacoc/logotipo_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
       </a>
       <a href="#" id="logo-escuro">
-        <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image mb-2">
+        <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
       </a>
     </h1>
   </div>
