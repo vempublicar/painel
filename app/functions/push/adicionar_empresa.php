@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'compartilha_dados' => $compartilhaDados
         ];
 
-        $tabela = 'empresas';
+        $tabela = 'empresa';
         $colunas = implode(", ", array_keys($dados));
         $valores = ":" . implode(", :", array_keys($dados));
         $sql = "INSERT INTO $tabela ($colunas) VALUES ($valores)";
