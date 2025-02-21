@@ -1,6 +1,6 @@
 <?php 
 $minhas_empresas = $_SESSION['minhas_empresas'];
-if(!empty($minhas_empresas)) {
+if(empty($minhas_empresas)) {
     $empresa['cnpj'] = $_SESSION['cnpj_cpf'];
     $empresa['empresa'] = $_SESSION['nome_empresa'];
     $empresa['cep'] = $_SESSION['cep'];
