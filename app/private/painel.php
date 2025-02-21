@@ -9,6 +9,8 @@
     <?php // include "app/private/parts/submenu.php" ?>
 
     <?php
+
+    echo 'teste1';
 // Obter os parâmetros GET com valores padrão null
 $a = $_GET['a'] ?? null;
 $b = $_GET['b'] ?? null;
@@ -101,7 +103,7 @@ switch ($a) {
     <?php
         
                         include "app/private/paginas/analise/radar/g-radar.php";
-               echo 'teste';
+               echo 'teste2';
     ?>
 
 
