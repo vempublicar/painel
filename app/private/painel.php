@@ -101,9 +101,9 @@ switch ($a) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
  
     <?php
-        
+         echo 'teste2';
                         include "app/private/paginas/analise/radar/g-radar.php";
-               echo 'teste2';
+              
     ?>
 
 
