@@ -12,7 +12,6 @@ $consistencia = intval(21);
 <div class="page-header d-print-none">
   <div class="container container-tight">
     <div class="row g-3 align-items-center">
-
       <div class="col-md-auto ms-auto d-print-none">
         <div class="btn-list">
           <a class="btn btn-indigo ms-auto" id="generate-pdf" data-bs-toggle="modal" data-bs-target="#modal-full-width">
@@ -46,16 +45,16 @@ $consistencia = intval(21);
         <div class="card-body p-4">
           <div class="row">
             <div class="col-sm-4 mb-2 d-flex align-items-center justify-content-center">
-              <h3 class="h1 card-title text-info">Desempenho Geral <br><sp class="text-info" ><?= urldecode($_GET['n']) . '</b><br><small class="text-secondary">' . $nomeMes . ' de ' . $anoAtual ?></small></h3>
+              <h3 class="h1 card-title text-info">Desempenho Geral <br><span class="text-info"></span><br><small class="text-secondary"></small></h3>
             </div>
             <div class="col-sm-7 mx-auto justify-content-center ">
               <div id="radarChart" class="mt-1"></div>
             </div>
           </div>
         </div>
-        <h3 class="text-info text-center" >Números Mágicos</h3>
+        <h3 class="text-info text-center">Números Mágicos</h3>
         <div class="row">
-          <div class="col ">
+          <div class="col">
             <div class="card card-sm">
               <div class="card-body">
                 <div class="align-items-center">
@@ -65,15 +64,14 @@ $consistencia = intval(21);
                     </div>
                   </div>
                   <div class="col-12 text-center mt-2">
-                    <?php $cor = determinarCor($dadosAtuais['receita-online'],$metasAtuais['meta-receita-online']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['receita-online'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-receita-online'].'%' ?></small>
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col ">
+          <div class="col">
             <div class="card card-sm">
               <div class="card-body">
                 <div class="align-items-center">
@@ -83,51 +81,48 @@ $consistencia = intval(21);
                     </div>
                   </div>
                   <div class="col-12 text-center mt-2">
-                  <?php $cor = determinarCor($dadosAtuais['receita-presencial'],$metasAtuais['meta-receita-presencial']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['receita-presencial'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-receita-presencial'].'%' ?></small>
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col ">
+          <div class="col">
             <div class="card card-sm">
               <div class="card-body">
                 <div class="align-items-center">
                   <div class="col-12">
                     <div class="font-weight-medium text-center">
-                    Matéria Prima
+                      Matéria Prima
                     </div>
                   </div>
                   <div class="col-12 text-center mt-2">
-                  <?php $cor = determinarCor($dadosAtuais['materia-prima'],$metasAtuais['meta-materia-prima']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['materia-prima'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-materia-prima'].'%' ?></small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>          
-          <div class="col ">
-            <div class="card card-sm">
-              <div class="card-body">
-                <div class="align-items-center">
-                  <div class="col-12">
-                    <div class="font-weight-medium text-center">
-                    Marketing
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mt-2">
-                  <?php $cor = determinarCor($dadosAtuais['marketing'],$metasAtuais['meta-marketing']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['marketing'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-marketing'].'%' ?></small>
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col ">
+          <div class="col">
+            <div class="card card-sm">
+              <div class="card-body">
+                <div class="align-items-center">
+                  <div class="col-12">
+                    <div class="font-weight-medium text-center">
+                      Marketing
+                    </div>
+                  </div>
+                  <div class="col-12 text-center mt-2">
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
             <div class="card card-sm">
               <div class="card-body">
                 <div class="align-items-center">
@@ -136,28 +131,26 @@ $consistencia = intval(21);
                       Despesas
                     </div>
                   </div>
-                  <div class="col-12 text-center mt-2">
-                  <?php $cor = determinarCor($dadosAtuais['folha-pagamento'],$metasAtuais['meta-folha-pagamento']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['folha-pagamento'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-folha-pagamento'].'%' ?></small>
+                  <div the="col-12 text-center mt-2">
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col ">
+          <div class="col">
             <div class="card card-sm">
               <div class="card-body">
                 <div class="align-items-center">
-                  <div class="col-12">
+                  <div the="col-12">
                     <div class="font-weight-medium text-center">
-                    Margem de Lucro
+                      Margem de Lucro
                     </div>
                   </div>
-                  <div class="col-12 text-center mt-2">
-                  <?php $cor = determinarCor($dadosAtuais['margem-lucro'],$metasAtuais['meta-margem-lucro']) ?>
-                    <span class="h2 float-right font-weight-medium text-<?= $cor ?>"><?= $dadosAtuais['margem-lucro'] ?>%</span>
-                    <br>Sua Meta: <small><?php echo $metasAtuais['meta-margem-lucro'].'%' ?></small>
+                  <div the="col-12 text-center mt-2">
+                    <span class="h2 float-right font-weight-medium"></span>
+                    <br>Sua Meta: <small></small>
                   </div>
                 </div>
               </div>
@@ -168,3 +161,4 @@ $consistencia = intval(21);
     </div>
   </div>
 </div>
+
