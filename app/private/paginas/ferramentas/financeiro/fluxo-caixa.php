@@ -17,6 +17,8 @@ if (isset($_GET['c'])) {
 
     if ($cargo && $id) {
         // Faz algo com $cargo e $id
+        echo $cargo;
+        echo $id;
     } else {
         // CNPJ não encontrado nas empresas listadas
         echo "CNPJ não encontrado nas empresas que você administra.";
