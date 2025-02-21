@@ -10,6 +10,7 @@ $consistencia = intval(21);
 
 ?>
   <nav class="navbar navbar-vertical navbar-expand-lg">
+    <div class="container-fluid">
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,6 +39,7 @@ $consistencia = intval(21);
         <a class="nav-link" href="#">Suporte</a>
       </li>
     </ul>
+  </div>
   </nav>
   <div class="content">
     <div class="container-fluid">
