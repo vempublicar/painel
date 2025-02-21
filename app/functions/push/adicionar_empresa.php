@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Tratamento do upload do logotipo
     $logotipoPath = null;
     if (isset($_FILES['logotipo']) && $_FILES['logotipo']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'vendor/upload/logos/';
+        $uploadDir = 'vendor/upload/logo/';
         $fileTmpName = $_FILES['logotipo']['tmp_name'];
         $fileName    = $_FILES['logotipo']['name'];
         $fileSize    = $_FILES['logotipo']['size'];
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Opcional: validação do tamanho do arquivo (ex.: máximo 2MB)
-        $maxSize = 2 * 1024 * 1024; // 2MB
+        $maxSize = 2 * 2024 * 2024; // 2MB
         if ($fileSize > $maxSize) {
             redirecionarComMensagem("painel&a=empresas", "Arquivo muito grande para logotipo.");
         }
