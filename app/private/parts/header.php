@@ -102,6 +102,7 @@
     </div>
   </div>
 </header>
+<?php if(isset($_GET['a']) && $_GET['a'] == 'edit-empresa'){ ?>
 <header class="navbar-expand-md">
 		<div class="navbar-collapse collapse" id="navbar-menu" style="">
 			<div class="navbar">
@@ -110,20 +111,10 @@
 						<div class="col">
                   <ul class="navbar-nav">
                       <li class="nav-item active">
-                        <a class="nav-link" href="./#">
-                          
+                        <a class="nav-link" href="./#">                          
                           <span class="nav-link-title">
                             First
                           </span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="./#">
-                          
-                          <span class="nav-link-title">
-                            Second
-                          </span>
-                          <span class="badge badge-sm bg-red">2</span>
                         </a>
                       </li>
                       <li class="nav-item dropdown">
@@ -160,3 +151,4 @@
 			</div>
 		</div>
 	</header>
+  <?php } ?>
