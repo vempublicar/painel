@@ -118,7 +118,20 @@ if(empty($minhas_empresas)) {
         </form>
     </div>
 </div>
-
+<script>
+$(document).ready(function(){
+    $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
+    $('#cep').mask('00000-000');
+    $('#telefoneComercial').mask('(00) 0000-0000#', {
+        translation: {
+            '#': {
+                pattern: /-|9/,
+                optional: true
+            }
+        }
+    });
+});
+</script>
 <script>
 function previewLogotipo(input) {
     if (input.files && input.files[0]) {
