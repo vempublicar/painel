@@ -1,4 +1,4 @@
-  <header class="navbar d-print-none header1">
+  <header class="navbar d-print-none header1 p-2">
     <div class="container-xl">
       <h1 class="d-none-navbar-horizontal">
         <a href="#" id="logo-branco">
