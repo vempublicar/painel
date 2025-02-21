@@ -26,7 +26,8 @@ $consistencia = intval(21);
   <div class="row">
     <div class="col-lg-12">
       <!-- Cards dos números mágicos abaixo do gráfico de radar -->
-      <h3 class="text-info text-center">Números Mágicos</h3>      
+      <h3 class="text-info text-center">Números Mágicos</h3>  
+      <div class="row">   
         <div class="col">
           <div class="card h-100">
             <div class="card-body text-center">
@@ -75,6 +76,7 @@ $consistencia = intval(21);
             </div>
           </div>
         </div>
+      </div> 
     </div>
     <!-- Coluna esquerda com gráficos e números mágicos -->
     <div class="col-lg-9">
