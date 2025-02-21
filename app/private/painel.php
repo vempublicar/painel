@@ -67,6 +67,15 @@ switch ($a) {
             include "app/private/paginas/empresas/inicial-empresas.php";
         }
         break;
+    case 'painel-empresa':
+            if ($b) {
+                // Lógica para subpágina de empresas (a definir)
+                // include "app/private/paginas/empresas/subpagina.php";
+            } else {
+                // Página inicial de empresas
+                include "app/private/paginas/painel-empresa/resumo-empresa.php";
+            }
+            break;
     default:
         // Se não houver parâmetro ou a categoria não for reconhecida, mostra a página inicial do painel
         include "app/private/paginas/inicial-painel.php";
