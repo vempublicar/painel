@@ -103,6 +103,7 @@ switch ($a) {
             // Se $b não estiver definida ou for nula, carrega o gráfico padrão
             if (!isset($b) || is_null($b)) {
                 include "app/private/paginas/analise/radar/g-radar.php";
+                echo 'teste';
             } else {
                 // Se $b estiver definida e não for nula, utiliza o switch para tratar os casos
                 switch ($b) {
