@@ -9,7 +9,7 @@
         </a>
       </h1>
       <div class="m-auto d-print-none ">
-        <div class="btn-list d-none d-sm-block">
+        <div class="d-none d-sm-block">
             <a href="painel&a=empresas" class="text-secondary" aria-current="true"><i class="fas fa-building m-2"></i>Minhas Empresas</a>
             <a href="painel&a=treinamento" class="text-secondary"><i class="fas fa-graduation-cap m-2"></i>Minhas Análises</a>
             <a href="painel&a=estrategias" class="text-secondary"><i class="fas fa-play m-2"></i> Estratégias Exclusivas</a>
