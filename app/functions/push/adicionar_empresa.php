@@ -22,7 +22,7 @@ function redirecionarComMensagem($url, $mensagem) {
 
 // Função para verificar se o CNPJ já está cadastrado
 function cnpjJaCadastrado($cnpj, $pdo) {
-    $sql = "SELECT id FROM empresas WHERE cnpj = :cnpj LIMIT 1";
+    $sql = "SELECT id FROM empresa WHERE cnpj = :cnpj LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['cnpj' => $cnpj]);
     return $stmt->fetch() ? true : false;
