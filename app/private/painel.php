@@ -98,25 +98,25 @@ switch ($a) {
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
  
-    <?php if(isset($_GET['a'])){ ?>
-        <?php if($_GET['a'] == 'edit-empresa'){ 
-                if ($b) {
-                    switch ($b) {
-                        case 'radar':
-                            include "app/private/pages/00-resumo/g-kpis.php";
-                            break;
-                            
-                }else{
-                    //carrega o script do grafico inicial de radar
-                    include "app/private/pages/00-resumo/g-kpis.php";
+    <?php
+        if (isset($_GET['a']) && $_GET['a'] == 'edit-empresa') {
+            if ($b) {
+                switch ($b) {
+                    case 'radar':
+                        include "app/private/pages/00-resumo/g-kpis.php";
+                        break;
+                    // Outros cases podem ser adicionados aqui, se necessário
+                    default:
+                        // Opcional: comportamento padrão caso nenhum case seja atendido
+                        break;
                 }
+            } else {
+                // Carrega o script do gráfico inicial de radar
+                include "app/private/pages/00-resumo/g-kpis.php";
+            }
+        }
+        ?>
 
-                
-            ?>
-        <?php } ?>
-        
-
-    <?php } ?>
     </body>
 
 </html>
