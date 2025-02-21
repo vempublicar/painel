@@ -52,21 +52,103 @@ if(!empty($minhas_empresas)) {
     </div>
 </div>
 
-<!-- Offcanvas Formulário -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCadastro" aria-labelledby="offcanvasCadastroLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasCadastroLabel">Cadastro de Empresa</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <form action="/cadastrar_empresa" method="post">
-            <!-- Campos do formulário para cadastrar uma nova empresa -->
+        <form action="app/functions/push/adicionar_empresa.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="empresaNome" class="form-label">Nome da Empresa</label>
-                <input type="text" class="form-control" id="empresaNome" name="empresaNome" required>
+                <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
+                <input type="text" class="form-control" id="nomeEmpresa" name="nome_empresa" required>
             </div>
-            <!-- Adicionar mais campos conforme necessário -->
+            <div class="mb-3">
+                <label for="cnpj" class="form-label">CNPJ</label>
+                <input type="text" class="form-control" id="cnpj" name="cnpj" required>
+            </div>
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" required>
+            </div>
+            <div class="mb-3">
+                <label for="segmento" class="form-label">Segmento</label>
+                <input type="text" class="form-control" id="segmento" name="segmento" required>
+            </div>
+            <div class="mb-3">
+                <label for="setor-select" class="form-label">Setor</label>
+                <select class="form-select" id="setor-select" name="setor" required></select>
+            </div>
+            <div class="mb-3">
+                <label for="atividade-select" class="form-label">Atividade</label>
+                <select class="form-select" id="atividade-select" name="atividade" required></select>
+            </div>
+            <div class="mb-3">
+                <label for="emailComercial" class="form-label">Email Comercial</label>
+                <input type="email" class="form-control" id="emailComercial" name="email_comercial" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefoneComercial" class="form-label">Telefone Comercial</label>
+                <input type="tel" class="form-control" id="telefoneComercial" name="telefone_comercial" required>
+            </div>
+            <div class="mb-3">
+                <label for="logotipo" class="form-label">Logotipo</label>
+                <input type="file" class="form-control" id="logotipo" name="logotipo" accept="image/*" onchange="previewLogotipo(this);">
+                <img id="logotipoPreview" src="" alt="Logotipo Preview" style="max-width: 100%; margin-top: 10px; display: none;">
+            </div>
+            <div class="mb-3">
+                <label for="senhaInterna" class="form-label">Senha Interna</label>
+                <input type="password" class="form-control" id="senhaInterna" name="senha_interna" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="compartilhaDados" name="compartilha_dados">
+                <label class="form-check-label" for="compartilhaDados">Compartilhar Dados?</label>
+            </div>
             <button type="submit" class="btn btn-primary">Salvar Empresa</button>
         </form>
     </div>
 </div>
+
+<script>
+function previewLogotipo(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            document.getElementById('logotipoPreview').style.display = 'block';
+            document.getElementById('logotipoPreview').src = e.target.result;
+        };
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const setorSelect = document.getElementById('setor-select');
+    const atividadeSelect = document.getElementById('atividade-select');
+
+    fetch('vendor/json/atividades.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(setor => {
+                let option = document.createElement('option');
+                option.value = setor.nome;
+                option.textContent = setor.nome;
+                option.dataset.atividades = JSON.stringify(setor.atividades);
+                setorSelect.appendChild(option);
+            });
+        });
+
+    setorSelect.addEventListener('change', function() {
+        atividadeSelect.innerHTML = '';
+        let atividades = JSON.parse(setorSelect.selectedOptions[0].dataset.atividades);
+        atividades.forEach(atividade => {
+            let option = document.createElement('option');
+            option.value = atividade;
+            option.textContent = atividade;
+            atividadeSelect.appendChild(option);
+        });
+    });
+});
+
+</script>
+
