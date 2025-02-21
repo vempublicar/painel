@@ -73,7 +73,7 @@ switch ($a) {
                 // include "app/private/paginas/empresas/subpagina.php";
             } else {
                 // Página inicial de empresas
-                include "app/private/paginas/painel-empresa/resumo-empresa.php";
+                include "app/private/paginas/analise/radar/radar.php";
             }
             break;
     default:
