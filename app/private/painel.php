@@ -99,24 +99,9 @@ switch ($a) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
  
     <?php
-        if (isset($_GET['a']) && $_GET['a'] === 'edit-empresa') {
-            // Se $b não estiver definida ou for nula, carrega o gráfico padrão
-            if (!isset($_GET['b']) || is_null($b)) {
-                include "app/private/paginas/analise/radar/g-radar.php";
-                echo 'teste';
-            } else {
-                // Se $b estiver definida e não for nula, utiliza o switch para tratar os casos
-                switch ($b) {
-                    case 'radar':
+        
                         include "app/private/paginas/analise/radar/g-radar.php";
-                        break;
-                    default:
-                        // Opcional: se desejar tratar outros casos, inclua aqui ou defina um comportamento padrão
-                        include "app/private/paginas/analise/radar/g-radar.php";
-                        break;
-                }
-            }
-        }
+               
     ?>
 
 
