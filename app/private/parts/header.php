@@ -11,22 +11,22 @@
       <div class="m-auto d-print-none ">
         <div class="btn-list d-none d-sm-block">
         <a href="painel&a=empresas" class="text-secondary btn " aria-current="true">
-            <i class="bi bi-folder me-2"></i>
+            <i class="fas fa-building m-2"></i>
             Minhas Empresas
             </a>
-            <a href="painel&a=analises" class="text-secondary btn ">
-            <i class="bi bi-graph-up me-2"></i>
+            <a href="painel&a=treinamento" class="text-secondary btn ">
+            <i class="fas fa-graduation-cap m-2"></i>
             Minhas Análises
             </a>
             <a href="painel&a=estrategias" class="text-secondary btn ">
-            <i class="bi bi-play me-2"></i> Estratégias Exclusivas
+            <i class="fas fa-play m-2"></i> Estratégias Exclusivas
             </a>
         </div>
       </div>
       
       <div class="d-flex">   
           <a href="painel&a=empresas" class="text-secondary d-sm-none d-lg-none">
-              <i class="fas fa-folder m-2"></i>
+              <i class="fas fa-building m-2"></i>
           </a>
           <a href="painel&a=treinamento" class="text-secondary d-sm-none d-lg-none">
               <i class="fas fa-graduation-cap m-2"></i>
