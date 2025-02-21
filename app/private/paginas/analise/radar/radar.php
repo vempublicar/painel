@@ -10,6 +10,14 @@ $consistencia = intval(21);
 
 ?>
   <nav class="navbar navbar-vertical navbar-expand-lg">
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-brand navbar-brand-autodark">
+    <a href="#" id="logo-escuro">
+        <img src="vendor/images/fepacoc/logobranco_fepacoc.png" width="100" height="32" alt="Logo" class="navbar-brand-image ">
+      </a>
+    </div>
     <div class="px-3 mb-3">
       <h2 class="text-white">Menu</h2>
     </div>
