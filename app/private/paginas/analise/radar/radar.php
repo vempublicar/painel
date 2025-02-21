@@ -24,7 +24,7 @@ $consistencia = intval(21);
 <div class="page-body">
   <div class="container-xl">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 mb-3">
       <!-- Cards dos números mágicos abaixo do gráfico de radar -->
       <h3 class="text-info text-center">Números Mágicos</h3>  
       <div class="row">   
