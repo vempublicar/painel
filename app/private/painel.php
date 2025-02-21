@@ -6,7 +6,7 @@
     <div class="page" id="page-content">
     
     <?php include "app/private/parts/header.php" ?>
-    <?php // include "app/private/parts/submenu.php" ?>
+    <?php  include "app/private/parts/submenu.php" ?>
 
     <?php
 // Obter os parâmetros GET com valores padrão null

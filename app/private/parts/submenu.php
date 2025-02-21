@@ -25,7 +25,7 @@
   font-size: 1.5rem; /* ou o tamanho desejado */
 }
 </style>
-<?php if(isset($_GET['edit'])){ ?>
+<?php if(isset($_GET['a']) && $_GET['a'] === 'edit-empresa'){ ?>
 <div class="sub-menu">
   <div class="btn-tools">
     <a href="#" title="Metas" class="btn btn-square btn-outline-primary">
