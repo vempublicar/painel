@@ -73,8 +73,7 @@ print_r($financeiro);
                         <th>Ano</th>
                         <th>Faturamento</th>
                         <th>Despesa</th>
-                        <th>Editar</th>
-                        <th>Status</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,13 +106,10 @@ print_r($financeiro);
                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
                                     <i class="fas fa-edit"></i>
-                                </a>                                
-                            </td>
-                            <td>
-                                <!-- Botão para desativar -->
+                                </a>    
                                 <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn" title="Desativar">
                                     <i class="fas fa-ban"></i>
-                                </a>
+                                </a>                            
                             </td>
                         </tr>
                     <?php endforeach; ?>
