@@ -408,122 +408,122 @@ foreach ($dadosFinanceiros as $item) {
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    var dadosParaGrafico = <?php echo json_encode($dadosParaGrafico); ?>;
+            var dadosParaGrafico = <?php echo json_encode($dadosParaGrafico); ?>;
 
-    var chartBarLine;
+            var chartBarLine;
 
-    function updateCharts(period) {
-        var filteredMeses = dadosParaGrafico.meses.slice(-period);
-        var filteredFaturamentoBruto = dadosParaGrafico.faturamento_bruto.slice(-period);
-        var filteredDespesasBrutas = dadosParaGrafico.despesas_brutas.slice(-period);
-        var filteredReceitaLiquida = dadosParaGrafico.receita_liquida.slice(-period);
-        var filteredImpostosPeriodo = dadosParaGrafico.impostos_periodo.slice(-period);
+            function updateCharts(period) {
+                var filteredMeses = dadosParaGrafico.meses.slice(-period);
+                var filteredFaturamentoBruto = dadosParaGrafico.faturamento_bruto.slice(-period);
+                var filteredDespesasBrutas = dadosParaGrafico.despesas_brutas.slice(-period);
+                var filteredReceitaLiquida = dadosParaGrafico.receita_liquida.slice(-period);
+                var filteredImpostosPeriodo = dadosParaGrafico.impostos_periodo.slice(-period);
 
-        var optionsBarLine = {
-            series: [{
-                name: 'Faturamento Bruto',
-                type: 'column',
-                data: filteredFaturamentoBruto
-            }, {
-                name: 'Despesas Brutas',
-                type: 'column',
-                data: filteredDespesasBrutas
-            }, {
-                name: 'Receita Líquida',
-                type: 'line',
-                data: filteredReceitaLiquida
-            }, {
-                name: 'Impostos do Período',
-                type: 'line',
-                data: filteredImpostosPeriodo
-            }],
-            chart: {
-                height: 400,
-                type: 'line',
-            },
-            colors: ['#2bcbba', '#fa4654', '#f66d9b', '#f1c40f'],
-            stroke: {
-                width: [0, 0, 4, 4],
-                curve: 'smooth'
-            },
-            dataLabels: {
-                enabled: false
-            },
-            labels: filteredMeses.map(mes => {
-                const [month, year] = mes.split('-');
-                const monthShort = month.slice(0, 3);
-                return `${monthShort}/${year.slice(-2)}`;
-            }),
-            xaxis: {
-                type: 'category',
-                labels: {
-                    style: {
-                        colors: '#2bcbba',
-                        fontSize: '14px',
-                        fontWeight: 600
-                    }
-                }
-            },
-            yaxis: [{
-                title: {
-                    text: 'Valor (R$)',
-                    style: {
-                        color: '#2bcbba',
-                        fontSize: '16px',
-                        fontWeight: 700
-                    }
-                },
-                labels: {
-                    formatter: function(value) {
-                        return (value / 1000).toLocaleString('pt-BR') + 'k';
+                var optionsBarLine = {
+                    series: [{
+                        name: 'Faturamento Bruto',
+                        type: 'column',
+                        data: filteredFaturamentoBruto
+                    }, {
+                        name: 'Despesas Brutas',
+                        type: 'column',
+                        data: filteredDespesasBrutas
+                    }, {
+                        name: 'Receita Líquida',
+                        type: 'line',
+                        data: filteredReceitaLiquida
+                    }, {
+                        name: 'Impostos do Período',
+                        type: 'line',
+                        data: filteredImpostosPeriodo
+                    }],
+                    chart: {
+                        height: 400,
+                        type: 'line',
                     },
-                    style: {
-                        colors: '#2bcbba',
-                        fontSize: '14px',
-                        fontWeight: 600
+                    colors: ['#2bcbba', '#fa4654', '#f66d9b', '#f1c40f'],
+                    stroke: {
+                        width: [0, 0, 4, 4],
+                        curve: 'smooth'
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    labels: filteredMeses.map(mes => {
+                        const [month, year] = mes.split('-');
+                        const monthShort = month.slice(0, 3);
+                        return `${monthShort}/${year.slice(-2)}`;
+                    }),
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            style: {
+                                colors: '#2bcbba',
+                                fontSize: '14px',
+                                fontWeight: 600
+                            }
+                        }
+                    },
+                    yaxis: [{
+                        title: {
+                            text: 'Valor (R$)',
+                            style: {
+                                color: '#2bcbba',
+                                fontSize: '16px',
+                                fontWeight: 700
+                            }
+                        },
+                        labels: {
+                            formatter: function(value) {
+                                return (value / 1000).toLocaleString('pt-BR') + 'k';
+                            },
+                            style: {
+                                colors: '#2bcbba',
+                                fontSize: '14px',
+                                fontWeight: 600
+                            }
+                        }
+                    }],
+                    legend: {
+                        position: 'bottom',
+                        horizontalAlign: 'center',
+                        floating: false,
+                        labels: {
+                            colors: '#2bcbba'
+                        },
+                        markers: {
+                            width: 12,
+                            height: 12,
+                            radius: 12
+                        }
+                    },
+                    tooltip: {
+                        y: {
+                            formatter: function(value) {
+                                return value.toLocaleString('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                });
+                            }
+                        }
                     }
+                };
+
+                if (chartBarLine) {
+                    chartBarLine.destroy();
                 }
-            }],
-            legend: {
-                position: 'bottom',
-                horizontalAlign: 'center',
-                floating: false,
-                labels: {
-                    colors: '#2bcbba'
-                },
-                markers: {
-                    width: 12,
-                    height: 12,
-                    radius: 12
-                }
-            },
-            tooltip: {
-                y: {
-                    formatter: function(value) {
-                        return value.toLocaleString('pt-BR', {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2
-                        });
-                    }
-                }
+
+                chartBarLine = new ApexCharts(document.querySelector('#chart-receita-mensal'), optionsBarLine);
+                chartBarLine.render();
             }
-        };
 
-        if (chartBarLine) {
-            chartBarLine.destroy();
-        }
+            updateCharts(12);
 
-        chartBarLine = new ApexCharts(document.querySelector('#chart-receita-mensal'), optionsBarLine);
-        chartBarLine.render();
-    }
-
-    updateCharts(12);
-
-    document.getElementById('periodo').addEventListener('change', function() {
-        var period = parseInt(this.value);
-        updateCharts(period);
-    });
-});
+            document.getElementById('periodo').addEventListener('change', function() {
+                var period = parseInt(this.value);
+                updateCharts(period);
+            });
+        });
 
     </script>
 
