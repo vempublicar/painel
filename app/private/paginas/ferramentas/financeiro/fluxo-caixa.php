@@ -107,9 +107,16 @@ print_r($financeiro);
                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
                                     <i class="fas fa-edit"></i>
                                 </a>    
-                                <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn" title="Desativar">
-                                    <i class="fas fa-ban"></i>
-                                </a>                            
+                                <a href="#"
+                                class="btn btn-sm btn-danger open-confirm-modal" 
+                                title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
+                                data-id="<?= $registro['id'] ?>"
+                                data-status="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
+                                data-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
+                                data-indicador="<?= $registro['indicador'] ?>"
+                                data-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
+                                    <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
+                                </a>     
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -122,6 +129,36 @@ print_r($financeiro);
 </div>
 
 </div>
+
+<!-- Modal de Confirmação de Alteração de Status -->
+<!-- Modal de Confirmação de Alteração de Status -->
+<div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+         <h5 class="modal-title" id="confirmStatusModalLabel">Confirmação de Alteração de Status</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+         <p id="confirmText">Deseja realmente alterar o status deste registro?</p>
+         <!-- Formulário para alteração de status -->
+         <form action="alterar_status.php" method="post" id="formAlterarStatus">
+            <input type="hidden" name="id" id="modalId">
+            <input type="hidden" name="status" id="modalStatus">
+            <input type="hidden" name="cnpj" id="modalCnpj">
+            <input type="hidden" name="indicador" id="modalIndicador">
+            <input type="hidden" name="redirectUrl" id="modalRedirectUrl">
+         </form>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+         <button type="submit" form="formAlterarStatus" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="floating-button <?= $editar ?>">
     <div class="linha-background bg-cyan"></div>
@@ -225,6 +262,43 @@ print_r($financeiro);
         </form>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o modal e cria a instância do Bootstrap Modal
+    var confirmModalEl = document.getElementById('confirmStatusModal');
+    var bsModal = new bootstrap.Modal(confirmModalEl);
+    
+    // Associa o evento aos botões com a classe "open-confirm-modal"
+    document.querySelectorAll('.open-confirm-modal').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Obtém os dados do registro a partir dos atributos data-*
+            var recordId     = this.getAttribute('data-id');
+            var newStatus    = this.getAttribute('data-status');
+            var cnpj         = this.getAttribute('data-cnpj');
+            var indicador    = this.getAttribute('data-indicador');
+            var redirectUrl  = this.getAttribute('data-redirect');
+            
+            // Popula os campos ocultos do formulário no modal
+            document.getElementById('modalId').value = recordId;
+            document.getElementById('modalStatus').value = newStatus;
+            document.getElementById('modalCnpj').value = cnpj;
+            document.getElementById('modalIndicador').value = indicador;
+            document.getElementById('modalRedirectUrl').value = redirectUrl;
+            
+            // Atualiza o texto de confirmação de acordo com a ação
+            var confirmText = (newStatus === 'inativo') 
+                ? "Deseja realmente desativar este registro?" 
+                : "Deseja realmente ativar este registro?";
+            document.getElementById('confirmText').textContent = confirmText;
+            
+            // Exibe o modal
+            bsModal.show();
+        });
+    });
+});
+</script>
+
 
 <script>
 // Aguarda o carregamento do DOM
