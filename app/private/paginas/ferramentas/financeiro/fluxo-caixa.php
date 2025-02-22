@@ -55,25 +55,34 @@ $dadosParaGrafico = [
     "impostos_periodo" => []
 ];
 
-foreach ($dadosFinanceiros as $item) {
+foreach ($financeiro as $item) {
     $mesAno = sprintf("%02d-%d", $item['mes'], $item['ano']);
-    
-    $fat_presencial = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['fat_presencial'])));
-    $fat_online = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['fat_online'])));
-    $desp_bruta = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['desp_bruta'])));
-    $rec_liquida = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['rec_liquida'])));
-    $imp_periodo = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['imp_periodo'])));
 
-    $faturamento_bruto = $fat_presencial + $fat_online;
+    // Decodificar os dados JSON corretamente
+    $jsonDados = json_decode($item['json_dados'], true);
 
-    $dadosParaGrafico['meses'][] = $mesAno;
-    $dadosParaGrafico['faturamento_bruto'][] = $faturamento_bruto;
-    $dadosParaGrafico['despesas_brutas'][] = $desp_bruta;
-    $dadosParaGrafico['receita_liquida'][] = $rec_liquida;
-    $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
+    if ($jsonDados) {
+        // Corrigir valores monetários (remover ponto dos milhares e trocar vírgula por ponto)
+        $fat_presencial = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['fat_presencial']));
+        $fat_online = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['fat_online']));
+        $desp_bruta = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['desp_bruta']));
+        $rec_liquida = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['rec_liquida']));
+        $imp_periodo = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['imp_periodo']));
+
+        $faturamento_bruto = $fat_presencial + $fat_online;
+
+        // Adicionar os valores ao array final
+        $dadosParaGrafico['meses'][] = $mesAno;
+        $dadosParaGrafico['faturamento_bruto'][] = $faturamento_bruto;
+        $dadosParaGrafico['despesas_brutas'][] = $desp_bruta;
+        $dadosParaGrafico['receita_liquida'][] = $rec_liquida;
+        $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
+    } else {
+        error_log("Erro ao decodificar JSON para o mês $mesAno");
+    }
 }
 
-print_r ($financeiro);
+
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
