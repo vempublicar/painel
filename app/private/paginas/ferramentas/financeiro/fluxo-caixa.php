@@ -55,7 +55,7 @@ $dadosParaGrafico = [
     "impostos_periodo" => []
 ];
 
-foreach ($financeiro as $item) {
+foreach ($dadosFinanceiros as $item) {
     $mesAno = sprintf("%02d-%d", $item['mes'], $item['ano']);
     
     $fat_presencial = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['fat_presencial'])));
@@ -73,7 +73,7 @@ foreach ($financeiro as $item) {
     $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
 }
 
-print_r ($dadosParaGrafico);
+print_r ($financeiro);
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
