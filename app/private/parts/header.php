@@ -12,7 +12,7 @@
   </div>
 
   <!-- Seção Central: Botões de Navegação -->
-  <div class="d-none d-sm-flex flex-grow-1 justify-content-center">
+  <div class="d-none d-md-flex flex-grow-1 justify-content-center">
     <a href="painel&a=empresas" class="text-secondary me-2" aria-current="true">
       <i class="fas fa-building me-2"></i>Minhas Empresas
     </a>
