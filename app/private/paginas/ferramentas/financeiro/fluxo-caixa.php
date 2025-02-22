@@ -79,16 +79,18 @@ print_r($financeiro);
                 <tbody>
                     <?php foreach ($financeiro as $registro) : ?>
                         <?php
-                        // Decodifica o JSON para obter os dados extras
+                        // Decodifica o JSON para obter os dados extras                        
                         $jsonDados = json_decode($registro['json_dados'], true);
                         $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
+                        $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
+                        $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
+                        $totalFaturamento = $fat_presencial + $fat_online;
                         ?>
-                        <tr>
-                            <td><?= $registro['id'] ?></td>
-                            <td><?= $registro['create_at'] ?></td>
+                        <tr>                            
                             <td><?= $registro['status'] ?></td>
                             <td><?= $registro['mes'] ?></td>
                             <td><?= $registro['ano'] ?></td>
+                            <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
                             <td><?= $desp_bruta ?></td>
                             <td>
                                 <!-- Botão para editar -->
