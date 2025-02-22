@@ -46,14 +46,39 @@ if (!canAccess($cargo, $permiteVisualizar)) {
 }
 $indicador = 'fluxo-caixa';
 $financeiro = fetchFluxoFinanceiro($id, $indicador);
-print_r($financeiro);
+
+$dadosParaGrafico = [
+    "meses" => [],
+    "faturamento_bruto" => [],
+    "despesas_brutas" => [],
+    "receita_liquida" => [],
+    "impostos_periodo" => []
+];
+
+foreach ($dadosFinanceiros as $item) {
+    $mesAno = sprintf("%02d-%d", $item['mes'], $item['ano']);
+    
+    $fat_presencial = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['fat_presencial'])));
+    $fat_online = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['fat_online'])));
+    $desp_bruta = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['desp_bruta'])));
+    $rec_liquida = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['rec_liquida'])));
+    $imp_periodo = floatval(str_replace(',', '.', str_replace('.', '', $item['json_dados']['imp_periodo'])));
+
+    $faturamento_bruto = $fat_presencial + $fat_online;
+
+    $dadosParaGrafico['meses'][] = $mesAno;
+    $dadosParaGrafico['faturamento_bruto'][] = $faturamento_bruto;
+    $dadosParaGrafico['despesas_brutas'][] = $desp_bruta;
+    $dadosParaGrafico['receita_liquida'][] = $rec_liquida;
+    $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
+}
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-6">
-                <canvas id="barChart"></canvas>
+                <canvas id="periodo"></canvas>
             </div>
             <div class="col-md-6">
                 <canvas id="pieChart"></canvas>
@@ -379,5 +404,126 @@ print_r($financeiro);
                     }]
                 }
             });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var dadosParaGrafico = <?php echo json_encode($dadosParaGrafico); ?>;
+
+    var chartBarLine;
+
+    function updateCharts(period) {
+        var filteredMeses = dadosParaGrafico.meses.slice(-period);
+        var filteredFaturamentoBruto = dadosParaGrafico.faturamento_bruto.slice(-period);
+        var filteredDespesasBrutas = dadosParaGrafico.despesas_brutas.slice(-period);
+        var filteredReceitaLiquida = dadosParaGrafico.receita_liquida.slice(-period);
+        var filteredImpostosPeriodo = dadosParaGrafico.impostos_periodo.slice(-period);
+
+        var optionsBarLine = {
+            series: [{
+                name: 'Faturamento Bruto',
+                type: 'column',
+                data: filteredFaturamentoBruto
+            }, {
+                name: 'Despesas Brutas',
+                type: 'column',
+                data: filteredDespesasBrutas
+            }, {
+                name: 'Receita Líquida',
+                type: 'line',
+                data: filteredReceitaLiquida
+            }, {
+                name: 'Impostos do Período',
+                type: 'line',
+                data: filteredImpostosPeriodo
+            }],
+            chart: {
+                height: 400,
+                type: 'line',
+            },
+            colors: ['#2bcbba', '#fa4654', '#f66d9b', '#f1c40f'],
+            stroke: {
+                width: [0, 0, 4, 4],
+                curve: 'smooth'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            labels: filteredMeses.map(mes => {
+                const [month, year] = mes.split('-');
+                const monthShort = month.slice(0, 3);
+                return `${monthShort}/${year.slice(-2)}`;
+            }),
+            xaxis: {
+                type: 'category',
+                labels: {
+                    style: {
+                        colors: '#2bcbba',
+                        fontSize: '14px',
+                        fontWeight: 600
+                    }
+                }
+            },
+            yaxis: [{
+                title: {
+                    text: 'Valor (R$)',
+                    style: {
+                        color: '#2bcbba',
+                        fontSize: '16px',
+                        fontWeight: 700
+                    }
+                },
+                labels: {
+                    formatter: function(value) {
+                        return (value / 1000).toLocaleString('pt-BR') + 'k';
+                    },
+                    style: {
+                        colors: '#2bcbba',
+                        fontSize: '14px',
+                        fontWeight: 600
+                    }
+                }
+            }],
+            legend: {
+                position: 'bottom',
+                horizontalAlign: 'center',
+                floating: false,
+                labels: {
+                    colors: '#2bcbba'
+                },
+                markers: {
+                    width: 12,
+                    height: 12,
+                    radius: 12
+                }
+            },
+            tooltip: {
+                y: {
+                    formatter: function(value) {
+                        return value.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                    }
+                }
+            }
+        };
+
+        if (chartBarLine) {
+            chartBarLine.destroy();
+        }
+
+        chartBarLine = new ApexCharts(document.querySelector('#chart-receita-mensal'), optionsBarLine);
+        chartBarLine.render();
+    }
+
+    updateCharts(12);
+
+    document.getElementById('periodo').addEventListener('change', function() {
+        var period = parseInt(this.value);
+        updateCharts(period);
+    });
+});
+
     </script>
 
