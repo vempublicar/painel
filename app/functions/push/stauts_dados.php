@@ -15,6 +15,14 @@ function sanitizar($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
+/**
+ * Redireciona para uma URL com uma mensagem
+ */
+function redirecionarComMensagem($url, $mensagem) {
+    header("Location: " . BASE_URL . $url . "&msg=" . urlencode($mensagem));
+    exit();
+}
+
 // Verifica se a requisição foi feita via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
