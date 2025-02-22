@@ -69,32 +69,47 @@ print_r($financeiro);
                     <tr>
                         <th>ID</th>
                         <th>Data</th>
-                        <th>Empresa</th>
-                        <th>Indicador</th>
                         <th>Status</th>
                         <th>Mês</th>
                         <th>Ano</th>
-                        <th>Total Faturamento</th>
+                        <th>Desp. Bruta</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($financeiro as $registro) : ?>
                         <?php
-                        // Decodifica o JSON e obtém os valores
+                        // Decodifica o JSON para obter os dados extras
                         $jsonDados = json_decode($registro['json_dados'], true);
-                        $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
-                        $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
-                        $totalFaturamento = $fat_presencial + $fat_online;
+                        $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
                         ?>
                         <tr>
                             <td><?= $registro['id'] ?></td>
                             <td><?= $registro['create_at'] ?></td>
-                            <td><?= $registro['empresa'] ?></td>
-                            <td><?= $registro['indicador'] ?></td>
                             <td><?= $registro['status'] ?></td>
                             <td><?= $registro['mes'] ?></td>
                             <td><?= $registro['ano'] ?></td>
-                            <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
+                            <td><?= $desp_bruta ?></td>
+                            <td>
+                                <!-- Botão para editar -->
+                                <a href="#" 
+                                    class="btn btn-sm btn-primary edit-record" 
+                                    title="Editar"
+                                    data-id="<?= $registro['id'] ?>"
+                                    data-mes="<?= $registro['mes'] ?>"
+                                    data-ano="<?= $registro['ano'] ?>"
+                                    data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
+                                    data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
+                                    data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
+                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
+                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                <!-- Botão para desativar -->
+                                <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn btn-sm btn-danger" title="Desativar">
+                                    <i class="fas fa-ban"></i>
+                                </a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -124,14 +139,17 @@ print_r($financeiro);
     <div class="offcanvas-body">
         <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
             <div class="row">
-                <input type="hidden" name="cnpj" id="empresa" value="<?= $_GET['c'] ?>" class="form-control" readonly>
+                <!-- cnpj vindo da URL e empresa logada -->
+                <input type="hidden" name="cnpj" id="cnpj" value="<?= $_GET['c'] ?>" class="form-control" readonly>
                 <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
-                <input type="hidden" name="id" id="id" value="" class="form-control"> <!-- SE O VALOR SERÁ EDITADO -->
+                <!-- Campo para identificar se é edição (id preenchido) -->
+                <input type="hidden" name="id" id="recordId" value="" class="form-control">
                 <input type="hidden" name="tabela" value="financeiro">
                 <input type="hidden" name="indicador" value="fluxo-caixa">
                 <input type="hidden" name="status" value="ativo">
                 <input type="hidden" name="retorno" value="null">
                 <input type="hidden" name="calculo" value="periodo">
+
                 <label class="form-label">Data do Resultado</label>
                 <div class="mb-3 col-6">
                     <label class="form-label">Mês</label>
@@ -152,55 +170,96 @@ print_r($financeiro);
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label">Ano</label>
-                    <select name="ano" id="ano" class="form-select" required>                        
-                        <option value="2024" >2024</option>
+                    <select name="ano" id="ano" class="form-select" required>
+                        <option value="2024">2024</option>
                         <option value="2025" selected>2025</option>
                         <option value="2026">2026</option>
                     </select>
                 </div>
+
                 <label class="form-label">Faturamento Bruto</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;" >Vendas Presencial </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Vendas Presencial</span>
                         <input type="text" name="fat_presencial" id="fat_presencial" class="form-control value" required>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;">Vendas Online </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Vendas Online</span>
                         <input type="text" name="fat_online" id="fat_online" class="form-control value" required>
                     </div>
                 </div>
+
                 <label class="form-label">Faturado no Mês <small class="text-secondary">(Receita que entrou no caixa)</small></label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;"> Entrada de Caixa </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Entrada de Caixa</span>
                         <input type="text" name="rec_liquida" id="rec_liquida" class="form-control value" required>
                     </div>
                 </div>
+
                 <label class="form-label">Despesa Bruta</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;"> Saída de Caixa </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Saída de Caixa</span>
                         <input type="text" name="desp_bruta" id="desp_bruta" class="form-control value" required>
                     </div>
                 </div>
+
                 <label class="form-label">Impostos</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;"> Equivalente Período </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Equivalente Período</span>
                         <input type="text" name="imp_periodo" id="imp_periodo" class="form-control value" required>
                     </div>
                 </div>
-
             </div>
             <div class="mt-3">
                 <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
-                <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black " data-bs-dismiss="offcanvas">Salvar</button>
+                <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black">Salvar</button>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+// Aguarda o carregamento do DOM
+document.addEventListener("DOMContentLoaded", function() {
+    // Seleciona todos os botões de edição (que devem ter a classe "edit-record")
+    const editButtons = document.querySelectorAll('.edit-record');
+    editButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Extrai os dados do registro a partir dos atributos data-*
+            const recordId     = this.getAttribute('data-id');
+            const mes          = this.getAttribute('data-mes');
+            const ano          = this.getAttribute('data-ano');
+            const fatPresencial= this.getAttribute('data-fat_presencial');
+            const fatOnline    = this.getAttribute('data-fat_online');
+            const recLiquida   = this.getAttribute('data-rec_liquida');
+            const despBruta    = this.getAttribute('data-desp_bruta');
+            const impPeriodo   = this.getAttribute('data-imp_periodo');
+
+            // Preenche os campos do formulário no offcanvas
+            document.getElementById('recordId').value = recordId;
+            document.getElementById('mes').value = mes;
+            document.getElementById('ano').value = ano;
+            document.getElementById('fat_presencial').value = fatPresencial;
+            document.getElementById('fat_online').value = fatOnline;
+            document.getElementById('rec_liquida').value = recLiquida;
+            document.getElementById('desp_bruta').value = despBruta;
+            document.getElementById('imp_periodo').value = impPeriodo;
+
+            // Abre o offcanvas utilizando a API do Bootstrap
+            const offcanvasElement = document.getElementById('offReceitaEditar');
+            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            bsOffcanvas.show();
+        });
+    });
+});
+</script>
+
 <?php include_once "app/private/parts/footer.php" ?>
 <script>
     const maskOptions = {
