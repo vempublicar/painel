@@ -29,8 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Obtém o nome da tabela
     $tabela = sanitizar($_POST['tabela'] ?? '');
+    // Monta a URL de redirecionamento com os parâmetros "indicador" e "cnpj"
+    $redirectUrl = "painel&a=edit-empresa&b=" . (isset($_POST['indicador']) ? sanitizar($_POST['indicador']) : '') . "&c=" . (isset($_POST['cnpj']) ? sanitizar($_POST['cnpj']) : '');
+
     if (empty($tabela)) {
-        redirecionarComMensagem("painel", "Tabela não especificada.");
+        redirecionarComMensagem($redirectUrl, "Tabela não especificada.");
     }
 
     // Verifica se há um ID (para update) ou não (insert)
@@ -38,10 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /**
      * Mapeamento dos campos enviados para as colunas da tabela.
-     * Observe que se o formulário enviar o campo "create", ele será mapeado para a coluna "create_at".
+     * O campo "create" foi removido, pois a coluna create_at é automática.
      */
     $defaultFieldsMap = [
-        'create'    => 'create_at',  // campo do formulário "create" mapeado para "create_at"
         'empresa'   => 'empresa',
         'indicador' => 'indicador',
         'status'    => 'status',
@@ -53,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Array que armazenará os dados a serem inseridos/atualizados nas colunas
     $data = [];
-    // Array para guardar os campos extras que serão armazenados em json_dados
+    // Array para guardar os campos extras que serão armazenados em json_dados (incluindo "cnpj")
     $jsonData = [];
 
     // Percorre os dados enviados via POST
@@ -63,23 +65,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $valor = sanitizar($value);
         if (array_key_exists($key, $defaultFieldsMap)) {
-            // Mapeia o campo para o nome correto da coluna
             $coluna = $defaultFieldsMap[$key];
             $data[$coluna] = $valor;
         } else {
-            // Campos não mapeados serão armazenados no JSON
+            // Campos não mapeados serão armazenados no JSON (como o "cnpj")
             $jsonData[$key] = $valor;
         }
     }
 
-    // Se o campo 'usuario' não foi enviado, usa o e-mail do usuário logado
+    // Se o campo 'usuario' não foi enviado, utiliza o e-mail do usuário logado
     if (!isset($data['usuario']) && isset($_SESSION['user_email'])) {
         $data['usuario'] = $_SESSION['user_email'];
     }
 
     // Tratamento de upload de imagem, se houver (input com name="imagem")
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = '../../uploads/'.$_POST['indicador']; // Diretório para salvar as imagens
+        $uploadDir = '../../uploads/'; // Diretório para salvar as imagens
         $fileTmpName = $_FILES['imagem']['tmp_name'];
         $fileName    = $_FILES['imagem']['name'];
         $fileSize    = $_FILES['imagem']['size'];
@@ -88,13 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validação das extensões permitidas
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
         if (!in_array($fileExtension, $allowedExtensions)) {
-            redirecionarComMensagem("painel", "Tipo de arquivo não permitido para imagem.");
+            redirecionarComMensagem($redirectUrl, "Tipo de arquivo não permitido para imagem.");
         }
 
         // Validação do tamanho do arquivo (ex.: máximo 2MB)
         $maxSize = 2 * 1024 * 1024;
         if ($fileSize > $maxSize) {
-            redirecionarComMensagem("painel", "Arquivo de imagem muito grande.");
+            redirecionarComMensagem($redirectUrl, "Arquivo de imagem muito grande.");
         }
 
         // Gera um nome único para a imagem
@@ -107,10 +108,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!move_uploaded_file($fileTmpName, $destination)) {
-            redirecionarComMensagem("painel", "Erro ao fazer upload da imagem.");
+            redirecionarComMensagem($redirectUrl, "Erro ao fazer upload da imagem.");
         }
 
-        // Adiciona a imagem aos dados extras (pode ser ajustado para uma coluna específica, se necessário)
+        // Adiciona a imagem aos dados extras (JSON)
         $jsonData['imagem'] = $newFileName;
     }
 
@@ -133,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE $tabela SET $setString WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
-            redirecionarComMensagem("painel", "Registro atualizado com sucesso!");
+            redirecionarComMensagem($redirectUrl, "Registro atualizado com sucesso!");
         } else {
             // Inserção: monta o comando INSERT
             $columns = implode(", ", array_keys($data));
@@ -141,10 +142,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO $tabela ($columns) VALUES ($placeholders)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
-            redirecionarComMensagem("painel", "Registro inserido com sucesso!");
+            redirecionarComMensagem($redirectUrl, "Registro inserido com sucesso!");
         }
     } catch (PDOException $e) {
-        redirecionarComMensagem("painel", "Erro ao inserir/atualizar dados: " . $e->getMessage());
+        redirecionarComMensagem($redirectUrl, "Erro ao inserir/atualizar dados: " . $e->getMessage());
     }
 } else {
     redirecionarComMensagem("painel", "Acesso inválido ao script.");

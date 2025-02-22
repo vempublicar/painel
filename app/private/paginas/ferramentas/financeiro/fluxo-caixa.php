@@ -72,6 +72,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
     <div class="offcanvas-body">
         <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
             <div class="row">
+                <input type="hidden" name="cnpj" id="empresa" value="<?= $_GET['c'] ?>" class="form-control" readonly>
                 <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
                 <input type="hidden" name="id" id="id" value="" class="form-control"> <!-- SE O VALOR SERÁ EDITADO -->
                 <input type="hidden" name="tabela" value="financeiro">
