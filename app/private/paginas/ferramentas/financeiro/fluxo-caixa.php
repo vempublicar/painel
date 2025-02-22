@@ -458,7 +458,8 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
             </form>
         </div>
     </div>
-
+    
+    <div id="alert-container" class="container mt-3"></div>
     <?php include_once "app/private/parts/footer.php" ?>
 
     <script>
