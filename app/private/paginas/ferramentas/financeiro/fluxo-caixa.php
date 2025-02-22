@@ -23,14 +23,6 @@ if (isset($_GET['c'])) {
         }
     }
 
-    if ($cargo && $id) {
-        // Faz algo com $cargo e $id
-        echo $cargo;
-        echo $id;
-    } else {
-        // CNPJ não encontrado nas empresas listadas
-        echo "CNPJ não encontrado nas empresas que você administra.";
-    }
 }
 
 $editar = '';
@@ -77,7 +69,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
         <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
-                <input type="hidden" name="emp_ref" id="emp_ref" value="1" class="form-control" readonly>
+                <input type="hidden" name="emp_ref" id="emp_ref" value="<?= $id ?>" class="form-control" readonly>
                 <input type="hidden" name="id" id="id" class="form-control">
                 <input type="hidden" name="tabela" value="financeiro">
                 <input type="hidden" name="indicador" value="fluxo-caixa">
@@ -134,6 +126,13 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;"> Saída de Caixa </span>
+                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                    </div>
+                </div>
+                <label class="form-label">Impostos</label>
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text text-center" style="width: 150px;"> Equivalente Período </span>
                         <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
                     </div>
                 </div>
