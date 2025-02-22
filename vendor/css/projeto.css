@@ -143,6 +143,13 @@ body {
     page-break-after: always;  
  }
 
+.input-group-label {
+    min-width: 100px; /* Ajuste conforme necessário para sua UI */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 hr.custom-hr {
     border: none;                 /* Remove a borda padrão */
     height: 4px;                  /* Define a altura da linha */
