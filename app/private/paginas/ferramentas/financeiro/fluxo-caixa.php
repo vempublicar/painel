@@ -10,6 +10,11 @@ $minhas_empresas = $_SESSION['minhas_empresas'];
 function canAccess($userRole, $allowedRoles) {
     return in_array($userRole, $allowedRoles);
 }
+function convertBRToFloat($value) {
+    $value = str_replace('.', '', $value); // Remove separador de milhar
+    $value = str_replace(',', '.', $value); // Substitui a vírgula pelo ponto decimal
+    return floatval($value);
+}
 
 // Defina os cargos permitidos para a operação
 $permiteInserir = ['proprietario', 'total', 'financeiro'];
@@ -69,10 +74,18 @@ print_r($financeiro);
                         <th>Status</th>
                         <th>Mês</th>
                         <th>Ano</th>
+                        <th>Total Faturamento</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($financeiro as $registro) : ?>
+                        <?php
+                        // Decodifica o JSON e obtém os valores
+                        $jsonDados = json_decode($registro['json_dados'], true);
+                        $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
+                        $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
+                        $totalFaturamento = $fat_presencial + $fat_online;
+                        ?>
                         <tr>
                             <td><?= $registro['id'] ?></td>
                             <td><?= $registro['create_at'] ?></td>
@@ -81,6 +94,7 @@ print_r($financeiro);
                             <td><?= $registro['status'] ?></td>
                             <td><?= $registro['mes'] ?></td>
                             <td><?= $registro['ano'] ?></td>
+                            <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
