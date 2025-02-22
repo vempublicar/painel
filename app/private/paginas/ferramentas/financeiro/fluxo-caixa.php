@@ -199,7 +199,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="col-sm-12">
+                <div class="col-sm-12 mb-2">
                     <div class="card">
                         <div class="progress card-progress">
                             <div class="progress-bar bg-cyan" style="width: 100%;" role="progressbar" 
