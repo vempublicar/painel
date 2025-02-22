@@ -1,7 +1,6 @@
 
 <?Php
 $minhas_empresas = $_SESSION['minhas_empresas'];
-
 function canAccess($userRole, $allowedRoles) {
     return in_array($userRole, $allowedRoles);
 }
@@ -34,15 +33,15 @@ if (isset($_GET['c'])) {
 $editar = '';
 $visualizar = '';
 if (!canAccess($cargo, $permiteInserir)) {
-    $editar = '';
+    $editar = 'd-none';
 }
 if (!canAccess($cargo, $permiteVisualizar)) {
-    $visualizar = '';
+    $visualizar = 'd-none';
 }
 
 ?>
 
-<div class="container <?= $visualizar ?> mt-5">
+<div class="container  mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-6">
@@ -54,7 +53,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
         </div>
 </div>
 
-<div class="floating-button <?= $editar ?>">
+<div class="floating-button ">
     <div class="linha-background bg-cyan"></div>
     <a class="btn btn-cyan btn-icon text-black" data-bs-toggle="offcanvas" href="#offReceitaEditar" role="button" aria-controls="offcanvasEnd" style="height: 60px; width: 60px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
