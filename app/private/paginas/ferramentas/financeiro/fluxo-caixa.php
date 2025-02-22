@@ -71,7 +71,7 @@ print_r($financeiro);
                         <th>Mês</th>
                         <th>Ano</th>
                         <th>Faturamento</th>
-                        <th>Desp. Bruta</th>
+                        <th>Despesa</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
