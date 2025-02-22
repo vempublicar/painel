@@ -79,6 +79,7 @@ foreach ($dadosFinanceiros as $item) {
         <div class="row">
             <div class="col-md-6">
                 <canvas id="chart-receita-mensal"></canvas>
+                <canvas id="barChart"></canvas>
             </div>
             <div class="col-md-6">
                 <canvas id="pieChart"></canvas>
