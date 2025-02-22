@@ -72,6 +72,8 @@ foreach ($dadosFinanceiros as $item) {
     $dadosParaGrafico['receita_liquida'][] = $rec_liquida;
     $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
 }
+
+print_r ($dadosParaGrafico);
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
