@@ -111,7 +111,7 @@
 						<div class="col">
                   <ul class="navbar-nav">
                       <li class="nav-item <?php if(!isset($_GET['b']) || $_GET['b'] == 'radar'){echo 'active';} ?>">
-                        <a class="nav-link" href="./#">                          
+                        <a class="nav-link" href="painel&a=edit-empresa&b=radar&c=<?= $_GET['c'] ?>">                          
                           <span class="nav-link-title">
                             Início
                           </span>
