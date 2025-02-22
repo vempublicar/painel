@@ -156,7 +156,11 @@ foreach ($dadosFinanceiros as $item) {
             <p class="text-center">Nenhum registro encontrado.</p>
         <?php endif; ?>
     </div>
-
+    <select id="periodo">
+        <option value="3">Últimos 3 meses</option>
+        <option value="6">Últimos 6 meses</option>
+        <option value="12" selected>Últimos 12 meses</option>
+    </select>
     <!-- Modal de Confirmação de Alteração de Status -->
     <div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
     <div class="modal-dialog">
