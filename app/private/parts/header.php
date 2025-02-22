@@ -25,7 +25,7 @@
   </div>
 
   <!-- Seção Direita: Outros Ícones e Dropdown -->
-  <div class="d-flex align-items-center">
+  <div class="d-sm-flex align-items-center">
     <a href="painel" title="Início" class="d-block">
       <i class="fas fa-home m-2"></i>
     </a>
