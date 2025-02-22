@@ -62,9 +62,10 @@ print_r($financeiro);
 
     <!-- Lista dos últimos registros -->
     <div class="mt-5">
-        <h4>Últimos Registros</h4>
-        <?php if (!empty($financeiro)) : ?>
-            <table class="table table-bordered">
+    <h4>Últimos Registros</h4>
+    <?php if (!empty($financeiro)) : ?>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Status</th>
@@ -78,14 +79,14 @@ print_r($financeiro);
                 <tbody>
                     <?php foreach ($financeiro as $registro) : ?>
                         <?php
-                        // Decodifica o JSON para obter os dados extras                        
+                        // Decodifica o JSON para obter os dados extras
                         $jsonDados = json_decode($registro['json_dados'], true);
                         $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
                         $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
                         $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
                         $totalFaturamento = $fat_presencial + $fat_online;
                         ?>
-                        <tr>                            
+                        <tr>
                             <td><?= $registro['status'] ?></td>
                             <td><?= $registro['mes'] ?></td>
                             <td><?= $registro['ano'] ?></td>
@@ -94,18 +95,18 @@ print_r($financeiro);
                             <td>
                                 <!-- Botão para editar -->
                                 <a href="#" 
-                                    class="btn btn-sm btn-primary edit-record" 
-                                    title="Editar"
-                                    data-id="<?= $registro['id'] ?>"
-                                    data-mes="<?= $registro['mes'] ?>"
-                                    data-ano="<?= $registro['ano'] ?>"
-                                    data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
-                                    data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
-                                    data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
-                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
-                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
+                                   class="btn btn-sm btn-primary edit-record" 
+                                   title="Editar"
+                                   data-id="<?= $registro['id'] ?>"
+                                   data-mes="<?= $registro['mes'] ?>"
+                                   data-ano="<?= $registro['ano'] ?>"
+                                   data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
+                                   data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
+                                   data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
+                                   data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
+                                   data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                                 <!-- Botão para desativar -->
                                 <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn btn-sm btn-danger" title="Desativar">
                                     <i class="fas fa-ban"></i>
@@ -115,10 +116,12 @@ print_r($financeiro);
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        <?php else : ?>
-            <p class="text-center">Nenhum registro encontrado.</p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php else : ?>
+        <p class="text-center">Nenhum registro encontrado.</p>
+    <?php endif; ?>
+</div>
+
 </div>
 
 <div class="floating-button <?= $editar ?>">
