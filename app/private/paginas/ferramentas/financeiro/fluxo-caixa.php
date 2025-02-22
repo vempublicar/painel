@@ -145,8 +145,9 @@ if (!canAccess($cargo, $permiteVisualizar)) {
         </form>
     </div>
 </div>
+<?php include_once "app/private/parts/footer.php" ?>
 
-    <script>
+<script>
         const barCtx = document.getElementById('barChart').getContext('2d');
         const pieCtx = document.getElementById('pieChart').getContext('2d');
 
@@ -172,5 +173,5 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 }]
             }
         });
-    </script>
+</script>
 
