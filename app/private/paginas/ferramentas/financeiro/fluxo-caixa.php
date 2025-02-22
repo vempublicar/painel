@@ -185,16 +185,17 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
-        <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-8">
                 <div class="card-body">
-                    <select id="periodo">
-                        <option value="3">Últimos 3 meses</option>
-                        <option value="6">Últimos 6 meses</option>
-                        <option value="12" selected>Últimos 12 meses</option>
-                    </select>
-                    <h3 class="card-title">Fluxo de receita no período</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <select id="periodo" class="form-select w-auto">
+                            <option value="3">Últimos 3 meses</option>
+                            <option value="6">Últimos 6 meses</option>
+                            <option value="12" selected>Últimos 12 meses</option>
+                        </select>
+                        <h3 class="card-title mb-0">Fluxo de receita no período</h3>
+                    </div>
                     <div id="chart-receita-mensal" style="min-height: 240px;"></div>
                 </div>
             </div>
