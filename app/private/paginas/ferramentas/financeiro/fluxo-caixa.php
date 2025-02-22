@@ -49,82 +49,114 @@ $financeiro = fetchFluxoFinanceiro($id, $indicador);
 print_r($financeiro);
 ?>
 
-<div class="container <?= $visualizar ?> mt-5">
-    <h3 class="text-center">Dashboard Financeiro</h3>
-    <div class="row">
-        <div class="col-md-6">
-            <canvas id="barChart"></canvas>
+    <div class="container <?= $visualizar ?> mt-5">
+        <h3 class="text-center">Dashboard Financeiro</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="pieChart"></canvas>
+            </div>
         </div>
-        <div class="col-md-6">
-            <canvas id="pieChart"></canvas>
-        </div>
+
+        <!-- Lista dos últimos registros -->
+        <div class="mt-5">
+        <h4>Últimos Registros</h4>
+        <?php if (!empty($financeiro)) : ?>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Mês</th>
+                            <th>Ano</th>
+                            <th>Faturamento</th>
+                            <th>Despesa</th>
+                            <th>Editar</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($financeiro as $registro) : ?>
+                            <?php
+                            // Decodifica o JSON para obter os dados extras
+                            $jsonDados = json_decode($registro['json_dados'], true);
+                            $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
+                            $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
+                            $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
+                            $totalFaturamento = $fat_presencial + $fat_online;
+                            ?>
+                            <tr>
+                                <td><?= $registro['status'] ?></td>
+                                <td><?= $registro['mes'] ?></td>
+                                <td><?= $registro['ano'] ?></td>
+                                <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
+                                <td><?= $desp_bruta ?></td>
+                                <td>
+                                    <!-- Botão para editar -->
+                                    <a href="#" 
+                                    class="btn btn-sm btn-primary edit-record" 
+                                    title="Editar"
+                                    data-id="<?= $registro['id'] ?>"
+                                    data-mes="<?= $registro['mes'] ?>"
+                                    data-ano="<?= $registro['ano'] ?>"
+                                    data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
+                                    data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
+                                    data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
+                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
+                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
+                                        <i class="fas fa-edit"></i>
+                                    </a>                                
+                                </td>
+                                <td>
+                                    <!-- Botão para desativar -->
+                                    <a href="#"
+                                        class="btn btn-sm btn-danger open-confirm-status-modal" 
+                                        title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
+                                        data-status-id="<?= $registro['id'] ?>"
+                                        data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
+                                        data-status-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
+                                        data-status-indicador="<?= $registro['indicador'] ?>"
+                                        data-status-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
+                                            <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else : ?>
+            <p class="text-center">Nenhum registro encontrado.</p>
+        <?php endif; ?>
     </div>
 
-    <!-- Lista dos últimos registros -->
-    <div class="mt-5">
-    <h4>Últimos Registros</h4>
-    <?php if (!empty($financeiro)) : ?>
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Mês</th>
-                        <th>Ano</th>
-                        <th>Faturamento</th>
-                        <th>Despesa</th>
-                        <th>Editar</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($financeiro as $registro) : ?>
-                        <?php
-                        // Decodifica o JSON para obter os dados extras
-                        $jsonDados = json_decode($registro['json_dados'], true);
-                        $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
-                        $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
-                        $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
-                        $totalFaturamento = $fat_presencial + $fat_online;
-                        ?>
-                        <tr>
-                            <td><?= $registro['status'] ?></td>
-                            <td><?= $registro['mes'] ?></td>
-                            <td><?= $registro['ano'] ?></td>
-                            <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
-                            <td><?= $desp_bruta ?></td>
-                            <td>
-                                <!-- Botão para editar -->
-                                <a href="#" 
-                                   class="btn btn-sm btn-primary edit-record" 
-                                   title="Editar"
-                                   data-id="<?= $registro['id'] ?>"
-                                   data-mes="<?= $registro['mes'] ?>"
-                                   data-ano="<?= $registro['ano'] ?>"
-                                   data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
-                                   data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
-                                   data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
-                                   data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
-                                   data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
-                                    <i class="fas fa-edit"></i>
-                                </a>                                
-                            </td>
-                            <td>
-                                <!-- Botão para desativar -->
-                                <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn btn-sm btn-danger" title="Desativar">
-                                    <i class="fas fa-ban"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    <?php else : ?>
-        <p class="text-center">Nenhum registro encontrado.</p>
-    <?php endif; ?>
-</div>
-
+<!-- Modal de Confirmação de Alteração de Status -->
+<div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+         <h5 class="modal-title" id="confirmStatusModalLabel">Confirmação de Alteração de Status</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+         <p id="confirmText">Deseja realmente alterar o status deste registro?</p>
+         <!-- Formulário para alteração de status -->
+         <form action="alterar_status.php" method="post" id="formAlterarStatus">
+            <input type="hidden" name="id" id="modalId">
+            <input type="hidden" name="status" id="modalStatus">
+            <input type="hidden" name="cnpj" id="modalCnpj">
+            <input type="hidden" name="indicador" id="modalIndicador">
+            <input type="hidden" name="redirectUrl" id="modalRedirectUrl">
+         </form>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+         <button type="submit" form="formAlterarStatus" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="floating-button <?= $editar ?>">
@@ -229,6 +261,44 @@ print_r($financeiro);
         </form>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o modal e cria a instância do Bootstrap Modal para o status
+    var confirmStatusModalEl = document.getElementById('confirmStatusModal');
+    var bsModalStatus = new bootstrap.Modal(confirmStatusModalEl);
+    
+    // Associa o evento aos botões com a classe "open-confirm-status-modal"
+    document.querySelectorAll('.open-confirm-status-modal').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Obtém os dados a partir dos atributos personalizados (data-status-*)
+            var recordId   = this.getAttribute('data-status-id');
+            var newStatus  = this.getAttribute('data-status-new');
+            var cnpj       = this.getAttribute('data-status-cnpj');
+            var indicador  = this.getAttribute('data-status-indicador');
+            var redirectUrl= this.getAttribute('data-status-redirect');
+            
+            // Popula os campos do formulário no modal
+            document.getElementById('modalId').value = recordId;
+            document.getElementById('modalStatus').value = newStatus;
+            document.getElementById('modalCnpj').value = cnpj;
+            document.getElementById('modalIndicador').value = indicador;
+            document.getElementById('modalRedirectUrl').value = redirectUrl;
+            
+            // Atualiza o texto de confirmação de acordo com a ação
+            var confirmText = (newStatus === 'inativo') 
+                ? "Deseja realmente desativar este registro?" 
+                : "Deseja realmente ativar este registro?";
+            document.getElementById('confirmText').textContent = confirmText;
+            
+            // Exibe o modal de confirmação
+            bsModalStatus.show();
+        });
+    });
+});
+</script>
+
 
 <script>
 // Aguarda o carregamento do DOM
