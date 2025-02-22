@@ -55,33 +55,56 @@ $dadosParaGrafico = [
     "impostos_periodo" => []
 ];
 
+// Criar array com os últimos 12 meses no formato "MM-YYYY"
+$ultimos12Meses = [];
+for ($i = 11; $i >= 0; $i--) {
+    $data = new DateTime();
+    $data->modify("-$i months");
+    $mesAno = $data->format("m-Y"); // Exemplo: "02-2024"
+    $ultimos12Meses[$mesAno] = [
+        "faturamento_bruto" => 0,
+        "despesas_brutas" => 0,
+        "receita_liquida" => 0,
+        "impostos_periodo" => 0
+    ];
+}
+
+// Preencher os meses existentes no banco de dados
 foreach ($financeiro as $item) {
     $mesAno = sprintf("%02d-%d", $item['mes'], $item['ano']);
 
-    // Decodificar os dados JSON corretamente
+    // Decodificar JSON corretamente
     $jsonDados = json_decode($item['json_dados'], true);
 
     if ($jsonDados) {
-        // Corrigir valores monetários (remover ponto dos milhares e trocar vírgula por ponto)
+        // Converter valores corretamente
         $fat_presencial = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['fat_presencial']));
         $fat_online = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['fat_online']));
         $desp_bruta = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['desp_bruta']));
         $rec_liquida = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['rec_liquida']));
         $imp_periodo = floatval(str_replace(['.', ','], ['', '.'], $jsonDados['imp_periodo']));
 
+        // Calcular Faturamento Bruto
         $faturamento_bruto = $fat_presencial + $fat_online;
 
-        // Adicionar os valores ao array final
-        $dadosParaGrafico['meses'][] = $mesAno;
-        $dadosParaGrafico['faturamento_bruto'][] = $faturamento_bruto;
-        $dadosParaGrafico['despesas_brutas'][] = $desp_bruta;
-        $dadosParaGrafico['receita_liquida'][] = $rec_liquida;
-        $dadosParaGrafico['impostos_periodo'][] = $imp_periodo;
-    } else {
-        error_log("Erro ao decodificar JSON para o mês $mesAno");
+        // Substituir os valores zerados pelos dados reais
+        $ultimos12Meses[$mesAno] = [
+            "faturamento_bruto" => $faturamento_bruto,
+            "despesas_brutas" => $desp_bruta,
+            "receita_liquida" => $rec_liquida,
+            "impostos_periodo" => $imp_periodo
+        ];
     }
 }
 
+// Preencher o array final para o gráfico
+foreach ($ultimos12Meses as $mes => $valores) {
+    $dadosParaGrafico['meses'][] = $mes;
+    $dadosParaGrafico['faturamento_bruto'][] = $valores['faturamento_bruto'];
+    $dadosParaGrafico['despesas_brutas'][] = $valores['despesas_brutas'];
+    $dadosParaGrafico['receita_liquida'][] = $valores['receita_liquida'];
+    $dadosParaGrafico['impostos_periodo'][] = $valores['impostos_periodo'];
+}
 
 ?>
 
