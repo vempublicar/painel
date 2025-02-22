@@ -130,12 +130,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($coluna == 'id') continue;
                 $setParts[] = "$coluna = :$coluna";
             }
-            $setString = implode(", ", $setParts);
+            $setString = implode(", ", $setParts);                    
             $sql = "UPDATE $tabela SET $setString WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
             redirecionarComMensagem($redirectUrl, "Registro atualizado com sucesso!");
         } else {
+            // Verifica se já existe um registro com os mesmos valores
+            $verificaSQL = "SELECT COUNT(*) FROM $tabela WHERE empresa = :empresa AND indicador = :indicador AND mes = :mes AND ano = :ano";
+            $stmtVerifica = $pdo->prepare($verificaSQL);
+            $stmtVerifica->execute([
+                'empresa'   => $data['empresa'],
+                'indicador' => $data['indicador'],
+                'mes'       => $data['mes'],
+                'ano'       => $data['ano']
+            ]);
+
+            // Se já existe um registro, impede a inserção
+            if ($stmtVerifica->fetchColumn() > 0) {
+                redirecionarComMensagem($redirectUrl, "Erro: Já existe um registro para este indicador, mês e ano nesta empresa.");
+            }
             // Inserção: monta o comando INSERT
             $columns = implode(", ", array_keys($data));
             $placeholders = ":" . implode(", :", array_keys($data));
