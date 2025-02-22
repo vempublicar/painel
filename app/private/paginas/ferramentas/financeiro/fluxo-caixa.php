@@ -41,6 +41,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
 }
 $indicador = 'fluxo-caixa';
 $financeiro = fetchFluxoFinanceiro($id, $indicador);
+print_r($financeiro);
 ?>
 
 <div class="container <?= $visualizar ?> mt-5">
