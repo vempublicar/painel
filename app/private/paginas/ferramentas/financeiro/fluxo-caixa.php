@@ -1,45 +1,5 @@
 
-<?Php
-$minhas_empresas = $_SESSION['minhas_empresas'];
-function canAccess($userRole, $allowedRoles) {
-    return in_array($userRole, $allowedRoles);
-}
-// Defina os cargos permitidos para a operação
-$permiteInserir = ['proprietario', 'total', 'financeiro'];
-$permiteVisualizar = ['proprietario', 'total', 'financeiro';
 
-
-if (isset($_GET['c'])) {
-    $empresa_edit = base64_decode($_GET['c']);
-    $cargo = '';
-    $id = '';
-
-    foreach ($minhas_empresas as $empresa) {
-        if ($empresa['cnpj'] === $empresa_edit) {
-            $cargo = $empresa['cargo'];
-            $id = $empresa['id'];
-            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
-        }
-    }
-    if ($cargo && $id) {
-        // Faz algo com $cargo e $id
-        echo $cargo;
-        echo $id;
-    } else {
-        // CNPJ não encontrado nas empresas listadas
-        echo "CNPJ não encontrado nas empresas que você administra.";
-    }
-}
-$editar = '';
-$visualizar = '';
-if (!canAccess($cargo, $permiteInserir)) {
-    $editar = 'd-none';
-}
-if (!canAccess($cargo, $permiteVisualizar)) {
-    $visualizar = 'd-none';
-}
-
-?>
 
 <div class="container  mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
