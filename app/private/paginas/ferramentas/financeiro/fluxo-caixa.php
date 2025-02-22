@@ -78,7 +78,7 @@ foreach ($dadosFinanceiros as $item) {
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-6">
-                <canvas id="periodo"></canvas>
+                <canvas id="chart-receita-mensal"></canvas>
             </div>
             <div class="col-md-6">
                 <canvas id="pieChart"></canvas>
