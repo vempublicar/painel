@@ -13,13 +13,13 @@
 
   <!-- Seção Central: Botões de Navegação -->
   <div class="d-none d-sm-flex flex-grow-1 justify-content-center">
-    <a href="painel&a=empresas" class="text-secondary btn me-2" aria-current="true">
+    <a href="painel&a=empresas" class="text-secondary me-2" aria-current="true">
       <i class="fas fa-building me-2"></i>Minhas Empresas
     </a>
-    <a href="painel&a=treinamento" class="text-secondary btn me-2">
+    <a href="painel&a=treinamento" class="text-secondary me-2">
       <i class="fas fa-graduation-cap me-2"></i>Minhas Análises
     </a>
-    <a href="painel&a=estrategias" class="text-secondary btn">
+    <a href="painel&a=estrategias" class="text-secondary ">
       <i class="fas fa-play me-2"></i>Estratégias Exclusivas
     </a>
   </div>

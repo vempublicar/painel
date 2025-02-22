@@ -119,21 +119,21 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 </div>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text" style="width: 150px;"> Digital </span>
+                        <span class="input-group-text text-center" style="width: 150px;"> Digital </span>
                         <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
                     </div>
                 </div>
                 <label class="form-label">Faturado no Mês</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text" style="width: 150px;"> Entrada de Caixa </span>
+                        <span class="input-group-text text-center" style="width: 150px;"> Entrada de Caixa </span>
                         <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
                     </div>
                 </div>
                 <label class="form-label">Despesa Bruta</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text" style="width: 150px;"> Saída de Caixa </span>
+                        <span class="input-group-text text-center" style="width: 150px;"> Saída de Caixa </span>
                         <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
                     </div>
                 </div>
