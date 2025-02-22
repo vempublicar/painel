@@ -115,7 +115,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                         <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
                     </div>
                 </div>
-                <label class="form-label">Faturado no Mês</label>
+                <label class="form-label">Faturado no Mês <span>(Receita que entrou no caixa)</span></label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;"> Entrada de Caixa </span>
