@@ -384,31 +384,6 @@ foreach ($dadosFinanceiros as $item) {
             document.querySelectorAll('input.value').forEach(input => IMask(input, maskOptions));
         });
 
-            const barCtx = document.getElementById('barChart').getContext('2d');
-            const pieCtx = document.getElementById('pieChart').getContext('2d');
-
-            new Chart(barCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Jan', 'Fev', 'Mar', 'Abr'],
-                    datasets: [{
-                        label: 'Receita Mensal',
-                        data: [1000, 1500, 2000, 1800],
-                        backgroundColor: 'rgba(54, 162, 235, 0.6)'
-                    }]
-                }
-            });
-
-            new Chart(pieCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Online', 'Presencial'],
-                    datasets: [{
-                        data: [60, 40],
-                        backgroundColor: ['#36A2EB', '#FF6384']
-                    }]
-                }
-            });
     </script>
 
     <script>
