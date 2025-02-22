@@ -197,6 +197,6 @@ $consistencia = intval(21);
 </div>
 
 <?php 
-include_once "app/private/parts/footer.php" 
+include_once "app/private/parts/footer.php";
 include "app/private/paginas/analise/radar/g-radar.php";
 ?>
