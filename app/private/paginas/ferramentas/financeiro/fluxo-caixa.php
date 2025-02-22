@@ -256,6 +256,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
 
         </div>
         <!-- Lista dos últimos registros -->
+         <hr>
         <div class="mt-5">
         <h4>Últimos Registros</h4>
         <?php if (!empty($financeiro)) : ?>
