@@ -158,7 +158,6 @@ $financeiro = fetchFluxoFinanceiro($id, $indicador);
                     <input type="hidden" name="cnpj" id="modalCnpj">
                     <input type="hidden" name="indicador" id="modalIndicador">
                     <!-- Caso necessário, adicione redirectUrl aqui -->
-                    <input type="hidden" name="redirectUrl" id="modalRedirectUrl">
                 </form>
             </div>
             <div class="modal-footer">
