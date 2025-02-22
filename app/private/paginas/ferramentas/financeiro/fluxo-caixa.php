@@ -141,6 +141,8 @@ $melhorTrimestre = array_reduce(array_keys($trimestres), function($maxTrimestre,
 
 $melhorFaturamento = $trimestres[$melhorTrimestre]['faturamento'];
 $melhorDespesa = $trimestres[$melhorTrimestre]['despesas'];
+$melhorTrimestreNum = str_replace("Q", "", $melhorTrimestre);
+$melhorTrimestreAno = date("Y");
 
 // Identificar o trimestre atual (baseado no mês de hoje)
 $mesAtual = date('n');
@@ -161,17 +163,24 @@ $ultimoTrimestreNum = str_replace("Q", "", $trimestreAtual);
 $ultimoTrimestreAno = date("Y");
 
 // Calcular percentual das despesas e do lucro
-if ($ultimoTrimestreTotal > 0) {
-    $percentualDespesas = ($ultimoTrimestreDespesas / $ultimoTrimestreTotal) * 100;
-    $percentualLucro = 100 - $percentualDespesas;
-} else {
-    $percentualDespesas = 0;
-    $percentualLucro = 0;
+function calcularPercentuais($faturamento, $despesas) {
+    if ($faturamento > 0) {
+        $percentualDespesas = ($despesas / $faturamento) * 100;
+        $percentualLucro = 100 - $percentualDespesas;
+    } else {
+        $percentualDespesas = 0;
+        $percentualLucro = 0;
+    }
+
+    return [
+        'despesas' => min(100, max(0, $percentualDespesas)),
+        'lucro' => min(100, max(0, $percentualLucro))
+    ];
 }
 
-// Garantir que os percentuais estejam entre 0 e 100%
-$percentualDespesas = min(100, max(0, $percentualDespesas));
-$percentualLucro = min(100, max(0, $percentualLucro));
+// Cálculo dos percentuais para ambos os trimestres
+$percentuaisMelhor = calcularPercentuais($melhorFaturamento, $melhorDespesa);
+$percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreDespesas);
 
 ?>
 
