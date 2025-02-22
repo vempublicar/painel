@@ -15,37 +15,26 @@ function sanitizar($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
-/**
- * Redireciona para uma URL com uma mensagem
- */
-function redirecionarComMensagem($url, $mensagem) {
-    header("Location: " . BASE_URL . $url . "&msg=" . urlencode($mensagem));
-    exit();
-}
+// Verifica se a requisição foi feita via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// Verifica se a requisição foi feita via GET
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
-    // Obtém e sanitiza os parâmetros
-    $id       = sanitizar($_GET['id'] ?? '');
-    $tabela   = sanitizar($_GET['tabela'] ?? '');
-    $novoStatus = sanitizar($_GET['status'] ?? '');
+    // Obtém e sanitiza os parâmetros enviados pelo formulário
+    $id          = sanitizar($_POST['id'] ?? '');
+    $novoStatus  = sanitizar($_POST['status'] ?? '');
+    $redirectUrl = sanitizar($_POST['redirectUrl'] ?? '');
 
     // Verifica se os parâmetros essenciais foram informados
-    if (empty($id) || empty($tabela) || empty($novoStatus)) {
+    if (empty($id) || empty($novoStatus) || empty($redirectUrl)) {
         redirecionarComMensagem("painel", "Parâmetros insuficientes para alteração de status.");
     }
 
     // Valida se o status informado é "ativo" ou "inativo"
     if (!in_array($novoStatus, ['ativo', 'inativo'])) {
-        redirecionarComMensagem("painel", "Status inválido.");
+        redirecionarComMensagem($redirectUrl, "Status inválido.");
     }
-    
-    // Opcional: valide se o nome da tabela é permitido
-    $tabelasPermitidas = ['financeiro']; // Adicione outras tabelas permitidas, se necessário
-    if (!in_array($tabela, $tabelasPermitidas)) {
-        redirecionarComMensagem("painel", "Tabela não permitida.");
-    }
+
+    // Define a tabela onde o registro será atualizado
+    $tabela = 'financeiro';
 
     $pdo = db_connect();
 
@@ -56,9 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             'status' => $novoStatus,
             'id'     => $id
         ]);
-        redirecionarComMensagem("painel", "Status alterado com sucesso!");
+        // Redireciona para a URL informada com mensagem de sucesso
+        redirecionarComMensagem($redirectUrl, "Status alterado com sucesso!");
     } catch (PDOException $e) {
-        redirecionarComMensagem("painel", "Erro ao alterar status: " . $e->getMessage());
+        redirecionarComMensagem($redirectUrl, "Erro ao alterar status: " . $e->getMessage());
     }
 } else {
     redirecionarComMensagem("painel", "Acesso inválido ao script.");
