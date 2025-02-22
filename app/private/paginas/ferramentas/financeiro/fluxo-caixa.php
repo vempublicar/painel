@@ -39,7 +39,7 @@ if (!canAccess($cargo, $permiteInserir)) {
 if (!canAccess($cargo, $permiteVisualizar)) {
     $visualizar = 'd-none';
 }
-
+$indicador = 'fluxo-caixa';
 $financeiro = fetchFluxoFinanceiro($id, $indicador);
 ?>
 
