@@ -147,7 +147,6 @@ print_r($financeiro);
             <input type="hidden" name="status" id="modalStatus">
             <input type="hidden" name="cnpj" id="modalCnpj">
             <input type="hidden" name="indicador" id="modalIndicador">
-            <input type="hidden" name="redirectUrl" id="modalRedirectUrl">
          </form>
       </div>
       <div class="modal-footer">

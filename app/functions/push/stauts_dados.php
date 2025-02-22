@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém e sanitiza os parâmetros enviados pelo formulário
     $id          = sanitizar($_POST['id'] ?? '');
     $novoStatus  = sanitizar($_POST['status'] ?? '');
-    $redirectUrl = sanitizar($_POST['redirectUrl'] ?? '');
+    $redirectUrl = "painel&a=edit-empresa&b=" . (isset($_POST['indicador']) ? sanitizar($_POST['indicador']) : '') . "&c=" . (isset($_POST['cnpj']) ? sanitizar($_POST['cnpj']) : '');
 
     // Verifica se os parâmetros essenciais foram informados
     if (empty($id) || empty($novoStatus) || empty($redirectUrl)) {
