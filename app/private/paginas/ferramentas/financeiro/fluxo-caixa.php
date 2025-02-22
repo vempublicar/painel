@@ -1,24 +1,32 @@
-
 <?php
+// Inicia a sessão, se ainda não estiver iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// As linhas de debug de erros foram comentadas para ambiente de produção
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
+
 include "app/functions/data/dados.php";
 
-$minhas_empresas = $_SESSION['minhas_empresas'];
+// Verifica se a variável de sessão existe
+$minhas_empresas = isset($_SESSION['minhas_empresas']) ? $_SESSION['minhas_empresas'] : [];
 
 function canAccess($userRole, $allowedRoles) {
     return in_array($userRole, $allowedRoles);
 }
+
 function convertBRToFloat($value) {
     $value = str_replace('.', '', $value); // Remove separador de milhar
-    $value = str_replace(',', '.', $value); // Substitui a vírgula pelo ponto decimal
+    $value = str_replace(',', '.', $value); // Converte vírgula para ponto decimal
     return floatval($value);
 }
 
-// Defina os cargos permitidos para a operação
-$permiteInserir = ['proprietario', 'total', 'financeiro'];
-$permiteVisualizar = ['proprietario', 'total', 'financeiro'];  // Corrigido
+// Defina os cargos permitidos para as operações de inserção e visualização
+$permiteInserir   = ['proprietario', 'total', 'financeiro'];
+$permiteVisualizar = ['proprietario', 'total', 'financeiro'];
 
 if (isset($_GET['c'])) {
     $empresa_edit = base64_decode($_GET['c']);
@@ -29,24 +37,27 @@ if (isset($_GET['c'])) {
         if ($empresa['cnpj'] === $empresa_edit) {
             $cargo = $empresa['cargo'];
             $id = $empresa['id'];
-            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
+            break;  // Para assim que encontrar a empresa correspondente
         }
     }
-
 }
 
 $editar = '';
 $visualizar = '';
 
+// Define classes CSS para exibição ou ocultação com base nas permissões
 if (!canAccess($cargo, $permiteInserir)) {
     $editar = 'd-none';
 }
 if (!canAccess($cargo, $permiteVisualizar)) {
     $visualizar = 'd-none';
 }
+
 $indicador = 'fluxo-caixa';
 $financeiro = fetchFluxoFinanceiro($id, $indicador);
-print_r($financeiro);
+
+// Remova ou comente o print_r abaixo em ambiente de produção
+// print_r($financeiro);
 ?>
 
 <div class="container <?= $visualizar ?> mt-5">
@@ -62,102 +73,103 @@ print_r($financeiro);
 
     <!-- Lista dos últimos registros -->
     <div class="mt-5">
-    <h4>Últimos Registros</h4>
-    <?php if (!empty($financeiro)) : ?>
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Mês</th>
-                        <th>Ano</th>
-                        <th>Faturamento</th>
-                        <th>Despesa</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($financeiro as $registro) : ?>
-                        <?php
-                        // Decodifica o JSON para obter os dados extras
-                        $jsonDados = json_decode($registro['json_dados'], true);
-                        $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
-                        $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
-                        $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
-                        $totalFaturamento = $fat_presencial + $fat_online;
-                        ?>
+        <h4>Últimos Registros</h4>
+        <?php if (!empty($financeiro)) : ?>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
-                            <td><?= $registro['status'] ?></td>
-                            <td><?= $registro['mes'] ?></td>
-                            <td><?= $registro['ano'] ?></td>
-                            <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
-                            <td><?= $desp_bruta ?></td>
-                            <td>
-                                <!-- Botão para editar -->
-                                <a href="#" 
-                                   class="btn" 
-                                   title="Editar"
-                                   data-id="<?= $registro['id'] ?>"
-                                   data-mes="<?= $registro['mes'] ?>"
-                                   data-ano="<?= $registro['ano'] ?>"
-                                   data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
-                                   data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
-                                   data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
-                                   data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
-                                   data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="#"
-                                    class="btn open-confirm-status-modal" 
-                                    title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
-                                    data-status-id="<?= $registro['id'] ?>"
-                                    data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
-                                    data-status-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
-                                    data-status-indicador="<?= $registro['indicador'] ?>"
-                                    data-status-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
-                                        <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
-                                </a>  
-                            </td>
+                            <th>Status</th>
+                            <th>Mês</th>
+                            <th>Ano</th>
+                            <th>Faturamento</th>
+                            <th>Despesa</th>
+                            <th>Ações</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    <?php else : ?>
-        <p class="text-center">Nenhum registro encontrado.</p>
-    <?php endif; ?>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($financeiro as $registro) : ?>
+                            <?php
+                            // Decodifica o JSON armazenado na coluna json_dados
+                            $jsonDados = json_decode($registro['json_dados'], true);
+                            $desp_bruta = isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '-';
+                            $fat_presencial = isset($jsonDados['fat_presencial']) ? convertBRToFloat($jsonDados['fat_presencial']) : 0;
+                            $fat_online     = isset($jsonDados['fat_online']) ? convertBRToFloat($jsonDados['fat_online']) : 0;
+                            $totalFaturamento = $fat_presencial + $fat_online;
+                            ?>
+                            <tr>
+                                <td><?= $registro['status'] ?></td>
+                                <td><?= $registro['mes'] ?></td>
+                                <td><?= $registro['ano'] ?></td>
+                                <td><?= number_format($totalFaturamento, 2, ',', '.') ?></td>
+                                <td><?= $desp_bruta ?></td>
+                                <td>
+                                    <!-- Botão para editar (offcanvas de edição) -->
+                                    <a href="#"
+                                       class="btn" 
+                                       title="Editar"
+                                       data-id="<?= $registro['id'] ?>"
+                                       data-mes="<?= $registro['mes'] ?>"
+                                       data-ano="<?= $registro['ano'] ?>"
+                                       data-fat_presencial="<?= isset($jsonDados['fat_presencial']) ? $jsonDados['fat_presencial'] : '' ?>"
+                                       data-fat_online="<?= isset($jsonDados['fat_online']) ? $jsonDados['fat_online'] : '' ?>"
+                                       data-rec_liquida="<?= isset($jsonDados['rec_liquida']) ? $jsonDados['rec_liquida'] : '' ?>"
+                                       data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
+                                       data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <!-- Botão para alterar status com confirmação (usa atributos personalizados para evitar conflito) -->
+                                    <a href="#"
+                                       class="btn open-confirm-status-modal" 
+                                       title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
+                                       data-status-id="<?= $registro['id'] ?>"
+                                       data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
+                                       data-status-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
+                                       data-status-indicador="<?= $registro['indicador'] ?>"
+                                       data-status-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
+                                        <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else : ?>
+            <p class="text-center">Nenhum registro encontrado.</p>
+        <?php endif; ?>
+    </div>
 </div>
-
-</div>
-
 
 <!-- Modal de Confirmação de Alteração de Status -->
 <div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-         <h5 class="modal-title" id="confirmStatusModalLabel">Confirmação de Alteração de Status</h5>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body">
-         <p id="confirmText">Deseja realmente alterar o status deste registro?</p>
-         <!-- Formulário para alteração de status -->
-         <form action="app/functions/push/stauts_dados.php" method="post" id="formAlterarStatus">
-            <input type="hidden" name="id" id="modalId">
-            <input type="hidden" name="status" id="modalStatus">
-            <input type="hidden" name="cnpj" id="modalCnpj">
-            <input type="hidden" name="indicador" id="modalIndicador">
-         </form>
-      </div>
-      <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-         <button type="submit" form="formAlterarStatus" class="btn btn-primary">Confirmar</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmStatusModalLabel">Confirmação de Alteração de Status</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmText">Deseja realmente alterar o status deste registro?</p>
+                <!-- Formulário para alteração de status -->
+                <form action="app/functions/push/status_dados.php" method="post" id="formAlterarStatus">
+                    <input type="hidden" name="id" id="modalId">
+                    <input type="hidden" name="status" id="modalStatus">
+                    <input type="hidden" name="cnpj" id="modalCnpj">
+                    <input type="hidden" name="indicador" id="modalIndicador">
+                    <!-- Caso necessário, adicione redirectUrl aqui -->
+                    <input type="hidden" name="redirectUrl" id="modalRedirectUrl">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="formAlterarStatus" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-
+<!-- Botão flutuante para abrir o offcanvas de cadastro/edição -->
 <div class="floating-button <?= $editar ?>">
     <div class="linha-background bg-cyan"></div>
     <a class="btn btn-cyan btn-icon text-black" data-bs-toggle="offcanvas" href="#offReceitaEditar" role="button" aria-controls="offcanvasEnd" style="height: 60px; width: 60px;">
@@ -169,6 +181,7 @@ print_r($financeiro);
     </a>
 </div>
 
+<!-- Offcanvas para cadastro/edição -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offReceitaEditar" aria-labelledby="offReceitaEditarLabel">
     <div class="offcanvas-header">
         <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Fluxo</h2>
@@ -260,9 +273,11 @@ print_r($financeiro);
         </form>
     </div>
 </div>
+
+<!-- JavaScript para o modal de confirmação de alteração de status -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o modal e cria a instância do Bootstrap Modal para o status
+    // Seleciona o modal e cria a instância do Bootstrap Modal para alteração de status
     var confirmStatusModalEl = document.getElementById('confirmStatusModal');
     var bsModalStatus = new bootstrap.Modal(confirmStatusModalEl);
     
@@ -270,21 +285,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.open-confirm-status-modal').forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            // Obtém os dados a partir dos atributos personalizados (data-status-*)
-            var recordId   = this.getAttribute('data-status-id');
-            var newStatus  = this.getAttribute('data-status-new');
-            var cnpj       = this.getAttribute('data-status-cnpj');
-            var indicador  = this.getAttribute('data-status-indicador');
-            var redirectUrl= this.getAttribute('data-status-redirect');
+            // Lê os dados a partir dos atributos personalizados (prefixados com data-status-*)
+            var recordId    = this.getAttribute('data-status-id');
+            var newStatus   = this.getAttribute('data-status-new');
+            var cnpj        = this.getAttribute('data-status-cnpj');
+            var indicador   = this.getAttribute('data-status-indicador');
+            var redirectUrl = this.getAttribute('data-status-redirect');
             
-            // Popula os campos do formulário no modal
+            // Preenche os campos do formulário no modal
             document.getElementById('modalId').value = recordId;
             document.getElementById('modalStatus').value = newStatus;
             document.getElementById('modalCnpj').value = cnpj;
             document.getElementById('modalIndicador').value = indicador;
             document.getElementById('modalRedirectUrl').value = redirectUrl;
             
-            // Atualiza o texto de confirmação de acordo com a ação
+            // Atualiza o texto de confirmação conforme a ação
             var confirmText = (newStatus === 'inativo') 
                 ? "Deseja realmente desativar este registro?" 
                 : "Deseja realmente ativar este registro?";
@@ -297,8 +312,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-
 <?php include_once "app/private/parts/footer.php" ?>
+
+<!-- Script para máscara de inputs e criação dos gráficos -->
 <script>
     const maskOptions = {
         mask: Number,
@@ -317,30 +333,29 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('input.value').forEach(input => IMask(input, maskOptions));
     });
 
-        const barCtx = document.getElementById('barChart').getContext('2d');
-        const pieCtx = document.getElementById('pieChart').getContext('2d');
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    const pieCtx = document.getElementById('pieChart').getContext('2d');
 
-        new Chart(barCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Fev', 'Mar', 'Abr'],
-                datasets: [{
-                    label: 'Receita Mensal',
-                    data: [1000, 1500, 2000, 1800],
-                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
-                }]
-            }
-        });
+    new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr'],
+            datasets: [{
+                label: 'Receita Mensal',
+                data: [1000, 1500, 2000, 1800],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+            }]
+        }
+    });
 
-        new Chart(pieCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Online', 'Presencial'],
-                datasets: [{
-                    data: [60, 40],
-                    backgroundColor: ['#36A2EB', '#FF6384']
-                }]
-            }
-        });
+    new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Online', 'Presencial'],
+            datasets: [{
+                data: [60, 40],
+                backgroundColor: ['#36A2EB', '#FF6384']
+            }]
+        }
+    });
 </script>
-
