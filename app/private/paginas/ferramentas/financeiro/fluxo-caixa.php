@@ -262,44 +262,6 @@ print_r($financeiro);
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o modal e cria a instância do Bootstrap Modal
-    var confirmModalEl = document.getElementById('confirmStatusModal');
-    var bsModal = new bootstrap.Modal(confirmModalEl);
-    
-    // Associa o evento aos botões com a classe "open-confirm-modal"
-    document.querySelectorAll('.open-confirm-modal').forEach(function(button) {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Obtém os dados do registro a partir dos atributos data-*
-            var recordId     = this.getAttribute('data-id');
-            var newStatus    = this.getAttribute('data-status');
-            var cnpj         = this.getAttribute('data-cnpj');
-            var indicador    = this.getAttribute('data-indicador');
-            var redirectUrl  = this.getAttribute('data-redirect');
-            
-            // Popula os campos ocultos do formulário no modal
-            document.getElementById('modalId').value = recordId;
-            document.getElementById('modalStatus').value = newStatus;
-            document.getElementById('modalCnpj').value = cnpj;
-            document.getElementById('modalIndicador').value = indicador;
-            document.getElementById('modalRedirectUrl').value = redirectUrl;
-            
-            // Atualiza o texto de confirmação de acordo com a ação
-            var confirmText = (newStatus === 'inativo') 
-                ? "Deseja realmente desativar este registro?" 
-                : "Deseja realmente ativar este registro?";
-            document.getElementById('confirmText').textContent = confirmText;
-            
-            // Exibe o modal
-            bsModal.show();
-        });
-    });
-});
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
     // Seleciona o modal e cria a instância do Bootstrap Modal para o status
     var confirmStatusModalEl = document.getElementById('confirmStatusModal');
     var bsModalStatus = new bootstrap.Modal(confirmStatusModalEl);
