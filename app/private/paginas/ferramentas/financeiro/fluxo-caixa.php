@@ -143,7 +143,7 @@ print_r($financeiro);
       <div class="modal-body">
          <p id="confirmText">Deseja realmente alterar o status deste registro?</p>
          <!-- Formulário para alteração de status -->
-         <form action="alterar_status.php" method="post" id="formAlterarStatus">
+         <form action="app/functions/push/stauts_dados.php" method="post" id="formAlterarStatus">
             <input type="hidden" name="id" id="modalId">
             <input type="hidden" name="status" id="modalStatus">
             <input type="hidden" name="cnpj" id="modalCnpj">
