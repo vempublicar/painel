@@ -1,6 +1,13 @@
 
 <?Php
 $minhas_empresas = $_SESSION['minhas_empresas'];
+function canAccess($userRole, $allowedRoles) {
+    return in_array($userRole, $allowedRoles);
+}
+// Defina os cargos permitidos para a operação
+$permiteInserir = ['proprietario', 'total', 'financeiro'];
+$permiteVisualizar = ['proprietario', 'total', 'financeiro';
+
 
 if (isset($_GET['c'])) {
     $empresa_edit = base64_decode($_GET['c']);
@@ -14,7 +21,6 @@ if (isset($_GET['c'])) {
             break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
         }
     }
-
     if ($cargo && $id) {
         // Faz algo com $cargo e $id
         echo $cargo;
@@ -24,9 +30,18 @@ if (isset($_GET['c'])) {
         echo "CNPJ não encontrado nas empresas que você administra.";
     }
 }
+$editar = '';
+$visualizar = '';
+if (!canAccess($cargo, $permiteInserir)) {
+    $editar = 'd-none';
+}
+if (!canAccess($cargo, $permiteVisualizar)) {
+    $visualizar = 'd-none';
+}
+
 ?>
 
-<div class="container mt-5">
+<div class="container <?= $visualizar ?> mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
             <div class="col-md-6">
@@ -36,9 +51,9 @@ if (isset($_GET['c'])) {
                 <canvas id="pieChart"></canvas>
             </div>
         </div>
-    </div>
+</div>
 
-    <div class="floating-button">
+<div class="floating-button <?= $editar ?>">
     <div class="linha-background bg-cyan"></div>
     <a class="btn btn-cyan btn-icon text-black" data-bs-toggle="offcanvas" href="#offReceitaEditar" role="button" aria-controls="offcanvasEnd" style="height: 60px; width: 60px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
