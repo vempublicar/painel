@@ -198,35 +198,61 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
                     <div id="chart-receita-mensal" style="min-height: 240px;"></div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="progress card-progress">
-                        <!-- Progress Bar do Faturamento -->
-                        <div class="progress-bar bg-cyan" style="width: 100%;" role="progressbar" 
-                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" 
-                            aria-label="100% Faturado">
-                            <span class="visually-hidden">100% Faturado</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="text-secondary">
-                            Faturado no Último Trimestre (TT<?= $ultimoTrimestreNum ?>, <?= $ultimoTrimestreAno ?>)
-                        </div>
-                        <div class="font-weight-medium">
-                            R$ <?= number_format($ultimoTrimestreTotal, 2, ',', '.') ?>
-                            <small class="text-success">(Lucro: <?= number_format($percentualLucro, 2, ',', '.') ?>%)</small>
-                        </div>
-                    </div>
-                    <div class="progress card-progress">
-                        <!-- Progress Bar das Despesas -->
-                        <div class="progress-bar bg-red" style="width: <?= $percentualDespesas ?>%;" role="progressbar" 
-                            aria-valuenow="<?= $percentualDespesas ?>" aria-valuemin="0" aria-valuemax="100" 
-                            aria-label="<?= number_format($percentualDespesas, 2, ',', '.') ?>% Despesas">
-                            <span class="visually-hidden"><?= number_format($percentualDespesas, 2, ',', '.') ?>% Despesas</span>
-                        </div>
-                    </div>
+            <div class="row">
+    <!-- Card do Melhor Trimestre -->
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="progress card-progress">
+                <div class="progress-bar bg-cyan" style="width: 100%;" role="progressbar" 
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="visually-hidden">100% Faturado</span>
                 </div>
             </div>
+            <div class="card-body">
+                <div class="text-secondary">
+                    Melhor Trimestre (TT<?= $melhorTrimestreNum ?>, <?= $melhorTrimestreAno ?>)
+                </div>
+                <div class="font-weight-medium">
+                    R$ <?= number_format($melhorFaturamento, 2, ',', '.') ?>
+                    <small class="text-success">(Lucro: <?= number_format($percentuaisMelhor['lucro'], 2, ',', '.') ?>%)</small>
+                </div>
+            </div>
+            <div class="progress card-progress">
+                <div class="progress-bar bg-red" style="width: <?= $percentuaisMelhor['despesas'] ?>%;" role="progressbar" 
+                    aria-valuenow="<?= $percentuaisMelhor['despesas'] ?>" aria-valuemin="0" aria-valuemax="100">
+                    <span class="visually-hidden"><?= number_format($percentuaisMelhor['despesas'], 2, ',', '.') ?>% Despesas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card do Trimestre Atual -->
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="progress card-progress">
+                <div class="progress-bar bg-cyan" style="width: 100%;" role="progressbar" 
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="visually-hidden">100% Faturado</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="text-secondary">
+                    Faturado no Último Trimestre (TT<?= $ultimoTrimestreNum ?>, <?= $ultimoTrimestreAno ?>)
+                </div>
+                <div class="font-weight-medium">
+                    R$ <?= number_format($ultimoTrimestreTotal, 2, ',', '.') ?>
+                    <small class="text-success">(Lucro: <?= number_format($percentuaisAtual['lucro'], 2, ',', '.') ?>%)</small>
+                </div>
+            </div>
+            <div class="progress card-progress">
+                <div class="progress-bar bg-red" style="width: <?= $percentuaisAtual['despesas'] ?>%;" role="progressbar" 
+                    aria-valuenow="<?= $percentuaisAtual['despesas'] ?>" aria-valuemin="0" aria-valuemax="100">
+                    <span class="visually-hidden"><?= number_format($percentuaisAtual['despesas'], 2, ',', '.') ?>% Despesas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Lista dos últimos registros -->
         <div class="mt-5">
