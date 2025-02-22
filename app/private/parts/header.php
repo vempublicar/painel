@@ -17,10 +17,10 @@
       <i class="fas fa-building me-2"></i>Minhas Empresas
     </a>
     <a href="painel&a=treinamento" class="text-secondary me-2">
-      <i class="fas fa-graduation-cap me-2"></i>Minhas Análises
+      | <i class="fas fa-graduation-cap me-2"></i>Minhas Análises
     </a>
     <a href="painel&a=estrategias" class="text-secondary ">
-      <i class="fas fa-play me-2"></i>Estratégias Exclusivas
+      | <i class="fas fa-play me-2"></i>Estratégias Exclusivas
     </a>
   </div>
 
@@ -29,13 +29,13 @@
     <a href="painel" title="Início" class="d-block">
       <i class="fas fa-home m-2"></i>
     </a>
-    <a href="painel&a=empresas" class="text-secondary d-sm-none d-lg-none">
+    <a href="painel&a=empresas" class="text-secondary d-md-none d-lg-none">
       <i class="fas fa-building m-2"></i>
     </a>
-    <a href="painel&a=treinamento" class="text-secondary d-sm-none d-lg-none">
+    <a href="painel&a=treinamento" class="text-secondary d-md-none d-lg-none">
       <i class="fas fa-graduation-cap m-2"></i>
     </a>
-    <a href="painel&a=estrategias" class="text-secondary d-sm-none d-lg-none">
+    <a href="painel&a=estrategias" class="text-secondary d-md-none d-lg-none">
       <i class="fas fa-play m-2"></i>
     </a>
     <div class="me-2">
