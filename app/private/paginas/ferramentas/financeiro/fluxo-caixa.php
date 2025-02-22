@@ -198,7 +198,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
                     <div id="chart-receita-mensal" style="min-height: 240px;"></div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="progress card-progress">
