@@ -109,7 +109,7 @@ print_r($financeiro);
                                 </a>    
                                 <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn" title="Desativar">
                                     <i class="fas fa-ban"></i>
-                                </a>                            
+                                </a>                    app/functions/push/stauts_dados.php        
                             </td>
                         </tr>
                     <?php endforeach; ?>
