@@ -67,8 +67,6 @@ print_r($financeiro);
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Data</th>
                         <th>Status</th>
                         <th>Mês</th>
                         <th>Ano</th>
