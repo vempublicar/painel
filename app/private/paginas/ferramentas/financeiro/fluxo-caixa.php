@@ -1,8 +1,9 @@
 
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+include "app/functions/data/dados.php";
 
 $minhas_empresas = $_SESSION['minhas_empresas'];
 
@@ -38,19 +39,55 @@ if (!canAccess($cargo, $permiteInserir)) {
 if (!canAccess($cargo, $permiteVisualizar)) {
     $visualizar = 'd-none';
 }
+
+$financeiro = fetchFluxoFinanceiro($id, $indicador);
 ?>
 
-
 <div class="container <?= $visualizar ?> mt-5">
-        <h3 class="text-center">Dashboard Financeiro</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <canvas id="barChart"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="pieChart"></canvas>
-            </div>
+    <h3 class="text-center">Dashboard Financeiro</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="barChart"></canvas>
         </div>
+        <div class="col-md-6">
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Lista dos últimos registros -->
+    <div class="mt-5">
+        <h4>Últimos Registros</h4>
+        <?php if (!empty($financeiro)) : ?>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Empresa</th>
+                        <th>Indicador</th>
+                        <th>Status</th>
+                        <th>Mês</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($financeiro as $registro) : ?>
+                        <tr>
+                            <td><?= $registro['id'] ?></td>
+                            <td><?= $registro['create_at'] ?></td>
+                            <td><?= $registro['empresa'] ?></td>
+                            <td><?= $registro['indicador'] ?></td>
+                            <td><?= $registro['status'] ?></td>
+                            <td><?= $registro['mes'] ?></td>
+                            <td><?= $registro['ano'] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else : ?>
+            <p class="text-center">Nenhum registro encontrado.</p>
+        <?php endif; ?>
+    </div>
 </div>
 
 <div class="floating-button <?= $editar ?>">
