@@ -73,7 +73,8 @@ print_r($financeiro);
                         <th>Ano</th>
                         <th>Faturamento</th>
                         <th>Despesa</th>
-                        <th>Ações</th>
+                        <th>Editar</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,7 +96,7 @@ print_r($financeiro);
                             <td>
                                 <!-- Botão para editar -->
                                 <a href="#" 
-                                   class="btn btn-sm btn-primary edit-record" 
+                                   class="btn" 
                                    title="Editar"
                                    data-id="<?= $registro['id'] ?>"
                                    data-mes="<?= $registro['mes'] ?>"
@@ -106,9 +107,11 @@ print_r($financeiro);
                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
                                     <i class="fas fa-edit"></i>
-                                </a>
+                                </a>                                
+                            </td>
+                            <td>
                                 <!-- Botão para desativar -->
-                                <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn btn-sm btn-danger" title="Desativar">
+                                <a href="desativar.php?id=<?= $registro['id'] ?>" class="btn" title="Desativar">
                                     <i class="fas fa-ban"></i>
                                 </a>
                             </td>
