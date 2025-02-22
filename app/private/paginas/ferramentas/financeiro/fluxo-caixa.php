@@ -106,6 +106,73 @@ foreach ($ultimos12Meses as $mes => $valores) {
     $dadosParaGrafico['impostos_periodo'][] = $valores['impostos_periodo'];
 }
 
+// Inicializar array dos trimestres para Faturamento e Despesas
+$trimestres = [
+    "Q1" => ["faturamento" => 0, "despesas" => 0], // Janeiro - Março
+    "Q2" => ["faturamento" => 0, "despesas" => 0], // Abril - Junho
+    "Q3" => ["faturamento" => 0, "despesas" => 0], // Julho - Setembro
+    "Q4" => ["faturamento" => 0, "despesas" => 0]  // Outubro - Dezembro
+];
+
+// Percorrer os dados e somar faturamento e despesas por trimestre
+foreach ($dadosParaGrafico['meses'] as $index => $mesAno) {
+    list($mes, $ano) = explode('-', $mesAno); // Separar Mês e Ano
+
+    // Identificar o trimestre
+    if ($mes >= 1 && $mes <= 3) {
+        $trimestre = 'Q1';
+    } elseif ($mes >= 4 && $mes <= 6) {
+        $trimestre = 'Q2';
+    } elseif ($mes >= 7 && $mes <= 9) {
+        $trimestre = 'Q3';
+    } else {
+        $trimestre = 'Q4';
+    }
+
+    // Somar faturamento e despesas no trimestre correspondente
+    $trimestres[$trimestre]['faturamento'] += $dadosParaGrafico['faturamento_bruto'][$index];
+    $trimestres[$trimestre]['despesas'] += $dadosParaGrafico['despesas_brutas'][$index];
+}
+
+// Encontrar o trimestre com maior faturamento
+$melhorTrimestre = array_reduce(array_keys($trimestres), function($maxTrimestre, $currentTrimestre) use ($trimestres) {
+    return ($trimestres[$currentTrimestre]['faturamento'] > $trimestres[$maxTrimestre]['faturamento']) ? $currentTrimestre : $maxTrimestre;
+}, "Q1");
+
+$melhorFaturamento = $trimestres[$melhorTrimestre]['faturamento'];
+$melhorDespesa = $trimestres[$melhorTrimestre]['despesas'];
+
+// Identificar o trimestre atual (baseado no mês de hoje)
+$mesAtual = date('n');
+if ($mesAtual >= 1 && $mesAtual <= 3) {
+    $trimestreAtual = 'Q1';
+} elseif ($mesAtual >= 4 && $mesAtual <= 6) {
+    $trimestreAtual = 'Q2';
+} elseif ($mesAtual >= 7 && $mesAtual <= 9) {
+    $trimestreAtual = 'Q3';
+} else {
+    $trimestreAtual = 'Q4';
+}
+
+// Obter os valores do trimestre atual
+$ultimoTrimestreTotal = $trimestres[$trimestreAtual]['faturamento'];
+$ultimoTrimestreDespesas = $trimestres[$trimestreAtual]['despesas'];
+$ultimoTrimestreNum = str_replace("Q", "", $trimestreAtual);
+$ultimoTrimestreAno = date("Y");
+
+// Calcular percentual das despesas e do lucro
+if ($ultimoTrimestreTotal > 0) {
+    $percentualDespesas = ($ultimoTrimestreDespesas / $ultimoTrimestreTotal) * 100;
+    $percentualLucro = 100 - $percentualDespesas;
+} else {
+    $percentualDespesas = 0;
+    $percentualLucro = 0;
+}
+
+// Garantir que os percentuais estejam entre 0 e 100%
+$percentualDespesas = min(100, max(0, $percentualDespesas));
+$percentualLucro = min(100, max(0, $percentualLucro));
+
 ?>
 
     <div class="container <?= $visualizar ?> mt-5">
@@ -122,7 +189,35 @@ foreach ($ultimos12Meses as $mes => $valores) {
                     <div id="chart-receita-mensal" style="min-height: 240px;"></div>
                 </div>
             </div>
-        </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="progress card-progress">
+                        <!-- Progress Bar do Faturamento -->
+                        <div class="progress-bar bg-cyan" style="width: 100%;" role="progressbar" 
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" 
+                            aria-label="100% Faturado">
+                            <span class="visually-hidden">100% Faturado</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-secondary">
+                            Faturado no Último Trimestre (TT<?= $ultimoTrimestreNum ?>, <?= $ultimoTrimestreAno ?>)
+                        </div>
+                        <div class="font-weight-medium">
+                            R$ <?= number_format($ultimoTrimestreTotal, 2, ',', '.') ?>
+                            <small class="text-success">(Lucro: <?= number_format($percentualLucro, 2, ',', '.') ?>%)</small>
+                        </div>
+                    </div>
+                    <div class="progress card-progress">
+                        <!-- Progress Bar das Despesas -->
+                        <div class="progress-bar bg-red" style="width: <?= $percentualDespesas ?>%;" role="progressbar" 
+                            aria-valuenow="<?= $percentualDespesas ?>" aria-valuemin="0" aria-valuemax="100" 
+                            aria-label="<?= number_format($percentualDespesas, 2, ',', '.') ?>% Despesas">
+                            <span class="visually-hidden"><?= number_format($percentualDespesas, 2, ',', '.') ?>% Despesas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <!-- Lista dos últimos registros -->
         <div class="mt-5">
