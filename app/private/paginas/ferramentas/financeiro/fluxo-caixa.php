@@ -106,17 +106,18 @@ print_r($financeiro);
                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
                                     <i class="fas fa-edit"></i>
-                                </a>    
+<<<<<<< HEAD
+                                </a>
                                 <a href="#"
-                                class="btn btn-sm btn-danger open-confirm-modal" 
-                                title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
-                                data-id="<?= $registro['id'] ?>"
-                                data-status="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
-                                data-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
-                                data-indicador="<?= $registro['indicador'] ?>"
-                                data-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
-                                    <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
-                                </a>     
+                                    class="btn btn-sm btn-danger open-confirm-status-modal" 
+                                    title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
+                                    data-status-id="<?= $registro['id'] ?>"
+                                    data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
+                                    data-status-cnpj="<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>"
+                                    data-status-indicador="<?= $registro['indicador'] ?>"
+                                    data-status-redirect="painel&a=edit-empresa&b=<?= $registro['indicador'] ?>&c=<?= isset($jsonDados['cnpj']) ? $jsonDados['cnpj'] : '' ?>">
+                                        <i class="fas <?= ($registro['status'] == 'ativo') ? 'fa-ban' : 'fa-check' ?>"></i>
+                                </a>  
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -130,7 +131,7 @@ print_r($financeiro);
 
 </div>
 
-<!-- Modal de Confirmação de Alteração de Status -->
+
 <!-- Modal de Confirmação de Alteração de Status -->
 <div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -157,7 +158,6 @@ print_r($financeiro);
     </div>
   </div>
 </div>
-
 
 
 <div class="floating-button <?= $editar ?>">
@@ -301,41 +301,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <script>
-// Aguarda o carregamento do DOM
-document.addEventListener("DOMContentLoaded", function() {
-    // Seleciona todos os botões de edição (que devem ter a classe "edit-record")
-    const editButtons = document.querySelectorAll('.edit-record');
-    editButtons.forEach(button => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o modal e cria a instância do Bootstrap Modal para o status
+    var confirmStatusModalEl = document.getElementById('confirmStatusModal');
+    var bsModalStatus = new bootstrap.Modal(confirmStatusModalEl);
+    
+    // Associa o evento aos botões com a classe "open-confirm-status-modal"
+    document.querySelectorAll('.open-confirm-status-modal').forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            // Extrai os dados do registro a partir dos atributos data-*
-            const recordId     = this.getAttribute('data-id');
-            const mes          = this.getAttribute('data-mes');
-            const ano          = this.getAttribute('data-ano');
-            const fatPresencial= this.getAttribute('data-fat_presencial');
-            const fatOnline    = this.getAttribute('data-fat_online');
-            const recLiquida   = this.getAttribute('data-rec_liquida');
-            const despBruta    = this.getAttribute('data-desp_bruta');
-            const impPeriodo   = this.getAttribute('data-imp_periodo');
-
-            // Preenche os campos do formulário no offcanvas
-            document.getElementById('recordId').value = recordId;
-            document.getElementById('mes').value = mes;
-            document.getElementById('ano').value = ano;
-            document.getElementById('fat_presencial').value = fatPresencial;
-            document.getElementById('fat_online').value = fatOnline;
-            document.getElementById('rec_liquida').value = recLiquida;
-            document.getElementById('desp_bruta').value = despBruta;
-            document.getElementById('imp_periodo').value = impPeriodo;
-
-            // Abre o offcanvas utilizando a API do Bootstrap
-            const offcanvasElement = document.getElementById('offReceitaEditar');
-            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
-            bsOffcanvas.show();
+            // Obtém os dados a partir dos atributos personalizados (data-status-*)
+            var recordId   = this.getAttribute('data-status-id');
+            var newStatus  = this.getAttribute('data-status-new');
+            var cnpj       = this.getAttribute('data-status-cnpj');
+            var indicador  = this.getAttribute('data-status-indicador');
+            var redirectUrl= this.getAttribute('data-status-redirect');
+            
+            // Popula os campos do formulário no modal
+            document.getElementById('modalId').value = recordId;
+            document.getElementById('modalStatus').value = newStatus;
+            document.getElementById('modalCnpj').value = cnpj;
+            document.getElementById('modalIndicador').value = indicador;
+            document.getElementById('modalRedirectUrl').value = redirectUrl;
+            
+            // Atualiza o texto de confirmação de acordo com a ação
+            var confirmText = (newStatus === 'inativo') 
+                ? "Deseja realmente desativar este registro?" 
+                : "Deseja realmente ativar este registro?";
+            document.getElementById('confirmText').textContent = confirmText;
+            
+            // Exibe o modal de confirmação
+            bsModalStatus.show();
         });
     });
 });
 </script>
+
 
 <?php include_once "app/private/parts/footer.php" ?>
 <script>
