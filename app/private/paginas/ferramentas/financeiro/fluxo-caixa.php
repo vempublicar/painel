@@ -113,7 +113,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 <label class="form-label">Faturamento Bruto</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text input-group-label" style="min-width: 100px;" >Presencial</span>
+                        <span class="input-group-text input-group-label" style="width: 120px;" >Presencial</span>
                         <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
                     </div>
                 </div>
