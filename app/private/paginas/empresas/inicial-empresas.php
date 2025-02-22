@@ -118,7 +118,7 @@ if(empty($minhas_empresas)) {
         </form>
     </div>
 </div>
-<?php include_once "app/private/parts/footer.php" ?>
+<?php // include_once "app/private/parts/footer.php" ?>
 <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var cnpjMask = IMask(
