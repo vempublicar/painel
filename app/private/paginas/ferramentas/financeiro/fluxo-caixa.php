@@ -1,6 +1,7 @@
 
 <?Php
 $minhas_empresas = $_SESSION['minhas_empresas'];
+
 function canAccess($userRole, $allowedRoles) {
     return in_array($userRole, $allowedRoles);
 }
@@ -33,10 +34,10 @@ if (isset($_GET['c'])) {
 $editar = '';
 $visualizar = '';
 if (!canAccess($cargo, $permiteInserir)) {
-    $editar = 'd-none';
+    $editar = '';
 }
 if (!canAccess($cargo, $permiteVisualizar)) {
-    $visualizar = 'd-none';
+    $visualizar = '';
 }
 
 ?>
