@@ -106,10 +106,9 @@ print_r($financeiro);
                                    data-desp_bruta="<?= isset($jsonDados['desp_bruta']) ? $jsonDados['desp_bruta'] : '' ?>"
                                    data-imp_periodo="<?= isset($jsonDados['imp_periodo']) ? $jsonDados['imp_periodo'] : '' ?>">
                                     <i class="fas fa-edit"></i>
-<<<<<<< HEAD
                                 </a>
                                 <a href="#"
-                                    class="btn btn-sm btn-danger open-confirm-status-modal" 
+                                    class="btn open-confirm-status-modal" 
                                     title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
                                     data-status-id="<?= $registro['id'] ?>"
                                     data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
