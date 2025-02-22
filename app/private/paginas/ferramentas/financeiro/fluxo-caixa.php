@@ -111,14 +111,16 @@ foreach ($ultimos12Meses as $mes => $valores) {
     <div class="container <?= $visualizar ?> mt-5">
         <h3 class="text-center">Dashboard Financeiro</h3>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="card-body">
+                    <select id="periodo">
+                        <option value="3">Últimos 3 meses</option>
+                        <option value="6">Últimos 6 meses</option>
+                        <option value="12" selected>Últimos 12 meses</option>
+                    </select>
                     <h3 class="card-title">Fluxo de receita no período</h3>
                     <div id="chart-receita-mensal" style="min-height: 240px;"></div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                
             </div>
         </div>
 
@@ -193,11 +195,7 @@ foreach ($ultimos12Meses as $mes => $valores) {
             <p class="text-center">Nenhum registro encontrado.</p>
         <?php endif; ?>
     </div>
-    <select id="periodo">
-        <option value="3">Últimos 3 meses</option>
-        <option value="6">Últimos 6 meses</option>
-        <option value="12" selected>Últimos 12 meses</option>
-    </select>
+
     <!-- Modal de Confirmação de Alteração de Status -->
     <div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
     <div class="modal-dialog">
