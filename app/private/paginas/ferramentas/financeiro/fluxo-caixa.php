@@ -146,8 +146,24 @@ if (!canAccess($cargo, $permiteVisualizar)) {
     </div>
 </div>
 <?php include_once "app/private/parts/footer.php" ?>
-
 <script>
+    const maskOptions = {
+        mask: Number,
+        scale: 2,
+        signed: false,
+        thousandsSeparator: '.',
+        padFractionalZeros: true,
+        normalizeZeros: true,
+        radix: ',',
+        mapToRadix: ['.'],
+        min: -9999999999999.99,
+        max: 9999999999999.99
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('input.value').forEach(input => IMask(input, maskOptions));
+    });
+
         const barCtx = document.getElementById('barChart').getContext('2d');
         const pieCtx = document.getElementById('pieChart').getContext('2d');
 
