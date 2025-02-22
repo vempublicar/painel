@@ -458,7 +458,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
             </form>
         </div>
     </div>
-            <div id="alert-container" class="container mt-3"></div>
+            
     <?php include_once "app/private/parts/footer.php" ?>
 
     <script>
@@ -674,31 +674,3 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
 
     </script>
 
-<script>
-    // Função para obter os parâmetros da URL
-    function getUrlParameter(name) {
-        const params = new URLSearchParams(window.location.search);
-        return params.get(name);
-    }
-
-    // Capturar o parâmetro "msg"
-    const mensagem = getUrlParameter('msg');
-
-    // Se houver uma mensagem, exibir um alerta Bootstrap
-    if (mensagem) {
-        const decodedMessage = decodeURIComponent(mensagem); // Decodifica a mensagem da URL
-        const alertHTML = `
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                ${decodedMessage}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        `;
-
-        // Inserir o alerta no container
-        document.getElementById("alert-container").innerHTML = alertHTML;
-
-        // Remover o parâmetro 'msg' da URL sem recarregar a página
-        const newUrl = window.location.origin + window.location.pathname + window.location.search.replace(/([?&])msg=[^&]+(&|$)/, '$1').replace(/&$/, '');
-        window.history.replaceState({}, document.title, newUrl);
-    }
-</script>
