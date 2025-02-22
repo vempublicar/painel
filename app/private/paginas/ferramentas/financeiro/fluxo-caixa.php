@@ -96,7 +96,7 @@ print_r($financeiro);
                                 <td>
                                     <!-- Botão para editar -->
                                     <a href="#" 
-                                    class="btn btn-sm btn-primary edit-record" 
+                                    class="btn edit-record" 
                                     title="Editar"
                                     data-id="<?= $registro['id'] ?>"
                                     data-mes="<?= $registro['mes'] ?>"
@@ -112,7 +112,7 @@ print_r($financeiro);
                                 <td>
                                     <!-- Botão para desativar -->
                                     <a href="#"
-                                        class="btn btn-sm btn-danger open-confirm-status-modal" 
+                                        class="btn open-confirm-status-modal" 
                                         title="<?= ($registro['status'] == 'ativo') ? 'Desativar' : 'Ativar' ?>"
                                         data-status-id="<?= $registro['id'] ?>"
                                         data-status-new="<?= ($registro['status'] == 'ativo') ? 'inativo' : 'ativo' ?>"
