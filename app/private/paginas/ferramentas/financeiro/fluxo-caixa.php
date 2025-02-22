@@ -68,18 +68,18 @@ if (!canAccess($cargo, $permiteVisualizar)) {
     <div class="offcanvas-body">
         <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
             <div class="row">
-                <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
-                <input type="hidden" name="emp_ref" id="emp_ref" value="<?= $id ?>" class="form-control" readonly>
-                <input type="hidden" name="id" id="id" class="form-control">
+                <input type="hidden" name="create" id="create" class="form-control" value="<?php echo date('d/m/Y') ?>">
+                <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
+                <input type="hidden" name="id" id="id" value="" class="form-control"> <!-- SE O VALOR SERÁ EDITADO -->
                 <input type="hidden" name="tabela" value="financeiro">
                 <input type="hidden" name="indicador" value="fluxo-caixa">
                 <input type="hidden" name="status" value="ativo">
                 <input type="hidden" name="retorno" value="null">
-                <input type="hidden" name="periodo_ref" value="M">
+                <input type="hidden" name="calculo" value="periodo">
                 <label class="form-label">Data do Resultado</label>
                 <div class="mb-3 col-6">
                     <label class="form-label">Mês</label>
-                    <select name="mes_ref" id="mes_ref" class="form-select" required>
+                    <select name="mes" id="mes" class="form-select" required>
                         <option value="1">Janeiro</option>
                         <option value="2">Fevereiro</option>
                         <option value="3">Março</option>
@@ -96,7 +96,7 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label">Ano</label>
-                    <select name="ano_ref" id="ano_ref" class="form-select" required>                        
+                    <select name="ano" id="ano" class="form-select" required>                        
                         <option value="2024" >2024</option>
                         <option value="2025" selected>2025</option>
                         <option value="2026">2026</option>
@@ -106,34 +106,34 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;" >Vendas Presencial </span>
-                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                        <input type="text" name="fat_presencial" id="fat_presencial" class="form-control value" required>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;">Vendas Online </span>
-                        <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
+                        <input type="text" name="fat_online" id="fat_online" class="form-control value" required>
                     </div>
                 </div>
                 <label class="form-label">Faturado no Mês <small class="text-secondary">(Receita que entrou no caixa)</small></label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;"> Entrada de Caixa </span>
-                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                        <input type="text" name="rec_liquida" id="rec_liquida" class="form-control value" required>
                     </div>
                 </div>
                 <label class="form-label">Despesa Bruta</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;"> Saída de Caixa </span>
-                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                        <input type="text" name="desp_bruta" id="desp_bruta" class="form-control value" required>
                     </div>
                 </div>
                 <label class="form-label">Impostos</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
                         <span class="input-group-text text-center" style="width: 150px;"> Equivalente Período </span>
-                        <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                        <input type="text" name="imp_periodo" id="imp_periodo" class="form-control value" required>
                     </div>
                 </div>
 
