@@ -105,13 +105,13 @@ if (!canAccess($cargo, $permiteVisualizar)) {
                 <label class="form-label">Faturamento Bruto</label>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;" > Presencial </span>
+                        <span class="input-group-text text-center" style="width: 150px;" >Vendas Presencial </span>
                         <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="input-group mb-2">
-                        <span class="input-group-text text-center" style="width: 150px;"> Digital </span>
+                        <span class="input-group-text text-center" style="width: 150px;">Vendas Online </span>
                         <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
                     </div>
                 </div>
