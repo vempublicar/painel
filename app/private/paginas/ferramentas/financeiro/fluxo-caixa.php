@@ -7,8 +7,8 @@ function canAccess($userRole, $allowedRoles) {
 }
 
 // Defina os cargos permitidos para a operação
-$permiteInserir = ['proprietario', 'total', 'financeiro'];
-$permiteVisualizar = ['total', 'financeiro'];  // Corrigido
+$permiteInserir = ['total', 'financeiro'];
+$permiteVisualizar = ['proprietario', 'total', 'financeiro'];  // Corrigido
 
 if (isset($_GET['c'])) {
     $empresa_edit = base64_decode($_GET['c']);
