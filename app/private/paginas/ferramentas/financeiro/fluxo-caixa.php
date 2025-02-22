@@ -70,6 +70,7 @@ print_r($financeiro);
                         <th>Status</th>
                         <th>Mês</th>
                         <th>Ano</th>
+                        <th>Faturamento</th>
                         <th>Desp. Bruta</th>
                         <th>Ações</th>
                     </tr>
