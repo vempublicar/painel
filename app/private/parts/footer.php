@@ -38,6 +38,7 @@
     <script src="vendor/libs/jsvectormap/dist/maps/world-merc.js" defer></script>
     <script src="vendor/libs/star-rating.js/dist/star-rating.js" defer></script>
     <script src="vendor/libs/tom-select/dist/js/tom-select.base.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/imask"></script>
     <!-- Tabler Core -->
     <script src="vendor/js/tabler.min.js" defer></script>
