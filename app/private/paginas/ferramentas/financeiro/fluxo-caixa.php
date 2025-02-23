@@ -458,6 +458,15 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
             </form>
         </div>
     </div>
+
+    <?php if (isset($_GET['msg'])): ?>
+        <div class="container mt-3">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars(urldecode($_GET['msg'])) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    <?php endif; ?>
             
     <?php include_once "app/private/parts/footer.php" ?>
 
@@ -673,23 +682,5 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
         });
 
     </script>
-    <script>
-        // Função para obter os parâmetros da URL
-        function getUrlParameter(name) {
-            const params = new URLSearchParams(window.location.search);
-            return params.get(name);
-        }
 
-        // Capturar o parâmetro "msg"
-        const mensagem = getUrlParameter('msg');
-
-        // Se houver uma mensagem, exibir um alerta
-        if (mensagem) {
-            alert(decodeURIComponent(mensagem)); // Decodifica os caracteres especiais da URL
-
-            // Remover o parâmetro 'msg' da URL sem recarregar a página
-            const newUrl = window.location.origin + window.location.pathname + window.location.search.replace(/([?&])msg=[^&]+(&|$)/, '$1').replace(/&$/, '');
-            window.history.replaceState({}, document.title, newUrl);
-        }
-    </script>
 
