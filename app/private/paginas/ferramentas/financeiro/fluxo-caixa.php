@@ -459,14 +459,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
         </div>
     </div>
 
-    <?php if (isset($_GET['msg'])): ?>
-        <div class="container mt-3">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?= htmlspecialchars(urldecode($_GET['msg'])) ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php endif; ?>
+
             
     <?php include_once "app/private/parts/footer.php" ?>
 
