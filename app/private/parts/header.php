@@ -102,12 +102,7 @@
     </div>
   </div>
 </header>
-<?php if (isset($_GET['msg'])): ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?= htmlspecialchars(urldecode($_GET['msg'])) ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-    <?php endif; ?>
+
 <?php if(isset($_GET['a']) && $_GET['a'] == 'edit-empresa'){ ?>
 <header class="navbar-expand-md">
 		<div class="navbar-collapse collapse" id="navbar-menu" style="">
@@ -246,3 +241,10 @@
 		</div>
 	</header>
   <?php } ?>
+
+  <?php if (isset($_GET['msg'])): ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars(urldecode($_GET['msg'])) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    <?php endif; ?>
