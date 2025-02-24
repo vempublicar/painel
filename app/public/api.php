@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// Lista de usuários autorizados (para teste, pode ser um array simples)
+// Lista de usuários autorizados (para teste)
 $usuarios_autorizados = [
     "5519997854769@s.whatsapp.net",
     "5511987654321@s.whatsapp.net"
@@ -9,29 +9,32 @@ $usuarios_autorizados = [
 
 // Verifica se foi passado um usuário na URL
 if (!isset($_GET['user'])) {
-    echo json_encode(["status" => "error", "message" => "Não encontrou informações suficientes, é necessário que o usuário preencha seus dados no Fepacoc.com"]);
+    echo json_encode(["status" => "error", "message" => "Usuário não especificado"]);
     exit;
 }
 
 $user = $_GET['user']; // Captura o usuário da URL
 
-// Verifica se o usuário está na lista de autorizados
+// Verifica se o usuário está autorizado
 if (!in_array($user, $usuarios_autorizados)) {
-    echo json_encode(["status" => "error", "message" => "Você não está autorizado a receber estas informações, cadastre-se no Fepacoc"]);
+    echo json_encode(["status" => "error", "message" => "Usuário não autorizado"]);
     exit;
 }
 
-// Valores fictícios de teste
-$faturamento = 100000;  // Exemplo de faturamento da empresa
-$despesas = 45000;      // Exemplo de despesas da empresa
+// Simulação de empresas associadas ao usuário (poderia vir do banco de dados)
+$empresas = [
+    ["empresa" => "Vem Publicar", "faturamento" => 100000, "despesas" => 45000],
+    ["empresa" => "FEPACOC Solutions", "faturamento" => 75000, "despesas" => 32000],
+    ["empresa" => "USA Marketing", "faturamento" => 120000, "despesas" => 55000],
+    ["empresa" => "Loja Online XYZ", "faturamento" => 50000, "despesas" => 23000],
+    ["empresa" => "Consultoria ABC", "faturamento" => 90000, "despesas" => 40000],
+];
 
-// Retorno JSON
+// Retorno JSON com a lista de empresas do usuário
 echo json_encode([
     "message" => "A análise FEPACOC retorna as informações da sua empresa abaixo",
     "status" => "success",
-    "data" => [
-        "faturamento" => $faturamento,
-        "despesas" => $despesas
-    ]
+    "user" => $user,
+    "data" => $empresas
 ]);
 exit;
