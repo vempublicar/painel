@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 // Lista de usuários autorizados (para teste)
 $usuarios_autorizados = [
     "5519997854769@s.whatsapp.net",
-    "5511987654321@s.whatsapp.net"
+    "5519996341869@s.whatsapp.net"
 ];
 
 // Verifica se foi passado um usuário na URL
