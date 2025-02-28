@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-
+        <div class="col-sm-9 d-flex flex-column" >
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-vcenter table-mobile-md card-table">
