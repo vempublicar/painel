@@ -1,6 +1,3 @@
-<?php 
-print_r($minhas_empresas);
-?>
 
 <div class="card-body">
     <div class="row">
@@ -92,5 +89,4 @@ print_r($minhas_empresas);
   </div>
 </div>
 
-</div>
      
