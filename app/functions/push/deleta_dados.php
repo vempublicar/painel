@@ -31,21 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tabela = sanitizar($_POST['tabela'] ?? '');
     // Redirecionamento para painel&a=empresas
     $redirectUrl = "painel";
+    $redirectUrl2 = $_SERVER['HTTP_REFERER'];
 
     if (empty($tabela)) {
-        redirecionarComMensagem($redirectUrl, "Tabela não especificada.");
+        redirecionarComMensagem($redirectUrl2, "Erro ao excluir.");
     }
 
     // Obtém o ID do registro a ser excluído. Pode vir como 'id' ou 'id_empresa'
     $id = sanitizar($_POST['id'] ?? $_POST['id_empresa'] ?? '');
     if (empty($id)) {
-        redirecionarComMensagem($redirectUrl, "ID não especificado.");
+        redirecionarComMensagem($redirectUrl2, "Erro ao excluir.");
     }
 
     // Verifica a confirmação da exclusão: o usuário deve digitar "EXCLUIR"
     $confirmarExclusao = sanitizar($_POST['confirmarExclusao'] ?? '');
     if (strtoupper($confirmarExclusao) !== "EXCLUIR") {
-        redirecionarComMensagem($redirectUrl, "Confirmação incorreta para exclusão.");
+        redirecionarComMensagem($redirectUrl2, "Confirmação incorreta para exclusão.");
     }
 
     // Cria a conexão com o banco de dados
@@ -59,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         redirecionarComMensagem($redirectUrl, "Registro excluído com sucesso!");
     } catch (PDOException $e) {
-        redirecionarComMensagem($redirectUrl, "Erro ao excluir o registro: " . $e->getMessage());
+        redirecionarComMensagem($redirectUrl2, "Erro ao excluir o registro.");
     }
 } else {
     redirecionarComMensagem("painel", "Acesso inválido ao script.");
