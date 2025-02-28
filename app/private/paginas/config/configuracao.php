@@ -1,20 +1,4 @@
-<?php
-$minhas_empresas = $_SESSION['minhas_empresas'];
-if (isset($_GET['c'])) {
-    $empresa_edit = base64_decode($_GET['c']);
-    $cargo = '';
-    $id = '';
 
-    foreach ($minhas_empresas as $empresa) {
-        if ($empresa['cnpj'] === $empresa_edit) {
-            $empresaEditada = $empresa;
-            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
-        }
-    }
-
-}
-print_r($empresaEditada);
-?>
 <div class="page-body">
   <div class="container-xl">
     <div class="card ">

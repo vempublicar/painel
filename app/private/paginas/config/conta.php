@@ -1,11 +1,28 @@
+<?php
+$minhas_empresas = $_SESSION['minhas_empresas'];
+if (isset($_GET['c'])) {
+    $empresa_edit = base64_decode($_GET['c']);
+    $cargo = '';
+    $id = '';
+
+    foreach ($minhas_empresas as $empresa) {
+        if ($empresa['cnpj'] === $empresa_edit) {
+            $empresaEditada = $empresa;
+            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
+        }
+    }
+
+}
+?>
 <div class="card-body">
     <div class="row">
         <div class="col-sm-6">
             <h3>Detalhes da Conta</h3>
+            <img src="vendor/upload/logo/<?= $empresaEditada['logotipo'] ?>" height="150" > 
             <p><strong>Nome da Empresa:</strong><?= $empresaEditada['nome_empresa'] ?></p>
-            <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
-            <p><strong>Endereço:</strong> Rua Exemplo, 123, Bairro, Cidade/UF</p>
-            <p><strong>Email:</strong> contato@empresaexemplo.com</p>
+            <p><strong>CNPJ:</strong><?= $empresaEditada['cnpj'] ?></p>
+            <p><strong>CEP:</strong><?= $empresaEditada['cep'] ?></p>
+            <p><strong>Email:</strong><?= $empresaEditada['email_comercial'] ?></p>
         </div>
         <div class="col-sm-6">
             <h3>Ferramentas Ativas</h3>
