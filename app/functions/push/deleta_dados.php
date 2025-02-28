@@ -25,9 +25,9 @@ function redirecionarComMensagem($url, $mensagem) {
 }
 
 function extrairParteAposPainel($url) {
-    $parts = explode("painel", $url);
+    $parts = explode("&a", $url);
     if (isset($parts[1])) {
-        return 'painel' . $parts[1];
+        return 'painel&a' . $parts[1];
     } else {
         return $url;
     }
