@@ -2,12 +2,18 @@
 <div class="card-body">
     <div class="row">
         <div class="col-sm-6">
-          <h3>Detalhes da Conta</h3>
-          <img src="app/empresas/logotipos/<?= $empresaEditada['logotipo'] ?>" height="150" alt="Logotipo da Empresa">
-          <p><strong>Nome da Empresa:</strong> <?= $empresaEditada['nome_empresa'] ?></p>
-          <p><strong>CNPJ:</strong> <?= $empresaEditada['cnpj'] ?></p>
-          <p><strong>CEP:</strong> <?= $empresaEditada['cep'] ?></p>
-          <p><strong>Email:</strong> <?= $empresaEditada['email_comercial'] ?></p>
+        <h3>Detalhes da Conta</h3>
+          <div class="row">
+            <div class="col-sm-4">
+            <img src="app/empresas/logotipos/<?= $empresaEditada['logotipo'] ?>" height="150" alt="Logotipo da Empresa">
+            </div>
+            <div class="col-sm-8">          
+              <p><strong>Nome da Empresa:</strong> <?= $empresaEditada['nome_empresa'] ?></p>
+              <p><strong>CNPJ:</strong> <?= $empresaEditada['cnpj'] ?></p>
+              <p><strong>CEP:</strong> <?= $empresaEditada['cep'] ?></p>
+              <p><strong>Email:</strong> <?= $empresaEditada['email_comercial'] ?></p>              
+            </div>
+          </div>
         </div>
 
         <div class="col-sm-6">
