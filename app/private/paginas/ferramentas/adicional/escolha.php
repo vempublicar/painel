@@ -1,94 +1,127 @@
+<?php 
+$ferramentas = [
+    [
+        'imagem'     => 'vendor/images/ferramentas/ferramenta1.png',
+        'nome'       => 'Fluxo de Caixa',
+        'codigo-url' => '&fin=fluxo-caixa',
+        'link-video' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        'plano'      => 'gratuito'
+    ],
+    [
+        'imagem'     => 'vendor/images/ferramentas/ferramenta2.png',
+        'nome'       => 'Detalhamento de Despesas',
+        'codigo-url' => '&fin=detalhe-despesas',
+        'link-video' => 'https://www.youtube.com/embed/3GwjfUFyY6M',
+        'plano'      => 'estrategia'
+    ],
+    [
+        'imagem'     => 'vendor/images/ferramentas/ferramenta3.png',
+        'nome'       => 'Detalhamento de Receita',
+        'codigo-url' => '&fin=detalhe-receita',
+        'link-video' => 'https://www.youtube.com/embed/abcdef12345',
+        'plano'      => 'ferramenta'
+    ]
+];
+?>
 <div class="page-body">
     <div class="container-xl">
         <div class="row">
-            <div class="col-lg-12 mb-3">
-              <!-- Cards dos números mágicos abaixo do gráfico de radar -->
-              <h3 class="text-info text-center">Números Mágicos</h3>  
-              <div class="row">   
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Receita Online</h5>
-                      <h2 class="card-text">20%</h2>
+            <?php foreach ($ferramentas as $ferramenta): ?>
+                <?php 
+                    // Define a cor da borda de acordo com o plano
+                    switch ($ferramenta['plano']) {
+                        case 'gratuito':
+                            $borderColor = "#28a745"; // verde
+                            break;
+                        case 'estrategia':
+                            $borderColor = "#007bff"; // azul
+                            break;
+                        case 'ferramenta':
+                            $borderColor = "#d4af37"; // dourada
+                            break;
+                        default:
+                            $borderColor = "#cccccc"; // cor padrão
+                            break;
+                    }
+                ?>
+                <div class="col-md-3 mb-4">
+                    <div class="card rounded" style="border-top: 5px solid <?php echo $borderColor; ?>;">
+                        <!-- Imagem na parte superior -->
+                        <img src="<?php echo $ferramenta['imagem']; ?>" class="card-img-top" alt="<?php echo $ferramenta['nome']; ?>">
+                        <div class="card-body text-center">
+                            <!-- Nome da ferramenta -->
+                            <h5 class="card-title"><?php echo $ferramenta['nome']; ?></h5>
+                            <div class="d-flex justify-content-around">
+                                <!-- Botão Play: abre o modal e passa o link do vídeo via data-video -->
+                                <button type="button" class="btn btn-outline-secondary w-50" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="<?php echo $ferramenta['link-video']; ?>">
+                                <i class="bi bi-play me-2"></i>  Como Usar
+                                </button>
+                                <!-- Botão Adicionar: link direcionado conforme o 'codigo-url' -->
+                                <button onclick="adicionarFerramenta(<?php echo $ferramenta['id']; ?>, <?php echo $empresa['id']; ?>)" class="btn btn-outline-secondary w-50">
+                                    <i class="bi bi-plus me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Receita Presencial</h5>
-                      <h2 class="card-text">20%</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Marketing</h5>
-                      <h2 class="card-text">20%</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Matéria Prima</h5>
-                      <h2 class="card-text">15%</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Despesas</h5>
-                      <h2 class="card-text">15%</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-2 col-6">
-                  <div class="card h-100">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Margem de Lucro</h5>
-                      <h2 class="card-text">10%</h2>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-            </div>
-            <!-- Coluna esquerda com gráficos e números mágicos -->
-            <div class="col-lg-9">
-              <!-- Card para o gráfico de radar -->
-              <div class="card">
-                <div class="card-body">
-                  <div id="radarChart"></div>
-                </div>
-              </div>
-              
-            </div>
-            <!-- Coluna direita com indicadores e atualizações -->
-            <div class="col-lg-3">
-              <!-- Card 1: Atualização dos Dados -->
-              <div class="card">
-                <div class="card-body">
-                  <h5>Atualização dos Dados</h5>
-                  <h2>Última atualização: 01/01/2025</h2>
-                </div>
-              </div>
-              <!-- Card 2: Indicador de Consistência -->
-              <div class="card">
-                <div class="card-body">
-                  <h5>Indicador de Consistência</h5>
-                  <h1>95%</h1>
-                </div>
-              </div>
-              <!-- Card 3: Indicador de Eficiência Operacional -->
-              <div class="card">
-                <div class="card-body">
-                  <h5>Indicador de Eficiência Operacional</h5>
-                  <h1>85%</h1>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
+
+<!-- Modal para exibir o vídeo do YouTube -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Assistir Vídeo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para carregar o vídeo no modal -->
+<script>
+    var videoModal = document.getElementById('videoModal');
+    videoModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var videoLink = button.getAttribute('data-video');
+        var iframe = document.getElementById('videoFrame');
+        // Acrescenta parâmetro para autoplay
+        iframe.src = videoLink + "?autoplay=1";
+    });
+    videoModal.addEventListener('hidden.bs.modal', function (event) {
+        var iframe = document.getElementById('videoFrame');
+        // Limpa o src para interromper o vídeo ao fechar o modal
+        iframe.src = "";
+    });
+</script>
+<script>
+function adicionarFerramenta(ferramentaId, empresaId) {
+    $.ajax({
+         type: "POST",
+         url: "app/functions/push/adicionar_ajax.php",
+         data: {
+             ferramenta: ferramentaId,
+             empresa: empresaId
+         },
+         dataType: "json",
+         success: function(response) {
+             if(response.success) {
+                 alert(response.success);
+             } else if(response.error) {
+                 alert(response.error);
+             }
+         },
+         error: function(xhr, status, error) {
+             alert("Erro: " + error);
+         }
+    });
+}
+</script>

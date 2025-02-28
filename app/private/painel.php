@@ -42,22 +42,6 @@ switch ($a) {
             include "app/private/paginas/treinamento/treinamento.php";
         }
         break;
-    case 'ferramentas':
-        if ($b) {
-            switch ($b) {
-                case 'lista':
-                    include "app/private/paginas/ferramentas/adicional/escolha.php";
-                    break;
-                default:
-                    // Caso não reconhecido, direciona para a página inicial de ferramentas
-                    include "app/private/paginas/ferramentas/adicional/escolha.php";
-                    break;
-            }
-        } else {
-            // Página inicial de ferramentas
-            include "app/private/paginas/ferramentas/inicial-ferramentas.php";
-        }
-        break;
     case 'empresas':
         if ($b) {
             // Lógica para subpágina de empresas (a definir)
@@ -80,6 +64,10 @@ switch ($a) {
 
                         case 'configuracao':
                             include "app/private/paginas/config/configuracao.php";
+                            break;
+
+                        case 'lista-ferramentas':
+                            include "app/private/paginas/ferramentas/adicional/escolha.php";
                             break;
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
