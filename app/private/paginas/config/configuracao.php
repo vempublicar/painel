@@ -31,6 +31,8 @@ if (isset($_GET['c'])) {
                   }else{
                     include "app/private/paginas/config/conta.php";
                   }
+              }else{
+                include "app/private/paginas/config/conta.php";
               }
 
             ?>
