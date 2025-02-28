@@ -14,22 +14,7 @@ if (isset($_GET['c'])) {
 
 }
 ?>
-<div class="page-body">
-  <div class="container-xl">
-    <div class="card ">
-      <div class="row g-0">
-        <div class="col-12 col-md-3 border-end">
-          <div class="card-body">
-            <h4 class="subheader">Minha Conta</h4>
-            <div class="list-group list-group-transparent">
-              <a href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>&config=conta" class="list-group-item list-group-item-action d-flex align-items-center active">Conta</a>
-              <a href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>&config=usuarios" class="list-group-item list-group-item-action d-flex align-items-center">Usuários</a>
-              <a href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>&config=plano" class="list-group-item list-group-item-action d-flex align-items-center">Plano</a>
-              <a href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>&config=suporte" class="list-group-item list-group-item-action d-flex align-items-center">Suporte</a>
-            </div>
-          </div>
-        </div>
-          <div class="col-sm-9 d-flex flex-column" >
+
             <?php
               if(isset($_GET['config'])){
                   if($_GET['config'] == 'conta'){
@@ -49,11 +34,6 @@ if (isset($_GET['c'])) {
               }
 
             ?>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
           
             <!-- O conteúdo do conta.php será carregado aqui automaticamente -->
           
