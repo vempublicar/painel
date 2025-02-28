@@ -13,7 +13,7 @@ if (isset($_GET['c'])) {
     }
 
 }
-print_r($empresaEditada);
+print_r($minhas_empresas);
 ?>
 <div class="card-body">
     <div class="row">
