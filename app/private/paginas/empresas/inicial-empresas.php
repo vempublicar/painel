@@ -3,7 +3,6 @@ include "app/functions/data/dados.php";
 carregarEmpresasDoUsuario();
 
 $minhas_empresas = $_SESSION['minhas_empresas'];
-print_r($minhas_empresas);
 
 if(empty($minhas_empresas)) {
     $pre['cnpj'] = $_SESSION['cnpj_cpf'];
