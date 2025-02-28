@@ -79,7 +79,7 @@ switch ($a) {
                             break;
 
                         case 'configuracao':
-                            include "app/private/paginas/ferramentas/config/configuracao.php";
+                            include "app/private/paginas/config/configuracao.php";
                             break;
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
