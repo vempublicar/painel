@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-6">
           <h3>Detalhes da Conta</h3>
-          <img src="app/empresas/logotipos/<?= $empresaEditada['logotipo'] ?>" height="150" alt="Logotipo da Empresa">
+          <?php print_r($empresaEditada) ?>
           <p><strong>Nome da Empresa:</strong> <?= $empresaEditada['nome_empresa'] ?></p>
           <p><strong>CNPJ:</strong> <?= $empresaEditada['cnpj'] ?></p>
           <p><strong>CEP:</strong> <?= $empresaEditada['cep'] ?></p>
