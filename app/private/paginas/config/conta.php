@@ -1,6 +1,7 @@
 <?php 
 print_r($minhas_empresas);
 ?>
+
 <div class="card-body">
     <div class="row">
         <div class="col-sm-6">
@@ -90,3 +91,6 @@ print_r($minhas_empresas);
     </div>
   </div>
 </div>
+
+</div>
+     
