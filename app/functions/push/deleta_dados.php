@@ -24,6 +24,15 @@ function redirecionarComMensagem($url, $mensagem) {
     exit();
 }
 
+function extrairParteAposPainel($url) {
+    $parts = explode("painel", $url);
+    if (isset($parts[1])) {
+        return 'painel' . $parts[1];
+    } else {
+        return $url;
+    }
+}
+
 // Verifica se a requisição é POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -31,7 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tabela = sanitizar($_POST['tabela'] ?? '');
     // Redirecionamento para painel&a=empresas
     $redirectUrl = "painel";
-    $redirectUrl2 = $_SERVER['HTTP_REFERER'];
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        $redirectUrl2 = extrairParteAposPainel($_SERVER['HTTP_REFERER']);
+    } else {
+        $redirectUrl2 = "painel";
+    }
 
     if (empty($tabela)) {
         redirecionarComMensagem($redirectUrl2, "Erro ao excluir.");
