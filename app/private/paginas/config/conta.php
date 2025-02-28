@@ -8,7 +8,7 @@
             <p><strong>Email:</strong> contato@empresaexemplo.com</p>
         </div>
         <div class="col-sm-6">
-            <h3>Plano</h3>
+            <h3>Ferramentas Ativas</h3>
 
         </div>
     </div>
