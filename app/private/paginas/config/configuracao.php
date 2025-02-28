@@ -13,7 +13,6 @@ if (isset($_GET['c'])) {
     }
 
 }
-print_r($empresa_edit);
 ?>
 <div class="page-body">
   <div class="container-xl">
@@ -36,14 +35,16 @@ print_r($empresa_edit);
                   if($_GET['config'] == 'conta'){
                     include "app/private/paginas/config/conta.php";
                   }
-                  if($_GET['config'] == 'usuarios'){
+                  elseif($_GET['config'] == 'usuarios'){
                     include "app/private/paginas/config/usuarios.php";
                   }
-                  if($_GET['config'] == 'plano'){
+                  elseif($_GET['config'] == 'plano'){
                     include "app/private/paginas/config/plano.php";
                   }
-                  if($_GET['config'] == 'suporte'){
+                  elseif($_GET['config'] == 'suporte'){
                     include "app/private/paginas/config/suporte.php";
+                  }else{
+                    include "app/private/paginas/config/conta.php";
                   }
               }
 
