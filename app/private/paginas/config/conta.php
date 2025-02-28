@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-6">
             <h3>Detalhes da Conta</h3>
-            <p><strong>Nome da Empresa:</strong> Empresa Exemplo</p>
+            <p><strong>Nome da Empresa:</strong><?= $empresaEditada['nome_empresa'] ?></p>
             <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
             <p><strong>Endereço:</strong> Rua Exemplo, 123, Bairro, Cidade/UF</p>
             <p><strong>Email:</strong> contato@empresaexemplo.com</p>
