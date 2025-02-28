@@ -17,13 +17,14 @@ if (isset($_GET['c'])) {
 <div class="card-body">
     <div class="row">
         <div class="col-sm-6">
-            <h3>Detalhes da Conta</h3>
-            <img src="vendor/upload/logo/<?= $empresaEditada['logotipo'] ?>" height="150" > 
-            <p><strong>Nome da Empresa:</strong><?= $empresaEditada['nome_empresa'] ?></p>
-            <p><strong>CNPJ:</strong><?= $empresaEditada['cnpj'] ?></p>
-            <p><strong>CEP:</strong><?= $empresaEditada['cep'] ?></p>
-            <p><strong>Email:</strong><?= $empresaEditada['email_comercial'] ?></p>
+          <h3>Detalhes da Conta</h3>
+          <img src="vendor/upload/logo/<?= $empresaEditada['logotipo'] ?>" height="150" alt="Logotipo da Empresa">
+          <p><strong>Nome da Empresa:</strong> <?= $empresaEditada['nome_empresa'] ?></p>
+          <p><strong>CNPJ:</strong> <?= $empresaEditada['cnpj'] ?></p>
+          <p><strong>CEP:</strong> <?= $empresaEditada['cep'] ?></p>
+          <p><strong>Email:</strong> <?= $empresaEditada['email_comercial'] ?></p>
         </div>
+
         <div class="col-sm-6">
             <h3>Ferramentas Ativas</h3>
 
@@ -77,26 +78,28 @@ if (isset($_GET['c'])) {
 <div class="modal fade" id="modalExcluirEmpresa" tabindex="-1" aria-labelledby="modalExcluirEmpresaLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form>
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalExcluirEmpresaLabel">Confirmar Exclusão da Empresa</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+    <form action="app/functions/push/deleta_dados.php" method="post">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalExcluirEmpresaLabel">Confirmar Exclusão da Empresa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Para confirmar a exclusão, digite a palavra <strong>"EXCLUIR"</strong> abaixo:</p>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="confirmarExclusao" name="confirmarExclusao" placeholder="Digite EXCLUIR">
         </div>
-        <div class="modal-body">
-          <p>Para confirmar a exclusão, digite a palavra <strong>"EXCLUIR"</strong> abaixo:</p>
-          <div class="mb-3">
-            <input type="text" class="form-control" id="confirmarExclusao" placeholder="Digite EXCLUIR">
-          </div>
-          <!-- Campos ocultos para envio dos dados -->
-          <input type="hidden" name="id_empresa" value="123">
-          <input type="hidden" name="id_usuario" value="456">
-          <input type="hidden" name="deletar" value="true">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-danger">Excluir Empresa</button>
-        </div>
-      </form>
+        <!-- Campos ocultos para envio dos dados -->
+        <input type="hidden" name="tabela" value="nome_da_tabela">
+        <input type="hidden" name="id_empresa" value="123">
+        <input type="hidden" name="id_usuario" value="456">
+        <input type="hidden" name="deletar" value="true">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-danger">Excluir Empresa</button>
+      </div>
+    </form>
+
     </div>
   </div>
 </div>
