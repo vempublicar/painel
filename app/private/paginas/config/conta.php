@@ -98,9 +98,9 @@
                       <input type="text" class="form-control" id="confirmarExclusao" name="confirmarExclusao" placeholder="Digite EXCLUIR">
                     </div>
                     <!-- Campos ocultos para envio dos dados -->
-                    <input type="hidden" name="tabela" value="nome_da_tabela">
-                    <input type="hidden" name="id_empresa" value="123">
-                    <input type="hidden" name="id_usuario" value="456">
+                    <input type="hidden" name="tabela" value="empresa">
+                    <input type="hidden" name="id_empresa" value="<?= $empresaEditada['id'] ?>">
+                    <input type="hidden" name="id_usuario" value="<?= $_SESSION['user_id'] ?>">
                     <input type="hidden" name="deletar" value="true">
                   </div>
                   <div class="modal-footer">
