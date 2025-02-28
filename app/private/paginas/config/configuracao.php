@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-sm-9 d-flex flex-column" id="content-area" >
                     <div class="area">
-
+                            
                     </div>
                 </div>
             </div>
