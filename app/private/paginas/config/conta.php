@@ -1,9 +1,16 @@
 <div class="card-body">
-  <h3>Detalhes da Conta</h3>
-  <p><strong>Nome da Empresa:</strong> Empresa Exemplo</p>
-  <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
-  <p><strong>Endereço:</strong> Rua Exemplo, 123, Bairro, Cidade/UF</p>
-  <p><strong>Email:</strong> contato@empresaexemplo.com</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Detalhes da Conta</h3>
+            <p><strong>Nome da Empresa:</strong> Empresa Exemplo</p>
+            <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123, Bairro, Cidade/UF</p>
+            <p><strong>Email:</strong> contato@empresaexemplo.com</p>
+        </div>
+        <div class="col-sm-6">
+            
+        </div>
+    </div>
 </div>
 <div class="card-footer bg-transparent mt-auto">
   <div class="btn-list justify-content-end">
@@ -25,7 +32,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
   </div>
   <div class="offcanvas-body">
-    <form>
+    <div class="row">
       <div class="mb-3">
         <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
         <input type="text" class="form-control" id="nomeEmpresa" value="Empresa Exemplo">
@@ -44,7 +51,7 @@
       </div>
       <!-- Adicione outros campos conforme necessário -->
       <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-    </form>
+    </div>
   </div>
 </div>
 
