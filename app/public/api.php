@@ -1,19 +1,32 @@
 <?php
 header('Content-Type: application/json');
 
+// Chave de API fixa para autenticação (deve ser movida para um local seguro posteriormente)
+$chave_api = "6A0RgCRM3fcLRXqaGZWHIwyk-AeUlWgrlEEbVA56SpI";
+
 // Lista de usuários autorizados (para teste)
 $usuarios_autorizados = [
     "5519997854769@s.whatsapp.net",
     "5519996341869@s.whatsapp.net"
 ];
 
+// Captura o cabeçalho Authorization
+$headers = apache_request_headers();
+$api_key = isset($headers['Authorization']) ? $headers['Authorization'] : null;
+
 // Verifica se foi passado um usuário na URL
-if (!isset($_GET['user'])) {
-    echo json_encode(["status" => "error", "message" => "Usuário não especificado"]);
+if (!isset($_GET['user']) || !$api_key) {
+    echo json_encode(["status" => "error", "message" => "Usuário ou chave API não especificado"]);
     exit;
 }
 
 $user = $_GET['user']; // Captura o usuário da URL
+
+// Verifica se a chave API é válida
+if ($api_key !== "Bearer " . $chave_api) {
+    echo json_encode(["status" => "error", "message" => "Chave API inválida"]);
+    exit;
+}
 
 // Verifica se o usuário está autorizado
 if (!in_array($user, $usuarios_autorizados)) {
