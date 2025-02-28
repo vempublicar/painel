@@ -233,6 +233,26 @@
                           </span>
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="painel&a=edit-empresa&b=ferramentas&c=<?= $_GET['c'] ?>">                          
+                          <span class="nav-link-title">
+                            Ferramentas
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="painel&a=edit-empresa&b=ferramentas&c=<?= $_GET['c'] ?>">                          
+                          <span class="nav-link-title">
+                            Ferramentas
+                          </span>
+                        </a>
+                      </li>
+                      
+                      <li class="nav-item ms-auto">
+                          <a class="nav-link " href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>">
+                              <i class="fas fa-cog"></i>
+                          </a>
+                      </li>
                   </ul>
 						</div>
 					</div>
