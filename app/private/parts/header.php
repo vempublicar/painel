@@ -234,7 +234,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link " href="painel&a=edit-empresa&b=ferramentas&c=<?= $_GET['c'] ?>">                          
+                        <a class="nav-link " href="painel&a=ferramentas&b=lista&c=<?= $_GET['c'] ?>">                          
                           <span class="nav-link-title">
                             Ferramentas
                           </span>

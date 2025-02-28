@@ -45,12 +45,12 @@ switch ($a) {
     case 'ferramentas':
         if ($b) {
             switch ($b) {
-                case 'okr':
-                    include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
+                case 'lista':
+                    include "app/private/paginas/ferramentas/adicional/escolha.php";
                     break;
                 default:
                     // Caso não reconhecido, direciona para a página inicial de ferramentas
-                    include "app/private/paginas/ferramentas/inicial-ferramentas.php";
+                    include "app/private/paginas/ferramentas/adicional/escolha.php";
                     break;
             }
         } else {
