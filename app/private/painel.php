@@ -77,6 +77,10 @@ switch ($a) {
                         case 'fluxo-caixa':
                             include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
                             break;
+
+                        case 'configuracao':
+                            include "app/private/paginas/ferramentas/config/configuracao.php";
+                            break;
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
                         include "app/private/paginas/analise/radar/radar.php";
