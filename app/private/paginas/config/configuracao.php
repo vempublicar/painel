@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-
+<?php include_once "app/private/parts/footer.php" ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       const links = document.querySelectorAll('.list-group-item');
