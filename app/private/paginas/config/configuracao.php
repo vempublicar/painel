@@ -13,7 +13,7 @@ if (isset($_GET['c'])) {
     }
 
 }
-
+print_r($empresaEditada);
 ?>
 <div class="page-body">
   <div class="container-xl">
