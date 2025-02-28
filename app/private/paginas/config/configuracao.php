@@ -6,16 +6,16 @@
                     <div class="card-body">
                         <h4 class="subheader">Minha Conta</h4>
                         <div class="list-group list-group-transparent">
-                            <a href="app/private/paginas/config/conta.php" class="list-group-item list-group-item-action d-flex align-items-center">Conta</a>
+                            <a href="app/private/paginas/config/conta.php" class="list-group-item list-group-item-action d-flex align-items-center active">Conta</a>
                             <a href="app/private/paginas/config/usuarios.php" class="list-group-item list-group-item-action d-flex align-items-center">Usuários</a>
-                            <a href="app/private/paginas/config/plano.php" class="list-group-item list-group-item-action d-flex align-items-center active">Plano</a>
+                            <a href="app/private/paginas/config/plano.php" class="list-group-item list-group-item-action d-flex align-items-center">Plano</a>
                             <a href="app/private/paginas/config/suporte.php" class="list-group-item list-group-item-action d-flex align-items-center">Suporte</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-9 d-flex flex-column" id="content-area" >
                     <div class="area">
-                            
+
                     </div>
                 </div>
             </div>
