@@ -30,7 +30,7 @@ print_r($empresa_edit);
             </div>
           </div>
         </div>
-          <div class="col-sm-9 d-flex flex-column" id="content-area">
+          <div class="col-sm-9 d-flex flex-column" >
             <?php
               if(isset($_GET['config'])){
                   if($_GET['config'] == 'conta'){
@@ -58,59 +58,3 @@ print_r($empresa_edit);
           
         
 <?php include_once "app/private/parts/footer.php" ?>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.list-group-item');
-    const contentArea = document.getElementById('content-area');
-
-    links.forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        // Atualiza a classe 'active' para destacar o item selecionado
-        links.forEach(item => item.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Exibe um indicador de carregamento (opcional)
-        contentArea.innerHTML = '<div class="area"><p>Carregando...</p></div>';
-        
-        // Obtém a URL do link
-        const url = this.getAttribute('href');
-        
-        // Carrega o conteúdo via fetch
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Erro na requisição: ' + response.status);
-            }
-            return response.text();
-          })
-          .then(data => {
-            contentArea.innerHTML = data;
-          })
-          .catch(error => {
-            contentArea.innerHTML = '<div class="area"><p>Erro ao carregar o conteúdo.</p></div>';
-            console.error('Erro:', error);
-          });
-      });
-    });
-
-    // Pré-carrega o conteúdo do conta.php ao carregar a página
-    const defaultUrl = "app/private/paginas/config/conta.php";
-    fetch(defaultUrl)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro na requisição: ' + response.status);
-        }
-        return response.text();
-      })
-      .then(data => {
-        contentArea.innerHTML = data;
-      })
-      .catch(error => {
-        contentArea.innerHTML = '<div class="area"><p>Erro ao carregar o conteúdo.</p></div>';
-        console.error('Erro:', error);
-      });
-  });
-</script>
