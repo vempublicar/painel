@@ -15,22 +15,6 @@ $b = $_GET['b'] ?? null;
 
 // Verifica a categoria e inclui a página apropriada
 switch ($a) {
-    case 'analises':
-        if ($b) {
-            switch ($b) {
-            case 'radar':
-                include "app/private/paginas/analise/radar/radar.php";
-                break;
-
-            default:
-                include "app/private/paginas/analise/inicial-analises.php";
-                break;
-            }
-        } else {
-            // Página inicial de análises
-            include "app/private/paginas/analise/inicial-analises.php";
-        }
-        break;
     case 'estrategias':
         if ($b) {
             // Lógica para subpágina de estratégias (a definir)
@@ -76,6 +60,15 @@ switch ($a) {
                         case 'lista-ferramentas':
                             include "app/private/paginas/ferramentas/adicional/escolha.php";
                             break;
+
+                        case 'analise':
+                            include "app/private/paginas/analise/inicial-analises.php";
+                            break;
+
+                        case 'analise-financeiro':
+                            include "app/private/paginas/analise/inicial-analises.php";
+                            break;
+
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
                         include "app/private/paginas/analise/inicial-analises.php";
