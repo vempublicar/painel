@@ -66,7 +66,28 @@ switch ($a) {
                             break;
 
                         case 'analise-financeiro':
-                            include "app/private/paginas/analise/inicial-analises.php";
+                            include "app/private/paginas/analise/analise-financeira.php";
+                            break;
+                        case 'analise-estrutura':
+                            include "app/private/paginas/analise/analise-estrutura.php";
+                            break; 
+                        case 'analise-estrutura':
+                            include "app/private/paginas/analise/analise-estrutura.php";
+                            break;                            
+                        case 'analise-produto':
+                            include "app/private/paginas/analise/analise-produto.php";
+                            break;
+                        case 'analise-anuncio':
+                            include "app/private/paginas/analise/analise-anuncio.php";
+                            break;
+                        case 'analise-cliente':
+                            include "app/private/paginas/analise/analise-cliente.php";
+                            break;
+                        case 'analise-operacional':
+                            include "app/private/paginas/analise/analise-operacional.php";
+                            break;
+                        case 'analise-operacional':
+                            include "app/private/paginas/analise/analise-operacional.php";
                             break;
 
                     default:
