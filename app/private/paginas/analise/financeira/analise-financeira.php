@@ -1,3 +1,6 @@
+<div class="page-body">
+    <div class="container-xl">           
+            
             <div class="page-header d-print-none">
                 <div class="container container-tight">
                     <div class="row g-3 align-items-center">
@@ -678,3 +681,7 @@
                     </div>
                 </div>
             </div>
+    </div>
+</div>
+
+<?php  include_once "app/private/parts/footer.php"; ?>
