@@ -11,7 +11,6 @@
                     // Definição do array com análises de exemplo
                     $analises = [
                         [
-                            'id' => 1,
                             'nome' => 'Análise do Financeiro',
                             'botao' => 'painel&a=edit-empresa&b=analise-financeira&c='.$_GET['c'],
                             'imagem' => 'img/analise_financeira.jpg',
@@ -19,7 +18,6 @@
                             'borderColor' => '#28a745'
                         ],
                         [
-                            'id' => 2,
                             'nome' => 'Análise da Estrutura',
                             'botao' => 'painel&a=edit-empresa&b=analise-estrutura&c='.$_GET['c'],
                             'imagem' => 'img/analise_mercado.jpg',
@@ -27,7 +25,6 @@
                             'borderColor' => '#007bff'
                         ],
                         [
-                            'id' => 3,
                             'nome' => 'Análise de Produto',
                             'botao' => 'painel&a=edit-empresa&b=analise-produto&c='.$_GET['c'],
                             'imagem' => 'img/analise_riscos.jpg',
@@ -35,7 +32,6 @@
                             'borderColor' => '#ffc107'
                         ],
                         [
-                            'id' => 4,
                             'nome' => 'Análise de Anúncios',
                             'botao' => 'painel&a=edit-empresa&b=analise-anuncio&c='.$_GET['c'],
                             'imagem' => 'img/analise_desempenho.jpg',
@@ -43,7 +39,6 @@
                             'borderColor' => '#dc3545'
                         ],
                         [
-                            'id' => 4,
                             'nome' => 'Análise de Cliente',
                             'botao' => 'painel&a=edit-empresa&b=analise-cliente&c='.$_GET['c'],
                             'imagem' => 'img/analise_desempenho.jpg',
@@ -51,7 +46,6 @@
                             'borderColor' => '#dc3545'
                         ],
                         [
-                            'id' => 4,
                             'nome' => 'Análise do Operacional',
                             'botao' => 'painel&a=edit-empresa&b=analise-operacional&c='.$_GET['c'],
                             'imagem' => 'img/analise_desempenho.jpg',
@@ -59,7 +53,6 @@
                             'borderColor' => '#dc3545'
                         ],
                         [
-                            'id' => 4,
                             'nome' => 'Análise das Campanhas',
                             'botao' => 'painel&a=edit-empresa&b=analise-campanha&c='.$_GET['c'],
                             'imagem' => 'img/analise_desempenho.jpg',
