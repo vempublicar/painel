@@ -33,9 +33,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal modal-blur fade" id="modal-full-width" tabindex="-1" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-full-width modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Relatório da Empresa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <iframe id="pdfFrame" style="width:100%; height: 500px;"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
+        <div id="salvarPdf">
+             
             <div class="page-break pdf-page mt-3">
                 <hr class="custom-hr">
                 <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
@@ -681,6 +694,8 @@
                     </div>
                 </div>
             </div>
+
+        </div> 
     </div>
 </div>
 
