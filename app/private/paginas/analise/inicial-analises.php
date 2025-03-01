@@ -1,4 +1,30 @@
 
+<?php 
+include "app/functions/data/dados.php";
+
+
+$minhas_empresas = $_SESSION['minhas_empresas'];
+if (isset($_GET['c'])) {
+    $empresa_edit = base64_decode($_GET['c']);
+    $cargo = '';
+    $id = '';
+
+    foreach ($minhas_empresas as $empresa) {
+        if ($empresa['cnpj'] === $empresa_edit) {
+            $cargo = $empresa['cargo'];
+            $id = $empresa['id'];
+            break;  // Interrompe o loop uma vez que a empresa correspondente é encontrada
+        }
+    }
+
+}
+
+$minhasFerramentas = fetchFluxoFerramentas($empresa);
+
+print_r($ferramentas);
+
+?>
+
 <div class="page-body">
     <div class="container-xl">
         <div class="card p-2">
@@ -24,11 +50,18 @@
                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                             <div class="offcanvas-body">
-                                <form action="function/push/empresa-cadastro.php" method="post" enctype="multipart/form-data">
+                                <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
-                                        <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
-                                        <input type="hidden" name="id" id="id" class="form-control">
-                                        <input type="hidden" name="tabela" value="financeiro">
+                                        <input type="hidden" name="cnpj" id="cnpj" value="<?= $_GET['c'] ?>" class="form-control" readonly>
+                                        <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
+                                        <!-- Campo para identificar se é edição (id preenchido) -->
+                                        <input type="hidden" name="id" value="" class="form-control">
+                                        <input type="hidden" name="tabela" value="ferramenta">
+                                        <input type="hidden" name="indicador" value="agent-fepacoc">
+                                        <input type="hidden" name="status" value="ativo">
+                                        <input type="hidden" name="retorno" value="null">
+                                        <input type="hidden" name="calculo" value="periodo">
+
                                         <label class="form-label">Ative seu Agent IA Fepacoc</label>
                                         <div class="col-sm-12">
                                             <div class="input-group mb-2">
@@ -69,11 +102,18 @@
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
-                                    <form action="function/push/empresa-cadastro.php" method="post" enctype="multipart/form-data">
+                                    <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
                                         <div class="row">
-                                            <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
-                                            <input type="hidden" name="id" id="id" class="form-control">
-                                            <input type="hidden" name="tabela" value="financeiro">
+                                        <input type="hidden" name="cnpj" id="cnpj" value="<?= $_GET['c'] ?>" class="form-control" readonly>
+                                        <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
+                                        <!-- Campo para identificar se é edição (id preenchido) -->
+                                        <input type="hidden" name="id" value="" class="form-control">
+                                        <input type="hidden" name="tabela" value="ferramenta">
+                                        <input type="hidden" name="indicador" value="ads-campanha">
+                                        <input type="hidden" name="status" value="ativo">
+                                        <input type="hidden" name="retorno" value="null">
+                                        <input type="hidden" name="calculo" value="periodo">
+
                                             <label class="form-label">Ative seu acompanhamento de campanhas</label>
                                             <div class="col-sm-12">
                                                 <div class="input-group mb-2">

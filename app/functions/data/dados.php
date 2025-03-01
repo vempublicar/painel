@@ -16,6 +16,14 @@ function fetchFluxoFinanceiro($empresa, $indicador) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function fetchFluxoFerramentas($empresa) {
+    $pdo = db_connect();
+    $sql = "SELECT * FROM ferramentas WHERE empresa = ? ORDER BY id DESC LIMIT 500";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$empresa, $indicador]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function carregarEmpresasDoUsuario() {
     $pdo = db_connect(); // Assegura que a função db_connect() está definida e retorna uma instância PDO.
 

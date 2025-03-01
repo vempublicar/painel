@@ -385,6 +385,8 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
                     <input type="hidden" name="status" value="ativo">
                     <input type="hidden" name="retorno" value="null">
                     <input type="hidden" name="calculo" value="periodo">
+                    <input type="hidden" name="mes" value="periodo">
+                    <input type="hidden" name="ano" value="periodo">
 
                     <label class="form-label">Data do Resultado</label>
                     <div class="mb-3 col-6">
