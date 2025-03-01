@@ -50,11 +50,11 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?= $analise['nome']; ?></h5>
                                 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="<?= $analise['video']; ?>">
-                                    <i class="fas fa-play me-2"></i> Como Usar
+                                    <i class="fas fa-play me-2"></i> Entenda
                                 </button>
-                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#<?= $offcanvasId; ?>" aria-controls="<?= $offcanvasId; ?>">
-                                    <i class="fas fa-check me-2"></i> <?= $botaoTexto; ?>
-                                </button>
+                                <a href="$botaoTexto;" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#<?= $offcanvasId; ?>" aria-controls="<?= $offcanvasId; ?>">
+                                    <i class="fas fa-check me-2"></i> Acessar
+                                </a>
                             </div>
                         </div>
                     </div>
