@@ -21,7 +21,7 @@ if (isset($_GET['c'])) {
 
 $minhasFerramentas = fetchFluxoFerramentas($empresa);
 
-print_r($ferramentas);
+print_r($minhasFerramentas);
 
 ?>
 
