@@ -159,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             redirecionarComMensagem($redirectUrl, "Sucesso! Já registramos sua informação.");
         }
     } catch (PDOException $e) {
-        redirecionarComMensagem($redirectUrl, "Erro! Não foi possível inserir/atualizar dados: ";
+        redirecionarComMensagem($redirectUrl, "Erro! Não foi possível inserir/atualizar dados: " . $e->getMessage());
     }
 } else {
     redirecionarComMensagem("painel", "Erro! Acesso inválido.");
