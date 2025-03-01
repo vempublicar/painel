@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $redirectUrl = "painel&a=edit-empresa&b=" . (isset($_POST['indicador']) ? sanitizar($_POST['indicador']) : '') . "&c=" . (isset($_POST['cnpj']) ? sanitizar($_POST['cnpj']) : '');
 
     if (empty($tabela)) {
-        redirecionarComMensagem($redirectUrl, "Tabela não especificada.");
+        redirecionarComMensagem($redirectUrl, "Erro! Problema com os dados.");
     }
 
     // Verifica se há um ID (para update) ou não (insert)
@@ -89,13 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validação das extensões permitidas
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
         if (!in_array($fileExtension, $allowedExtensions)) {
-            redirecionarComMensagem($redirectUrl, "Tipo de arquivo não permitido para imagem.");
+            redirecionarComMensagem($redirectUrl, "Alerta! Tipo de arquivo não permitido para imagem.");
         }
 
         // Validação do tamanho do arquivo (ex.: máximo 2MB)
         $maxSize = 2 * 1024 * 1024;
         if ($fileSize > $maxSize) {
-            redirecionarComMensagem($redirectUrl, "Arquivo de imagem muito grande.");
+            redirecionarComMensagem($redirectUrl, "Alerta! Arquivo de imagem muito grande.");
         }
 
         // Gera um nome único para a imagem
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!move_uploaded_file($fileTmpName, $destination)) {
-            redirecionarComMensagem($redirectUrl, "Erro ao fazer upload da imagem.");
+            redirecionarComMensagem($redirectUrl, "Erro! Não foi possível fazer o upload da imagem.");
         }
 
         // Adiciona a imagem aos dados extras (JSON)
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE $tabela SET $setString WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
-            redirecionarComMensagem($redirectUrl, "Registro atualizado com sucesso!");
+            redirecionarComMensagem($redirectUrl, "Sucesso! Já registramos sua informação.");
         } else {
             // Verifica se já existe um registro com os mesmos valores
             $verificaSQL = "SELECT COUNT(*) FROM $tabela WHERE empresa = :empresa AND indicador = :indicador AND mes = :mes AND ano = :ano";
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Se já existe um registro, impede a inserção
             if ($stmtVerifica->fetchColumn() > 0) {
-                redirecionarComMensagem($redirectUrl, "Erro: Já existe um registro para este indicador, mês e ano nesta empresa.");
+                redirecionarComMensagem($redirectUrl, "Alerta! Já existe um registro para este indicador, mês e ano nesta empresa.");
             }
             // Inserção: monta o comando INSERT
             $columns = implode(", ", array_keys($data));
@@ -156,12 +156,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO $tabela ($columns) VALUES ($placeholders)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
-            redirecionarComMensagem($redirectUrl, "Registro inserido com sucesso!");
+            redirecionarComMensagem($redirectUrl, "Sucesso! Já registramos sua informação.");
         }
     } catch (PDOException $e) {
-        redirecionarComMensagem($redirectUrl, "Erro ao inserir/atualizar dados: " . $e->getMessage());
+        redirecionarComMensagem($redirectUrl, "Erro! Não foi possível inserir/atualizar dados: ";
     }
 } else {
-    redirecionarComMensagem("painel", "Acesso inválido ao script.");
+    redirecionarComMensagem("painel", "Erro! Acesso inválido.");
 }
 ?>

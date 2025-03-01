@@ -260,8 +260,21 @@
 
   <?php } ?>
 
-  <?php if (isset($_GET['msg'])): ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?= htmlspecialchars(urldecode($_GET['msg'])) ?>
-            </div>
-    <?php endif; ?>
+<?php if (isset($_GET['msg'])): ?>
+    <?php
+    $msg = htmlspecialchars(urldecode($_GET['msg']));
+    $alertClass = 'alert-warning'; // Default class
+
+    if (strpos($msg, 'Erro!') === 0) {
+        $alertClass = 'alert-danger';
+    } elseif (strpos($msg, 'Alerta!') === 0) {
+        $alertClass = 'alert-warning';
+    } elseif (strpos($msg, 'Sucesso!') === 0) {
+        $alertClass = 'alert-success';
+    }
+    ?>
+    <div class="alert <?= $alertClass; ?> alert-dismissible fade show" role="alert">
+        <?= $msg ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
