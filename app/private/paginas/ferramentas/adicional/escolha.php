@@ -13,16 +13,50 @@ $ferramentas = [
         'imagem' => 'vendor/images/sistema/ferramentas/agent.png',
         'indicador' => 'agent-fepacoc',
         'video' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        'borderColor' => '#28a745'
+        'borderColor' => '#28a745',
+        'campos' => [
+            ['tipo' => 'text', 'nome' => 'num_whats', 'label' => 'Número WhatsApp', 'required' => true],
+            ['tipo' => 'text', 'nome' => 'rec_online', 'label' => 'Senha Acesso', 'required' => true]
+        ]
     ],
     [
         'nome' => 'Resultado Campanha',
         'imagem' => 'vendor/images/sistema/ferramentas/camp.png',
         'indicador' => 'ads-campanha',
         'video' => 'https://www.youtube.com/embed/3GwjfUFyY6M',
-        'borderColor' => '#007bff'
+        'borderColor' => '#007bff',
+        'campos' => [
+            ['tipo' => 'text', 'nome' => 'site', 'label' => 'URL do Site', 'required' => true],
+            ['tipo' => 'text', 'nome' => 'botao', 'label' => 'Caminho Botão', 'required' => true],
+            ['tipo' => 'select', 'nome' => 'tipo_botao', 'label' => 'Tipo de Botão', 'options' => ['Compra', 'Leia Mais', 'Inscreva-se'], 'required' => true]
+        ]
     ]
 ];
+
+function renderizarCampos($campos) {
+    $html = '';
+    foreach ($campos as $campo) {
+        if ($campo['tipo'] === 'text') {
+            $html .= "<div class='input-group mb-2'>
+                        <span class='input-group-text'>{$campo['label']}</span>
+                        <input type='{$campo['tipo']}' name='{$campo['nome']}' class='form-control' required='{$campo['required']}'>
+                      </div>";
+        } elseif ($campo['tipo'] === 'select') {
+            $options = '';
+            foreach ($campo['options'] as $option) {
+                $options .= "<option>$option</option>";
+            }
+            $html .= "<div class='input-group mb-2'>
+                        <span class='input-group-text'>{$campo['label']}</span>
+                        <select name='{$campo['nome']}' class='form-control' required='{$campo['required']}'>
+                            $options
+                        </select>
+                      </div>";
+        }
+    }
+    return $html;
+}
+
 
 function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empresaCnpj) {
     $ativo = false;
@@ -40,6 +74,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
 
     $botaoTexto = $ativo ? 'Desativar' : 'Ativar';
     $offcanvasId = "meuOffcanvas" . str_replace('-', '', ucfirst($ferramenta['indicador']));
+    $camposHtml = renderizarCampos($ferramenta['campos']);
 
     echo <<<HTML
     <div class="col-md-3 mb-4">
@@ -57,27 +92,24 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="$offcanvasId" aria-labelledby="{$offcanvasId}Label">
             <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="{$offcanvasId}Label">Informações Necessárias</h2>
+                <h5 class="offcanvas-title" id="{$offcanvasId}Label">Informações Necessárias</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        <input type="hidden" name="cnpj" id="cnpj" value="$empresaCnpj" class="form-control" readonly>
-                        <input type="hidden" name="empresa" id="empresa" value="$empresaId" class="form-control" readonly>
-                        <input type="hidden" name="id" value="$ferramentaId" class="form-control">
-                        <input type="hidden" name="tabela" value="ferramentas">
-                        <input type="hidden" name="indicador" value="{$ferramenta['indicador']}">
-                        <input type="hidden" name="status" value="$status">
-                        <input type="hidden" name="retorno" value="lista-ferramentas">
-                        <input type="hidden" name="calculo" value="periodo">
-                        <input type="hidden" name="mes" value="0">
-                        <input type="hidden" name="ano" value="0">
-                        <!-- Outros campos específicos da ferramenta -->
-                    </div>
+                    <input type="hidden" name="cnpj" value="$empresaCnpj" class="form-control" readonly>
+                    <input type="hidden" name="empresa" value="$empresaId" class="form-control" readonly>
+                    <input type="hidden" name="id" value="$ferramentaId" class="form-control">
+                    <input type="hidden" name="tabela" value="ferramentas">
+                    <input type="hidden" name="indicador" value="{$ferramenta['indicador']}">
+                    <input type="hidden" name="status" value="$status">
+                    <input type="hidden" name="retorno" value="lista-ferramentas">
+                    <input type="hidden" name="calculo" value="periodo">
+                    <input type="hidden" name="mes" value="0">
+                    <input type="hidden" name="ano" value="0">
+                    $camposHtml
                     <div class="mt-3">
-                        <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
-                        <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black" data-bs-dismiss="offcanvas">Salvar</button>
+                        <button type="submit" class="btn btn-primary float-end">Salvar</button>
                     </div>
                 </form>
             </div>
@@ -85,6 +117,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
     </div>
     HTML;
 }
+
 
 
 $minhas_empresas = $_SESSION['minhas_empresas'];
