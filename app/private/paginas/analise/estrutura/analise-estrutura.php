@@ -1,6 +1,6 @@
 <div class="page-body">
   <div class="container-xl">
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho e Modal (idêntico ao exemplo) -->
     <div class="page-header d-print-none">
       <div class="container container-tight">
         <div class="row g-3 align-items-center">
@@ -23,8 +23,9 @@
           <div class="col-md-auto ms-auto d-print-none">
             <div class="btn-list">
               <a class="btn btn-indigo ms-auto" id="generate-pdf" data-bs-toggle="modal" data-bs-target="#modal-full-width">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-download">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-download">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
                   <path d="M7 11l5 5l5 -5"></path>
@@ -49,14 +50,17 @@
         </div>
       </div>
     </div>
-    <!-- Conteúdo principal -->
+    <!-- Fim do Cabeçalho -->
+
+    <!-- Área de conteúdo com 3 páginas -->
     <div id="salvarPdf" class="container container-tight">
-      <div class="page-break mt-3">
+      <!-- Página 1: Indicadores Estruturais -->
+      <div class="page-break pdf-page mt-3">
         <hr class="custom-hr">
         <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
         <h3 class="h2 card-title text-secondary">Indicadores Estruturais</h3>
         <div class="row">
-          <!-- Card 1: Performance da Equipe -->
+          <!-- Card: Performance da Equipe -->
           <div class="card bg-white col-sm-8">
             <div class="card-header">
               <div class="col-10">
@@ -136,7 +140,7 @@
               </div>
             </div>
           </div>
-          <!-- Card 2: Indicadores Gerais e Benefícios -->
+          <!-- Card: Indicadores Gerais e Benefícios -->
           <div class="card bg-white col-sm-4">
             <div class="row">
               <div class="col text-center mt-3">
@@ -207,8 +211,18 @@
               </div>
             </div>
           </div>
-          <!-- Card 3: Parcerias -->
-          <div class="card bg-white col-sm-4">
+        </div>
+      </div>
+      <!-- Fim Página 1 -->
+
+      <!-- Página 2: Indicadores de Parcerias e Eventos -->
+      <div class="page-break pdf-page mt-3">
+        <hr class="custom-hr">
+        <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
+        <h3 class="h2 card-title text-secondary">Indicadores de Parcerias e Eventos</h3>
+        <div class="row">
+          <!-- Card: Parcerias -->
+          <div class="card bg-white col-sm-6">
             <div class="row">
               <div class="col-12 text-center mt-3">
                 <div class="datagrid-title">Parcerias</div>
@@ -239,8 +253,8 @@
               </div>
             </div>
           </div>
-          <!-- Card 4: Eventos -->
-          <div class="card bg-white col-sm-4">
+          <!-- Card: Eventos -->
+          <div class="card bg-white col-sm-6">
             <div class="row">
               <div class="col-12 text-center mt-3">
                 <div class="datagrid-title">Eventos</div>
@@ -271,8 +285,18 @@
               </div>
             </div>
           </div>
-          <!-- Card 5: Marketing Interno -->
-          <div class="card bg-white col-sm-4">
+        </div>
+      </div>
+      <!-- Fim Página 2 -->
+
+      <!-- Página 3: Indicadores de Marketing Interno -->
+      <div class="page-break pdf-page mt-3">
+        <hr class="custom-hr">
+        <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
+        <h3 class="h2 card-title text-secondary">Indicadores de Marketing Interno</h3>
+        <div class="row">
+          <!-- Card: Marketing Interno -->
+          <div class="card bg-white col-sm-12">
             <div class="row">
               <div class="col-12 text-center mt-3">
                 <div class="datagrid-title">Marketing Interno</div>
@@ -303,11 +327,13 @@
               </div>
             </div>
           </div>
-        </div><!-- Fim row -->
-      </div><!-- Fim page-break -->
-    </div><!-- Fim container salvarPdf -->
-  </div><!-- Fim container-xl -->
-</div><!-- Fim page-body -->
+        </div>
+      </div>
+      <!-- Fim Página 3 -->
+    </div>
+    <!-- Fim do Conteúdo -->
+  </div>
+</div>
 
 
     
