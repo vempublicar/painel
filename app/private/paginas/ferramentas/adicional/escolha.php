@@ -76,7 +76,10 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
 
     $botaoTexto = $ativo ? 'Desativar' : 'Ativar';
     $offcanvasId = "meuOffcanvas" . str_replace('-', '', ucfirst($ferramenta['indicador']));
-    $camposHtml = renderizarCampos($ferramenta['campos']);
+    if($status != 'ativo'){
+        $camposHtml = renderizarCampos($ferramenta['campos']);
+    }
+    
 
     echo <<<HTML
     <div class="col-md-3 mb-4">
