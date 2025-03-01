@@ -64,11 +64,13 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
     $status = 'ativo';
 
     foreach ($minhasFerramentas as $agent) {
-        if ($agent['indicador'] === $ferramenta['indicador'] && $agent['status'] === 'ativo') {
-            $ativo = true;
-            $ferramentaId = $agent['id'];
-            $status = 'inativo';
-            break;
+        if ($agent['indicador'] === $ferramenta['indicador']) {
+            $ferramentaId = $agent['id'];  // Sempre captura o ID, independente do status
+            if ($agent['status'] === 'ativo') {
+                $ativo = true;
+                $status = 'inativo';  // Se já está ativo, prepara para ser desativado
+            }
+            break;  // Encerra o loop assim que encontra a ferramenta, já que o ID foi capturado
         }
     }
 
