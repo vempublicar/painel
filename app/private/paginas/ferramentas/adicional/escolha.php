@@ -20,7 +20,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Resultado Campanha</h5>
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/3GwjfUFyY6M"> <i class="fas fa-play" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Detalhamento de Receita</h5>
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/abcdef12345"> <i class="fas fa-play" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>
                     </div>
                 </div>
             </div>
