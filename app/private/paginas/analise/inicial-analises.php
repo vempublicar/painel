@@ -12,29 +12,48 @@
                     $analises = [
                         [
                             'id' => 1,
-                            'nome' => 'Análise Financeira',
-                            'botao' => 'painel&a=edit-empresa&b=analise&c='.$_GET['c'],
+                            'nome' => 'Análise do Financeiro',
+                            'botao' => 'painel&a=edit-empresa&b=analise-financeira&c='.$_GET['c'],
                             'imagem' => 'img/analise_financeira.jpg',
                             'video' => 'videos/analise_financeira.mp4',
                             'borderColor' => '#28a745'
                         ],
                         [
                             'id' => 2,
-                            'nome' => 'Análise de Mercado',
+                            'nome' => 'Análise da Estrutura',
+                            'botao' => 'painel&a=edit-empresa&b=analise-estrutura&c='.$_GET['c'],
                             'imagem' => 'img/analise_mercado.jpg',
                             'video' => 'videos/analise_mercado.mp4',
                             'borderColor' => '#007bff'
                         ],
                         [
                             'id' => 3,
-                            'nome' => 'Análise de Riscos',
+                            'nome' => 'Análise de Produto',
+                            'botao' => 'painel&a=edit-empresa&b=analise-produto&c='.$_GET['c'],
                             'imagem' => 'img/analise_riscos.jpg',
                             'video' => 'videos/analise_riscos.mp4',
                             'borderColor' => '#ffc107'
                         ],
                         [
                             'id' => 4,
-                            'nome' => 'Análise de Desempenho',
+                            'nome' => 'Análise de Anúncios',
+                            'botao' => 'painel&a=edit-empresa&b=analise-anuncio&c='.$_GET['c'],
+                            'imagem' => 'img/analise_desempenho.jpg',
+                            'video' => 'videos/analise_desempenho.mp4',
+                            'borderColor' => '#dc3545'
+                        ],
+                        [
+                            'id' => 4,
+                            'nome' => 'Análise de Cliente',
+                            'botao' => 'painel&a=edit-empresa&b=analise-cliente&c='.$_GET['c'],
+                            'imagem' => 'img/analise_desempenho.jpg',
+                            'video' => 'videos/analise_desempenho.mp4',
+                            'borderColor' => '#dc3545'
+                        ],
+                        [
+                            'id' => 4,
+                            'nome' => 'Análise do Operacional',
+                            'botao' => 'painel&a=edit-empresa&b=analise-operacional&c='.$_GET['c'],
                             'imagem' => 'img/analise_desempenho.jpg',
                             'video' => 'videos/analise_desempenho.mp4',
                             'borderColor' => '#dc3545'
