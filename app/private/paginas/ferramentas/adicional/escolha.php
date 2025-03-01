@@ -7,8 +7,8 @@
                     <img src="vendor/images/ferramentas/ferramenta1.png" class="card-img-top" alt="Agent AI Fepacoc">
                     <div class="card-body text-center">
                         <h5 class="card-title">Agent AI Fepacoc</h5>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"> <i class="fas fa-play" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"> <i class="fas fa-check" ></i> Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"> <i class="fas fa-play me-2" ></i> Como Usar</button>
+                        <button type="button" class="btn btn-outline-secondary"> <i class="fas fa-check me-2" ></i> Ativar</button>
                     </div>
                 </div>
             </div>
@@ -19,8 +19,8 @@
                     <img src="vendor/images/ferramentas/ferramenta2.png" class="card-img-top" alt="Resultado Campanha">
                     <div class="card-body text-center">
                         <h5 class="card-title">Resultado Campanha</h5>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/3GwjfUFyY6M"> <i class="fas fa-play" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/3GwjfUFyY6M"> <i class="fas fa-play me-2" ></i> Como Usar</button>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check me-2" ></i> Ativar</button>
                     </div>
                 </div>
             </div>
@@ -31,8 +31,8 @@
                     <img src="vendor/images/ferramentas/ferramenta3.png" class="card-img-top" alt="Detalhamento de Receita">
                     <div class="card-body text-center">
                         <h5 class="card-title">Detalhamento de Receita</h5>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/abcdef12345"> <i class="fas fa-play" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check" ></i> Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/abcdef12345"> <i class="fas fa-play me-2" ></i> Como Usar</button>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check me-2" ></i> Ativar</button>
                     </div>
                 </div>
             </div>
