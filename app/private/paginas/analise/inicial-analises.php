@@ -1,8 +1,10 @@
 
 <div class="page-body">
     <div class="container-xl">
-        <div class="col m-auto">
-            <h1 class="text-start m-auto"><b class="text-info">Minhas Análises</b><br></h1>
+        <div class="card">
+            <div class="col m-auto">
+                <h2 class="text-start m-auto"><b class="text-info">Minhas Análises</b><br></h2>
+            </div>
         </div>
         <div class="row">
             <!-- AGENT AI FEPACOC -->
