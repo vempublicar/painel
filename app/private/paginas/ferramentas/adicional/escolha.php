@@ -1,8 +1,8 @@
 
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 include "app/functions/data/dados.php";
 
@@ -146,3 +146,37 @@ print_r($minhasFerramentas);
         </div>
     </div>
 </div>
+
+<!-- Modal para exibir o vídeo do YouTube -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Assistir Vídeo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php  include_once "app/private/parts/footer.php"; ?>
+<!-- Script para carregar o vídeo no modal -->
+<script>
+    var videoModal = document.getElementById('videoModal');
+    videoModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var videoLink = button.getAttribute('data-video');
+        var iframe = document.getElementById('videoFrame');
+        // Acrescenta parâmetro para autoplay
+        iframe.src = videoLink + "?autoplay=1";
+    });
+    videoModal.addEventListener('hidden.bs.modal', function (event) {
+        var iframe = document.getElementById('videoFrame');
+        // Limpa o src para interromper o vídeo ao fechar o modal
+        iframe.src = "";
+    });
+</script>
