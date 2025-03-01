@@ -684,4 +684,42 @@
     </div>
 </div>
 
+
+
+<?php
+$filename = 'default_name';  // Um nome padrão caso 'b' não esteja definido ou seja inválido
+if (isset($_GET['b']) && !empty($_GET['b'])) {
+    // Sanitizar para evitar caracteres indesejados e garantir que é uma string segura para um nome de arquivo
+    $filename = preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['b']);
+}
+?>
+
 <?php  include_once "app/private/parts/footer.php"; ?>
+
+<script>
+    var generatePdfButton = document.getElementById('generate-pdf');
+    if (generatePdfButton) {
+        document.getElementById('generate-pdf').addEventListener('click', function () {
+            const element = document.getElementById('salvarPdf');
+            const opt = {
+                margin:       0.0,
+                filename:     '<?= $filename ?>.pdf',  // Nome do arquivo ajustado e sanitizado
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 }, // Aumenta a escala do canvas portrait landscape
+                jsPDF: { unit: 'mm', format: [210, 297], orientation: 'landscape' }
+            };
+
+            html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+                const blob = pdf.output('blob');
+                const url = URL.createObjectURL(blob);
+                
+                // Exibir o PDF no iframe dentro do modal
+                const iframe = document.getElementById('pdfFrame');
+                iframe.src = url;
+
+                // Mostrar o modal
+                document.getElementById('pdfModal').style.display = 'block';
+            });
+        });
+    }
+</script>
