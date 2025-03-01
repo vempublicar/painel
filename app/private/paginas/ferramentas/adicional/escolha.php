@@ -78,6 +78,8 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
     $offcanvasId = "meuOffcanvas" . str_replace('-', '', ucfirst($ferramenta['indicador']));
     if($status != 'ativo'){
         $camposHtml = renderizarCampos($ferramenta['campos']);
+    }else{
+        $camposHtml = "";
     }
     
 
