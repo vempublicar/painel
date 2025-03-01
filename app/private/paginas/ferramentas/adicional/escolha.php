@@ -8,9 +8,45 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Agent AI Fepacoc</h5>
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"> <i class="fas fa-play me-2" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"> <i class="fas fa-check me-2" ></i> Ativar</button>
+                        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#agent" class="btn btn-outline-secondary"> <i class="fas fa-check me-2" ></i> Ativar</button>
                     </div>
                 </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="agent" aria-labelledby="offReceitaEditarLabel">
+                        <div class="offcanvas-header">
+                            <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Despesas</h2>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <form action="function/push/empresa-cadastro.php" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <input type="hidden" name="mes" id="mes" class="form-control" value="<?php echo date('d/m/Y') ?>">
+                                    <input type="hidden" name="id" id="id" class="form-control">
+                                    <input type="hidden" name="tabela" value="financeiro">
+                                    <label class="form-label">Informe das Vendas</label>
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text"> Presencial </span>
+                                            <input type="text" name="rec_presencial" id="rec_presencial" class="form-control value" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text"> Digital </span>
+                                            <input type="text" name="rec_online" id="rec_online" class="form-control value" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 col-12">
+                                        <label for="totalReceitaMensal" class="form-label">Total</label>
+                                        <input type="text" id="totalReceitaMensal" name="totalReceita" class="form-control bg-blue-lt" readonly>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
+                                    <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black " data-bs-dismiss="offcanvas">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
             </div>
 
             <!-- Card para Ferramenta 2 -->
