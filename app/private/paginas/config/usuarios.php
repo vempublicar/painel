@@ -2,7 +2,7 @@
   <div class="container-xl">
     <div class="card ">
       <div class="row g-0">
-        <div class="col-12 col-md-3 border-end">
+        <div class="col-3 col-md-3 border-end">
           <div class="card-body">
             <h4 class="subheader">Minha Conta</h4>
             <div class="list-group list-group-transparent">
@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-          <div class="col-sm-9 d-flex flex-column" >
+          <div class="col-9 col-sm-9 d-flex flex-column" >
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-vcenter table-mobile-md card-table">
