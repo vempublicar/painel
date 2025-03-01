@@ -82,10 +82,10 @@ $ferramentas = [
           <input type="hidden" name="ferramentaId" id="ferramentaId" value="">
           <input type="hidden" name="empresaId" id="empresaId" value="<?php echo $empresa['id']; ?>">
           <p>Tem certeza que deseja ativar esta ferramenta?</p>
-          <div class="modal-footer">
+          
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
             <button type="submit" class="btn btn-primary">Confirmar</button>
-          </div>
+          
         </form>
       </div>
     </div>
