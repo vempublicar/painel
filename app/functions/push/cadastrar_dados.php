@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém o nome da tabela
     $tabela = sanitizar($_POST['tabela'] ?? '');
     // Monta a URL de redirecionamento com os parâmetros "indicador" e "cnpj"
-    $redirectUrl = "painel&a=edit-empresa&b=" . (isset($_POST['indicador']) ? sanitizar($_POST['indicador']) : '') . "&c=" . (isset($_POST['cnpj']) ? sanitizar($_POST['cnpj']) : '');
+    $redirectUrl = "painel&a=edit-empresa&b=" . (isset($_POST['retorno']) ? sanitizar($_POST['retorno']) : '') . "&c=" . (isset($_POST['cnpj']) ? sanitizar($_POST['cnpj']) : '');
 
     if (empty($tabela)) {
         redirecionarComMensagem($redirectUrl, "Erro! Problema com os dados.");

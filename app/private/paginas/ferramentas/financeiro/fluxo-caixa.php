@@ -383,7 +383,7 @@ $percentuaisAtual = calcularPercentuais($ultimoTrimestreTotal, $ultimoTrimestreD
                     <input type="hidden" name="tabela" value="financeiro">
                     <input type="hidden" name="indicador" value="fluxo-caixa">
                     <input type="hidden" name="status" value="ativo">
-                    <input type="hidden" name="retorno" value="null">
+                    <input type="hidden" name="retorno" value="fluxo-caixa">
                     <input type="hidden" name="calculo" value="periodo">
                     <input type="hidden" name="mes" value="periodo">
                     <input type="hidden" name="ano" value="periodo">
