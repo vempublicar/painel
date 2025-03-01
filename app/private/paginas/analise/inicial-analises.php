@@ -57,6 +57,14 @@
                             'imagem' => 'img/analise_desempenho.jpg',
                             'video' => 'videos/analise_desempenho.mp4',
                             'borderColor' => '#dc3545'
+                        ],
+                        [
+                            'id' => 4,
+                            'nome' => 'Análise das Campanhas',
+                            'botao' => 'painel&a=edit-empresa&b=analise-campanha&c='.$_GET['c'],
+                            'imagem' => 'img/analise_desempenho.jpg',
+                            'video' => 'videos/analise_desempenho.mp4',
+                            'borderColor' => '#dc3545'
                         ]
                     ];
 
@@ -68,7 +76,7 @@
                             <img src="<?= $analise['imagem']; ?>" class="card-img-top" alt="<?= $analise['nome']; ?>">
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?= $analise['nome']; ?></h5>
-                                <a href="<?= $analise['botao']; ?>" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#<?= $offcanvasId; ?>" aria-controls="<?= $offcanvasId; ?>">
+                                <a href="<?= $analise['botao']; ?>" class="btn btn-outline-secondary" >
                                     <i class="fas fa-check me-2"></i> Acessar
                                 </a>
                             </div>

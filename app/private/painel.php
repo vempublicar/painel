@@ -65,7 +65,7 @@ switch ($a) {
                             include "app/private/paginas/analise/inicial-analises.php";
                             break;
 
-                        case 'analise-financeiro':
+                        case 'analise-financeira':
                             include "app/private/paginas/analise/analise-financeira.php";
                             break;
                         case 'analise-estrutura':
@@ -86,9 +86,9 @@ switch ($a) {
                         case 'analise-operacional':
                             include "app/private/paginas/analise/analise-operacional.php";
                             break;
-                        case 'analise-operacional':
-                            include "app/private/paginas/analise/analise-operacional.php";
-                            break;
+                        case 'aanalise-campanha':
+                            include "app/private/paginas/analise/analise-campanha.php";
+                            break;                          
 
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
