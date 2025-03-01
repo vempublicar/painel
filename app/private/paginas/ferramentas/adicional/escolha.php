@@ -8,10 +8,12 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Agent AI Fepacoc</h5>
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"> <i class="fas fa-play me-2" ></i> Como Usar</button>
-                        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#agent" class="btn btn-outline-secondary"> <i class="fas fa-check me-2" ></i> Ativar</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#meuOffcanvas" aria-controls="meuOffcanvas">
+                             <i class="fas fa-check me-2" ></i> Ativar
+                        </button>
                     </div>
                 </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="agent" aria-labelledby="offReceitaEditarLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="meuOffcanvas" aria-labelledby="meuOffcanvasLabel">
                         <div class="offcanvas-header">
                             <h2 class="offcanvas-title" id="offReceitaEditarLabel">Cadastrar Despesas</h2>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
