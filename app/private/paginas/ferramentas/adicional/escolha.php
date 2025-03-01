@@ -65,6 +65,8 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="status" value="ativo">
                                         <input type="hidden" name="retorno" value="null">
                                         <input type="hidden" name="calculo" value="periodo">
+                                        <input type="hidden" name="mes" value="0">
+                                        <input type="hidden" name="ano" value="0">
 
                                         <label class="form-label">Ative seu Agent IA Fepacoc</label>
                                         <div class="col-sm-12">
@@ -117,6 +119,8 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="status" value="ativo">
                                         <input type="hidden" name="retorno" value="null">
                                         <input type="hidden" name="calculo" value="periodo">
+                                        <input type="hidden" name="mes" value="0">
+                                        <input type="hidden" name="ano" value="0">
 
                                             <label class="form-label">Ative seu acompanhamento de campanhas</label>
                                             <div class="col-sm-12">
