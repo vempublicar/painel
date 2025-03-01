@@ -71,12 +71,12 @@ switch ($a) {
                             break;
                     default:
                         // Caso não reconhecido, direciona para a página inicial de ferramentas
-                        include "app/private/paginas/analise/radar/radar.php";
+                        include "app/private/paginas/analise/inicial-analises.php";
                         break;
                     }
             } else {
                 // Página inicial de empresas
-                include "app/private/paginas/analise/radar/radar.php";
+                include "app/private/paginas/analise/inicial-analises.php";
             }
             break;
     default:
