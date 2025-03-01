@@ -3,7 +3,7 @@
     <div class="container-xl">
         <div class="card p-2">
             <div class="col m-auto mb-3">
-                <h2 class="text-start m-auto"><b class="text-info">Minhas Análises</b><br></h2>
+                <h2 class="text-start m-auto">Análises<br></h2>
             </div>        
             <div class="row">
                 <!-- AGENT AI FEPACOC -->
