@@ -56,7 +56,7 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
                                         <!-- Campo para identificar se é edição (id preenchido) -->
                                         <input type="hidden" name="id" value="" class="form-control">
-                                        <input type="hidden" name="tabela" value="ferramenta">
+                                        <input type="hidden" name="tabela" value="ferramentas">
                                         <input type="hidden" name="indicador" value="agent-fepacoc">
                                         <input type="hidden" name="status" value="ativo">
                                         <input type="hidden" name="retorno" value="null">
@@ -108,7 +108,7 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
                                         <!-- Campo para identificar se é edição (id preenchido) -->
                                         <input type="hidden" name="id" value="" class="form-control">
-                                        <input type="hidden" name="tabela" value="ferramenta">
+                                        <input type="hidden" name="tabela" value="ferramentas">
                                         <input type="hidden" name="indicador" value="ads-campanha">
                                         <input type="hidden" name="status" value="ativo">
                                         <input type="hidden" name="retorno" value="null">
