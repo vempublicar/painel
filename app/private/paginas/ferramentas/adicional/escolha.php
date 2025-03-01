@@ -39,6 +39,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
     }
 
     $botaoTexto = $ativo ? 'Desativar' : 'Ativar';
+    $offcanvasId = "meuOffcanvas" . str_replace('-', '', ucfirst($ferramenta['indicador']));
 
     echo <<<HTML
     <div class="col-md-3 mb-4">
@@ -49,14 +50,42 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
                 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="{$ferramenta['video']}">
                     <i class="fas fa-play me-2"></i> Como Usar
                 </button>
-                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#meuOffcanvasAgent" aria-controls="meuOffcanvasAgent">
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#$offcanvasId" aria-controls="$offcanvasId">
                     <i class="fas fa-check me-2"></i> $botaoTexto
                 </button>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="$offcanvasId" aria-labelledby="{$offcanvasId}Label">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="{$offcanvasId}Label">Informações Necessárias</h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <input type="hidden" name="cnpj" id="cnpj" value="$empresaCnpj" class="form-control" readonly>
+                        <input type="hidden" name="empresa" id="empresa" value="$empresaId" class="form-control" readonly>
+                        <input type="hidden" name="id" value="$ferramentaId" class="form-control">
+                        <input type="hidden" name="tabela" value="ferramentas">
+                        <input type="hidden" name="indicador" value="{$ferramenta['indicador']}">
+                        <input type="hidden" name="status" value="$status">
+                        <input type="hidden" name="retorno" value="lista-ferramentas">
+                        <input type="hidden" name="calculo" value="periodo">
+                        <input type="hidden" name="mes" value="0">
+                        <input type="hidden" name="ano" value="0">
+                        <!-- Outros campos específicos da ferramenta -->
+                    </div>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-secondary-lt w-50" data-bs-dismiss="offcanvas">Cancelar</a>
+                        <button type="submit" class="btn btn-cyan ms-auto float-end w-50 text-black" data-bs-dismiss="offcanvas">Salvar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     HTML;
 }
+
 
 $minhas_empresas = $_SESSION['minhas_empresas'];
 if (isset($_GET['c'])) {
