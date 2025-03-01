@@ -118,6 +118,7 @@
 </div>
 <?php include_once "app/private/parts/footer.php" ?>
 <!-- Script para carregar o vídeo no modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script>
     var videoModal = document.getElementById('videoModal');
     videoModal.addEventListener('show.bs.modal', function (event) {
@@ -130,5 +131,24 @@
     videoModal.addEventListener('hidden.bs.modal', function (event) {
         var iframe = document.getElementById('videoFrame');
         iframe.src = ""; // Limpa o src para interromper o vídeo ao fechar o modal
+    });
+
+    $(document).ready(function(){
+    // Máscara para número de WhatsApp
+    $('#num_whats').mask('(00) 00000-0000', {placeholder: "(__) _____-____"});
+
+    // Máscara para senha de acesso
+    // Exemplo: máscara com letras e números (não é comum mascarar senha, mas pode ser aplicado para formatos específicos)
+    $('#rec_online').mask('AAAAAAAA', {translation:  {'A': {pattern: /[A-Za-z0-9]/}}});
+    });
+    $(document).ready(function(){
+    $('#site, #botao').on('blur', function(){
+        var url = $(this).val();
+        var pattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+        if(!pattern.test(url)){
+            alert("Por favor, insira uma URL válida.");
+            $(this).val(''); // Limpa o campo se a URL for inválida
+        }
+    });
     });
 </script>
