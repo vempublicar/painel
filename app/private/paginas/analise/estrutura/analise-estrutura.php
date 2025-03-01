@@ -1,4 +1,5 @@
-<div class="container-xl">
+<div class="page-body">
+    <div class="container-xl">
         
         <div class="page-header d-print-none">
             <div class="container container-tight">
@@ -50,7 +51,7 @@
                 <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
                 <h3 class="h2 card-title text-secondary ">Indicadores Estruturais</h3>
                 <div class="row">
-                    <div class="card col-sm-8">
+                    <div class="card bg-white col-sm-8">
                         <div class="card-header">
                             <div class="col-10">
                                 <h3 class="card-title">Performance da equipe</h3>
@@ -129,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card col-sm-4">
+                    <div class="card bg-white col-sm-4">
                         <div class="row">
                             <div class="col text-center mt-3">
                                 <div class="datagrid-title">Performance Geral</div>
@@ -199,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card col-sm-4">
+                    <div class="card bg-white col-sm-4">
                         <div class="row">
                             <div class="col-12 text-center mt-3">
                                 <div class="datagrid-title">Parcerias</div>
@@ -230,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card col-sm-4">
+                    <div class="card bg-white col-sm-4">
                         <div class="row">
                             <div class="col-12 text-center mt-3">
                                 <div class="datagrid-title">Eventos</div>
@@ -261,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card col-sm-4">
+                    <div class="card bg-white col-sm-4">
                         <div class="row">
                             <div class="col-12 text-center mt-3">
                                 <div class="datagrid-title">Marketing Interno</div>
@@ -297,6 +298,7 @@
 
         </div>
     </div>
+</div>
 
     
 <?php

@@ -1,4 +1,5 @@
-<div class="container-xl">        
+<div class="page-body">    
+    <div class="container-xl">        
         <div class="page-header d-print-none">
             <div class="container container-tight">
                 <div class="row g-3 align-items-center">
@@ -49,7 +50,7 @@
                 <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
                 <h3 class="h2 card-title text-secondary ">Indicadores dos Produtos</h3>
                 <div class="row">
-                    <div class="card  col-sm-12">
+                    <div class="card bg-white col-sm-12">
                         <div class="row">
                             <div class="col text-center mt-3">
                                 <div class="datagrid-title">Público Consumidor do Produto</div>
@@ -68,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card  col-sm-12">
+                    <div class="card bg-white col-sm-12">
                         <div class="card-status-top bg-orange"></div>
                         <div class="row m-auto">
                             <div class="col-sm-4 text-center mt-3">
@@ -338,6 +339,7 @@
             </div>
         </div>
     </div>
+</div>
 
         
 <?php
