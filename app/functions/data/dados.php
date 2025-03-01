@@ -20,7 +20,7 @@ function fetchFluxoFerramentas($empresa) {
     $pdo = db_connect();
     $sql = "SELECT * FROM ferramentas WHERE empresa = ? ORDER BY id DESC LIMIT 500";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$empresa, $indicador]);
+    $stmt->execute([$empresa]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
