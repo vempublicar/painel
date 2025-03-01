@@ -717,7 +717,7 @@ if (isset($_GET['b']) && !empty($_GET['b'])) {
         document.getElementById('generate-pdf').addEventListener('click', function () {
             const element = document.getElementById('salvarPdf');
             const opt = {
-                margin:       0.8,
+                margin:       3,
                 filename:     '<?= $filename ?>.pdf',  // Nome do arquivo ajustado e sanitizado
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { scale: 2 }, // Aumenta a escala do canvas portrait landscape
