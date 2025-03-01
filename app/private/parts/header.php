@@ -242,7 +242,7 @@
                       </li>                      
                       <li class="nav-item ms-auto">
                           <a class="nav-link" href="painel&a=edit-empresa&b=configuracao&c=<?= $_GET['c'] ?>">
-                              <i class="fas fa-cog"></i>
+                              <i class="fas fa-cog me-2"></i> Config
                           </a>
                       </li>
                   </ul>
