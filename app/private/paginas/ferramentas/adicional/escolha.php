@@ -96,7 +96,7 @@
         </div>
     </div>
 </div>
-
+<?php include_once "app/private/parts/footer.php" ?>
 <!-- Script para carregar o vídeo no modal -->
 <script>
     var videoModal = document.getElementById('videoModal');
