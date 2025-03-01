@@ -145,7 +145,7 @@ if (isset($_GET['c'])) {
 
 $minhasFerramentas = fetchFluxoFerramentas($id);
 
-print_r($minhasFerramentas);
+//print_r($minhasFerramentas);
 
 ?>
 
