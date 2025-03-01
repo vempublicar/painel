@@ -1,0 +1,1 @@
+vempublicar/painel/app/functions/push/ativar_ferramenta.php

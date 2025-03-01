@@ -57,8 +57,8 @@ $ferramentas = [
                                 <i class="bi bi-play me-2"></i>  Como Usar
                                 </button>
                                 <!-- Botão Adicionar: link direcionado conforme o 'codigo-url' -->
-                                <button onclick="adicionarFerramenta(<?php echo $ferramenta['id']; ?>, <?php echo $empresa['id']; ?>)" class="btn btn-outline-secondary w-50">
-                                    <i class="bi bi-plus me-2"></i> Adicionar
+                                <button type="button" class="btn btn-outline-secondary w-50" data-bs-toggle="modal" data-bs-target="#confirmActivationModal" onclick="setFerramentaId(<?php echo $ferramenta['id']; ?>)">
+                                    <i class="bi bi-plus me-2"></i> Ativar
                                 </button>
                             </div>
                         </div>
@@ -67,6 +67,29 @@ $ferramentas = [
             <?php endforeach; ?>
         </div>
     </div>
+</div>
+
+<!-- Modal de Confirmação para Ativar Ferramenta -->
+<div class="modal fade" id="confirmActivationModal" tabindex="-1" aria-labelledby="confirmActivationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmActivationModalLabel">Confirmar Ativação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="activateForm" action="app/functions/push/ativar_ferramenta.php" method="post">
+          <input type="hidden" name="ferramentaId" id="ferramentaId" value="">
+          <input type="hidden" name="empresaId" id="empresaId" value="<?php echo $empresa['id']; ?>">
+          <p>Tem certeza que deseja ativar esta ferramenta?</p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal para exibir o vídeo do YouTube -->
@@ -101,27 +124,11 @@ $ferramentas = [
         // Limpa o src para interromper o vídeo ao fechar o modal
         iframe.src = "";
     });
-</script>
-<script>
-function adicionarFerramenta(ferramentaId, empresaId) {
-    $.ajax({
-         type: "POST",
-         url: "app/functions/push/adicionar_ajax.php",
-         data: {
-             ferramenta: ferramentaId,
-             empresa: empresaId
-         },
-         dataType: "json",
-         success: function(response) {
-             if(response.success) {
-                 alert(response.success);
-             } else if(response.error) {
-                 alert(response.error);
-             }
-         },
-         error: function(xhr, status, error) {
-             alert("Erro: " + error);
-         }
-    });
-}
+    function setFerramentaId(ferramentaId) {
+        document.getElementById('ferramentaId').value = ferramentaId;
+    }
+    var confirmActivationModal = document.getElementById('confirmActivationModal');
+        confirmActivationModal.addEventListener('hidden.bs.modal', function (event) {
+            document.getElementById('ferramentaId').value = ''; // Limpa o campo para garantir que não fiquem dados antigos
+        });
 </script>
