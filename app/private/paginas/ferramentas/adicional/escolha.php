@@ -59,11 +59,12 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="cnpj" id="cnpj" value="<?= $_GET['c'] ?>" class="form-control" readonly>
                                         <input type="hidden" name="empresa" id="empresa" value="<?= $id ?>" class="form-control" readonly>
                                         <!-- Campo para identificar se é edição (id preenchido) -->
+
                                         <input type="hidden" name="id" value="" class="form-control">
                                         <input type="hidden" name="tabela" value="ferramentas">
                                         <input type="hidden" name="indicador" value="agent-fepacoc">
                                         <input type="hidden" name="status" value="ativo">
-                                        <input type="hidden" name="retorno" value="null">
+                                        <input type="hidden" name="retorno" value="lista-ferramentas">
                                         <input type="hidden" name="calculo" value="periodo">
                                         <input type="hidden" name="mes" value="0">
                                         <input type="hidden" name="ano" value="0">
@@ -117,7 +118,7 @@ print_r($minhasFerramentas);
                                         <input type="hidden" name="tabela" value="ferramentas">
                                         <input type="hidden" name="indicador" value="ads-campanha">
                                         <input type="hidden" name="status" value="ativo">
-                                        <input type="hidden" name="retorno" value="null">
+                                        <input type="hidden" name="retorno" value="lista-ferramentas">
                                         <input type="hidden" name="calculo" value="periodo">
                                         <input type="hidden" name="mes" value="0">
                                         <input type="hidden" name="ano" value="0">
