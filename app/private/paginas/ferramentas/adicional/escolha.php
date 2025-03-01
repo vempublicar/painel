@@ -79,7 +79,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
     if($status != 'inativo'){
         $camposHtml = renderizarCampos($ferramenta['campos']);
     }else{
-        $camposHtml = "";
+        $camposHtml = "<p>Confirme se deseja desabilitar esta ferramenta</p>";
     }
     
 
@@ -116,7 +116,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
                     <input type="hidden" name="ano" value="0">
                     $camposHtml
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-primary float-end">Salvar</button>
+                        <button type="submit" class="btn btn-primary float-end">Confirmar</button>
                     </div>
                 </form>
             </div>
