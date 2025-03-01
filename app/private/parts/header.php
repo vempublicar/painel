@@ -104,7 +104,7 @@
 </header>
 
 <?php if(isset($_GET['a']) && $_GET['a'] == 'edit-empresa'){ ?>
-<header class="navbar-expand-md">
+  <header class="navbar-expand-md">
 		<div class="navbar-collapse collapse" id="navbar-menu" style="">
 			<div class="navbar">
 				<div class="container-xl">
@@ -252,6 +252,9 @@
 			</div>
 		</div>
 	</header>
+  <button class="navbar-toggler floating-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
   <?php } ?>
 
   <?php if (isset($_GET['msg'])): ?>
