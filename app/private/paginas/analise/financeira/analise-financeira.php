@@ -1,5 +1,161 @@
-                
-                
+            <div class="page-header d-print-none">
+                <div class="container container-tight">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                                    <span class="status-indicator status-green status-indicator-animated">
+                                    <span class="status-indicator-circle"></span>
+                                    <span class="status-indicator-circle"></span>
+                                    <span class="status-indicator-circle"></span>
+                                </span>
+                                                </div>
+                        <div class="col">
+                            <div class="text-secondary">
+                                <ul class="list-inline list-inline-dots mb-0">
+                                                                        <li class="list-inline-item"><span class="text-green"></span>Dados Atualizados</li>
+                                    
+                                    <span class="list-inline-item"> </span>                              
+                                </ul>                            
+                            </div>
+                        </div>
+                        <div class="col-md-auto ms-auto d-print-none">
+                            <div class="btn-list">
+                                <a class="btn btn-indigo ms-auto" id="generate-pdf" data-bs-toggle="modal" data-bs-target="#modal-full-width">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-download">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                        <path d="M7 11l5 5l5 -5"></path>
+                                        <path d="M12 4l0 12"></path>
+                                    </svg>
+                                    Salvar PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="page-break pdf-page mt-3">
+                <hr class="custom-hr">
+                <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
+
+                <h3 class="h2 card-title text-secondary">Indicadores Financeiro</h3>
+                <div class="row row-deck row-cards mt-5 mb-5">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <span class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-dollar">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                            <path d="M13 17h-7v-14h-2"></path>
+                                            <path d="M6 5l14 1l-.575 4.022m-4.925 2.978h-8.5"></path>
+                                            <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
+                                            <path d="M19 21v1m0 -8v1"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-secondary">
+                                        Sem Dados                                    </div>
+                                    <div class="font-weight-medium text-green">
+                                        <b>
+                                                                                            R$0                                                                                    </b>
+                                    </div>
+                                    <div class="text-secondary">
+                                        Receita do período
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="bg-danger text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-receipt">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2m4 -14h6m-6 4h6m-2 4h2"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-secondary">
+                                        Sem Dados                                    </div>
+
+                                    <div class="font-weight-medium text-danger">
+                                        <b>
+                                            <!-- Se o mês for diferente, exibe o valor riscado -->
+                                                                                            R$0,00                                                                                    </b>
+                                    </div>
+
+                                    <div class="text-secondary">
+                                        Despesas do período
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="bg-orange text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-devices-dollar">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M13 19v-10a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1.5"></path>
+                                            <path d="M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h9"></path>
+                                            <path d="M16 9h2"></path>
+                                            <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
+                                            <path d="M19 21v1m0 -8v1"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-secondary">
+                                        Fevereiro                                    </div>
+                                    <div class="font-weight-medium text-orange">
+                                        <b>
+                                            R$0,00                                        </b>
+                                    </div>
+                                    <div class="text-secondary">
+                                        Retorno Investimento
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="bg-orange text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart-handshake">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+                                            <path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25"></path>
+                                            <path d="M12.5 15.5l2 2"></path>
+                                            <path d="M15 13l2 2"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-secondary">
+                                        Fevereiro                                    </div>
+                                    <div class="font-weight-medium text-orange">
+                                        <b>
+                                            R$0,00                                        </b>
+                                    </div>
+                                    <div class="text-secondary">
+                                        Compromissos Financeiro
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="card bg-white ">
                     <div class="row">
                         <div class="col-sm-5 ">
@@ -160,7 +316,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="page-break pdf-page mt-3">
+                <hr class="custom-hr">
+                <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
+
+                <h3 class="h2 card-title text-secondary ">Indicadores de Eficiência</h3>
                 <div class="card bg-white">
                     <div class="row">
                         <div class="col-sm-5 ">
@@ -374,7 +536,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="page-break pdf-page mt-3">
+                <hr class="custom-hr">
+                <span class="text-right text-secondary float-end ms-auto">Fepacoc.com</span>
+
+                <h3 class="h2 card-title text-secondary ">Indicadores de Participação</h3>
                 <div class="card bg-white">
                     <div class="row">
                         <div class="col-sm-5 m-auto">
@@ -509,3 +677,4 @@
                         </div>
                     </div>
                 </div>
+            </div>
