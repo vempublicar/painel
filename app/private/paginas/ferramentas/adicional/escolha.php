@@ -3,7 +3,7 @@
         <div class="row">
 
             <!-- AGENT AI FEPACOC -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card rounded" style="border-top: 5px solid #28a745;"> <!-- Verde para gratuito -->
                     <img src="vendor/images/ferramentas/ferramenta1.png" class="card-img-top" alt="Agent AI Fepacoc">
                     <div class="card-body text-center">
@@ -49,7 +49,7 @@
             </div>
 
             <!-- ACOMPANHAR CAMPANHAS -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card rounded" style="border-top: 5px solid #007bff;"> <!-- Azul para estratégia -->
                     <img src="vendor/images/ferramentas/ferramenta2.png" class="card-img-top" alt="Resultado Campanha">
                     <div class="card-body text-center">
@@ -94,17 +94,6 @@
                 </div>
             </div>
 
-            <!-- Card para Ferramenta 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card rounded" style="border-top: 5px solid #d4af37;"> <!-- Dourada para ferramenta -->
-                    <img src="vendor/images/ferramentas/ferramenta3.png" class="card-img-top" alt="Detalhamento de Receita">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Detalhamento de Receita</h5>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/embed/abcdef12345"> <i class="fas fa-play me-2" ></i> Como Usar</button>
-                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-check me-2" ></i> Ativar</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
