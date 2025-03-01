@@ -252,9 +252,9 @@
 			</div>
 		</div>
 	</header>
-  <button class="navbar-toggler floating-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler floating-btn d-md-none d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-</button>
+  </button>
   <?php } ?>
 
   <?php if (isset($_GET['msg'])): ?>
