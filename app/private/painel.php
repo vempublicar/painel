@@ -17,8 +17,15 @@ $b = $_GET['b'] ?? null;
 switch ($a) {
     case 'analises':
         if ($b) {
-            // Lógica para subpágina de análises (a definir)
-            // include "app/private/paginas/analise/subpagina.php";
+            switch ($b) {
+            case 'radar':
+                include "app/private/paginas/analise/radar/radar.php";
+                break;
+
+            default:
+                include "app/private/paginas/analise/inicial-analises.php";
+                break;
+            }
         } else {
             // Página inicial de análises
             include "app/private/paginas/analise/inicial-analises.php";
@@ -54,9 +61,9 @@ switch ($a) {
     case 'edit-empresa':
             if ($b) {
                 switch ($b) {
-                    case 'radar':
-                        include "app/private/paginas/analise/radar/radar.php";
-                        break;
+                        case 'radar':
+                            include "app/private/paginas/analise/radar/radar.php";
+                            break;
 
                         case 'fluxo-caixa':
                             include "app/private/paginas/ferramentas/financeiro/fluxo-caixa.php";
@@ -76,7 +83,7 @@ switch ($a) {
                     }
             } else {
                 // Página inicial de empresas
-                include "app/private/paginas/analise/inicial-analises.php";
+               // include "app/private/paginas/analise/inicial-analises.php";
             }
             break;
     default:
