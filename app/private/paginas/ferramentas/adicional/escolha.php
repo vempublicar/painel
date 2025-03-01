@@ -23,7 +23,7 @@ if (isset($_GET['c'])) {
 
 }
 
-$minhasFerramentas = fetchFluxoFerramentas($empresa);
+$minhasFerramentas = fetchFluxoFerramentas($id);
 
 print_r($minhasFerramentas);
 
