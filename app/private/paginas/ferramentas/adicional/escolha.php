@@ -106,7 +106,7 @@ function gerarCardFerramenta($ferramenta, $minhasFerramentas, $empresaId, $empre
                 <form action="app/functions/push/cadastrar_dados.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="cnpj" value="$empresaCnpj" class="form-control" readonly>
                     <input type="hidden" name="empresa" value="$empresaId" class="form-control" readonly>
-                    <input type="text" name="id" value="$ferramentaId" class="form-control">
+                    <input type="hidden" name="id" value="$ferramentaId" class="form-control">
                     <input type="hidden" name="tabela" value="ferramentas">
                     <input type="hidden" name="indicador" value="{$ferramenta['indicador']}">
                     <input type="hidden" name="status" value="$status">
