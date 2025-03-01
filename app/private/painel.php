@@ -66,31 +66,31 @@ switch ($a) {
                             break;
 
                         case 'analise-financeira':
-                            include "app/private/paginas/analise/analise-financeira.php";
+                            include "app/private/paginas/analise/financeira/analise-financeira.php";
                             break;
 
                         case 'analise-estrutura':
-                            include "app/private/paginas/analise/analise-estrutura.php";
+                            include "app/private/paginas/analise/estrutura/analise-estrutura.php";
                             break; 
       
                         case 'analise-produto':
-                            include "app/private/paginas/analise/analise-produto.php";
+                            include "app/private/paginas/analise/produto/analise-produto.php";
                             break;
 
                         case 'analise-anuncio':
-                            include "app/private/paginas/analise/analise-anuncio.php";
+                            include "app/private/paginas/analise/anuncio/analise-anuncio.php";
                             break;
 
                         case 'analise-cliente':
-                            include "app/private/paginas/analise/analise-cliente.php";
+                            include "app/private/paginas/analise/cliente/analise-cliente.php";
                             break;
 
                         case 'analise-operacional':
-                            include "app/private/paginas/analise/analise-operacional.php";
+                            include "app/private/paginas/analise/operacional/analise-operacional.php";
                             break;
 
                         case 'analise-campanha':
-                            include "app/private/paginas/analise/analise-campanha.php";
+                            include "app/private/paginas/analise/campanha/analise-campanha.php";
                             break;                          
 
                     default:
