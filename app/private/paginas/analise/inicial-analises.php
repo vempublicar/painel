@@ -1,7 +1,7 @@
 
 <div class="page-body">
     <div class="container-xl">
-        <div class="card ">
+        <div class="card p-2">
             <div class="col m-auto mb-3">
                 <h2 class="text-start m-auto"><b class="text-info">Minhas Análises</b><br></h2>
             </div>        
